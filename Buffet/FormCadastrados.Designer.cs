@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bttAdicionar = new System.Windows.Forms.Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatadeNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttRemove = new System.Windows.Forms.Button();
             this.bttEditar = new System.Windows.Forms.Button();
             this.gbProcura = new System.Windows.Forms.GroupBox();
-            this.lbNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.lbNome = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.lbCPF = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,6 +67,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(3, 361);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(677, 74);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
@@ -85,16 +95,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(677, 339);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // bttAdicionar
-            // 
-            this.bttAdicionar.Location = new System.Drawing.Point(64, 19);
-            this.bttAdicionar.Name = "bttAdicionar";
-            this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
-            this.bttAdicionar.TabIndex = 2;
-            this.bttAdicionar.Text = "Adicionar";
-            this.bttAdicionar.UseVisualStyleBackColor = true;
-            this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
             // 
             // Nome
             // 
@@ -126,6 +126,16 @@
             this.Telefone.Name = "Telefone";
             this.Telefone.ReadOnly = true;
             // 
+            // bttAdicionar
+            // 
+            this.bttAdicionar.Location = new System.Drawing.Point(64, 19);
+            this.bttAdicionar.Name = "bttAdicionar";
+            this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
+            this.bttAdicionar.TabIndex = 2;
+            this.bttAdicionar.Text = "Adicionar";
+            this.bttAdicionar.UseVisualStyleBackColor = true;
+            this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
+            // 
             // bttRemove
             // 
             this.bttRemove.Location = new System.Drawing.Point(292, 19);
@@ -154,6 +164,13 @@
             this.gbProcura.TabIndex = 5;
             this.gbProcura.TabStop = false;
             // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(39, 24);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(284, 20);
+            this.txtNome.TabIndex = 1;
+            // 
             // lbNome
             // 
             this.lbNome.AutoSize = true;
@@ -162,13 +179,6 @@
             this.lbNome.Size = new System.Drawing.Size(35, 13);
             this.lbNome.TabIndex = 0;
             this.lbNome.Text = "Nome";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(39, 24);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(284, 20);
-            this.txtNome.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -196,16 +206,6 @@
             this.lbCPF.Size = new System.Drawing.Size(27, 13);
             this.lbCPF.TabIndex = 0;
             this.lbCPF.Text = "CPF";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(3, 361);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(677, 74);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // groupBox4
             // 
