@@ -47,7 +47,7 @@
             // lbNome
             // 
             this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(69, 15);
+            this.lbNome.Location = new System.Drawing.Point(7, 12);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(38, 13);
             this.lbNome.TabIndex = 0;
@@ -56,7 +56,7 @@
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(77, 41);
+            this.lbCPF.Location = new System.Drawing.Point(7, 38);
             this.lbCPF.Name = "lbCPF";
             this.lbCPF.Size = new System.Drawing.Size(30, 13);
             this.lbCPF.TabIndex = 1;
@@ -65,7 +65,7 @@
             // lbEndereco
             // 
             this.lbEndereco.AutoSize = true;
-            this.lbEndereco.Location = new System.Drawing.Point(51, 67);
+            this.lbEndereco.Location = new System.Drawing.Point(7, 64);
             this.lbEndereco.Name = "lbEndereco";
             this.lbEndereco.Size = new System.Drawing.Size(56, 13);
             this.lbEndereco.TabIndex = 2;
@@ -82,7 +82,7 @@
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(55, 122);
+            this.lbTelefone.Location = new System.Drawing.Point(7, 119);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(52, 13);
             this.lbTelefone.TabIndex = 4;
@@ -129,7 +129,7 @@
             // lbDataNasc
             // 
             this.lbDataNasc.AutoSize = true;
-            this.lbDataNasc.Location = new System.Drawing.Point(4, 94);
+            this.lbDataNasc.Location = new System.Drawing.Point(6, 90);
             this.lbDataNasc.Name = "lbDataNasc";
             this.lbDataNasc.Size = new System.Drawing.Size(105, 13);
             this.lbDataNasc.TabIndex = 11;
