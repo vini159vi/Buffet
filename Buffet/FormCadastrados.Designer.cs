@@ -64,6 +64,7 @@
             this.gbLista.Size = new System.Drawing.Size(682, 372);
             this.gbLista.TabIndex = 1;
             this.gbLista.TabStop = false;
+            this.gbLista.Enter += new System.EventHandler(this.gbLista_Enter);
             // 
             // dataGViewLista
             // 
@@ -197,6 +198,7 @@
             // 
             // gbBotoes
             // 
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbBotoes.Controls.Add(this.bttAdicionar);
             this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
