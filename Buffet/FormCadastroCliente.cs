@@ -12,7 +12,7 @@ namespace Buffet
 {
     public partial class FormCadastroCliente : Form
     {
-        DatabaseDict clientes = new DatabaseDict();
+        private DatabaseDict clientes = new DatabaseDict();
 
         public FormCadastroCliente()
         {

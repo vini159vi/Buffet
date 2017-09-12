@@ -40,7 +40,8 @@ namespace Buffet
 
         private void gbLista_Enter(object sender, EventArgs e)
         {
-
+            
         }
+
     }
 }
