@@ -47,7 +47,7 @@
             // lbNome
             // 
             this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(7, 12);
+            this.lbNome.Location = new System.Drawing.Point(6, 13);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(38, 13);
             this.lbNome.TabIndex = 0;
@@ -56,7 +56,7 @@
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(7, 38);
+            this.lbCPF.Location = new System.Drawing.Point(6, 93);
             this.lbCPF.Name = "lbCPF";
             this.lbCPF.Size = new System.Drawing.Size(30, 13);
             this.lbCPF.TabIndex = 1;
@@ -65,7 +65,7 @@
             // lbEndereco
             // 
             this.lbEndereco.AutoSize = true;
-            this.lbEndereco.Location = new System.Drawing.Point(7, 64);
+            this.lbEndereco.Location = new System.Drawing.Point(6, 42);
             this.lbEndereco.Name = "lbEndereco";
             this.lbEndereco.Size = new System.Drawing.Size(56, 13);
             this.lbEndereco.TabIndex = 2;
@@ -82,7 +82,7 @@
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(7, 119);
+            this.lbTelefone.Location = new System.Drawing.Point(6, 117);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(52, 13);
             this.lbTelefone.TabIndex = 4;
@@ -91,45 +91,46 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 12);
+            this.textBox1.Location = new System.Drawing.Point(50, 10);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.Size = new System.Drawing.Size(263, 20);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 38);
+            this.textBox2.Location = new System.Drawing.Point(42, 90);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
+            this.textBox2.Size = new System.Drawing.Size(143, 20);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(113, 64);
+            this.textBox3.Location = new System.Drawing.Point(68, 39);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.Size = new System.Drawing.Size(245, 20);
             this.textBox3.TabIndex = 7;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(113, 119);
+            this.textBox5.Location = new System.Drawing.Point(64, 114);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(121, 20);
             this.textBox5.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.dateTimePicker1.Location = new System.Drawing.Point(113, 90);
+            this.dateTimePicker1.Location = new System.Drawing.Point(117, 63);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // lbDataNasc
             // 
             this.lbDataNasc.AutoSize = true;
-            this.lbDataNasc.Location = new System.Drawing.Point(6, 90);
+            this.lbDataNasc.Location = new System.Drawing.Point(6, 69);
             this.lbDataNasc.Name = "lbDataNasc";
             this.lbDataNasc.Size = new System.Drawing.Size(105, 13);
             this.lbDataNasc.TabIndex = 11;
@@ -138,21 +139,22 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.lbDataNasc);
             this.groupBox1.Controls.Add(this.lbNome);
-            this.groupBox1.Controls.Add(this.lbCPF);
             this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.lbTelefone);
+            this.groupBox1.Controls.Add(this.lbCPF);
+            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.lbEndereco);
+            this.groupBox1.Controls.Add(this.lbDataNasc);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.lbTelefone);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(5, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(347, 163);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // bttAdicionar
             // 
@@ -168,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 225);
+            this.ClientSize = new System.Drawing.Size(358, 223);
             this.Controls.Add(this.bttAdicionar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormCadastroCliente";
