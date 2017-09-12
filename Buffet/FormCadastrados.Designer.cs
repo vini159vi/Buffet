@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,12 +44,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.lbCPF = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbProcura.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -59,23 +58,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(3, 76);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(683, 358);
+            this.groupBox2.Size = new System.Drawing.Size(682, 372);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(3, 361);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(677, 74);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // dataGridView1
             // 
@@ -92,7 +80,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(677, 339);
+            this.dataGridView1.Size = new System.Drawing.Size(676, 353);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -185,7 +173,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtCPF);
             this.groupBox1.Controls.Add(this.lbCPF);
-            this.groupBox1.Location = new System.Drawing.Point(345, 1);
+            this.groupBox1.Location = new System.Drawing.Point(344, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(341, 69);
             this.groupBox1.TabIndex = 6;
@@ -207,27 +195,26 @@
             this.lbCPF.TabIndex = 0;
             this.lbCPF.Text = "CPF";
             // 
-            // groupBox4
+            // gbBotoes
             // 
-            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox4.Controls.Add(this.bttAdicionar);
-            this.groupBox4.Controls.Add(this.bttEditar);
-            this.groupBox4.Controls.Add(this.bttRemove);
-            this.groupBox4.Location = new System.Drawing.Point(3, 437);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(680, 74);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
+            this.gbBotoes.Controls.Add(this.bttAdicionar);
+            this.gbBotoes.Controls.Add(this.bttEditar);
+            this.gbBotoes.Controls.Add(this.bttRemove);
+            this.gbBotoes.Location = new System.Drawing.Point(2, 444);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(680, 74);
+            this.gbBotoes.TabIndex = 7;
+            this.gbBotoes.TabStop = false;
             // 
             // FormCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 515);
+            this.ClientSize = new System.Drawing.Size(689, 529);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbProcura);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.gbBotoes);
             this.Name = "FormCadastrados";
             this.Text = "Cadastrados";
             this.Load += new System.EventHandler(this.FormCadastrados_Load);
@@ -237,7 +224,7 @@
             this.gbProcura.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
+            this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -260,7 +247,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label lbCPF;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbBotoes;
     }
 }
