@@ -12,6 +12,8 @@ namespace Buffet
 {
     public partial class FormCadastroCliente : Form
     {
+        DatabaseDict clientes = new DatabaseDict();
+
         public FormCadastroCliente()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace Buffet
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-
+            GetDTO(SetDTO());
             Dispose();
         }
 
@@ -46,6 +48,23 @@ namespace Buffet
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private Cliente SetDTO()
+        {
+            Cliente c = new Cliente();
+
+            c.Cpf = long.Parse(txtCPF.Text);
+            c.Nome = txtNome.Text;
+            c.Telefone = long.Parse(txtTelefone.Text);
+            c.DataNasc = dateNascimento.Value;
+            c.Endereco = txtEndereco.Text;
+
+            return c;
+        }
+        private void GetDTO(Cliente c)
+        {
+            clientes.Save(c);
         }
     }
 }
