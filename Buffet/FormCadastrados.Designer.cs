@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gbLista = new System.Windows.Forms.GroupBox();
+            this.dataGViewLista = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,51 +38,51 @@
             this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttRemove = new System.Windows.Forms.Button();
             this.bttEditar = new System.Windows.Forms.Button();
-            this.gbProcura = new System.Windows.Forms.GroupBox();
+            this.gbProcuraNome = new System.Windows.Forms.GroupBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbProcuraCPF = new System.Windows.Forms.GroupBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.lbCPF = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.gbProcura.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbLista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
+            this.gbProcuraNome.SuspendLayout();
+            this.gbProcuraCPF.SuspendLayout();
             this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // gbLista
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gbLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(3, 76);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(682, 372);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
+            this.gbLista.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gbLista.Controls.Add(this.dataGViewLista);
+            this.gbLista.Location = new System.Drawing.Point(3, 76);
+            this.gbLista.Name = "gbLista";
+            this.gbLista.Size = new System.Drawing.Size(682, 372);
+            this.gbLista.TabIndex = 1;
+            this.gbLista.TabStop = false;
             // 
-            // dataGridView1
+            // dataGViewLista
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGViewLista.AllowUserToDeleteRows = false;
+            this.dataGViewLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGViewLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.CPF,
             this.Endereço,
             this.DatadeNascimento,
             this.Telefone});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(676, 353);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGViewLista.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGViewLista.Location = new System.Drawing.Point(3, 16);
+            this.dataGViewLista.Name = "dataGViewLista";
+            this.dataGViewLista.ReadOnly = true;
+            this.dataGViewLista.Size = new System.Drawing.Size(676, 353);
+            this.dataGViewLista.TabIndex = 0;
+            this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Nome
             // 
@@ -142,15 +142,15 @@
             this.bttEditar.Text = "Editar";
             this.bttEditar.UseVisualStyleBackColor = true;
             // 
-            // gbProcura
+            // gbProcuraNome
             // 
-            this.gbProcura.Controls.Add(this.txtNome);
-            this.gbProcura.Controls.Add(this.lbNome);
-            this.gbProcura.Location = new System.Drawing.Point(3, 1);
-            this.gbProcura.Name = "gbProcura";
-            this.gbProcura.Size = new System.Drawing.Size(341, 69);
-            this.gbProcura.TabIndex = 5;
-            this.gbProcura.TabStop = false;
+            this.gbProcuraNome.Controls.Add(this.txtNome);
+            this.gbProcuraNome.Controls.Add(this.lbNome);
+            this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
+            this.gbProcuraNome.Name = "gbProcuraNome";
+            this.gbProcuraNome.Size = new System.Drawing.Size(341, 69);
+            this.gbProcuraNome.TabIndex = 5;
+            this.gbProcuraNome.TabStop = false;
             // 
             // txtNome
             // 
@@ -168,16 +168,16 @@
             this.lbNome.TabIndex = 0;
             this.lbNome.Text = "Nome";
             // 
-            // groupBox1
+            // gbProcuraCPF
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.txtCPF);
-            this.groupBox1.Controls.Add(this.lbCPF);
-            this.groupBox1.Location = new System.Drawing.Point(344, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(341, 69);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
+            this.gbProcuraCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbProcuraCPF.Controls.Add(this.txtCPF);
+            this.gbProcuraCPF.Controls.Add(this.lbCPF);
+            this.gbProcuraCPF.Location = new System.Drawing.Point(344, 1);
+            this.gbProcuraCPF.Name = "gbProcuraCPF";
+            this.gbProcuraCPF.Size = new System.Drawing.Size(341, 69);
+            this.gbProcuraCPF.TabIndex = 6;
+            this.gbProcuraCPF.TabStop = false;
             // 
             // txtCPF
             // 
@@ -211,19 +211,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 529);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.gbProcura);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbProcuraCPF);
+            this.Controls.Add(this.gbProcuraNome);
+            this.Controls.Add(this.gbLista);
             this.Controls.Add(this.gbBotoes);
             this.Name = "FormCadastrados";
             this.Text = "Cadastrados";
             this.Load += new System.EventHandler(this.FormCadastrados_Load);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.gbProcura.ResumeLayout(false);
-            this.gbProcura.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbLista.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).EndInit();
+            this.gbProcuraNome.ResumeLayout(false);
+            this.gbProcuraNome.PerformLayout();
+            this.gbProcuraCPF.ResumeLayout(false);
+            this.gbProcuraCPF.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -231,8 +231,8 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox gbLista;
+        private System.Windows.Forms.DataGridView dataGViewLista;
         private System.Windows.Forms.Button bttAdicionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
@@ -241,10 +241,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.Button bttRemove;
         private System.Windows.Forms.Button bttEditar;
-        private System.Windows.Forms.GroupBox gbProcura;
+        private System.Windows.Forms.GroupBox gbProcuraNome;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbProcuraCPF;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label lbCPF;
         private System.Windows.Forms.GroupBox gbBotoes;
