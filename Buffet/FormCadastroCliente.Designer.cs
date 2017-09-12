@@ -33,11 +33,11 @@
             this.lbEndereco = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbTelefone = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtCPF = new System.Windows.Forms.TextBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.dateNascimento = new System.Windows.Forms.DateTimePicker();
             this.lbDataNasc = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bttAdicionar = new System.Windows.Forms.Button();
@@ -89,44 +89,44 @@
             this.lbTelefone.Text = "Telefone:";
             this.lbTelefone.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(50, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtNome.Location = new System.Drawing.Point(50, 15);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(263, 20);
+            this.txtNome.TabIndex = 5;
             // 
-            // textBox2
+            // txtCPF
             // 
-            this.textBox2.Location = new System.Drawing.Point(42, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtCPF.Location = new System.Drawing.Point(42, 105);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(143, 20);
+            this.txtCPF.TabIndex = 6;
             // 
-            // textBox3
+            // txtEndereco
             // 
-            this.textBox3.Location = new System.Drawing.Point(68, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 20);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtEndereco.Location = new System.Drawing.Point(68, 45);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(245, 20);
+            this.txtEndereco.TabIndex = 7;
+            this.txtEndereco.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox5
+            // txtTelefone
             // 
-            this.textBox5.Location = new System.Drawing.Point(64, 134);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 20);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtTelefone.Location = new System.Drawing.Point(64, 134);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(121, 20);
+            this.txtTelefone.TabIndex = 9;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // dateTimePicker1
+            // dateNascimento
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 75);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNascimento.ImeMode = System.Windows.Forms.ImeMode.Katakana;
+            this.dateNascimento.Location = new System.Drawing.Point(116, 75);
+            this.dateNascimento.Name = "dateNascimento";
+            this.dateNascimento.Size = new System.Drawing.Size(96, 20);
+            this.dateNascimento.TabIndex = 10;
             // 
             // lbDataNasc
             // 
@@ -139,17 +139,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateNascimento);
             this.groupBox1.Controls.Add(this.lbNome);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtTelefone);
             this.groupBox1.Controls.Add(this.lbTelefone);
             this.groupBox1.Controls.Add(this.lbCPF);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtCPF);
             this.groupBox1.Controls.Add(this.lbEndereco);
             this.groupBox1.Controls.Add(this.lbDataNasc);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtEndereco);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Location = new System.Drawing.Point(5, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(347, 163);
@@ -190,11 +190,11 @@
         private System.Windows.Forms.Label lbEndereco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbTelefone;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtCPF;
+        private System.Windows.Forms.TextBox txtEndereco;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.DateTimePicker dateNascimento;
         private System.Windows.Forms.Label lbDataNasc;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bttAdicionar;
