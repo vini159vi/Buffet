@@ -142,6 +142,7 @@
             this.bttEditar.TabIndex = 4;
             this.bttEditar.Text = "Editar";
             this.bttEditar.UseVisualStyleBackColor = true;
+            this.bttEditar.Click += new System.EventHandler(this.bttEditar_Click);
             // 
             // gbProcuraNome
             // 

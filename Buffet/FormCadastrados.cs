@@ -12,9 +12,12 @@ namespace Buffet
 {
     public partial class FormCadastrados : Form
     {
+        private DatabaseDict clientes = new DatabaseDict();
+            
         public FormCadastrados()
         {
             InitializeComponent();
+            this.dataGViewLista.DataSource = clientes;
         }
 
         private void bttAdicionar_Click(object sender, EventArgs e)
@@ -43,5 +46,9 @@ namespace Buffet
             
         }
 
+        private void bttEditar_Click(object sender, EventArgs e)
+        {
+            dataGViewLista.DataSource = clientes;
+        }
     }
 }
