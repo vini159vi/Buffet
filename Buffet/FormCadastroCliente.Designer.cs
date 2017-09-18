@@ -102,14 +102,14 @@
             this.txtCPF.Location = new System.Drawing.Point(42, 45);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(143, 20);
-            this.txtCPF.TabIndex = 3;
+            this.txtCPF.TabIndex = 1;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(68, 132);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(245, 20);
-            this.txtEndereco.TabIndex = 1;
+            this.txtEndereco.TabIndex = 4;
             this.txtEndereco.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtTelefone
@@ -117,17 +117,19 @@
             this.txtTelefone.Location = new System.Drawing.Point(42, 74);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(143, 20);
-            this.txtTelefone.TabIndex = 4;
+            this.txtTelefone.TabIndex = 2;
             this.txtTelefone.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // dateNascimento
             // 
+            this.dateNascimento.CustomFormat = "dd/mm/yyyy";
             this.dateNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNascimento.ImeMode = System.Windows.Forms.ImeMode.Katakana;
             this.dateNascimento.Location = new System.Drawing.Point(117, 101);
             this.dateNascimento.Name = "dateNascimento";
+            this.dateNascimento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateNascimento.Size = new System.Drawing.Size(96, 20);
-            this.dateNascimento.TabIndex = 2;
+            this.dateNascimento.TabIndex = 3;
             // 
             // lbDataNasc
             // 
@@ -154,7 +156,7 @@
             this.groupBox1.Location = new System.Drawing.Point(5, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(347, 163);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
@@ -163,7 +165,7 @@
             this.bttAdicionar.Location = new System.Drawing.Point(30, 171);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(121, 40);
-            this.bttAdicionar.TabIndex = 0;
+            this.bttAdicionar.TabIndex = 1;
             this.bttAdicionar.Text = "Adicionar";
             this.bttAdicionar.UseVisualStyleBackColor = true;
             this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
@@ -173,7 +175,7 @@
             this.bttCancelar.Location = new System.Drawing.Point(206, 171);
             this.bttCancelar.Name = "bttCancelar";
             this.bttCancelar.Size = new System.Drawing.Size(121, 40);
-            this.bttCancelar.TabIndex = 13;
+            this.bttCancelar.TabIndex = 2;
             this.bttCancelar.Text = "Cancelar";
             this.bttCancelar.UseVisualStyleBackColor = true;
             // 
@@ -185,6 +187,9 @@
             this.Controls.Add(this.bttCancelar);
             this.Controls.Add(this.bttAdicionar);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCadastroCliente";
             this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.FormCadastroCliente_Load);
