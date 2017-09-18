@@ -47,13 +47,8 @@ namespace Buffet
 
         private void bttEditar_Click(object sender, EventArgs e)
         {
-            //Fill();
-            if(dataGViewLista.CurrentRow != null)
-            {
-                long key = long.Parse(dataGViewLista.CurrentRow.Cells[0].Value.ToString);
-            }
+            Fill();
         }
-
         private void Fill()
         {
             DatabaseDict clientes = new DatabaseDict();

@@ -142,6 +142,7 @@
             // 
             // gbProcuraNome
             // 
+            this.gbProcuraNome.AutoSize = true;
             this.gbProcuraNome.Controls.Add(this.txtBuscaNomeCPF);
             this.gbProcuraNome.Controls.Add(this.lbNomeCPF);
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
@@ -154,6 +155,7 @@
             // 
             this.txtBuscaNomeCPF.Location = new System.Drawing.Point(73, 24);
             this.txtBuscaNomeCPF.Name = "txtBuscaNomeCPF";
+            this.txtBuscaNomeCPF.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBuscaNomeCPF.Size = new System.Drawing.Size(601, 20);
             this.txtBuscaNomeCPF.TabIndex = 1;
             // 
@@ -195,6 +197,7 @@
             this.gbProcuraNome.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
