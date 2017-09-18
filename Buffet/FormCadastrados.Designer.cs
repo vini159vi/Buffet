@@ -39,16 +39,12 @@
             this.bttRemove = new System.Windows.Forms.Button();
             this.bttEditar = new System.Windows.Forms.Button();
             this.gbProcuraNome = new System.Windows.Forms.GroupBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lbNome = new System.Windows.Forms.Label();
-            this.gbProcuraCPF = new System.Windows.Forms.GroupBox();
-            this.txtCPF = new System.Windows.Forms.TextBox();
-            this.lbCPF = new System.Windows.Forms.Label();
+            this.txtBuscaNomeCPF = new System.Windows.Forms.TextBox();
+            this.lbNomeCPF = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
-            this.gbProcuraCPF.SuspendLayout();
             this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,56 +142,29 @@
             // 
             // gbProcuraNome
             // 
-            this.gbProcuraNome.Controls.Add(this.txtNome);
-            this.gbProcuraNome.Controls.Add(this.lbNome);
+            this.gbProcuraNome.Controls.Add(this.txtBuscaNomeCPF);
+            this.gbProcuraNome.Controls.Add(this.lbNomeCPF);
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
             this.gbProcuraNome.Name = "gbProcuraNome";
-            this.gbProcuraNome.Size = new System.Drawing.Size(341, 69);
+            this.gbProcuraNome.Size = new System.Drawing.Size(682, 69);
             this.gbProcuraNome.TabIndex = 5;
             this.gbProcuraNome.TabStop = false;
             // 
-            // txtNome
+            // txtBuscaNomeCPF
             // 
-            this.txtNome.Location = new System.Drawing.Point(39, 24);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(284, 20);
-            this.txtNome.TabIndex = 1;
+            this.txtBuscaNomeCPF.Location = new System.Drawing.Point(73, 24);
+            this.txtBuscaNomeCPF.Name = "txtBuscaNomeCPF";
+            this.txtBuscaNomeCPF.Size = new System.Drawing.Size(601, 20);
+            this.txtBuscaNomeCPF.TabIndex = 1;
             // 
-            // lbNome
+            // lbNomeCPF
             // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(4, 27);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(35, 13);
-            this.lbNome.TabIndex = 0;
-            this.lbNome.Text = "Nome";
-            // 
-            // gbProcuraCPF
-            // 
-            this.gbProcuraCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbProcuraCPF.Controls.Add(this.txtCPF);
-            this.gbProcuraCPF.Controls.Add(this.lbCPF);
-            this.gbProcuraCPF.Location = new System.Drawing.Point(344, 1);
-            this.gbProcuraCPF.Name = "gbProcuraCPF";
-            this.gbProcuraCPF.Size = new System.Drawing.Size(341, 69);
-            this.gbProcuraCPF.TabIndex = 6;
-            this.gbProcuraCPF.TabStop = false;
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(39, 24);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(284, 20);
-            this.txtCPF.TabIndex = 1;
-            // 
-            // lbCPF
-            // 
-            this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(8, 27);
-            this.lbCPF.Name = "lbCPF";
-            this.lbCPF.Size = new System.Drawing.Size(27, 13);
-            this.lbCPF.TabIndex = 0;
-            this.lbCPF.Text = "CPF";
+            this.lbNomeCPF.AutoSize = true;
+            this.lbNomeCPF.Location = new System.Drawing.Point(7, 27);
+            this.lbNomeCPF.Name = "lbNomeCPF";
+            this.lbNomeCPF.Size = new System.Drawing.Size(63, 13);
+            this.lbNomeCPF.TabIndex = 0;
+            this.lbNomeCPF.Text = "Nome/CPF:";
             // 
             // gbBotoes
             // 
@@ -214,7 +183,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 529);
-            this.Controls.Add(this.gbProcuraCPF);
             this.Controls.Add(this.gbProcuraNome);
             this.Controls.Add(this.gbLista);
             this.Controls.Add(this.gbBotoes);
@@ -225,8 +193,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).EndInit();
             this.gbProcuraNome.ResumeLayout(false);
             this.gbProcuraNome.PerformLayout();
-            this.gbProcuraCPF.ResumeLayout(false);
-            this.gbProcuraCPF.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -245,11 +211,8 @@
         private System.Windows.Forms.Button bttRemove;
         private System.Windows.Forms.Button bttEditar;
         private System.Windows.Forms.GroupBox gbProcuraNome;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.GroupBox gbProcuraCPF;
-        private System.Windows.Forms.TextBox txtCPF;
-        private System.Windows.Forms.Label lbCPF;
+        private System.Windows.Forms.TextBox txtBuscaNomeCPF;
+        private System.Windows.Forms.Label lbNomeCPF;
         private System.Windows.Forms.GroupBox gbBotoes;
     }
 }

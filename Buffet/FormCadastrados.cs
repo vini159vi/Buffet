@@ -47,8 +47,11 @@ namespace Buffet
 
         private void bttEditar_Click(object sender, EventArgs e)
         {
-            Fill();
-            
+            //Fill();
+            if(dataGViewLista.CurrentRow != null)
+            {
+                long key = long.Parse(dataGViewLista.CurrentRow.Cells[0].Value.ToString);
+            }
         }
 
         private void Fill()
