@@ -41,6 +41,7 @@
             this.lbDataNasc = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bttAdicionar = new System.Windows.Forms.Button();
+            this.bttCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(6, 108);
+            this.lbCPF.Location = new System.Drawing.Point(6, 48);
             this.lbCPF.Name = "lbCPF";
             this.lbCPF.Size = new System.Drawing.Size(30, 13);
             this.lbCPF.TabIndex = 1;
@@ -65,7 +66,7 @@
             // lbEndereco
             // 
             this.lbEndereco.AutoSize = true;
-            this.lbEndereco.Location = new System.Drawing.Point(6, 48);
+            this.lbEndereco.Location = new System.Drawing.Point(6, 137);
             this.lbEndereco.Name = "lbEndereco";
             this.lbEndereco.Size = new System.Drawing.Size(56, 13);
             this.lbEndereco.TabIndex = 2;
@@ -82,30 +83,30 @@
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(6, 137);
+            this.lbTelefone.Location = new System.Drawing.Point(6, 77);
             this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(52, 13);
+            this.lbTelefone.Size = new System.Drawing.Size(28, 13);
             this.lbTelefone.TabIndex = 4;
-            this.lbTelefone.Text = "Telefone:";
+            this.lbTelefone.Text = "Tel.:";
             this.lbTelefone.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(50, 15);
+            this.txtNome.Location = new System.Drawing.Point(42, 15);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(263, 20);
+            this.txtNome.Size = new System.Drawing.Size(271, 20);
             this.txtNome.TabIndex = 0;
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(42, 105);
+            this.txtCPF.Location = new System.Drawing.Point(42, 45);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(143, 20);
             this.txtCPF.TabIndex = 3;
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(68, 45);
+            this.txtEndereco.Location = new System.Drawing.Point(68, 132);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(245, 20);
             this.txtEndereco.TabIndex = 1;
@@ -113,9 +114,9 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(64, 134);
+            this.txtTelefone.Location = new System.Drawing.Point(42, 74);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(121, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(143, 20);
             this.txtTelefone.TabIndex = 4;
             this.txtTelefone.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -123,7 +124,7 @@
             // 
             this.dateNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateNascimento.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.dateNascimento.Location = new System.Drawing.Point(116, 75);
+            this.dateNascimento.Location = new System.Drawing.Point(117, 101);
             this.dateNascimento.Name = "dateNascimento";
             this.dateNascimento.Size = new System.Drawing.Size(96, 20);
             this.dateNascimento.TabIndex = 2;
@@ -131,7 +132,7 @@
             // lbDataNasc
             // 
             this.lbDataNasc.AutoSize = true;
-            this.lbDataNasc.Location = new System.Drawing.Point(6, 80);
+            this.lbDataNasc.Location = new System.Drawing.Point(6, 107);
             this.lbDataNasc.Name = "lbDataNasc";
             this.lbDataNasc.Size = new System.Drawing.Size(105, 13);
             this.lbDataNasc.TabIndex = 11;
@@ -141,13 +142,13 @@
             // 
             this.groupBox1.Controls.Add(this.dateNascimento);
             this.groupBox1.Controls.Add(this.lbNome);
+            this.groupBox1.Controls.Add(this.txtEndereco);
             this.groupBox1.Controls.Add(this.txtTelefone);
+            this.groupBox1.Controls.Add(this.lbEndereco);
+            this.groupBox1.Controls.Add(this.lbDataNasc);
             this.groupBox1.Controls.Add(this.lbTelefone);
             this.groupBox1.Controls.Add(this.lbCPF);
             this.groupBox1.Controls.Add(this.txtCPF);
-            this.groupBox1.Controls.Add(this.lbEndereco);
-            this.groupBox1.Controls.Add(this.lbDataNasc);
-            this.groupBox1.Controls.Add(this.txtEndereco);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Location = new System.Drawing.Point(5, 2);
@@ -159,7 +160,7 @@
             // 
             // bttAdicionar
             // 
-            this.bttAdicionar.Location = new System.Drawing.Point(118, 171);
+            this.bttAdicionar.Location = new System.Drawing.Point(30, 171);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(121, 40);
             this.bttAdicionar.TabIndex = 0;
@@ -167,11 +168,21 @@
             this.bttAdicionar.UseVisualStyleBackColor = true;
             this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
             // 
+            // bttCancelar
+            // 
+            this.bttCancelar.Location = new System.Drawing.Point(206, 171);
+            this.bttCancelar.Name = "bttCancelar";
+            this.bttCancelar.Size = new System.Drawing.Size(121, 40);
+            this.bttCancelar.TabIndex = 13;
+            this.bttCancelar.Text = "Cancelar";
+            this.bttCancelar.UseVisualStyleBackColor = true;
+            // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 223);
+            this.ClientSize = new System.Drawing.Size(358, 224);
+            this.Controls.Add(this.bttCancelar);
             this.Controls.Add(this.bttAdicionar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormCadastroCliente";
@@ -198,5 +209,6 @@
         private System.Windows.Forms.Label lbDataNasc;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bttAdicionar;
+        private System.Windows.Forms.Button bttCancelar;
     }
 }
