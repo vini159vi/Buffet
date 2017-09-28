@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Buffet
 {
     public partial class FormCadastroCliente : Form
     {
-        private DatabaseDict clientes = new DatabaseDict();
-
+        private IDatabase clientes = new DatabaseMySQL();
         public FormCadastroCliente()
         {
             InitializeComponent();
@@ -65,6 +65,11 @@ namespace Buffet
         private void GetDTO(Cliente c)
         {
             clientes.Save(c);
+        }
+
+        private void bttCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

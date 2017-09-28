@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Buffet
 {
@@ -49,9 +50,9 @@ namespace Buffet
         {
             Fill();
         }
-        private void Fill()
+        public void Fill()
         {
-            DatabaseDict clientes = new DatabaseDict();
+            IDatabase clientes = new DatabaseMySQL();
             List<Cliente> listc = clientes.ListAll();
 
             dataGViewLista.Rows.Clear();
@@ -63,5 +64,11 @@ namespace Buffet
 
         }
 
+        private void bttRemove_Click(object sender, EventArgs e)
+        {
+            IDatabase clientes = new DatabaseMySQL();
+            int index = dataGViewLista.CurrentCell.ColumnIndex;
+            clientes.Delete(long.Parse(dataGViewLista.Rows[index].Cells[1].Value.ToString()));
+        }
     }
 }

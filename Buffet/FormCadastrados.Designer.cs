@@ -129,6 +129,7 @@
             this.bttRemove.TabIndex = 3;
             this.bttRemove.Text = "Remover";
             this.bttRemove.UseVisualStyleBackColor = true;
+            this.bttRemove.Click += new System.EventHandler(this.bttRemove_Click);
             // 
             // bttEditar
             // 
