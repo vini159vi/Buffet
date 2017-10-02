@@ -69,7 +69,7 @@ namespace Buffet
             if (bd.State != System.Data.ConnectionState.Open)
                 bd.Open();
 
-            string sql = String.Format("INSERT INTO Cliente (nome, endereco, cpf, telefone, dataNasc) VALUES('{0}','{1}','{2}','{3}','{4}')", c.Nome,c.Endereco,c.Cpf,c.Telefone,c.DataNasc);
+            string sql = String.Format("INSERT INTO Cliente (nome, endereco, cpf, telefone, dataNasc) VALUES('{0}','{1}','{2}','{3}','{4}')", c.Nome,c.Endereco,c.Cpf,c.Telefone,c.DataNasc.ToString("yyyy-MM-dd"));
 
             MySqlCommand cmd = new MySqlCommand(sql, bd);
             cmd.ExecuteNonQuery();

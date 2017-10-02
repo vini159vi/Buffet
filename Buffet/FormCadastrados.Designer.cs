@@ -154,7 +154,7 @@
             // 
             // txtBuscaNomeCPF
             // 
-            this.txtBuscaNomeCPF.Location = new System.Drawing.Point(73, 24);
+            this.txtBuscaNomeCPF.Location = new System.Drawing.Point(73, 23);
             this.txtBuscaNomeCPF.Name = "txtBuscaNomeCPF";
             this.txtBuscaNomeCPF.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBuscaNomeCPF.Size = new System.Drawing.Size(601, 20);
