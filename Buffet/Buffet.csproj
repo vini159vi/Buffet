@@ -47,37 +47,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="DatabaseDict.cs" />
-    <Compile Include="DatabaseMySQL.cs" />
-    <Compile Include="FormCadastrados.cs">
+    <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="Modelos\Cliente.cs" />
+    <Compile Include="MISC\DatabaseMySQL.cs" />
+    <Compile Include="CV\FormCadastrados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastrados.Designer.cs">
+    <Compile Include="CV\FormCadastrados.Designer.cs">
       <DependentUpon>FormCadastrados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroCliente.cs">
+    <Compile Include="CV\FormCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroCliente.Designer.cs">
+    <Compile Include="CV\FormCadastroCliente.Designer.cs">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenu.cs">
+    <Compile Include="CV\FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMenu.Designer.cs">
+    <Compile Include="CV\FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="IDatabase.cs" />
+    <Compile Include="MISC\IDatabase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormCadastrados.resx">
+    <EmbeddedResource Include="CV\FormCadastrados.resx">
       <DependentUpon>FormCadastrados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroCliente.resx">
+    <EmbeddedResource Include="CV\FormCadastroCliente.resx">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenu.resx">
+    <EmbeddedResource Include="CV\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -102,6 +103,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

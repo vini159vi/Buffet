@@ -12,6 +12,20 @@ namespace Buffet
         private long cpf, telefone;
         private DateTime dataNasc;
 
+        public Cliente(string nome, string endereco, long cpf, long telefone, DateTime dataNasc)
+        {
+            this.Nome = nome;
+            this.Endereco = endereco;
+            this.Cpf = cpf;
+            this.Telefone = telefone;
+            this.DataNasc = dataNasc;
+        }
+
+        public Cliente()
+        {
+
+        }
+
         public string Nome
         {
             get
@@ -77,18 +91,5 @@ namespace Buffet
             }
         }
 
-        public Cliente(string nome, string endereco, long cpf, long telefone, DateTime dataNasc)
-        {
-            this.Nome = nome;
-            this.Endereco = endereco;
-            this.Cpf = cpf;
-            this.Telefone = telefone;
-            this.DataNasc = dataNasc;
-        }
-
-        public Cliente()
-        {
-
-        }
     }
 }
