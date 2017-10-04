@@ -42,6 +42,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +97,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(271, 20);
             this.txtNome.TabIndex = 0;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // txtCPF
             // 
@@ -103,6 +105,7 @@
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(143, 20);
             this.txtCPF.TabIndex = 1;
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
             // txtEndereco
             // 
@@ -111,6 +114,7 @@
             this.txtEndereco.Size = new System.Drawing.Size(245, 20);
             this.txtEndereco.TabIndex = 4;
             this.txtEndereco.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEndereco_KeyPress);
             // 
             // txtTelefone
             // 
@@ -119,6 +123,7 @@
             this.txtTelefone.Size = new System.Drawing.Size(143, 20);
             this.txtTelefone.TabIndex = 2;
             this.txtTelefone.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // dateNascimento
             // 
@@ -142,6 +147,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.dateNascimento);
             this.groupBox1.Controls.Add(this.lbNome);
             this.groupBox1.Controls.Add(this.txtEndereco);
@@ -180,6 +186,14 @@
             this.bttCancelar.UseVisualStyleBackColor = true;
             this.bttCancelar.Click += new System.EventHandler(this.bttCancelar_Click);
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(213, 74);
+            this.maskedTextBox1.Mask = "(99) 0000-0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 12;
+            // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,5 +230,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bttAdicionar;
         private System.Windows.Forms.Button bttCancelar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

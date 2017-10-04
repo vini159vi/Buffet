@@ -12,7 +12,7 @@ namespace Buffet
 
         public void Delete(long cpf)
         {
-            bd.ConnectionString = "Server = localhost;Database = buffet;Uid = root;Pwd = ;";
+            bd.ConnectionString = SetupMySql() ;
             if (bd.State != System.Data.ConnectionState.Open)
                 bd.Open();
             Console.Write("Lá");
@@ -25,7 +25,7 @@ namespace Buffet
         public List<Cliente> ListAll()
         {
             List<Cliente> c = new List<Cliente>();
-            bd.ConnectionString = "Server = localhost;Database = buffet;Uid = root;Pwd = ;";
+            bd.ConnectionString = SetupMySql();
             if (bd.State != System.Data.ConnectionState.Open)
                 bd.Open();
 
@@ -38,7 +38,7 @@ namespace Buffet
                 cl.Cpf = dr.GetInt64(2);
                 cl.Nome = dr.GetString(0);
                 cl.Telefone = dr.GetInt64(3);
-                //cl.DataNasc = dr.GetDateTime(4);
+                cl.DataNasc = dr.GetDateTime(4);
                 cl.Endereco = dr.GetString(1);
 
                 c.Add(cl);
@@ -64,7 +64,7 @@ namespace Buffet
 
         public void Save(Cliente c)
         {
-            bd.ConnectionString = "Server = localhost;Database = buffet;Uid = root;Pwd =;";
+            bd.ConnectionString = SetupMySql();
 
             if (bd.State != System.Data.ConnectionState.Open)
                 bd.Open();
@@ -82,5 +82,9 @@ namespace Buffet
             throw new NotImplementedException();
         }
 
+        private string SetupMySql()
+        {
+            return "Server = localhost;Database = buffet;Uid = root;Pwd = ifsp;";
+        }
     }
 }

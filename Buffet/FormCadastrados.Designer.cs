@@ -80,6 +80,7 @@
             this.dataGViewLista.Size = new System.Drawing.Size(676, 353);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
             // 
             // Nome
             // 

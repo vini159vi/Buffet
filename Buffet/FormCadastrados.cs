@@ -31,10 +31,6 @@ namespace Buffet
 
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void FormCadastrados_Load(object sender, EventArgs e)
         {
@@ -59,7 +55,7 @@ namespace Buffet
 
             foreach (Cliente c in listc)
             {
-                dataGViewLista.Rows.Add(c.Nome, c.Cpf, c.Endereco, c.DataNasc, c.Telefone);
+                dataGViewLista.Rows.Add(c.Nome, c.Cpf, c.Endereco, c.DataNasc.Date, c.Telefone);
             }
 
         }
@@ -67,8 +63,25 @@ namespace Buffet
         private void bttRemove_Click(object sender, EventArgs e)
         {
             IDatabase clientes = new DatabaseMySQL();
+
             int index = dataGViewLista.CurrentCell.ColumnIndex;
-            clientes.Delete(long.Parse(dataGViewLista.Rows[index].Cells[1].Value.ToString()));
+            try
+            {
+                clientes.Delete(long.Parse(dataGViewLista.Rows[index].Cells[1].Value.ToString()));
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Não contem nenhuma pessoa registrada","Buffet", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Fill();
+            }
+        }
+
+        private void dataGViewLista_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            Fill();
         }
     }
 }

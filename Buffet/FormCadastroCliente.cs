@@ -36,7 +36,12 @@ namespace Buffet
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            GetDTO(SetDTO());
+            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+            clientes.Save(GetDTO());
+            if (f != null)
+            {
+                f.Fill();
+            }
             Dispose();
         }
 
@@ -50,7 +55,7 @@ namespace Buffet
 
         }
 
-        private Cliente SetDTO()
+        private Cliente GetDTO()
         {
             Cliente c = new Cliente();
 
@@ -62,14 +67,54 @@ namespace Buffet
 
             return c;
         }
-        private void GetDTO(Cliente c)
+        private void SetDTO(Cliente c)
         {
-            clientes.Save(c);
+            txtNome.Text = c.Nome;
+            txtEndereco.Text = c.Endereco;
+            txtCPF.Text = c.Cpf.ToString();
+            txtTelefone.Text = c.Telefone.ToString();
+
         }
+
+
 
         private void bttCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+
+                
         }
     }
 }
