@@ -57,7 +57,7 @@
             this.gbLista.Controls.Add(this.dataGViewLista);
             this.gbLista.Location = new System.Drawing.Point(3, 76);
             this.gbLista.Name = "gbLista";
-            this.gbLista.Size = new System.Drawing.Size(682, 372);
+            this.gbLista.Size = new System.Drawing.Size(707, 372);
             this.gbLista.TabIndex = 1;
             this.gbLista.TabStop = false;
             this.gbLista.Enter += new System.EventHandler(this.gbLista_Enter);
@@ -77,7 +77,7 @@
             this.dataGViewLista.Location = new System.Drawing.Point(3, 16);
             this.dataGViewLista.Name = "dataGViewLista";
             this.dataGViewLista.ReadOnly = true;
-            this.dataGViewLista.Size = new System.Drawing.Size(676, 353);
+            this.dataGViewLista.Size = new System.Drawing.Size(701, 353);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
@@ -144,21 +144,25 @@
             // 
             // gbProcuraNome
             // 
+            this.gbProcuraNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbProcuraNome.AutoSize = true;
             this.gbProcuraNome.Controls.Add(this.txtBuscaNomeCPF);
             this.gbProcuraNome.Controls.Add(this.lbNomeCPF);
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
             this.gbProcuraNome.Name = "gbProcuraNome";
-            this.gbProcuraNome.Size = new System.Drawing.Size(682, 69);
+            this.gbProcuraNome.Size = new System.Drawing.Size(707, 69);
             this.gbProcuraNome.TabIndex = 5;
             this.gbProcuraNome.TabStop = false;
             // 
             // txtBuscaNomeCPF
             // 
+            this.txtBuscaNomeCPF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscaNomeCPF.Location = new System.Drawing.Point(73, 23);
             this.txtBuscaNomeCPF.Name = "txtBuscaNomeCPF";
             this.txtBuscaNomeCPF.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBuscaNomeCPF.Size = new System.Drawing.Size(601, 20);
+            this.txtBuscaNomeCPF.Size = new System.Drawing.Size(619, 20);
             this.txtBuscaNomeCPF.TabIndex = 1;
             // 
             // lbNomeCPF
@@ -176,7 +180,7 @@
             this.gbBotoes.Controls.Add(this.bttAdicionar);
             this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
-            this.gbBotoes.Location = new System.Drawing.Point(2, 444);
+            this.gbBotoes.Location = new System.Drawing.Point(15, 444);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(680, 74);
             this.gbBotoes.TabIndex = 7;
@@ -186,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 529);
+            this.ClientSize = new System.Drawing.Size(714, 529);
             this.Controls.Add(this.gbProcuraNome);
             this.Controls.Add(this.gbLista);
             this.Controls.Add(this.gbBotoes);

@@ -33,7 +33,6 @@
             this.lbEndereco = new System.Windows.Forms.Label();
             this.lbTelefone = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.dateNascimento = new System.Windows.Forms.DateTimePicker();
             this.lbDataNasc = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtNumero = new System.Windows.Forms.MaskedTextBox();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,14 +93,6 @@
             this.txtNome.TabIndex = 0;
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(42, 45);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(143, 20);
-            this.txtCPF.TabIndex = 1;
-            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
-            // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(68, 132);
@@ -132,6 +124,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCPF);
             this.groupBox1.Controls.Add(this.txtNumero);
             this.groupBox1.Controls.Add(this.txtTelefone);
             this.groupBox1.Controls.Add(this.lblNumero);
@@ -144,7 +137,6 @@
             this.groupBox1.Controls.Add(this.lbDataNasc);
             this.groupBox1.Controls.Add(this.lbTelefone);
             this.groupBox1.Controls.Add(this.lbCPF);
-            this.groupBox1.Controls.Add(this.txtCPF);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Location = new System.Drawing.Point(5, 2);
             this.groupBox1.Name = "groupBox1";
@@ -202,7 +194,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(40, 74);
+            this.txtTelefone.Location = new System.Drawing.Point(42, 74);
             this.txtTelefone.Mask = "(99) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
@@ -217,6 +209,14 @@
             this.txtNumero.Size = new System.Drawing.Size(36, 20);
             this.txtNumero.TabIndex = 6;
             this.txtNumero.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
+            // txtCPF
+            // 
+            this.txtCPF.Location = new System.Drawing.Point(42, 45);
+            this.txtCPF.Mask = "000.000.000-00";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(100, 20);
+            this.txtCPF.TabIndex = 1;
             // 
             // FormCadastroCliente
             // 
@@ -245,7 +245,6 @@
         private System.Windows.Forms.Label lbEndereco;
         private System.Windows.Forms.Label lbTelefone;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.DateTimePicker dateNascimento;
         private System.Windows.Forms.Label lbDataNasc;
@@ -257,5 +256,6 @@
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.MaskedTextBox txtNumero;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
     }
 }
