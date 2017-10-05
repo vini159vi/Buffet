@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\ClienteDAO.cs" />
-    <Compile Include="Database.cs" />
+    <Compile Include="MISC\Database.cs" />
     <Compile Include="Modelos\Cliente.cs" />
     <Compile Include="MISC\DatabaseMySQL.cs" />
     <Compile Include="CV\FormCadastrados.cs">

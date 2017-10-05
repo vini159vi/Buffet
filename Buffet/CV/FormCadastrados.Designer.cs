@@ -30,11 +30,6 @@
         {
             this.gbLista = new System.Windows.Forms.GroupBox();
             this.dataGViewLista = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatadeNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttRemove = new System.Windows.Forms.Button();
             this.bttEditar = new System.Windows.Forms.Button();
@@ -42,6 +37,13 @@
             this.txtBuscaNomeCPF = new System.Windows.Forms.TextBox();
             this.lbNomeCPF = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatadeNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
@@ -64,15 +66,18 @@
             // 
             // dataGViewLista
             // 
+            this.dataGViewLista.AllowUserToAddRows = false;
             this.dataGViewLista.AllowUserToDeleteRows = false;
             this.dataGViewLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGViewLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.CPF,
-            this.Endereço,
+            this.Telefone,
+            this.Celular,
             this.DatadeNascimento,
-            this.Telefone});
+            this.Endereço,
+            this.Numero});
             this.dataGViewLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGViewLista.Location = new System.Drawing.Point(3, 16);
             this.dataGViewLista.Name = "dataGViewLista";
@@ -81,36 +86,6 @@
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // CPF
-            // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
-            // 
-            // Endereço
-            // 
-            this.Endereço.HeaderText = "Endereço";
-            this.Endereço.Name = "Endereço";
-            this.Endereço.ReadOnly = true;
-            // 
-            // DatadeNascimento
-            // 
-            this.DatadeNascimento.HeaderText = "Data de Nascimento";
-            this.DatadeNascimento.Name = "DatadeNascimento";
-            this.DatadeNascimento.ReadOnly = true;
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
             // 
             // bttAdicionar
             // 
@@ -186,6 +161,48 @@
             this.gbBotoes.TabIndex = 7;
             this.gbBotoes.TabStop = false;
             // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            // 
+            // Celular
+            // 
+            this.Celular.HeaderText = "Celular";
+            this.Celular.Name = "Celular";
+            this.Celular.ReadOnly = true;
+            // 
+            // DatadeNascimento
+            // 
+            this.DatadeNascimento.HeaderText = "Data de Nascimento";
+            this.DatadeNascimento.Name = "DatadeNascimento";
+            this.DatadeNascimento.ReadOnly = true;
+            // 
+            // Endereço
+            // 
+            this.Endereço.HeaderText = "Endereço";
+            this.Endereço.Name = "Endereço";
+            this.Endereço.ReadOnly = true;
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
             // FormCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,16 +229,18 @@
         private System.Windows.Forms.GroupBox gbLista;
         private System.Windows.Forms.DataGridView dataGViewLista;
         private System.Windows.Forms.Button bttAdicionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Endereço;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DatadeNascimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.Button bttRemove;
         private System.Windows.Forms.Button bttEditar;
         private System.Windows.Forms.GroupBox gbProcuraNome;
         private System.Windows.Forms.TextBox txtBuscaNomeCPF;
         private System.Windows.Forms.Label lbNomeCPF;
         private System.Windows.Forms.GroupBox gbBotoes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatadeNascimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Endereço;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
     }
 }

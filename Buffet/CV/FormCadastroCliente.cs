@@ -24,16 +24,6 @@ namespace Buffet
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
             FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
@@ -45,25 +35,23 @@ namespace Buffet
             Dispose();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private Cliente GetDTO()
         {
             Cliente c = new Cliente();
 
+            txtCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             c.Cpf = long.Parse(txtCPF.Text);
+            txtCPF.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
             c.Nome = txtNome.Text;
+            txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             c.Telefone = long.Parse(txtTelefone.Text);
+            txtTelefone.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
             c.DataNasc = dateNascimento.Value;
             c.Endereco = txtEndereco.Text;
+            c.NumeroCasa = int.Parse(txtNumero.Text);
+            txtCelular.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            c.Celular = long.Parse(txtCelular.Text);
+            txtCelular.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
 
             return c;
         }
@@ -73,7 +61,8 @@ namespace Buffet
             txtEndereco.Text = c.Endereco;
             txtCPF.Text = c.Cpf.ToString();
             txtTelefone.Text = c.Telefone.ToString();
-
+            txtCelular.Text = c.Celular.ToString();
+            txtNumero.Text = c.NumeroCasa.ToString();
         }
 
 
@@ -117,11 +106,6 @@ namespace Buffet
                 
         }
 
-        private void lblNumero_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
@@ -134,5 +118,26 @@ namespace Buffet
         {
 
         }
+
+        private void lblNumero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

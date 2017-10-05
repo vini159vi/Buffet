@@ -1,4 +1,7 @@
-﻿namespace Buffet
+﻿using System;
+using System.Windows.Forms;
+
+namespace Buffet
 {
     partial class FormCadastroCliente
     {
@@ -237,6 +240,7 @@
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
 

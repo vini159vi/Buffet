@@ -9,16 +9,19 @@ namespace Buffet
     class Cliente
     {
         private string nome, endereco;
-        private long cpf, telefone;
+        private long cpf, telefone, celular;
         private DateTime dataNasc;
+        private int numeroCasa;
 
-        public Cliente(string nome, string endereco, long cpf, long telefone, DateTime dataNasc)
+        public Cliente(string nome, string endereco, long cpf, long telefone, DateTime dataNasc,long celular, int numeroCasa)
         {
             this.Nome = nome;
             this.Endereco = endereco;
             this.Cpf = cpf;
             this.Telefone = telefone;
             this.DataNasc = dataNasc;
+            this.Celular = celular;
+            this.NumeroCasa = numeroCasa;
         }
 
         public Cliente()
@@ -91,5 +94,30 @@ namespace Buffet
             }
         }
 
+        public long Celular
+        {
+            get
+            {
+                return celular;
+            }
+
+            set
+            {
+                celular = value;
+            }
+        }
+
+        public int NumeroCasa
+        {
+            get
+            {
+                return numeroCasa;
+            }
+
+            set
+            {
+                numeroCasa = value;
+            }
+        }
     }
 }

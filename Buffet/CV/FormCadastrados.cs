@@ -52,10 +52,13 @@ namespace Buffet
             List<Cliente> listc = clientes.ListAll();
 
             dataGViewLista.Rows.Clear();
+            dataGViewLista.Columns[1].DefaultCellStyle.Format = "###,###,###-##";
+            dataGViewLista.Columns[2].DefaultCellStyle.Format = "(##) ####-####";
+            dataGViewLista.Columns[3].DefaultCellStyle.Format = "(##) #####-####";
 
             foreach (Cliente c in listc)
             {
-                dataGViewLista.Rows.Add(c.Nome, c.Cpf, c.Endereco, c.DataNasc.Date, c.Telefone);
+                dataGViewLista.Rows.Add(c.Nome, c.Cpf, c.Telefone, c.Celular, c.DataNasc.Date, c.Endereco, c.NumeroCasa);
             }
 
         }
@@ -64,9 +67,9 @@ namespace Buffet
         {
             IDatabase clientes = new DatabaseMySQL();
 
-            int index = dataGViewLista.CurrentCell.ColumnIndex;
             try
             {
+                int index = dataGViewLista.CurrentCell.ColumnIndex;
                 clientes.Delete(long.Parse(dataGViewLista.Rows[index].Cells[1].Value.ToString()));
             }
             catch(NullReferenceException)
