@@ -85,7 +85,7 @@ namespace Buffet
 
         private string SetupMySql()
         {
-            return "Server = localhost;Database = buffet;Uid = root;Pwd = ;";
+            return "Server = localhost;Database = buffet;Uid = root;Pwd = ifsp;";
         }
     }
 }
