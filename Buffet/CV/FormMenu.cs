@@ -16,5 +16,10 @@ namespace Buffet
         {
             InitializeComponent();
         }
+
+        private void cadastrosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
