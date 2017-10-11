@@ -48,7 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\ClienteFisicoDAO.cs" />
+    <Compile Include="DAO\ClienteJuridicoDAO.cs" />
+    <Compile Include="DAO\RepresentanteDAO.cs" />
     <Compile Include="MISC\Database.cs" />
+    <Compile Include="MISC\IDAO.cs" />
     <Compile Include="Modelos\Cliente.cs" />
     <Compile Include="MISC\DatabaseMySQL.cs" />
     <Compile Include="CV\FormCadastrados.cs">
@@ -70,6 +74,9 @@
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="MISC\IDatabase.cs" />
+    <Compile Include="Modelos\ClienteFisico.cs" />
+    <Compile Include="Modelos\ClienteJuridico.cs" />
+    <Compile Include="Modelos\RepresentanteJuridico.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CV\FormCadastrados.resx">

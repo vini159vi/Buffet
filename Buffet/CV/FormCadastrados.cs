@@ -17,6 +17,8 @@ namespace Buffet
         public FormCadastrados()
         {
             InitializeComponent();
+            dataGViewLista.Columns[2].DefaultCellStyle.Format = "(##) ####-####";
+            dataGViewLista.Columns[3].DefaultCellStyle.Format = "(##) #####-####";
             Fill();
         }
 
@@ -51,14 +53,9 @@ namespace Buffet
             IDatabase clientes = new DatabaseMySQL();
             List<Cliente> listc = clientes.ListAll();
 
-            dataGViewLista.Rows.Clear();
-            dataGViewLista.Columns[1].DefaultCellStyle.Format = "###,###,###-##";
-            dataGViewLista.Columns[2].DefaultCellStyle.Format = "(##) ####-####";
-            dataGViewLista.Columns[3].DefaultCellStyle.Format = "(##) #####-####";
-
             foreach (Cliente c in listc)
             {
-                dataGViewLista.Rows.Add(c.Nome, c.Cpf, c.Telefone, c.Celular, c.DataNasc.Date, c.Endereco, c.NumeroCasa);
+                dataGViewLista.Rows.Add(c.Nome, c.Cpf.ToString(@"000\.000\.000\-00"), c.Telefone, c.Celular, c.DataNasc.Date, c.Endereco, c.NumeroCasa);
             }
 
         }

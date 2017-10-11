@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using Buffet.MISC;
 
 namespace Buffet
 {
@@ -15,8 +16,8 @@ namespace Buffet
         public void Create(Cliente c)
         {
             Database dbCliente = Database.GetInstance();
-            string qry = string.Format("INSERT INTO Cliente(nome, endereco, cpf, telefone, dataNasc) VALUES('{0}', '{1}', '{2}', '{3}', '{4}')",
-                c.Nome, c.Endereco, c.Cpf, c.Telefone, c.DataNasc.ToString("yyyy - MM - dd"));
+            string qry = string.Format("INSERT INTO Cliente(nome, endereco, cpf, telefone, dataNasc, celular, numeroCasa) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
+                c.Nome, c.Endereco, c.Cpf, c.Telefone, c.DataNasc.ToString("yyyy-MM-dd"), c.Celular, c.NumeroCasa);
             dbCliente.ExecuteNonQuery(qry);
         }
 
@@ -96,7 +97,7 @@ namespace Buffet
             return clientes;
         }
 
-        public List<Cliente> FindByName(string nome)
+        public List<Cliente> ListByName(string nome)
         {
             Database bd = Database.GetInstance();
             string qry = "SELECT * FROM Cliente WHERE nome LIKE '%"+ nome +"%'";

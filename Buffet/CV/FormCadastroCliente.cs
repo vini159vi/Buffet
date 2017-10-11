@@ -27,7 +27,10 @@ namespace Buffet
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
             FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
-            clientes.Save(GetDTO());
+            ClienteDAO clienteDAO = new ClienteDAO();
+            Cliente cliente = GetDTO();
+            clienteDAO.Create(cliente);
+            
             if (f != null)
             {
                 f.Fill();
