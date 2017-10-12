@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CV\FormJuridico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormJuridico.Designer.cs">
+      <DependentUpon>FormJuridico.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\ClienteFisicoDAO.cs" />
     <Compile Include="DAO\ClienteJuridicoDAO.cs" />
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCadastroCliente.resx">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormJuridico.resx">
+      <DependentUpon>FormJuridico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
