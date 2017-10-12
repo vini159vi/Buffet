@@ -6,11 +6,115 @@ using System.Threading.Tasks;
 
 namespace Buffet.Modelos
 {
-    class ClienteJuridico
+    class ClienteJuridico : Cliente
     {
         private string nomeEmpresa, cidade, rua, bairro, estado;
         private long cep, cnpj;
         private int numeroEmpresa;
+
+        public string NomeEmpresa
+        {
+            get
+            {
+                return nomeEmpresa;
+            }
+
+            set
+            {
+                nomeEmpresa = value;
+            }
+        }
+
+        public string Cidade
+        {
+            get
+            {
+                return cidade;
+            }
+
+            set
+            {
+                cidade = value;
+            }
+        }
+
+        public string Rua
+        {
+            get
+            {
+                return rua;
+            }
+
+            set
+            {
+                rua = value;
+            }
+        }
+
+        public string Bairro
+        {
+            get
+            {
+                return bairro;
+            }
+
+            set
+            {
+                bairro = value;
+            }
+        }
+
+        public string Estado
+        {
+            get
+            {
+                return estado;
+            }
+
+            set
+            {
+                estado = value;
+            }
+        }
+
+        public long Cep
+        {
+            get
+            {
+                return cep;
+            }
+
+            set
+            {
+                cep = value;
+            }
+        }
+
+        public long Cnpj
+        {
+            get
+            {
+                return cnpj;
+            }
+
+            set
+            {
+                cnpj = value;
+            }
+        }
+
+        public int NumeroEmpresa
+        {
+            get
+            {
+                return numeroEmpresa;
+            }
+
+            set
+            {
+                numeroEmpresa = value;
+            }
+        }
 
         public ClienteJuridico(string nomeEmpresa, string cidade, string rua, string bairro, string estado, long cep, long cnpj, int numeroEmpresa)
         {
@@ -24,13 +128,8 @@ namespace Buffet.Modelos
             this.NumeroEmpresa = numeroEmpresa;
         }
 
-        public string NomeEmpresa { get => nomeEmpresa; set => nomeEmpresa = value; }
-        public string Cidade { get => cidade; set => cidade = value; }
-        public string Rua { get => rua; set => rua = value; }
-        public string Bairro { get => bairro; set => bairro = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public long Cep { get => cep; set => cep = value; }
-        public long Cnpj { get => cnpj; set => cnpj = value; }
-        public int NumeroEmpresa { get => numeroEmpresa; set => numeroEmpresa = value; }
+        public ClienteJuridico()
+        {
+        }
     }
 }

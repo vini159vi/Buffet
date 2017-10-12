@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Buffet
 {
-    class Cliente
+    public class Cliente
     {
         private string nome, endereco;
         private long cpf, telefone, celular;

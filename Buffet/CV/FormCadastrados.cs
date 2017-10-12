@@ -17,6 +17,7 @@ namespace Buffet
         public FormCadastrados()
         {
             InitializeComponent();
+            dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
             dataGViewLista.Columns[2].DefaultCellStyle.Format = "(##) ####-####";
             dataGViewLista.Columns[3].DefaultCellStyle.Format = "(##) #####-####";
             Fill();
@@ -46,23 +47,29 @@ namespace Buffet
 
         private void bttEditar_Click(object sender, EventArgs e)
         {
-            Fill();
+            ClienteDAO clientes = new ClienteDAO();
+            int index = dataGViewLista.CurrentCell.ColumnIndex;
+            Cliente c = clientes.Read(dataGViewLista.Rows[index].Cells[1].Value.ToString());
+
+            FormCadastroCliente cc = new FormCadastroCliente(c);
+            cc.Show();
         }
         public void Fill()
         {
-            IDatabase clientes = new DatabaseMySQL();
-            List<Cliente> listc = clientes.ListAll();
+            ClienteDAO clientes = new ClienteDAO();
+            List<Cliente> listc = clientes.List();
+            dataGViewLista.Rows.Clear();
 
             foreach (Cliente c in listc)
             {
-                dataGViewLista.Rows.Add(c.Nome, c.Cpf.ToString(@"000\.000\.000\-00"), c.Telefone, c.Celular, c.DataNasc.Date, c.Endereco, c.NumeroCasa);
+                dataGViewLista.Rows.Add(c.Nome, c.Cpf, c.Telefone, c.Celular, c.DataNasc.Date, c.Endereco, c.NumeroCasa);
             }
 
         }
 
         private void bttRemove_Click(object sender, EventArgs e)
         {
-            IDatabase clientes = new DatabaseMySQL();
+            ClienteDAO clientes = new ClienteDAO();
 
             try
             {

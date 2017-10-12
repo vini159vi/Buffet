@@ -1,5 +1,4 @@
-﻿using Buffet.MISC;
-using Buffet.Modelos;
+﻿using Buffet.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

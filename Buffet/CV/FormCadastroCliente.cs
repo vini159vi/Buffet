@@ -13,10 +13,14 @@ namespace Buffet
 {
     public partial class FormCadastroCliente : Form
     {
-        private IDatabase clientes = new DatabaseMySQL();
         public FormCadastroCliente()
         {
             InitializeComponent();
+        }
+        public FormCadastroCliente(Cliente c)
+        {
+            InitializeComponent();
+            SetDTO(c);
         }
 
         private void FormCadastroCliente_Load(object sender, EventArgs e)

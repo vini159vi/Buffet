@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Data;
-using Buffet.MISC;
+using System.Data.SQLite;
 
 namespace Buffet
 {
     class ClienteDAO
     {
-        MySqlConnection bd = new MySqlConnection();
+        SQLiteConnection bd = new SQLiteConnection();
 
         public void Create(Cliente c)
         {
