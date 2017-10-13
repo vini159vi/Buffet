@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Buffet.CV;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Buffet
 {
     public partial class FormMenu : Form
     {
+        private FormJuridico fj = new FormJuridico();
+        private FormCadastroCliente fcc = new FormCadastroCliente();
+        private FormCadastrados fc = new FormCadastrados();
         public FormMenu()
         {
             InitializeComponent();
@@ -19,7 +23,28 @@ namespace Buffet
 
         private void cadastrosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            if (!fc.Visible)
+            {
+                fc.MdiParent = this;
+                fc.Show();
+            }
+        }
 
+        private void pessoaJurídicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!fj.Visible) {
+                fj.MdiParent = this;
+                fj.Show();
+            }
+        }
+
+        private void pessoaFísicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!fcc.Visible)
+            {
+                fcc.MdiParent = this;
+                fcc.Show();
+            }
         }
     }
 }

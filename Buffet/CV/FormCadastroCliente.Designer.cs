@@ -40,14 +40,14 @@ namespace Buffet
             this.dateNascimento = new System.Windows.Forms.DateTimePicker();
             this.lbDataNasc = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.txtNumero = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.lblCel = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
-            this.lblCel = new System.Windows.Forms.Label();
-            this.lblNumero = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumero = new System.Windows.Forms.MaskedTextBox();
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +148,51 @@ namespace Buffet
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txtCPF
+            // 
+            this.txtCPF.Location = new System.Drawing.Point(42, 45);
+            this.txtCPF.Mask = "000.000.000-00";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(100, 20);
+            this.txtCPF.TabIndex = 1;
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(279, 132);
+            this.txtNumero.Mask = "0000";
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.PromptChar = ' ';
+            this.txtNumero.Size = new System.Drawing.Size(36, 20);
+            this.txtNumero.TabIndex = 6;
+            this.txtNumero.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(42, 74);
+            this.txtTelefone.Mask = "(99) 0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefone.TabIndex = 2;
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Location = new System.Drawing.Point(251, 135);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(22, 13);
+            this.lblNumero.TabIndex = 4;
+            this.lblNumero.Text = "Nº:";
+            this.lblNumero.Click += new System.EventHandler(this.lblNumero_Click);
+            // 
+            // lblCel
+            // 
+            this.lblCel.AutoSize = true;
+            this.lblCel.Location = new System.Drawing.Point(181, 77);
+            this.lblCel.Name = "lblCel";
+            this.lblCel.Size = new System.Drawing.Size(28, 13);
+            this.lblCel.TabIndex = 3;
+            this.lblCel.Text = "Cel.:";
+            // 
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(215, 74);
@@ -175,51 +220,6 @@ namespace Buffet
             this.bttCancelar.Text = "Cancelar";
             this.bttCancelar.UseVisualStyleBackColor = true;
             this.bttCancelar.Click += new System.EventHandler(this.bttCancelar_Click);
-            // 
-            // lblCel
-            // 
-            this.lblCel.AutoSize = true;
-            this.lblCel.Location = new System.Drawing.Point(181, 77);
-            this.lblCel.Name = "lblCel";
-            this.lblCel.Size = new System.Drawing.Size(28, 13);
-            this.lblCel.TabIndex = 3;
-            this.lblCel.Text = "Cel.:";
-            // 
-            // lblNumero
-            // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(251, 135);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(22, 13);
-            this.lblNumero.TabIndex = 4;
-            this.lblNumero.Text = "Nº:";
-            this.lblNumero.Click += new System.EventHandler(this.lblNumero_Click);
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(42, 74);
-            this.txtTelefone.Mask = "(99) 0000-0000";
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 2;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(279, 132);
-            this.txtNumero.Mask = "0000";
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.PromptChar = ' ';
-            this.txtNumero.Size = new System.Drawing.Size(36, 20);
-            this.txtNumero.TabIndex = 6;
-            this.txtNumero.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(42, 45);
-            this.txtCPF.Mask = "000.000.000-00";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(100, 20);
-            this.txtCPF.TabIndex = 1;
             // 
             // FormCadastroCliente
             // 

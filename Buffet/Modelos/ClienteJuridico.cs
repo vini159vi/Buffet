@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Buffet.Modelos
 {
-    class ClienteJuridico : Cliente
+    public class ClienteJuridico
     {
         private string nomeEmpresa, cidade, rua, bairro, estado;
         private long cep, cnpj;

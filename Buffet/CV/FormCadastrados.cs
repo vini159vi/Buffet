@@ -18,8 +18,8 @@ namespace Buffet
         {
             InitializeComponent();
             dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
-            dataGViewLista.Columns[2].DefaultCellStyle.Format = "(##) ####-####";
-            dataGViewLista.Columns[3].DefaultCellStyle.Format = "(##) #####-####";
+            dataGViewLista.Columns[2].DefaultCellStyle.Format = @"(##) ####-####";
+            dataGViewLista.Columns[3].DefaultCellStyle.Format = @"(##) #####-####";
             Fill();
         }
 
@@ -54,7 +54,7 @@ namespace Buffet
             FormCadastroCliente cc = new FormCadastroCliente(c);
             cc.Show();
         }
-        public void Fill()
+        public void Fill(int tipo)
         {
             ClienteDAO clientes = new ClienteDAO();
             List<Cliente> listc = clientes.List();
@@ -62,8 +62,21 @@ namespace Buffet
 
             foreach (Cliente c in listc)
             {
-                dataGViewLista.Rows.Add(c.Nome, c.Cpf, c.Telefone, c.Celular, c.DataNasc.Date, c.Endereco, c.NumeroCasa);
+                dataGViewLista.Rows.Add();
             }
+
+            if(tipo == 1)
+            {
+
+            }else if(tipo == 2)
+            {
+
+            }
+            else
+            {
+                dataGViewLista.Rows.Add();
+            }
+
 
         }
 

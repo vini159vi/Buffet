@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Buffet.Modelos
 {
-    class RepresentanteJuridico
+    public class RepresentanteJuridico
     {
         private string nome, nacionalidade, estadoCivil, profissao, rua, bairro, cidade, estado;
         private long rg, cpf,cep, telefone, celular;
@@ -210,6 +210,11 @@ namespace Buffet.Modelos
             this.Telefone = telefone;
             this.NumeroCasa = numeroCasa;
             this.Celular = celular;
+        }
+
+        public RepresentanteJuridico()
+        {
+
         }
     }
 }

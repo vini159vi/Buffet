@@ -37,13 +37,15 @@
             this.txtBuscaNomeCPF = new System.Windows.Forms.TextBox();
             this.lbNomeCPF = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.radioBttTodos = new System.Windows.Forms.RadioButton();
+            this.radioBttFisica = new System.Windows.Forms.RadioButton();
+            this.radioBttJuridica = new System.Windows.Forms.RadioButton();
+            this.lblTipoPessoa = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF_CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatadeNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
@@ -72,12 +74,10 @@
             this.dataGViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGViewLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
-            this.CPF,
+            this.CPF_CNPJ,
             this.Telefone,
             this.Celular,
-            this.DatadeNascimento,
-            this.Endereço,
-            this.Numero});
+            this.Endereço});
             this.dataGViewLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGViewLista.Location = new System.Drawing.Point(3, 16);
             this.dataGViewLista.Name = "dataGViewLista";
@@ -122,11 +122,15 @@
             this.gbProcuraNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbProcuraNome.AutoSize = true;
+            this.gbProcuraNome.Controls.Add(this.lblTipoPessoa);
+            this.gbProcuraNome.Controls.Add(this.radioBttJuridica);
+            this.gbProcuraNome.Controls.Add(this.radioBttFisica);
+            this.gbProcuraNome.Controls.Add(this.radioBttTodos);
             this.gbProcuraNome.Controls.Add(this.txtBuscaNomeCPF);
             this.gbProcuraNome.Controls.Add(this.lbNomeCPF);
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
             this.gbProcuraNome.Name = "gbProcuraNome";
-            this.gbProcuraNome.Size = new System.Drawing.Size(707, 69);
+            this.gbProcuraNome.Size = new System.Drawing.Size(707, 88);
             this.gbProcuraNome.TabIndex = 5;
             this.gbProcuraNome.TabStop = false;
             // 
@@ -161,17 +165,59 @@
             this.gbBotoes.TabIndex = 7;
             this.gbBotoes.TabStop = false;
             // 
+            // radioBttTodos
+            // 
+            this.radioBttTodos.AutoSize = true;
+            this.radioBttTodos.Location = new System.Drawing.Point(82, 52);
+            this.radioBttTodos.Name = "radioBttTodos";
+            this.radioBttTodos.Size = new System.Drawing.Size(55, 17);
+            this.radioBttTodos.TabIndex = 2;
+            this.radioBttTodos.TabStop = true;
+            this.radioBttTodos.Text = "Todos";
+            this.radioBttTodos.UseVisualStyleBackColor = true;
+            // 
+            // radioBttFisica
+            // 
+            this.radioBttFisica.AutoSize = true;
+            this.radioBttFisica.Location = new System.Drawing.Point(143, 52);
+            this.radioBttFisica.Name = "radioBttFisica";
+            this.radioBttFisica.Size = new System.Drawing.Size(52, 17);
+            this.radioBttFisica.TabIndex = 3;
+            this.radioBttFisica.TabStop = true;
+            this.radioBttFisica.Text = "Fisica";
+            this.radioBttFisica.UseVisualStyleBackColor = true;
+            // 
+            // radioBttJuridica
+            // 
+            this.radioBttJuridica.AutoSize = true;
+            this.radioBttJuridica.Location = new System.Drawing.Point(201, 52);
+            this.radioBttJuridica.Name = "radioBttJuridica";
+            this.radioBttJuridica.Size = new System.Drawing.Size(61, 17);
+            this.radioBttJuridica.TabIndex = 4;
+            this.radioBttJuridica.TabStop = true;
+            this.radioBttJuridica.Text = "Juridica";
+            this.radioBttJuridica.UseVisualStyleBackColor = true;
+            // 
+            // lblTipoPessoa
+            // 
+            this.lblTipoPessoa.AutoSize = true;
+            this.lblTipoPessoa.Location = new System.Drawing.Point(7, 54);
+            this.lblTipoPessoa.Name = "lblTipoPessoa";
+            this.lblTipoPessoa.Size = new System.Drawing.Size(69, 13);
+            this.lblTipoPessoa.TabIndex = 5;
+            this.lblTipoPessoa.Text = "Tipo Pessoa:";
+            // 
             // Nome
             // 
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
             // 
-            // CPF
+            // CPF_CNPJ
             // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
+            this.CPF_CNPJ.HeaderText = "CPF/CNPJ";
+            this.CPF_CNPJ.Name = "CPF_CNPJ";
+            this.CPF_CNPJ.ReadOnly = true;
             // 
             // Telefone
             // 
@@ -185,23 +231,11 @@
             this.Celular.Name = "Celular";
             this.Celular.ReadOnly = true;
             // 
-            // DatadeNascimento
-            // 
-            this.DatadeNascimento.HeaderText = "Data de Nascimento";
-            this.DatadeNascimento.Name = "DatadeNascimento";
-            this.DatadeNascimento.ReadOnly = true;
-            // 
             // Endereço
             // 
             this.Endereço.HeaderText = "Endereço";
             this.Endereço.Name = "Endereço";
             this.Endereço.ReadOnly = true;
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
             // 
             // FormCadastrados
             // 
@@ -213,6 +247,7 @@
             this.Controls.Add(this.gbBotoes);
             this.Name = "FormCadastrados";
             this.Text = "Cadastrados";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormCadastrados_Load);
             this.gbLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).EndInit();
@@ -235,12 +270,14 @@
         private System.Windows.Forms.TextBox txtBuscaNomeCPF;
         private System.Windows.Forms.Label lbNomeCPF;
         private System.Windows.Forms.GroupBox gbBotoes;
+        private System.Windows.Forms.Label lblTipoPessoa;
+        private System.Windows.Forms.RadioButton radioBttJuridica;
+        private System.Windows.Forms.RadioButton radioBttFisica;
+        private System.Windows.Forms.RadioButton radioBttTodos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF_CNPJ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DatadeNascimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Endereço;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
     }
 }

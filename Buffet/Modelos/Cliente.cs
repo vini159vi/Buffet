@@ -8,116 +8,23 @@ namespace Buffet
 {
     public class Cliente
     {
-        private string nome, endereco;
-        private long cpf, telefone, celular;
-        private DateTime dataNasc;
-        private int numeroCasa;
+        private string nome, endereco, bairro;
+        private long cep;
+        private int numero;
 
-        public Cliente(string nome, string endereco, long cpf, long telefone, DateTime dataNasc,long celular, int numeroCasa)
+        public Cliente(string nome, string endereco, string bairro, long cep, int numero)
         {
             this.Nome = nome;
             this.Endereco = endereco;
-            this.Cpf = cpf;
-            this.Telefone = telefone;
-            this.DataNasc = dataNasc;
-            this.Celular = celular;
-            this.NumeroCasa = numeroCasa;
+            this.Bairro = bairro;
+            this.Cep = cep;
+            this.Numero = numero;
         }
 
-        public Cliente()
-        {
-
-        }
-
-        public string Nome
-        {
-            get
-            {
-                return nome;
-            }
-
-            set
-            {
-                nome = value;
-            }
-        }
-
-        public string Endereco
-        {
-            get
-            {
-                return endereco;
-            }
-
-            set
-            {
-                endereco = value;
-            }
-        }
-
-        public long Cpf
-        {
-            get
-            {
-                return cpf;
-            }
-
-            set
-            {
-                cpf = value;
-            }
-        }
-
-        public long Telefone
-        {
-            get
-            {
-                return telefone;
-            }
-
-            set
-            {
-                telefone = value;
-            }
-        }
-
-        public DateTime DataNasc
-        {
-            get
-            {
-                return dataNasc;
-            }
-
-            set
-            {
-                dataNasc = value;
-            }
-        }
-
-        public long Celular
-        {
-            get
-            {
-                return celular;
-            }
-
-            set
-            {
-                celular = value;
-            }
-        }
-
-        public int NumeroCasa
-        {
-            get
-            {
-                return numeroCasa;
-            }
-
-            set
-            {
-                numeroCasa = value;
-            }
-        }
+        public string Nome { get => nome; set => nome = value; }
+        public string Endereco { get => endereco; set => endereco = value; }
+        public string Bairro { get => bairro; set => bairro = value; }
+        public long Cep { get => cep; set => cep = value; }
+        public int Numero { get => numero; set => numero = value; }
     }
 }

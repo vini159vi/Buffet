@@ -17,10 +17,29 @@ namespace Buffet
         {
             InitializeComponent();
         }
-        public FormCadastroCliente(Cliente c)
+        public FormCadastroCliente(Cliente c, int mode)
         {
             InitializeComponent();
-            SetDTO(c);
+
+            if(mode == 1)
+            {
+                SetDTO(c);
+                this.Text = "Editando";
+                this.bttAdicionar.Text = "Editar";
+            }
+            else
+            {
+                this.Text = "Visualizando " + c.Nome;
+                this.bttAdicionar.Hide();
+                this.bttCancelar.Text = "Fechar";
+                SetDTO(c);
+                txtNome.ReadOnly = true;
+                txtEndereco.ReadOnly = true;
+                txtCPF.ReadOnly = true;
+                txtTelefone.ReadOnly = true;
+                txtCelular.ReadOnly = true;
+                txtNumero.ReadOnly = true;
+            }
         }
 
         private void FormCadastroCliente_Load(object sender, EventArgs e)
@@ -39,7 +58,21 @@ namespace Buffet
             {
                 f.Fill();
             }
-            Dispose();
+            this.Hide();
+        }
+
+        private void bttAdicionar_Click(object sender, EventArgs e, Cliente c)
+        {
+            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+            ClienteDAO clienteDAO = new ClienteDAO();
+            c = GetDTO();
+            clienteDAO.Create(c);
+
+            if (f != null)
+            {
+                f.Fill();
+            }
+            this.Hide();
         }
 
         private Cliente GetDTO()
@@ -76,7 +109,7 @@ namespace Buffet
 
         private void bttCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Hide();
         }
 
         private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
