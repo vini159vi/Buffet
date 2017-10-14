@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Buffet.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Buffet.DAO
 {
     class RepresentanteDAO
     {
-        public void Create(Cliente c)
+        public void Create(RepresentanteJuridico rj)
         {
             throw new NotImplementedException();
         }

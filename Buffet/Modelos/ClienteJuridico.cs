@@ -10,7 +10,8 @@ namespace Buffet.Modelos
     {
         private string nomeEmpresa, cidade, rua, bairro, estado;
         private long cep, cnpj;
-        private int numeroEmpresa;
+        private int numeroEmpresa, tipo;
+        private RepresentanteJuridico representanteJuridico;
 
         public string NomeEmpresa
         {
@@ -116,7 +117,35 @@ namespace Buffet.Modelos
             }
         }
 
-        public ClienteJuridico(string nomeEmpresa, string cidade, string rua, string bairro, string estado, long cep, long cnpj, int numeroEmpresa)
+        public int Tipo
+        {
+            get
+            {
+                return tipo;
+            }
+
+            set
+            {
+                tipo = value;
+
+            }
+        }
+        public RepresentanteJuridico RepresentanteJuridico
+        {
+            get
+            {
+                return representanteJuridico;
+            }
+
+            set
+            {
+                representanteJuridico = value;
+
+            }
+        }
+
+
+        public ClienteJuridico(string nomeEmpresa, string cidade, string rua, string bairro, string estado, long cep, long cnpj, int numeroEmpresa, int tipo, RepresentanteJuridico representanteJuridico)
         {
             this.NomeEmpresa = nomeEmpresa;
             this.Cidade = cidade;
@@ -126,6 +155,8 @@ namespace Buffet.Modelos
             this.Cep = cep;
             this.Cnpj = cnpj;
             this.NumeroEmpresa = numeroEmpresa;
+            this.Tipo = tipo;
+            this.RepresentanteJuridico = representanteJuridico;
         }
 
         public ClienteJuridico()

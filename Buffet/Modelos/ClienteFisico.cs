@@ -11,7 +11,7 @@ namespace Buffet.Modelos
         private string nome, endereco, bairro;
         private long cpf, rg, telefone, celular, cep;
         private DateTime dataNasc;
-        private int numeroCasa;
+        private int numeroCasa, tipo;
 
         public string Nome
         {
@@ -143,7 +143,21 @@ namespace Buffet.Modelos
             }
         }
 
-        public ClienteFisico(string nome, string endereco, string bairro, long cpf, long rg, long telefone, long celular, DateTime dataNasc, int numeroCasa, long cep)
+        public int Tipo
+        {
+            get
+            {
+                return tipo;
+            }
+
+            set
+            {
+                tipo= value;
+            }
+        }
+
+
+        public ClienteFisico(string nome, string endereco, string bairro, long cpf, long rg, long telefone, long celular, DateTime dataNasc, int numeroCasa, long cep, int tipo)
         {
             this.Nome = nome;
             this.Endereco = endereco;
@@ -155,6 +169,7 @@ namespace Buffet.Modelos
             this.DataNasc = dataNasc;
             this.NumeroCasa = numeroCasa;
             this.Cep = cep;
+            this.Tipo = tipo;
         }
 
         public ClienteFisico()

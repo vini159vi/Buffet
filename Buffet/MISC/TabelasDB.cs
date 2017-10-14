@@ -32,8 +32,9 @@ namespace Buffet.MISC
                       "endereco VARCHAR(64),"+
                       "bairro VARCHAR(64),"+
                       "numeroCasa INT,"+
+                      "tipo INT" +
 
-                      "PRIMARY KEY(cpf));"+
+                      "PRIMARY KEY(cpf));" +
 
                     "CREATE TABLE RepresentanteJuridico("+
                       "nome VARCHAR(64) NOT NULL,"+
@@ -49,7 +50,7 @@ namespace Buffet.MISC
                       "cidade VARCHAR(64),"+
                       "estado VARCHAR(64),"+
                       "numeroCasa INT,"+
-                      "celular BIGINY"+
+                      "celular BIGINT"+
                       "PRIMARY KEY(cpf));"+
 
                     "CREATE TABLE ClienteJuridico("+
@@ -62,6 +63,7 @@ namespace Buffet.MISC
                       "estado VARCHAR(64),"+
                       "numeroEmpresa INTEGER,"+
                       "representanteCPF BIGINT,"+
+                      "tipo INT"+
 
                       "PRIMARY KEY(cnpj),"+
                       "FOREIGN KEY(representanteCPF) REFERENCES RepresentanteJuridico(cpf));";

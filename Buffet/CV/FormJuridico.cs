@@ -1,4 +1,5 @@
-﻿using Buffet.Modelos;
+﻿using Buffet.DAO;
+using Buffet.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -92,7 +93,7 @@ namespace Buffet.CV
             this.Hide();
         }
 
-        private ClienteJuridico GetDTOJuridico()
+        private ClienteJuridico GetDTOJuridico(RepresentanteJuridico rj)
         {
             ClienteJuridico cj = new ClienteJuridico();
 
@@ -107,7 +108,7 @@ namespace Buffet.CV
             cj.Cep = long.Parse(txtCEPEmpresa.Text);
             cj.Cidade = txtCidadeEmpresa.Text;
             cj.Estado = txtEstadoEmpresa.Text;
-
+            cj.RepresentanteJuridico = rj;
             return cj;
         }
 
@@ -165,6 +166,25 @@ namespace Buffet.CV
             txtEstadoRepresentante.Text = rj.Estado;
             txtTelefone.Text = rj.Telefone.ToString();
             txtCelular.Text = rj.Celular.ToString();
+        }
+
+        private void bttAdicionar_Click(object sender, EventArgs e)
+        {
+            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+            RepresentanteJuridico rj = GetDTORepresentante();
+            ClienteJuridico cj = GetDTOJuridico(rj);
+
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+            RepresentanteDAO rjDAO = new RepresentanteDAO();
+
+            cjDAO.Create(cj);
+            rjDAO.Create(rj);
+
+            if (f != null)
+            {
+                f.Fill();
+            }
+            this.Hide();
         }
     }
 }

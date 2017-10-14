@@ -518,6 +518,7 @@
             this.bttAdicionar.TabIndex = 2;
             this.bttAdicionar.Text = "Adicionar";
             this.bttAdicionar.UseVisualStyleBackColor = true;
+            this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
             // 
             // bttCancelar
             // 
