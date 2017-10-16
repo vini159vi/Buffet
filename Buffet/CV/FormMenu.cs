@@ -16,6 +16,7 @@ namespace Buffet
         private FormJuridico fj = new FormJuridico();
         private FormCadastroCliente fcc = new FormCadastroCliente();
         private FormCadastrados fc = new FormCadastrados();
+        private FormRepresentante fr = new FormRepresentante();
         public FormMenu()
         {
             InitializeComponent();
@@ -44,6 +45,15 @@ namespace Buffet
             {
                 fcc.MdiParent = this;
                 fcc.Show();
+            }
+        }
+
+        private void representanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!fr.Visible)
+            {
+                fr.MdiParent = this;
+                fr.Show();
             }
         }
     }

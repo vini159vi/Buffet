@@ -13,11 +13,12 @@ namespace Buffet
 {
     public partial class FormCadastroCliente : Form
     {
+        
         public FormCadastroCliente()
         {
             InitializeComponent();
         }
-        public FormCadastroCliente(Cliente c, int mode)
+        /*public FormCadastroCliente(Cliente c, int mode)
         {
             InitializeComponent();
 
@@ -40,7 +41,7 @@ namespace Buffet
                 txtCelular.ReadOnly = true;
                 txtNumero.ReadOnly = true;
             }
-        }
+        }*/
 
         private void FormCadastroCliente_Load(object sender, EventArgs e)
         {
@@ -49,7 +50,7 @@ namespace Buffet
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+            /*FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
             ClienteDAO clienteDAO = new ClienteDAO();
             Cliente cliente = GetDTO();
             clienteDAO.Create(cliente);
@@ -58,10 +59,10 @@ namespace Buffet
             {
                 f.Fill();
             }
-            this.Hide();
+            this.Hide();*/
         }
 
-        private Cliente GetDTO()
+        /*private Cliente GetDTO()
         {
             Cliente c = new Cliente();
 
@@ -80,8 +81,8 @@ namespace Buffet
             txtCelular.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
 
             return c;
-        }
-        private void SetDTO(Cliente c)
+        }*/
+        /*private void SetDTO(Cliente c)
         {
             txtNome.Text = c.Nome;
             txtEndereco.Text = c.Endereco;
@@ -89,7 +90,7 @@ namespace Buffet
             txtTelefone.Text = c.Telefone.ToString();
             txtCelular.Text = c.Celular.ToString();
             txtNumero.Text = c.NumeroCasa.ToString();
-        }
+        }*/
 
 
 
@@ -164,6 +165,6 @@ namespace Buffet
         {
 
         }
-
+        
     }
 }

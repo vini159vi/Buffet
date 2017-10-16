@@ -10,6 +10,7 @@ namespace Buffet
 {
     class ClienteDAO
     {
+        /*
         SQLiteConnection bd = new SQLiteConnection();
 
         public void Create(Cliente c)
@@ -115,7 +116,7 @@ namespace Buffet
                 clientes.Add(c);
             }
             return clientes;
-        }
+        }*/
 
     }
 }

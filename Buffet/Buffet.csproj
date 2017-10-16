@@ -73,6 +73,12 @@
     <Compile Include="CV\FormJuridico.Designer.cs">
       <DependentUpon>FormJuridico.cs</DependentUpon>
     </Compile>
+    <Compile Include="CV\FormRepresentante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormRepresentante.Designer.cs">
+      <DependentUpon>FormRepresentante.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\ClienteFisicoDAO.cs" />
     <Compile Include="DAO\ClienteJuridicoDAO.cs" />
@@ -116,6 +122,9 @@
     <EmbeddedResource Include="CV\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormRepresentante.resx">
+      <DependentUpon>FormRepresentante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -126,6 +135,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Buffet.Modelos.ClienteJuridico.datasource" />
+    <None Include="Properties\DataSources\Buffet.Modelos.RepresentanteJuridico.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

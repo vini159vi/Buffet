@@ -16,10 +16,13 @@ namespace Buffet.CV
     {
         public FormJuridico()
         {
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+
             InitializeComponent();
+            //cbRepresentanteBusca.Items.Add(cjDAO.List());
         }
 
-        public FormJuridico(ClienteJuridico cj, RepresentanteJuridico rj ,int mode)
+        public FormJuridico(ClienteJuridico cj,int mode)
         {
             InitializeComponent();
 
@@ -28,14 +31,12 @@ namespace Buffet.CV
                 this.Text = "Editando";
                 this.bttAdicionar.Text = "Editar";
                 this.bttCancelar.Text = "Cancelar";
-                SetDTOJuridico(cj);
-                SetDTORepresentante(rj);
+                SetDTO(cj);
 
             }
             else
             {
-                SetDTOJuridico(cj);
-                SetDTORepresentante(rj);
+                SetDTO(cj);
                 this.bttAdicionar.Hide();
                 this.bttCancelar.Text = "Fechar";
 
@@ -48,22 +49,6 @@ namespace Buffet.CV
                 txtCEPEmpresa.ReadOnly = true;
                 txtCidadeEmpresa.ReadOnly = true;
                 txtEstadoEmpresa.ReadOnly = true;
-
-                //Ativar só leitura nos txt do Representante
-                txtNomeRepresentante.ReadOnly = true;
-                txtCPFRepresentante.ReadOnly = true;
-                txtRG.ReadOnly = true;
-                txtProfissao.ReadOnly = true;
-                txtNacionalidade.ReadOnly = true;
-                txtEstadoCivil.ReadOnly = true;
-                txtRuaRepresentante.ReadOnly = true;
-                txtNumeroRepresentante.ReadOnly = true;
-                txtBairroRepresentante.ReadOnly = true;
-                txtCEPRepresentante.ReadOnly = true;
-                txtCidadeRepresentante.ReadOnly = true;
-                txtEstadoRepresentante.ReadOnly = true;
-                txtTelefone.ReadOnly = true;
-                txtCelular.ReadOnly = true;
 
             }
         }
@@ -93,7 +78,7 @@ namespace Buffet.CV
             this.Hide();
         }
 
-        private ClienteJuridico GetDTOJuridico(RepresentanteJuridico rj)
+        private ClienteJuridico GetDTO()
         {
             ClienteJuridico cj = new ClienteJuridico();
 
@@ -108,38 +93,13 @@ namespace Buffet.CV
             cj.Cep = long.Parse(txtCEPEmpresa.Text);
             cj.Cidade = txtCidadeEmpresa.Text;
             cj.Estado = txtEstadoEmpresa.Text;
-            cj.RepresentanteJuridico = rj;
+            cj.Tipo = 2;
             return cj;
+            Console.WriteLine("Passou o GetDTO");
         }
 
-        private RepresentanteJuridico GetDTORepresentante()
-        {
-            RepresentanteJuridico rj = new RepresentanteJuridico();
 
-            //Representante
-            rj.Nome = txtNomeRepresentante.Text;
-            txtCPFRepresentante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            rj.Cep = long.Parse(txtCPFRepresentante.Text);
-            rj.Rg = long.Parse(txtRG.Text);
-            rj.Profissao = txtProfissao.Text;
-            rj.Nacionalidade = txtNacionalidade.Text;
-            rj.EstadoCivil = txtEstadoCivil.Text;
-            rj.Rua = txtRuaRepresentante.Text;
-            rj.NumeroCasa = int.Parse(txtNumeroRepresentante.Text);
-            rj.Bairro = txtBairroRepresentante.Text;
-            txtCEPRepresentante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            rj.Cep = long.Parse(txtCEPRepresentante.Text);
-            rj.Cidade = txtCidadeRepresentante.Text;
-            rj.Estado = txtEstadoRepresentante.Text;
-            txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            rj.Telefone = long.Parse(txtTelefone.Text);
-            txtCelular.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            rj.Celular = long.Parse(txtCelular.Text);
-
-            return rj;
-        }
-
-        private void SetDTOJuridico(ClienteJuridico cj)
+        private void SetDTO(ClienteJuridico cj)
         {
             txtNomeEmpresa.Text = cj.NomeEmpresa;
             txtCNPJ.Text = cj.Cnpj.ToString();
@@ -150,41 +110,24 @@ namespace Buffet.CV
             txtCidadeEmpresa.Text = cj.Cidade;
             txtEstadoEmpresa.Text = cj.Estado;
         }
-        private void SetDTORepresentante(RepresentanteJuridico rj)
-        {
-            txtNomeRepresentante.Text = rj.Nome.ToString();
-            txtCPFRepresentante.Text = rj.Cep.ToString() ;
-            txtRG.Text = rj.Rg.ToString();
-            txtProfissao.Text = rj.Profissao;
-            txtNacionalidade.Text = rj.Nacionalidade;
-            txtEstadoCivil.Text = rj.EstadoCivil;
-            txtRuaRepresentante.Text = rj.Rua;
-            txtNumeroRepresentante.Text = rj.NumeroCasa.ToString();
-            txtBairroRepresentante.Text = rj.Bairro;
-            txtCEPRepresentante.Text = rj.Cep.ToString();
-            txtCidadeRepresentante.Text = rj.Cidade;
-            txtEstadoRepresentante.Text = rj.Estado;
-            txtTelefone.Text = rj.Telefone.ToString();
-            txtCelular.Text = rj.Celular.ToString();
-        }
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
             FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
-            RepresentanteJuridico rj = GetDTORepresentante();
-            ClienteJuridico cj = GetDTOJuridico(rj);
+            ClienteJuridico cj = GetDTO();
 
             ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-            RepresentanteDAO rjDAO = new RepresentanteDAO();
 
             cjDAO.Create(cj);
-            rjDAO.Create(rj);
 
             if (f != null)
             {
                 f.Fill();
             }
             this.Hide();
+            //cbRepresentanteBusca.Items.Add(cjDAO.List());
         }
+
+        
     }
 }

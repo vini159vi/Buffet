@@ -40,6 +40,7 @@
             this.pessoaJurídicaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.representanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +69,8 @@
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pessoaFísicaToolStripMenuItem,
-            this.pessoaJurídicaToolStripMenuItem});
+            this.pessoaJurídicaToolStripMenuItem,
+            this.representanteToolStripMenuItem});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem.Text = "Novo";
@@ -109,7 +111,7 @@
             this.pessoaFísicaToolStripMenuItem1,
             this.pessoaJurídicaToolStripMenuItem1});
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem1.Text = "Novo";
             // 
             // pessoaFísicaToolStripMenuItem1
@@ -127,7 +129,7 @@
             // consultaToolStripMenuItem2
             // 
             this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
-            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem2.Text = "Consulta";
             // 
             // agendaToolStripMenuItem
@@ -135,6 +137,13 @@
             this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
             this.agendaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.agendaToolStripMenuItem.Text = "Agenda";
+            // 
+            // representanteToolStripMenuItem
+            // 
+            this.representanteToolStripMenuItem.Name = "representanteToolStripMenuItem";
+            this.representanteToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.representanteToolStripMenuItem.Text = "Representante";
+            this.representanteToolStripMenuItem.Click += new System.EventHandler(this.representanteToolStripMenuItem_Click);
             // 
             // FormMenu
             // 
@@ -168,5 +177,6 @@
         private System.Windows.Forms.ToolStripMenuItem pessoaJurídicaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem representanteToolStripMenuItem;
     }
 }

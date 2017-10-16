@@ -30,22 +30,22 @@
         {
             this.gbLista = new System.Windows.Forms.GroupBox();
             this.dataGViewLista = new System.Windows.Forms.DataGridView();
-            this.bttAdicionar = new System.Windows.Forms.Button();
-            this.bttRemove = new System.Windows.Forms.Button();
-            this.bttEditar = new System.Windows.Forms.Button();
-            this.gbProcuraNome = new System.Windows.Forms.GroupBox();
-            this.txtBuscaNomeCPF = new System.Windows.Forms.TextBox();
-            this.lbNomeCPF = new System.Windows.Forms.Label();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.radioBttTodos = new System.Windows.Forms.RadioButton();
-            this.radioBttFisica = new System.Windows.Forms.RadioButton();
-            this.radioBttJuridica = new System.Windows.Forms.RadioButton();
-            this.lblTipoPessoa = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF_CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bttAdicionar = new System.Windows.Forms.Button();
+            this.bttRemove = new System.Windows.Forms.Button();
+            this.bttEditar = new System.Windows.Forms.Button();
+            this.gbProcuraNome = new System.Windows.Forms.GroupBox();
+            this.lblTipoPessoa = new System.Windows.Forms.Label();
+            this.radioBttJuridica = new System.Windows.Forms.RadioButton();
+            this.radioBttFisica = new System.Windows.Forms.RadioButton();
+            this.radioBttTodos = new System.Windows.Forms.RadioButton();
+            this.txtBuscaNomeCPF = new System.Windows.Forms.TextBox();
+            this.lbNomeCPF = new System.Windows.Forms.Label();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
@@ -85,7 +85,38 @@
             this.dataGViewLista.Size = new System.Drawing.Size(701, 353);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGViewLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGViewLista_CellDoubleClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // CPF_CNPJ
+            // 
+            this.CPF_CNPJ.HeaderText = "CPF/CNPJ";
+            this.CPF_CNPJ.Name = "CPF_CNPJ";
+            this.CPF_CNPJ.ReadOnly = true;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            // 
+            // Celular
+            // 
+            this.Celular.HeaderText = "Celular";
+            this.Celular.Name = "Celular";
+            this.Celular.ReadOnly = true;
+            // 
+            // Endereço
+            // 
+            this.Endereço.HeaderText = "Endereço";
+            this.Endereço.Name = "Endereço";
+            this.Endereço.ReadOnly = true;
             // 
             // bttAdicionar
             // 
@@ -134,6 +165,50 @@
             this.gbProcuraNome.TabIndex = 5;
             this.gbProcuraNome.TabStop = false;
             // 
+            // lblTipoPessoa
+            // 
+            this.lblTipoPessoa.AutoSize = true;
+            this.lblTipoPessoa.Location = new System.Drawing.Point(7, 54);
+            this.lblTipoPessoa.Name = "lblTipoPessoa";
+            this.lblTipoPessoa.Size = new System.Drawing.Size(69, 13);
+            this.lblTipoPessoa.TabIndex = 5;
+            this.lblTipoPessoa.Text = "Tipo Pessoa:";
+            // 
+            // radioBttJuridica
+            // 
+            this.radioBttJuridica.AutoSize = true;
+            this.radioBttJuridica.Location = new System.Drawing.Point(201, 52);
+            this.radioBttJuridica.Name = "radioBttJuridica";
+            this.radioBttJuridica.Size = new System.Drawing.Size(61, 17);
+            this.radioBttJuridica.TabIndex = 4;
+            this.radioBttJuridica.Text = "Juridica";
+            this.radioBttJuridica.UseVisualStyleBackColor = true;
+            this.radioBttJuridica.CheckedChanged += new System.EventHandler(this.radioBttJuridica_CheckedChanged);
+            // 
+            // radioBttFisica
+            // 
+            this.radioBttFisica.AutoSize = true;
+            this.radioBttFisica.Location = new System.Drawing.Point(143, 52);
+            this.radioBttFisica.Name = "radioBttFisica";
+            this.radioBttFisica.Size = new System.Drawing.Size(52, 17);
+            this.radioBttFisica.TabIndex = 3;
+            this.radioBttFisica.Text = "Fisica";
+            this.radioBttFisica.UseVisualStyleBackColor = true;
+            this.radioBttFisica.CheckedChanged += new System.EventHandler(this.radioBttFisica_CheckedChanged);
+            // 
+            // radioBttTodos
+            // 
+            this.radioBttTodos.AutoSize = true;
+            this.radioBttTodos.Checked = true;
+            this.radioBttTodos.Location = new System.Drawing.Point(82, 52);
+            this.radioBttTodos.Name = "radioBttTodos";
+            this.radioBttTodos.Size = new System.Drawing.Size(55, 17);
+            this.radioBttTodos.TabIndex = 2;
+            this.radioBttTodos.TabStop = true;
+            this.radioBttTodos.Text = "Todos";
+            this.radioBttTodos.UseVisualStyleBackColor = true;
+            this.radioBttTodos.CheckedChanged += new System.EventHandler(this.radioBttTodos_CheckedChanged);
+            // 
             // txtBuscaNomeCPF
             // 
             this.txtBuscaNomeCPF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -164,78 +239,6 @@
             this.gbBotoes.Size = new System.Drawing.Size(680, 74);
             this.gbBotoes.TabIndex = 7;
             this.gbBotoes.TabStop = false;
-            // 
-            // radioBttTodos
-            // 
-            this.radioBttTodos.AutoSize = true;
-            this.radioBttTodos.Location = new System.Drawing.Point(82, 52);
-            this.radioBttTodos.Name = "radioBttTodos";
-            this.radioBttTodos.Size = new System.Drawing.Size(55, 17);
-            this.radioBttTodos.TabIndex = 2;
-            this.radioBttTodos.TabStop = true;
-            this.radioBttTodos.Text = "Todos";
-            this.radioBttTodos.UseVisualStyleBackColor = true;
-            // 
-            // radioBttFisica
-            // 
-            this.radioBttFisica.AutoSize = true;
-            this.radioBttFisica.Location = new System.Drawing.Point(143, 52);
-            this.radioBttFisica.Name = "radioBttFisica";
-            this.radioBttFisica.Size = new System.Drawing.Size(52, 17);
-            this.radioBttFisica.TabIndex = 3;
-            this.radioBttFisica.TabStop = true;
-            this.radioBttFisica.Text = "Fisica";
-            this.radioBttFisica.UseVisualStyleBackColor = true;
-            // 
-            // radioBttJuridica
-            // 
-            this.radioBttJuridica.AutoSize = true;
-            this.radioBttJuridica.Location = new System.Drawing.Point(201, 52);
-            this.radioBttJuridica.Name = "radioBttJuridica";
-            this.radioBttJuridica.Size = new System.Drawing.Size(61, 17);
-            this.radioBttJuridica.TabIndex = 4;
-            this.radioBttJuridica.TabStop = true;
-            this.radioBttJuridica.Text = "Juridica";
-            this.radioBttJuridica.UseVisualStyleBackColor = true;
-            // 
-            // lblTipoPessoa
-            // 
-            this.lblTipoPessoa.AutoSize = true;
-            this.lblTipoPessoa.Location = new System.Drawing.Point(7, 54);
-            this.lblTipoPessoa.Name = "lblTipoPessoa";
-            this.lblTipoPessoa.Size = new System.Drawing.Size(69, 13);
-            this.lblTipoPessoa.TabIndex = 5;
-            this.lblTipoPessoa.Text = "Tipo Pessoa:";
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // CPF_CNPJ
-            // 
-            this.CPF_CNPJ.HeaderText = "CPF/CNPJ";
-            this.CPF_CNPJ.Name = "CPF_CNPJ";
-            this.CPF_CNPJ.ReadOnly = true;
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
-            // 
-            // Celular
-            // 
-            this.Celular.HeaderText = "Celular";
-            this.Celular.Name = "Celular";
-            this.Celular.ReadOnly = true;
-            // 
-            // Endereço
-            // 
-            this.Endereço.HeaderText = "Endereço";
-            this.Endereço.Name = "Endereço";
-            this.Endereço.ReadOnly = true;
             // 
             // FormCadastrados
             // 

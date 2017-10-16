@@ -11,62 +11,64 @@ namespace Buffet.MISC
         public override string ToString()
         {
 
-            return "CREATE TABLE Cliente("+
-                   "nome VARCHAR(64) NOT NULL,"+
-                   "endereco VARCHAR(64),"+
-                   "cpf BIGINT NOT NULL,"+
-                   "telefone BIGINT,"+
-                   "dataNasc DATE,"+
-                   "celular BIGINT,"+
-                   "numeroCasa INT,"+
+            return "CREATE TABLE Cliente(" +
+                   "nome VARCHAR(64) NOT NULL," +
+                   "endereco VARCHAR(64)," +
+                   "cpf BIGINT NOT NULL," +
+                   "telefone BIGINT," +
+                   "dataNasc DATE," +
+                   "celular BIGINT," +
+                   "numeroCasa INT," +
 
-                   "PRIMARY KEY(cpf));"+
+                   "PRIMARY KEY(cpf));" +
 
-                   "CREATE TABLE ClienteFisico("+
-                      "nome VARCHAR(64) NOT NULL,"+
-                      "cpf BIGINT NOT NULL,"+
-                      "rg BIGINT,"+
-                      "telefone BIGINT,"+
-                      "celular BIGINT,"+
-                      "dataNasc DATE,"+
-                      "endereco VARCHAR(64),"+
-                      "bairro VARCHAR(64),"+
-                      "numeroCasa INT,"+
-                      "tipo INT" +
+                   "CREATE TABLE ClienteFisico(" +
+                      "nome VARCHAR(64) NOT NULL," +
+                      "cpf BIGINT NOT NULL," +
+                      "rg BIGINT," +
+                      "telefone BIGINT," +
+                      "celular BIGINT," +
+                      "dataNasc DATE," +
+                      "rua VARCHAR(64)," +
+                      "bairro VARCHAR(64)," +
+                      "numeroCasa INT," +
+                      "tipo INT," +
 
                       "PRIMARY KEY(cpf));" +
 
-                    "CREATE TABLE RepresentanteJuridico("+
-                      "nome VARCHAR(64) NOT NULL,"+
-                      "nacionalidade VARCHAR(64) DEFAULT 'Brasileiro',"+
-                      "estadoCivil VARCHAR(32),"+
-                      "profissao VARCHAR(64) DEFAULT 'Desempregado',"+
-                      "cpf BIGINT NOT NULL,"+
-                      "rg BIGINT,"+
-                      "telefone BIGINT,"+
-                      "cep BIGINT,"+
-                      "endereco VARCHAR(64),"+
-                      "bairro VARCHAR(64),"+
-                      "cidade VARCHAR(64),"+
-                      "estado VARCHAR(64),"+
-                      "numeroCasa INT,"+
-                      "celular BIGINT"+
-                      "PRIMARY KEY(cpf));"+
+                    "CREATE TABLE RepresentanteJuridico(" +
+                      "nome VARCHAR(64) NOT NULL," +
+                      "nacionalidade VARCHAR(64) DEFAULT 'Brasileiro'," +
+                      "estadoCivil VARCHAR(32)," +
+                      "profissao VARCHAR(64) DEFAULT 'Desempregado'," +
+                      "cpf BIGINT NOT NULL," +
+                      "rg BIGINT," +
+                      "telefone BIGINT," +
+                      "cep BIGINT," +
+                      "rua VARCHAR(64)," +
+                      "bairro VARCHAR(64)," +
+                      "cidade VARCHAR(64)," +
+                      "estado VARCHAR(64)," +
+                      "numeroCasa INT," +
+                      "celular BIGINT," +
+                      "tipo INT," +
+                      "empresaCnpj BIGINT," +
+                      "PRIMARY KEY(cpf)," +
+                      "FOREIGN KEY(empresaCnpj) REFERENCES ClienteJuridico(cnpj)" +
+                      ");" +
 
-                    "CREATE TABLE ClienteJuridico("+
-                      "nomeEmpresa VARCHAR(64),"+
-                      "cnpj BIGINT NOT NULL,"+
-                      "cep BIGINT,"+
-                      "cidade VARCHAR(64),"+
-                      "rua VARCHAR(64),"+
-                      "bairro VARCHAR(64),"+
-                      "estado VARCHAR(64),"+
-                      "numeroEmpresa INTEGER,"+
-                      "representanteCPF BIGINT,"+
-                      "tipo INT"+
+                    "CREATE TABLE ClienteJuridico(" +
+                      "nomeEmpresa VARCHAR(64)," +
+                      "cnpj BIGINT NOT NULL," +
+                      "cep BIGINT," +
+                      "cidade VARCHAR(64)," +
+                      "rua VARCHAR(64)," +
+                      "bairro VARCHAR(64)," +
+                      "estado VARCHAR(64)," +
+                      "numeroEmpresa INTEGER," +
+                      "tipo INT," +
 
-                      "PRIMARY KEY(cnpj),"+
-                      "FOREIGN KEY(representanteCPF) REFERENCES RepresentanteJuridico(cpf));";
+                      "PRIMARY KEY(cnpj));";
         }
     }
 }

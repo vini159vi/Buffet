@@ -14,8 +14,8 @@ namespace Buffet
     {
         private static SQLiteConnection connection;
         private static Database instance;
-        private static string URL = "Data Source=Buffet.db";
-        private static string bdNome = "Buffet.db";
+        private static string URL = "Data Source=Banco.db";
+        private static string bdNome = "Banco.db";
 
         SQLiteConnection bd = new SQLiteConnection();
 
@@ -44,6 +44,7 @@ namespace Buffet
             if (connection.State != System.Data.ConnectionState.Open)
                 connection.Open();
             SQLiteCommand comm = new SQLiteCommand(qry, connection);
+            Console.WriteLine(qry);
             comm.ExecuteNonQuery();
             connection.Close();
         }
@@ -64,10 +65,8 @@ namespace Buffet
         
         private void CriarTabelas(string bdNome)
         {
-            Console.WriteLine("TUSCA333");
             if (!File.Exists(bdNome))
             {
-                Console.WriteLine("TUSCA");
                 SQLiteConnection.CreateFile(bdNome);
                 SQLiteConnection conn = new SQLiteConnection(URL);
                 conn.Open();
