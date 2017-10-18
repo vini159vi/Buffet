@@ -91,6 +91,8 @@ namespace Buffet.CV
             rj.Telefone = long.Parse(txtTelefone.Text);
             txtCelular.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             rj.Celular = long.Parse(txtCelular.Text);
+            rj.Empresa.Cnpj = Convert.ToInt64(cbEmpresaBusca.SelectedValue);
+
 
             return rj;
         }
@@ -139,10 +141,20 @@ namespace Buffet.CV
             List<ClienteJuridico> listcj = new List<ClienteJuridico>();
             ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
             listcj = cjDAO.List();
-            foreach (ClienteJuridico ck in listcj)
+
+            if(cbEmpresaBusca.Items.Count == 0)
+                cbEmpresaBusca.Items.Clear();
+
+
+            cbEmpresaBusca.DisplayMember = "NomeEmpresa";
+            cbEmpresaBusca.ValueMember = "Cnpj";
+            cbEmpresaBusca.DataSource = listcj;
+
+
+            /*foreach (ClienteJuridico ck in listcj)
             {
                 cbEmpresaBusca.Items.Add(ck);
-            }
+            }*/
         }
     }
 }

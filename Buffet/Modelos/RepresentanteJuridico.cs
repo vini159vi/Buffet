@@ -11,8 +11,9 @@ namespace Buffet.Modelos
         private string nome, nacionalidade, estadoCivil, profissao, rua, bairro, cidade, estado;
         private long rg, cpf,cep, telefone, celular;
         private int numeroCasa;
-        private ClienteJuridico empresa;
 
+
+        ClienteJuridico empresa = new ClienteJuridico();
         public string Nome
         {
             get
