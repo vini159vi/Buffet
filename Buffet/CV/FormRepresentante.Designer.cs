@@ -85,7 +85,7 @@
             this.txtTelefone.Mask = "(99) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 22;
+            this.txtTelefone.TabIndex = 12;
             // 
             // txtCelular
             // 
@@ -93,7 +93,7 @@
             this.txtCelular.Mask = "(99) 90000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(100, 20);
-            this.txtCelular.TabIndex = 5;
+            this.txtCelular.TabIndex = 13;
             // 
             // lbTelefone
             // 
@@ -109,14 +109,14 @@
             this.txtEstadoRepresentante.Location = new System.Drawing.Point(508, 101);
             this.txtEstadoRepresentante.Name = "txtEstadoRepresentante";
             this.txtEstadoRepresentante.Size = new System.Drawing.Size(120, 20);
-            this.txtEstadoRepresentante.TabIndex = 17;
+            this.txtEstadoRepresentante.TabIndex = 11;
             // 
             // txtBairroRepresentante
             // 
             this.txtBairroRepresentante.Location = new System.Drawing.Point(503, 75);
             this.txtBairroRepresentante.Name = "txtBairroRepresentante";
             this.txtBairroRepresentante.Size = new System.Drawing.Size(126, 20);
-            this.txtBairroRepresentante.TabIndex = 16;
+            this.txtBairroRepresentante.TabIndex = 8;
             // 
             // lbEstadoRepresentante
             // 
@@ -141,7 +141,7 @@
             this.txtCidadeRepresentante.Location = new System.Drawing.Point(194, 101);
             this.txtCidadeRepresentante.Name = "txtCidadeRepresentante";
             this.txtCidadeRepresentante.Size = new System.Drawing.Size(259, 20);
-            this.txtCidadeRepresentante.TabIndex = 16;
+            this.txtCidadeRepresentante.TabIndex = 10;
             // 
             // lbCidadeRepresentante
             // 
@@ -157,7 +157,7 @@
             this.txtRuaRepresentante.Location = new System.Drawing.Point(42, 75);
             this.txtRuaRepresentante.Name = "txtRuaRepresentante";
             this.txtRuaRepresentante.Size = new System.Drawing.Size(339, 20);
-            this.txtRuaRepresentante.TabIndex = 15;
+            this.txtRuaRepresentante.TabIndex = 6;
             // 
             // txtCEPRepresentante
             // 
@@ -165,7 +165,7 @@
             this.txtCEPRepresentante.Mask = "00000-000";
             this.txtCEPRepresentante.Name = "txtCEPRepresentante";
             this.txtCEPRepresentante.Size = new System.Drawing.Size(96, 20);
-            this.txtCEPRepresentante.TabIndex = 15;
+            this.txtCEPRepresentante.TabIndex = 9;
             // 
             // txtNumeroRepresentante
             // 
@@ -174,7 +174,7 @@
             this.txtNumeroRepresentante.Name = "txtNumeroRepresentante";
             this.txtNumeroRepresentante.PromptChar = ' ';
             this.txtNumeroRepresentante.Size = new System.Drawing.Size(38, 20);
-            this.txtNumeroRepresentante.TabIndex = 15;
+            this.txtNumeroRepresentante.TabIndex = 7;
             // 
             // lbCEPRepresentante
             // 
@@ -227,7 +227,7 @@
             this.gbRepresentante.Location = new System.Drawing.Point(2, 65);
             this.gbRepresentante.Name = "gbRepresentante";
             this.gbRepresentante.Size = new System.Drawing.Size(634, 162);
-            this.gbRepresentante.TabIndex = 2;
+            this.gbRepresentante.TabIndex = 1;
             this.gbRepresentante.TabStop = false;
             this.gbRepresentante.Text = "Representante";
             // 
@@ -255,14 +255,14 @@
             this.txtCPFRepresentante.Mask = "000.000.000-00";
             this.txtCPFRepresentante.Name = "txtCPFRepresentante";
             this.txtCPFRepresentante.Size = new System.Drawing.Size(100, 20);
-            this.txtCPFRepresentante.TabIndex = 10;
+            this.txtCPFRepresentante.TabIndex = 1;
             // 
             // txtEstadoCivil
             // 
             this.txtEstadoCivil.Location = new System.Drawing.Point(531, 49);
             this.txtEstadoCivil.Name = "txtEstadoCivil";
             this.txtEstadoCivil.Size = new System.Drawing.Size(98, 20);
-            this.txtEstadoCivil.TabIndex = 9;
+            this.txtEstadoCivil.TabIndex = 5;
             // 
             // lbEstadoCivil
             // 
@@ -278,7 +278,7 @@
             this.txtNacionalidade.Location = new System.Drawing.Point(315, 49);
             this.txtNacionalidade.Name = "txtNacionalidade";
             this.txtNacionalidade.Size = new System.Drawing.Size(139, 20);
-            this.txtNacionalidade.TabIndex = 7;
+            this.txtNacionalidade.TabIndex = 4;
             // 
             // lbNacionalidade
             // 
@@ -294,7 +294,7 @@
             this.txtProfissao.Location = new System.Drawing.Point(65, 49);
             this.txtProfissao.Name = "txtProfissao";
             this.txtProfissao.Size = new System.Drawing.Size(160, 20);
-            this.txtProfissao.TabIndex = 5;
+            this.txtProfissao.TabIndex = 3;
             // 
             // lbProfissao
             // 
@@ -310,7 +310,7 @@
             this.txtRG.Location = new System.Drawing.Point(491, 23);
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(137, 20);
-            this.txtRG.TabIndex = 3;
+            this.txtRG.TabIndex = 2;
             // 
             // lbRG
             // 
@@ -326,7 +326,7 @@
             this.txtNomeRepresentante.Location = new System.Drawing.Point(50, 23);
             this.txtNomeRepresentante.Name = "txtNomeRepresentante";
             this.txtNomeRepresentante.Size = new System.Drawing.Size(261, 20);
-            this.txtNomeRepresentante.TabIndex = 1;
+            this.txtNomeRepresentante.TabIndex = 0;
             // 
             // lbNomeRepresentante
             // 
@@ -345,7 +345,7 @@
             this.gbBotoes.Location = new System.Drawing.Point(5, 227);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(625, 74);
-            this.gbBotoes.TabIndex = 9;
+            this.gbBotoes.TabIndex = 2;
             this.gbBotoes.TabStop = false;
             // 
             // bttAdicionar
@@ -353,7 +353,7 @@
             this.bttAdicionar.Location = new System.Drawing.Point(149, 19);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
-            this.bttAdicionar.TabIndex = 2;
+            this.bttAdicionar.TabIndex = 0;
             this.bttAdicionar.Text = "Adicionar";
             this.bttAdicionar.UseVisualStyleBackColor = true;
             this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
@@ -363,7 +363,7 @@
             this.bttCancelar.Location = new System.Drawing.Point(377, 19);
             this.bttCancelar.Name = "bttCancelar";
             this.bttCancelar.Size = new System.Drawing.Size(125, 43);
-            this.bttCancelar.TabIndex = 3;
+            this.bttCancelar.TabIndex = 1;
             this.bttCancelar.Text = "Cancelar";
             this.bttCancelar.UseVisualStyleBackColor = true;
             this.bttCancelar.Click += new System.EventHandler(this.bttCancelar_Click);
@@ -388,7 +388,7 @@
             this.gbRepresentanteBusca.Location = new System.Drawing.Point(2, 3);
             this.gbRepresentanteBusca.Name = "gbRepresentanteBusca";
             this.gbRepresentanteBusca.Size = new System.Drawing.Size(634, 56);
-            this.gbRepresentanteBusca.TabIndex = 10;
+            this.gbRepresentanteBusca.TabIndex = 0;
             this.gbRepresentanteBusca.TabStop = false;
             this.gbRepresentanteBusca.Text = "Empresa";
             // 

@@ -16,8 +16,7 @@ namespace Buffet.DAO
         {
             Database dbCliente = Database.GetInstance();
 
-            string qry = string.Format("INSERT INTO RepresentanteJuridico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular, empresaCnpj) VALUES("
-               + "@Nome,@Nacionalidade,@EstadoCivil,@Profissao,@CPF,@RG,@Telefone,@CEP,@Rua,@Bairro,@Cidade,@Estado,@NumeroCasa,@Celular,@EmpresaCNPJ)");
+            string qry = String.Format("INSERT INTO RepresentanteJuridico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular, empresaCnpj) VALUES (@Nome,@Nacionalidade,@EstadoCivil,@Profissao,@CPF,@RG,@Telefone,@CEP,@Rua,@Bairro,@Cidade,@Estado,@NumeroCasa,@Celular,@EmpresaCNPJ)");
 
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
 
@@ -39,7 +38,7 @@ namespace Buffet.DAO
 
             dbCliente.ExecuteNonQuery(qry);
         }
-
+    
         public RepresentanteJuridico Read(string cpf)
         {
             RepresentanteJuridico rj = new RepresentanteJuridico();
