@@ -87,9 +87,9 @@ namespace Buffet
 
             }else if(tipo == 2)
             {
-                foreach (ClienteJuridico c in listcj)
+                foreach (ClienteJuridico cj in listcj)
                 {
-                    dataGViewLista.Rows.Add();
+                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, 0, 0, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
                 }
             }
             else
