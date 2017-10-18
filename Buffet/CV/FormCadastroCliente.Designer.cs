@@ -233,6 +233,7 @@ namespace Buffet
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.FormCadastroCliente_Load);
             this.groupBox1.ResumeLayout(false);

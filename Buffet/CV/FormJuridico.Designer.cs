@@ -61,6 +61,7 @@
             // 
             // gbEmpresa
             // 
+            this.gbEmpresa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbEmpresa.Controls.Add(this.txtEstadoEmpresa);
             this.gbEmpresa.Controls.Add(this.lbEstadoEmpresa);
             this.gbEmpresa.Controls.Add(this.txtCidadeEmpresa);
@@ -77,7 +78,7 @@
             this.gbEmpresa.Controls.Add(this.lbCNPJ);
             this.gbEmpresa.Controls.Add(this.txtNomeEmpresa);
             this.gbEmpresa.Controls.Add(this.lbNomeEmpresa);
-            this.gbEmpresa.Location = new System.Drawing.Point(5, 3);
+            this.gbEmpresa.Location = new System.Drawing.Point(10, 12);
             this.gbEmpresa.Name = "gbEmpresa";
             this.gbEmpresa.Size = new System.Drawing.Size(634, 112);
             this.gbEmpresa.TabIndex = 0;
@@ -244,7 +245,7 @@
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbBotoes.Controls.Add(this.bttAdicionar);
             this.gbBotoes.Controls.Add(this.bttCancelar);
-            this.gbBotoes.Location = new System.Drawing.Point(5, 114);
+            this.gbBotoes.Location = new System.Drawing.Point(10, 130);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(634, 74);
             this.gbBotoes.TabIndex = 8;
@@ -266,10 +267,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 200);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ClientSize = new System.Drawing.Size(669, 215);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbEmpresa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormJuridico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Juridico";
             this.gbEmpresa.ResumeLayout(false);
             this.gbEmpresa.PerformLayout();
