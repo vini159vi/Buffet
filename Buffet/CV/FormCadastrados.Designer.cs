@@ -161,7 +161,7 @@
             this.gbProcuraNome.Controls.Add(this.lbNomeCPF);
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
             this.gbProcuraNome.Name = "gbProcuraNome";
-            this.gbProcuraNome.Size = new System.Drawing.Size(963, 88);
+            this.gbProcuraNome.Size = new System.Drawing.Size(976, 88);
             this.gbProcuraNome.TabIndex = 5;
             this.gbProcuraNome.TabStop = false;
             this.gbProcuraNome.Text = "Filtrar";
@@ -217,7 +217,7 @@
             this.txtBuscaNomeCPF.Location = new System.Drawing.Point(73, 23);
             this.txtBuscaNomeCPF.Name = "txtBuscaNomeCPF";
             this.txtBuscaNomeCPF.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBuscaNomeCPF.Size = new System.Drawing.Size(875, 20);
+            this.txtBuscaNomeCPF.Size = new System.Drawing.Size(888, 20);
             this.txtBuscaNomeCPF.TabIndex = 1;
             // 
             // lbNomeCPF
