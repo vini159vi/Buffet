@@ -24,14 +24,19 @@ namespace Buffet.MISC
 
                    "CREATE TABLE ClienteFisico(" +
                       "nome VARCHAR(64) NOT NULL," +
+                      "nacionalidade VARCHAR(64) DEFAULT 'Brasileiro'," +
+                      "estadoCivil VARCHAR(32)," +
+                      "profissao VARCHAR(64) DEFAULT 'Desempregado'," +
                       "cpf BIGINT NOT NULL," +
                       "rg BIGINT," +
                       "telefone BIGINT," +
-                      "celular BIGINT," +
-                      "dataNasc DATE," +
+                      "cep BIGINT," +
                       "rua VARCHAR(64)," +
                       "bairro VARCHAR(64)," +
+                      "cidade VARCHAR(64)," +
+                      "estado VARCHAR(64)," +
                       "numeroCasa INT," +
+                      "celular BIGINT," +
                       "tipo INT," +
 
                       "PRIMARY KEY(cpf));" +

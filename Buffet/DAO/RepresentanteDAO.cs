@@ -16,25 +16,9 @@ namespace Buffet.DAO
         {
             Database dbCliente = Database.GetInstance();
 
-            string qry = String.Format("INSERT INTO RepresentanteJuridico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular, empresaCnpj) VALUES (@Nome,@Nacionalidade,@EstadoCivil,@Profissao,@CPF,@RG,@Telefone,@CEP,@Rua,@Bairro,@Cidade,@Estado,@NumeroCasa,@Celular,@EmpresaCNPJ)");
-
-            SQLiteCommand comm = new SQLiteCommand(qry, bd);
-
-            comm.Parameters.AddWithValue("@Nome", rj.Nome);
-            comm.Parameters.AddWithValue("@Nacionalidade", rj.Nacionalidade);
-            comm.Parameters.AddWithValue("@EstadoCivil", rj.EstadoCivil);
-            comm.Parameters.AddWithValue("@Profissao", rj.Profissao);
-            comm.Parameters.AddWithValue("@CPF", rj.Cpf);
-            comm.Parameters.AddWithValue("@RG", rj.Rg);
-            comm.Parameters.AddWithValue("@Telefone", rj.Telefone);
-            comm.Parameters.AddWithValue("@CEP", rj.Cep);
-            comm.Parameters.AddWithValue("@Rua", rj.Rua);
-            comm.Parameters.AddWithValue("@Bairro", rj.Bairro);
-            comm.Parameters.AddWithValue("@Cidade", rj.Cidade);
-            comm.Parameters.AddWithValue("@Estado", rj.Estado);
-            comm.Parameters.AddWithValue("@NumeroCasa", rj.NumeroCasa);
-            comm.Parameters.AddWithValue("@Celular", rj.Celular);
-            comm.Parameters.AddWithValue("@EmpresaCNPJ", rj.Empresa.Cnpj);
+            string qry = string.Format("INSERT INTO RepresentanteJuridico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular, empresaCnpj) " +
+                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4)', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}')", 
+                rj.Nome, rj.Nacionalidade, rj.EstadoCivil, rj.Profissao, rj.Cpf, rj.Rg, rj.Telefone, rj.Cep, rj.Rua, rj.Bairro, rj.Cidade, rj.Estado, rj.NumeroCasa, rj.Celular, rj.Empresa.Cnpj);
 
             dbCliente.ExecuteNonQuery(qry);
         }
@@ -70,25 +54,10 @@ namespace Buffet.DAO
         public void Update(RepresentanteJuridico rj)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE RepresentanteJuridico SET nome=@Nome, nacionalidade=@Nacionalidade, estadoCivil=@EstadoCivil, profissao=@Profissao, cpf=@CPF, rg=@RG, telefone=@Telefone, cep=@CEP, rua=@Rua, bairro=@Bairro, cidade=@Cidade, estado=@Estado, numeroCasa=@NumeroCasa, celular=@Celular, empresaCnpj=@EmpresaCNPJ"
-            + " WHERE cpf = @CPF");
+            string qry = string.Format("UPDATE RepresentanteJuridico SET nome={0}, nacionalidade={1}, estadoCivil={2}, profissao={3}, cpf={4}, rg={5}, telefone={6}, cep={7}, rua={8}, bairro={9}, cidade={10}, estado={11}, numeroCasa={12}, celular={13}, empresaCnpj={14}"
+            + " WHERE cpf = {4}",
+            rj.Nome, rj.Nacionalidade, rj.EstadoCivil, rj.Profissao, rj.Cpf, rj.Rg, rj.Telefone, rj.Cep, rj.Rua, rj.Bairro, rj.Cidade, rj.Estado, rj.NumeroCasa, rj.Celular, rj.Empresa.Cnpj);
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
-
-            comm.Parameters.AddWithValue("@Nome", rj.Nome);
-            comm.Parameters.AddWithValue("@Nacionalidade", rj.Nacionalidade);
-            comm.Parameters.AddWithValue("@EstadoCivil", rj.EstadoCivil);
-            comm.Parameters.AddWithValue("@Profissao", rj.Profissao);
-            comm.Parameters.AddWithValue("@CPF", rj.Cpf);
-            comm.Parameters.AddWithValue("@RG", rj.Rg);
-            comm.Parameters.AddWithValue("@Telefone", rj.Telefone);
-            comm.Parameters.AddWithValue("@CEP", rj.Cep);
-            comm.Parameters.AddWithValue("@Rua", rj.Rua);
-            comm.Parameters.AddWithValue("@Bairro", rj.Bairro);
-            comm.Parameters.AddWithValue("@Cidade", rj.Cidade);
-            comm.Parameters.AddWithValue("@Estado", rj.Estado);
-            comm.Parameters.AddWithValue("@NumeroCasa", rj.NumeroCasa);
-            comm.Parameters.AddWithValue("@Celular", rj.Celular);
-            comm.Parameters.AddWithValue("@EmpresaCNPJ", rj.Empresa.Cnpj);
 
             db.ExecuteNonQuery(qry);
         }

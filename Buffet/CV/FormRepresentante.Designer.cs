@@ -73,7 +73,7 @@
             // lblCel
             // 
             this.lblCel.AutoSize = true;
-            this.lblCel.Location = new System.Drawing.Point(460, 78);
+            this.lblCel.Location = new System.Drawing.Point(460, 81);
             this.lblCel.Name = "lblCel";
             this.lblCel.Size = new System.Drawing.Size(28, 13);
             this.lblCel.TabIndex = 4;
@@ -81,7 +81,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(351, 75);
+            this.txtTelefone.Location = new System.Drawing.Point(351, 78);
             this.txtTelefone.Mask = "(99) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
@@ -89,7 +89,7 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(495, 75);
+            this.txtCelular.Location = new System.Drawing.Point(495, 78);
             this.txtCelular.Mask = "(99) 90000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(133, 20);
@@ -98,7 +98,7 @@
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(317, 78);
+            this.lbTelefone.Location = new System.Drawing.Point(317, 81);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(28, 13);
             this.lbTelefone.TabIndex = 21;
@@ -106,14 +106,14 @@
             // 
             // txtEstadoRepresentante
             // 
-            this.txtEstadoRepresentante.Location = new System.Drawing.Point(508, 127);
+            this.txtEstadoRepresentante.Location = new System.Drawing.Point(508, 134);
             this.txtEstadoRepresentante.Name = "txtEstadoRepresentante";
             this.txtEstadoRepresentante.Size = new System.Drawing.Size(120, 20);
             this.txtEstadoRepresentante.TabIndex = 13;
             // 
             // txtBairroRepresentante
             // 
-            this.txtBairroRepresentante.Location = new System.Drawing.Point(503, 101);
+            this.txtBairroRepresentante.Location = new System.Drawing.Point(503, 108);
             this.txtBairroRepresentante.Name = "txtBairroRepresentante";
             this.txtBairroRepresentante.Size = new System.Drawing.Size(126, 20);
             this.txtBairroRepresentante.TabIndex = 10;
@@ -121,7 +121,7 @@
             // lbEstadoRepresentante
             // 
             this.lbEstadoRepresentante.AutoSize = true;
-            this.lbEstadoRepresentante.Location = new System.Drawing.Point(459, 130);
+            this.lbEstadoRepresentante.Location = new System.Drawing.Point(459, 137);
             this.lbEstadoRepresentante.Name = "lbEstadoRepresentante";
             this.lbEstadoRepresentante.Size = new System.Drawing.Size(43, 13);
             this.lbEstadoRepresentante.TabIndex = 20;
@@ -130,7 +130,7 @@
             // lbBairroRepresentante
             // 
             this.lbBairroRepresentante.AutoSize = true;
-            this.lbBairroRepresentante.Location = new System.Drawing.Point(460, 104);
+            this.lbBairroRepresentante.Location = new System.Drawing.Point(460, 111);
             this.lbBairroRepresentante.Name = "lbBairroRepresentante";
             this.lbBairroRepresentante.Size = new System.Drawing.Size(37, 13);
             this.lbBairroRepresentante.TabIndex = 18;
@@ -138,7 +138,7 @@
             // 
             // txtCidadeRepresentante
             // 
-            this.txtCidadeRepresentante.Location = new System.Drawing.Point(194, 127);
+            this.txtCidadeRepresentante.Location = new System.Drawing.Point(194, 134);
             this.txtCidadeRepresentante.Name = "txtCidadeRepresentante";
             this.txtCidadeRepresentante.Size = new System.Drawing.Size(259, 20);
             this.txtCidadeRepresentante.TabIndex = 12;
@@ -146,7 +146,7 @@
             // lbCidadeRepresentante
             // 
             this.lbCidadeRepresentante.AutoSize = true;
-            this.lbCidadeRepresentante.Location = new System.Drawing.Point(145, 130);
+            this.lbCidadeRepresentante.Location = new System.Drawing.Point(145, 137);
             this.lbCidadeRepresentante.Name = "lbCidadeRepresentante";
             this.lbCidadeRepresentante.Size = new System.Drawing.Size(43, 13);
             this.lbCidadeRepresentante.TabIndex = 19;
@@ -154,14 +154,14 @@
             // 
             // txtRuaRepresentante
             // 
-            this.txtRuaRepresentante.Location = new System.Drawing.Point(42, 101);
+            this.txtRuaRepresentante.Location = new System.Drawing.Point(42, 108);
             this.txtRuaRepresentante.Name = "txtRuaRepresentante";
             this.txtRuaRepresentante.Size = new System.Drawing.Size(339, 20);
             this.txtRuaRepresentante.TabIndex = 8;
             // 
             // txtCEPRepresentante
             // 
-            this.txtCEPRepresentante.Location = new System.Drawing.Point(43, 127);
+            this.txtCEPRepresentante.Location = new System.Drawing.Point(43, 134);
             this.txtCEPRepresentante.Mask = "00000-000";
             this.txtCEPRepresentante.Name = "txtCEPRepresentante";
             this.txtCEPRepresentante.Size = new System.Drawing.Size(96, 20);
@@ -169,7 +169,7 @@
             // 
             // txtNumeroRepresentante
             // 
-            this.txtNumeroRepresentante.Location = new System.Drawing.Point(416, 101);
+            this.txtNumeroRepresentante.Location = new System.Drawing.Point(416, 108);
             this.txtNumeroRepresentante.Mask = "0000";
             this.txtNumeroRepresentante.Name = "txtNumeroRepresentante";
             this.txtNumeroRepresentante.PromptChar = ' ';
@@ -179,7 +179,7 @@
             // lbCEPRepresentante
             // 
             this.lbCEPRepresentante.AutoSize = true;
-            this.lbCEPRepresentante.Location = new System.Drawing.Point(6, 130);
+            this.lbCEPRepresentante.Location = new System.Drawing.Point(6, 137);
             this.lbCEPRepresentante.Name = "lbCEPRepresentante";
             this.lbCEPRepresentante.Size = new System.Drawing.Size(31, 13);
             this.lbCEPRepresentante.TabIndex = 18;
@@ -188,7 +188,7 @@
             // lbRuaRepresentante
             // 
             this.lbRuaRepresentante.AutoSize = true;
-            this.lbRuaRepresentante.Location = new System.Drawing.Point(6, 104);
+            this.lbRuaRepresentante.Location = new System.Drawing.Point(6, 111);
             this.lbRuaRepresentante.Name = "lbRuaRepresentante";
             this.lbRuaRepresentante.Size = new System.Drawing.Size(30, 13);
             this.lbRuaRepresentante.TabIndex = 15;
@@ -234,7 +234,7 @@
             // 
             // txtEstadoCivil
             // 
-            this.txtEstadoCivil.Location = new System.Drawing.Point(77, 75);
+            this.txtEstadoCivil.Location = new System.Drawing.Point(77, 78);
             this.txtEstadoCivil.Name = "txtEstadoCivil";
             this.txtEstadoCivil.Size = new System.Drawing.Size(234, 20);
             this.txtEstadoCivil.TabIndex = 5;
@@ -242,7 +242,7 @@
             // lbEstadoCivil
             // 
             this.lbEstadoCivil.AutoSize = true;
-            this.lbEstadoCivil.Location = new System.Drawing.Point(6, 78);
+            this.lbEstadoCivil.Location = new System.Drawing.Point(6, 81);
             this.lbEstadoCivil.Name = "lbEstadoCivil";
             this.lbEstadoCivil.Size = new System.Drawing.Size(65, 13);
             this.lbEstadoCivil.TabIndex = 8;
@@ -251,7 +251,7 @@
             // lbNumeroRepresentante
             // 
             this.lbNumeroRepresentante.AutoSize = true;
-            this.lbNumeroRepresentante.Location = new System.Drawing.Point(388, 104);
+            this.lbNumeroRepresentante.Location = new System.Drawing.Point(388, 111);
             this.lbNumeroRepresentante.Name = "lbNumeroRepresentante";
             this.lbNumeroRepresentante.Size = new System.Drawing.Size(22, 13);
             this.lbNumeroRepresentante.TabIndex = 17;
@@ -346,7 +346,7 @@
             this.gbBotoes.Location = new System.Drawing.Point(12, 242);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(634, 74);
-            this.gbBotoes.TabIndex = 9;
+            this.gbBotoes.TabIndex = 2;
             this.gbBotoes.TabStop = false;
             // 
             // bttAdicionar
@@ -398,7 +398,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 325);
+            this.ClientSize = new System.Drawing.Size(658, 329);
             this.Controls.Add(this.gbRepresentanteBusca);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbRepresentante);

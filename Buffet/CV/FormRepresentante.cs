@@ -75,7 +75,7 @@ namespace Buffet.CV
             //Representante
             rj.Nome = txtNomeRepresentante.Text;
             txtCPFRepresentante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            rj.Cep = long.Parse(txtCPFRepresentante.Text);
+            rj.Cpf = long.Parse(txtCPFRepresentante.Text);
             rj.Rg = long.Parse(txtRG.Text);
             rj.Profissao = txtProfissao.Text;
             rj.Nacionalidade = txtNacionalidade.Text;

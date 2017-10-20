@@ -18,30 +18,8 @@ namespace Buffet.DAO
             Database dbCliente = Database.GetInstance();
 
             string qry = string.Format("INSERT INTO ClienteJuridico(nomeEmpresa, cnpj, cep, cidade, rua, bairro, estado, numeroEmpresa, tipo) "+
-                "VALUES(@NomeEmpresa, @CNPJ, @Cep, @Cidade, @Rua, @Bairro, @Estado, @NumeroEmpresa, @Tipo)");
-
-
-            SQLiteCommand comm = new SQLiteCommand(qry, bd);
-
-            /*comm.Parameters.Add(new SQLiteParameter("@NomeEmpresa",cj.NomeEmpresa));
-            comm.Parameters.Add(new SQLiteParameter("@CNPJ", cj.Cnpj));
-            comm.Parameters.Add(new SQLiteParameter("@Cep", cj.Cep));
-            comm.Parameters.Add(new SQLiteParameter("@Cidade", cj.Cidade));
-            comm.Parameters.Add(new SQLiteParameter("@Rua", cj.Rua));
-            comm.Parameters.Add(new SQLiteParameter("@Bairro", cj.Bairro));
-            comm.Parameters.Add(new SQLiteParameter("@Estado", cj.Estado));
-            comm.Parameters.Add(new SQLiteParameter("@NumeroEmpresa", cj.NumeroEmpresa));
-            comm.Parameters.Add(new SQLiteParameter("@Tipo", cj.Tipo));*/
-
-            comm.Parameters.AddWithValue("@NomeEmpresa", cj.NomeEmpresa);
-            comm.Parameters.AddWithValue("@CNPJ", cj.Cnpj);
-            comm.Parameters.AddWithValue("@Cep", cj.Cep);
-            comm.Parameters.AddWithValue("@Cidade", cj.Cidade);
-            comm.Parameters.AddWithValue("@Rua", cj.Rua);
-            comm.Parameters.AddWithValue("@Bairro", cj.Bairro);
-            comm.Parameters.AddWithValue("@Estado", cj.Estado);
-            comm.Parameters.AddWithValue("@NumeroEmpresa", cj.NumeroEmpresa);
-            comm.Parameters.AddWithValue("@Tipo", cj.Tipo);
+                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
+                cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, cj.Tipo);
 
             dbCliente.ExecuteNonQuery(qry);
         }
@@ -70,19 +48,9 @@ namespace Buffet.DAO
         public void Update(ClienteJuridico cj)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE ClienteJuridico SET nomeEmpresa=@NomeEmpresa, cnpj = @CNPJ, cep = @Cep, cidade = @Cidade,  rua = @Rua, bairro= @Bairro, estado = @Estado, numeroEmpresa = @NumeroEmpresa, tipo = @Tipo"
-            + " WHERE cnpj = @CNPJ");
-            SQLiteCommand comm = new SQLiteCommand(qry, bd);
-
-            comm.Parameters.AddWithValue("@NomeEmpresa", cj.NomeEmpresa);
-            comm.Parameters.AddWithValue("@CNPJ", cj.Cnpj);
-            comm.Parameters.AddWithValue("@Cep", cj.Cep);
-            comm.Parameters.AddWithValue("@Cidade", cj.Cidade);
-            comm.Parameters.AddWithValue("@Rua", cj.Rua);
-            comm.Parameters.AddWithValue("@Bairro", cj.Bairro);
-            comm.Parameters.AddWithValue("@Estado", cj.Estado);
-            comm.Parameters.AddWithValue("@NumeroEmpresa", cj.NumeroEmpresa);
-            comm.Parameters.AddWithValue("@Tipo", cj.Tipo);
+            string qry = string.Format("UPDATE ClienteJuridico SET nomeEmpresa='{0}', cnpj = '{1}', cep = '{2}', cidade = '{3}',  rua = '{4}', bairro= '{5}', estado = '{6}', numeroEmpresa = '{7}', tipo = '{8}'"
+            + " WHERE cnpj = '{1}'",
+            cj.NumeroEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, cj.Tipo);
 
             db.ExecuteNonQuery(qry);
         }
@@ -199,6 +167,36 @@ namespace Buffet.DAO
                 }
             }
             return cj;
+        }
+
+        public RepresentanteJuridico FindByRepresentante(long cnpj)
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM RepresentanteJuridico rj " +
+                "JOIN ClienteJuridico cj ON cj.Cnpj=rj.EmpresaCnpj WHERE cnpj=" + cnpj;
+            DataSet ds = bd.ExecuteQuery(qry);
+            RepresentanteJuridico rj = new RepresentanteJuridico();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                rj.Nome = dr["nome"].ToString();
+                rj.Nacionalidade = dr["nacionalidade"].ToString();
+                rj.EstadoCivil = dr["estadoCivil"].ToString();
+                rj.Profissao = dr["profissao"].ToString();
+                rj.Cpf = long.Parse(dr["cpf"].ToString());
+                rj.Rg = long.Parse(dr["rg"].ToString());
+                rj.Telefone = long.Parse(dr["Telefone"].ToString());
+                rj.Cep = long.Parse(dr["cep"].ToString());
+                rj.Rua = dr["rua"].ToString();
+                rj.Bairro = dr["bairro"].ToString();
+                rj.Cidade = dr["cidade"].ToString();
+                rj.Estado = dr["estado"].ToString();
+                rj.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+                rj.Celular = long.Parse(dr["celular"].ToString());
+                rj.Empresa.Cnpj = long.Parse(dr["empresaCnpj"].ToString());
+            }
+            return rj;
+
         }
     }
 }

@@ -31,7 +31,6 @@ namespace Buffet
         public FormCadastrados()
         {
             InitializeComponent();
-            dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
             dataGViewLista.Columns[2].DefaultCellStyle.Format = @"(##) ####-####";
             dataGViewLista.Columns[3].DefaultCellStyle.Format = @"(##) #####-####";
             Fill();
@@ -83,13 +82,14 @@ namespace Buffet
         }
         public void Fill()
         {
-
             ClienteJuridicoDAO juridicos = new ClienteJuridicoDAO();
             List<ClienteJuridico> listcj = juridicos.List();
 
             ClienteFisicoDAO fisicos = new ClienteFisicoDAO();
-            //List<ClienteFisico> listcf = fisicos.List();
+            List<ClienteFisico> listcf = fisicos.List();
 
+            RepresentanteDAO representantes = new RepresentanteDAO();
+            List<RepresentanteJuridico> listrj = representantes.List();
 
             dataGViewLista.Rows.Clear();
 
@@ -100,14 +100,18 @@ namespace Buffet
             {
                 foreach (ClienteJuridico cj in listcj)
                 {
-                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, 0, 0, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
+                    RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
+                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"00\.000\.000\\0000\-00";
+                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, rj.Celular, rj.Telefone, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
                 }
             }
             else
             {
                 foreach (ClienteJuridico cj in listcj)
                 {
-                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, 0, 0, cj.Rua + ", " + cj.NumeroEmpresa+"- "+ cj.Cidade);
+                    RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
+                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"00\.000\.000\\0000\-00";
+                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, rj.Celular, rj.Telefone, cj.Rua + ", " + cj.NumeroEmpresa+"- "+ cj.Cidade);
                 }
 
                 /*foreach (ClienteFisico cf in listcf)

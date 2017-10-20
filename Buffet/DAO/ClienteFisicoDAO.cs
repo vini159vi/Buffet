@@ -10,76 +10,62 @@ using System.Threading.Tasks;
 namespace Buffet.DAO
 {
     class ClienteFisicoDAO
-    {   /*
+    {
         SQLiteConnection bd = Database.GetInstance().GetConnection();
         public void Create(ClienteFisico cf)
         {
             Database dbCliente = Database.GetInstance();
 
-            string qry = string.Format("INSERT INTO ClienteFisico(nome, cpf, rg, telefone, celular, dataNasc, endereco, bairro, numeroCasa, tipo) VALUES("
-               + "@Nome,@CPF,@RG,@Telefone,@Celular,@DataNasc,@Endereco,@Bairro,@NumeroCasa,@Tipo)");
+            string qry = String.Format("INSERT INTO ClienteFisico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular) VALUES " +
+                "('{0}','{1}','{2}','{3}','{4)','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}'", 
+                cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular);
 
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
-
-            comm.Parameters.AddWithValue("@Nome", cf.Nome);
-            comm.Parameters.AddWithValue("@CPF", cf.Cpf);
-            comm.Parameters.AddWithValue("@RG", cf.Rg);
-            comm.Parameters.AddWithValue("@Telefone", cf.Telefone);
-            comm.Parameters.AddWithValue("@Celular", cf.Celular);
-            comm.Parameters.AddWithValue("@DataNasc", cf.DataNasc);
-            comm.Parameters.AddWithValue("@Endereco", cf.Endereco);
-            comm.Parameters.AddWithValue("@Bairro", cf.Bairro);
-            comm.Parameters.AddWithValue("@NumeroCasa", cf.NumeroCasa);
-            comm.Parameters.AddWithValue("@Tipo", cf.Tipo);
-
             dbCliente.ExecuteNonQuery(qry);
         }
-
+    
         public ClienteFisico Read(string cpf)
         {
+            ClienteFisico cf = new ClienteFisico();
             Database bd = Database.GetInstance();
             string qry = "SELECT * FROM ClienteFisico WHERE cpf=" + cpf;
             DataSet ds = bd.ExecuteQuery(qry);
-            ClienteFisico cf = new ClienteFisico();
+
             DataRow dr = ds.Tables[0].Rows[0];
 
             cf.Nome = dr["nome"].ToString();
+            cf.Nacionalidade = dr["nacionalidade"].ToString();
+            cf.EstadoCivil = dr["estadoCivil"].ToString();
+            cf.Profissao = dr["profissao"].ToString();
             cf.Cpf = long.Parse(dr["cpf"].ToString());
+            cf.Rg = long.Parse(dr["rg"].ToString());
+            cf.Telefone = long.Parse(dr["Telefone"].ToString());
             cf.Cep = long.Parse(dr["cep"].ToString());
-            cf.Cidade = dr["cidade"].ToString();
             cf.Rua = dr["rua"].ToString();
             cf.Bairro = dr["bairro"].ToString();
+            cf.Cidade = dr["cidade"].ToString();
             cf.Estado = dr["estado"].ToString();
-            cf.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
-            cf.Tipo = int.Parse(dr["tipo"].ToString());
+            cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+            cf.Celular = long.Parse(dr["celular"].ToString());
 
             return cf;
         }
 
-        public void Update(ClienteFisico cj)
+        public void Update(ClienteFisico cf)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE ClienteJuridico SET nomeEmpresa=@NomeEmpresa, cnpj = @CNPJ, cep = @Cep, cidade = @Cidade,  rua = @Rua, bairro= @Bairro, estado = @Estado, numeroEmpresa = @NumeroEmpresa, tipo = @Tipo"
-            + " WHERE cnpj = @CNPJ");
+            string qry = string.Format("UPDATE ClienteFisico SET nome={0}, nacionalidade={1}, estadoCivil={2}, profissao={3}, cpf={4}, rg={5}, telefone={6}, cep={7}, rua={8}, bairro={9}, cidade={10}, estado={11}, numeroCasa={12}, celular={13}"
+            + " WHERE cpf = {4}",
+            cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular);
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
-
-            comm.Parameters.AddWithValue("@NomeEmpresa", cj.NomeEmpresa);
-            comm.Parameters.AddWithValue("@CNPJ", cj.Cnpj);
-            comm.Parameters.AddWithValue("@Cep", cj.Cep);
-            comm.Parameters.AddWithValue("@Cidade", cj.Cidade);
-            comm.Parameters.AddWithValue("@Rua", cj.Rua);
-            comm.Parameters.AddWithValue("@Bairro", cj.Bairro);
-            comm.Parameters.AddWithValue("@Estado", cj.Estado);
-            comm.Parameters.AddWithValue("@NumeroEmpresa", cj.NumeroEmpresa);
-            comm.Parameters.AddWithValue("@Tipo", cj.Tipo);
 
             db.ExecuteNonQuery(qry);
         }
 
-        public void Delete(long cnpj)
+        public void Delete(long cpf)
         {
             Database db = Database.GetInstance();
-            string qry = "DELETE FROM ClienteJuridico WHERE cnpj =" + cnpj;
+            string qry = "DELETE FROM ClienteFisico WHERE cpf =" + cpf;
 
             db.ExecuteNonQuery(qry);
         }
@@ -87,82 +73,97 @@ namespace Buffet.DAO
         public List<ClienteFisico> List()
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM ClienteJuridico";
+            string qry = "SELECT * FROM ClienteFisico";
             DataSet ds = bd.ExecuteQuery(qry);
-            List<ClienteFisico> clientes = new List<ClienteFisico>();
+            List <ClienteFisico> fisicos = new List<ClienteFisico>();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                ClienteFisico cj = new ClienteFisico();
+                ClienteFisico cf = new ClienteFisico();
 
 
-                cj.NomeEmpresa = dr["nomeEmpresa"].ToString();
-                cj.Cnpj = long.Parse(dr["cnpj"].ToString());
-                cj.Cep = long.Parse(dr["cep"].ToString());
-                cj.Cidade = dr["cidade"].ToString();
-                cj.Rua = dr["rua"].ToString();
-                cj.Bairro = dr["bairro"].ToString();
-                cj.Estado = dr["estado"].ToString();
-                cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
-                cj.Tipo = int.Parse(dr["tipo"].ToString());
+                cf.Nome = dr["nome"].ToString();
+                cf.Nacionalidade = dr["nacionalidade"].ToString();
+                cf.EstadoCivil = dr["estadoCivil"].ToString();
+                cf.Profissao = dr["profissao"].ToString();
+                cf.Cpf = long.Parse(dr["cpf"].ToString());
+                cf.Rg = long.Parse(dr["rg"].ToString());
+                cf.Telefone = long.Parse(dr["Telefone"].ToString());
+                cf.Cep = long.Parse(dr["cep"].ToString());
+                cf.Rua = dr["rua"].ToString();
+                cf.Bairro = dr["bairro"].ToString();
+                cf.Cidade = dr["cidade"].ToString();
+                cf.Estado = dr["estado"].ToString();
+                cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+                cf.Celular = long.Parse(dr["celular"].ToString());
 
-                clientes.Add(cj);
+                fisicos.Add(cf);
             }
-            return clientes;
+            return fisicos;
         }
 
-        public List<ClienteFisico> ListByCNPJ(long cnpj)
+        public List<ClienteFisico> ListByCPF(long cpf)
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM ClienteJuridico WHERE cnpj=" + cnpj;
+            string qry = "SELECT * FROM ClienteFisico WHERE cpf=" + cpf;
             DataSet ds = bd.ExecuteQuery(qry);
-            List<ClienteFisico> clientes = new List<ClienteFisico>();
-            ClienteFisico cj = new ClienteFisico();
+            List<ClienteFisico> fisicos = new List<ClienteFisico>();
+            ClienteFisico cf = new ClienteFisico();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if (long.Parse(dr["cnpj"].ToString()) == cnpj)
+                if (long.Parse(dr["cpf"].ToString()) == cpf)
                 {
-                    cj.NomeEmpresa = dr["nomeEmpresa"].ToString();
-                    cj.Cnpj = long.Parse(dr["cnpj"].ToString());
-                    cj.Cep = long.Parse(dr["cep"].ToString());
-                    cj.Cidade = dr["cidade"].ToString();
-                    cj.Rua = dr["rua"].ToString();
-                    cj.Bairro = dr["bairro"].ToString();
-                    cj.Estado = dr["estado"].ToString();
-                    cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
-                    cj.Tipo = int.Parse(dr["tipo"].ToString());
+                    cf.Nome = dr["nome"].ToString();
+                    cf.Nacionalidade = dr["nacionalidade"].ToString();
+                    cf.EstadoCivil = dr["estadoCivil"].ToString();
+                    cf.Profissao = dr["profissao"].ToString();
+                    cf.Cpf = long.Parse(dr["cpf"].ToString());
+                    cf.Rg = long.Parse(dr["rg"].ToString());
+                    cf.Telefone = long.Parse(dr["Telefone"].ToString());
+                    cf.Cep = long.Parse(dr["cep"].ToString());
+                    cf.Rua = dr["rua"].ToString();
+                    cf.Bairro = dr["bairro"].ToString();
+                    cf.Cidade = dr["cidade"].ToString();
+                    cf.Estado = dr["estado"].ToString();
+                    cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+                    cf.Celular = long.Parse(dr["celular"].ToString());
                 }
             }
-            clientes.Add(cj);
-            return clientes;
+            fisicos.Add(cf);
+            return fisicos;
         }
 
-        public List<ClienteFisico> ListByName(string nomeEmpresa)
+        public List<ClienteFisico> ListByName(string nome)
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM ClienteJuridico WHERE nomeEmpresa LIKE '%" + nomeEmpresa + "%'";
+            string qry = "SELECT * FROM ClienteFisico WHERE nome LIKE '%" + nome + "%'";
             DataSet ds = bd.ExecuteQuery(qry);
-            List<ClienteFisico> clientes = new List<ClienteFisico>();
-            ClienteFisico cj = new ClienteFisico();
+            List<ClienteFisico> fisicos = new List<ClienteFisico>();
+            ClienteFisico cf = new ClienteFisico();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if (dr["nomeEmpresa"].ToString() == nomeEmpresa)
+                if (dr["nome"].ToString() == nome)
                 {
-                    cj.NomeEmpresa = dr["nomeEmpresa"].ToString();
-                    cj.Cnpj = long.Parse(dr["cnpj"].ToString());
-                    cj.Cep = long.Parse(dr["cep"].ToString());
-                    cj.Cidade = dr["cidade"].ToString();
-                    cj.Rua = dr["rua"].ToString();
-                    cj.Bairro = dr["bairro"].ToString();
-                    cj.Estado = dr["estado"].ToString();
-                    cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
-                    cj.Tipo = int.Parse(dr["tipo"].ToString());
+                    cf.Nome = dr["nome"].ToString();
+                    cf.Nacionalidade = dr["nacionalidade"].ToString();
+                    cf.EstadoCivil = dr["estadoCivil"].ToString();
+                    cf.Profissao = dr["profissao"].ToString();
+                    cf.Cpf = long.Parse(dr["cpf"].ToString());
+                    cf.Rg = long.Parse(dr["rg"].ToString());
+                    cf.Telefone = long.Parse(dr["Telefone"].ToString());
+                    cf.Cep = long.Parse(dr["cep"].ToString());
+                    cf.Rua = dr["rua"].ToString();
+                    cf.Bairro = dr["bairro"].ToString();
+                    cf.Cidade = dr["cidade"].ToString();
+                    cf.Estado = dr["estado"].ToString();
+                    cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+                    cf.Celular = long.Parse(dr["celular"].ToString());
                 }
             }
-            clientes.Add(cj);
-            return clientes;
-        }*/
+            fisicos.Add(cf);
+            return fisicos;
+        }
     }
 }

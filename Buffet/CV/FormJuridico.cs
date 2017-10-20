@@ -107,7 +107,6 @@ namespace Buffet.CV
             cj.Estado = txtEstadoEmpresa.Text;
             cj.Tipo = 2;
             return cj;
-            Console.WriteLine("Passou o GetDTO");
         }
 
 
