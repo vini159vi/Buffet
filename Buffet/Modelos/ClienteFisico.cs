@@ -8,10 +8,9 @@ namespace Buffet.Modelos
 {
     public class ClienteFisico
     {
-        private string nome, endereco, bairro;
-        private long cpf, rg, telefone, celular, cep;
-        private DateTime dataNasc;
-        private int numeroCasa, tipo;
+        private string nome, nacionalidade, estadoCivil, profissao, rua, bairro, cidade, estado;
+        private long rg, cpf, cep, telefone, celular;
+        private int numeroCasa;
 
         public string Nome
         {
@@ -26,16 +25,55 @@ namespace Buffet.Modelos
             }
         }
 
-        public string Endereco
+        public string Nacionalidade
         {
             get
             {
-                return endereco;
+                return nacionalidade;
             }
 
             set
             {
-                endereco = value;
+                nacionalidade = value;
+            }
+        }
+
+        public string EstadoCivil
+        {
+            get
+            {
+                return estadoCivil;
+            }
+
+            set
+            {
+                estadoCivil = value;
+            }
+        }
+
+        public string Profissao
+        {
+            get
+            {
+                return profissao;
+            }
+
+            set
+            {
+                profissao = value;
+            }
+        }
+
+        public string Rua
+        {
+            get
+            {
+                return rua;
+            }
+
+            set
+            {
+                rua = value;
             }
         }
 
@@ -52,16 +90,29 @@ namespace Buffet.Modelos
             }
         }
 
-        public long Cpf
+        public string Cidade
         {
             get
             {
-                return cpf;
+                return cidade;
             }
 
             set
             {
-                cpf = value;
+                cidade = value;
+            }
+        }
+
+        public string Estado
+        {
+            get
+            {
+                return estado;
+            }
+
+            set
+            {
+                estado = value;
             }
         }
 
@@ -78,55 +129,16 @@ namespace Buffet.Modelos
             }
         }
 
-        public long Telefone
+        public long Cpf
         {
             get
             {
-                return telefone;
+                return cpf;
             }
 
             set
             {
-                telefone = value;
-            }
-        }
-
-        public long Celular
-        {
-            get
-            {
-                return celular;
-            }
-
-            set
-            {
-                celular = value;
-            }
-        }
-
-        public DateTime DataNasc
-        {
-            get
-            {
-                return dataNasc;
-            }
-
-            set
-            {
-                dataNasc = value;
-            }
-        }
-
-        public int NumeroCasa
-        {
-            get
-            {
-                return numeroCasa;
-            }
-
-            set
-            {
-                numeroCasa = value;
+                cpf = value;
             }
         }
 
@@ -143,37 +155,67 @@ namespace Buffet.Modelos
             }
         }
 
-        public int Tipo
+        public long Telefone
         {
             get
             {
-                return tipo;
+                return telefone;
             }
 
             set
             {
-                tipo= value;
+                telefone = value;
             }
         }
 
+        public int NumeroCasa
+        {
+            get
+            {
+                return numeroCasa;
+            }
 
-        public ClienteFisico(string nome, string endereco, string bairro, long cpf, long rg, long telefone, long celular, DateTime dataNasc, int numeroCasa, long cep, int tipo)
+            set
+            {
+                numeroCasa = value;
+            }
+        }
+
+        public long Celular
+        {
+            get
+            {
+                return celular;
+            }
+
+            set
+            {
+                celular = value;
+            }
+        }
+
+        public ClienteFisico(string nome, string nacionalidade, string estadoCivil, string profissao, string rua, string bairro, string cidade, string estado, long rg, long cpf, long cep, long telefone, int numeroCasa, long celular)
         {
             this.Nome = nome;
-            this.Endereco = endereco;
+            this.Nacionalidade = nacionalidade;
+            this.EstadoCivil = estadoCivil;
+            this.Profissao = profissao;
+            this.Rua = rua;
             this.Bairro = bairro;
-            this.Cpf = cpf;
+            this.Cidade = cidade;
+            this.Estado = estado;
             this.Rg = rg;
-            this.Telefone = telefone;
-            this.Celular = celular;
-            this.DataNasc = dataNasc;
-            this.NumeroCasa = numeroCasa;
+            this.Cpf = cpf;
             this.Cep = cep;
-            this.Tipo = tipo;
+            this.Telefone = telefone;
+            this.NumeroCasa = numeroCasa;
+            this.Celular = celular;
         }
 
         public ClienteFisico()
         {
+
         }
     }
+
 }
