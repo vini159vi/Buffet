@@ -17,7 +17,7 @@ namespace Buffet.DAO
             Database dbCliente = Database.GetInstance();
 
             string qry = string.Format("INSERT INTO RepresentanteJuridico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular, empresaCnpj) " +
-                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4)', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}')", 
+                "VALUES ('{0}', '{1}', '{2}', '{3}', {4}, {5}, {6}, {7}, '{8}', '{9}', '{10}', '{11}', {12}, {13}, {14})", 
                 rj.Nome, rj.Nacionalidade, rj.EstadoCivil, rj.Profissao, rj.Cpf, rj.Rg, rj.Telefone, rj.Cep, rj.Rua, rj.Bairro, rj.Cidade, rj.Estado, rj.NumeroCasa, rj.Celular, rj.Empresa.Cnpj);
 
             dbCliente.ExecuteNonQuery(qry);

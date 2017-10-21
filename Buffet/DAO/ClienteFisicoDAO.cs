@@ -17,7 +17,7 @@ namespace Buffet.DAO
             Database dbCliente = Database.GetInstance();
 
             string qry = String.Format("INSERT INTO ClienteFisico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4)','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}'", 
+                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}'", 
                 cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular);
 
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
