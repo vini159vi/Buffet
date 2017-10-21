@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CV\FormFisico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormFisico.Designer.cs">
+      <DependentUpon>FormFisico.cs</DependentUpon>
+    </Compile>
     <Compile Include="CV\FormJuridico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,12 +96,6 @@
     <Compile Include="CV\FormCadastrados.Designer.cs">
       <DependentUpon>FormCadastrados.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormCadastroCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CV\FormCadastroCliente.Designer.cs">
-      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="CV\FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +111,8 @@
     <EmbeddedResource Include="CV\FormCadastrados.resx">
       <DependentUpon>FormCadastrados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormCadastroCliente.resx">
-      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
+    <EmbeddedResource Include="CV\FormFisico.resx">
+      <DependentUpon>FormFisico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormJuridico.resx">
       <DependentUpon>FormJuridico.cs</DependentUpon>
