@@ -46,7 +46,6 @@
             this.txtBuscaNomeCPF = new System.Windows.Forms.TextBox();
             this.lbNomeCPF = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
@@ -60,9 +59,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbLista.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gbLista.Controls.Add(this.dataGViewLista);
-            this.gbLista.Location = new System.Drawing.Point(3, 106);
+            this.gbLista.Location = new System.Drawing.Point(3, 76);
             this.gbLista.Name = "gbLista";
-            this.gbLista.Size = new System.Drawing.Size(1252, 591);
+            this.gbLista.Size = new System.Drawing.Size(962, 543);
             this.gbLista.TabIndex = 1;
             this.gbLista.TabStop = false;
             this.gbLista.Enter += new System.EventHandler(this.gbLista_Enter);
@@ -83,7 +82,7 @@
             this.dataGViewLista.Location = new System.Drawing.Point(3, 16);
             this.dataGViewLista.Name = "dataGViewLista";
             this.dataGViewLista.ReadOnly = true;
-            this.dataGViewLista.Size = new System.Drawing.Size(1246, 572);
+            this.dataGViewLista.Size = new System.Drawing.Size(956, 524);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGViewLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGViewLista_CellDoubleClick);
@@ -121,7 +120,7 @@
             // 
             // bttAdicionar
             // 
-            this.bttAdicionar.Location = new System.Drawing.Point(113, 19);
+            this.bttAdicionar.Location = new System.Drawing.Point(64, 19);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
             this.bttAdicionar.TabIndex = 2;
@@ -131,7 +130,7 @@
             // 
             // bttRemove
             // 
-            this.bttRemove.Location = new System.Drawing.Point(336, 19);
+            this.bttRemove.Location = new System.Drawing.Point(292, 19);
             this.bttRemove.Name = "bttRemove";
             this.bttRemove.Size = new System.Drawing.Size(125, 43);
             this.bttRemove.TabIndex = 3;
@@ -141,7 +140,7 @@
             // 
             // bttEditar
             // 
-            this.bttEditar.Location = new System.Drawing.Point(559, 19);
+            this.bttEditar.Location = new System.Drawing.Point(515, 19);
             this.bttEditar.Name = "bttEditar";
             this.bttEditar.Size = new System.Drawing.Size(125, 43);
             this.bttEditar.TabIndex = 4;
@@ -160,9 +159,9 @@
             this.gbProcuraNome.Controls.Add(this.radioBttTodos);
             this.gbProcuraNome.Controls.Add(this.txtBuscaNomeCPF);
             this.gbProcuraNome.Controls.Add(this.lbNomeCPF);
-            this.gbProcuraNome.Location = new System.Drawing.Point(3, 12);
+            this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
             this.gbProcuraNome.Name = "gbProcuraNome";
-            this.gbProcuraNome.Size = new System.Drawing.Size(1254, 88);
+            this.gbProcuraNome.Size = new System.Drawing.Size(964, 88);
             this.gbProcuraNome.TabIndex = 5;
             this.gbProcuraNome.TabStop = false;
             this.gbProcuraNome.Text = "Filtrar";
@@ -218,7 +217,7 @@
             this.txtBuscaNomeCPF.Location = new System.Drawing.Point(73, 23);
             this.txtBuscaNomeCPF.Name = "txtBuscaNomeCPF";
             this.txtBuscaNomeCPF.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBuscaNomeCPF.Size = new System.Drawing.Size(1166, 20);
+            this.txtBuscaNomeCPF.Size = new System.Drawing.Size(876, 20);
             this.txtBuscaNomeCPF.TabIndex = 1;
             // 
             // lbNomeCPF
@@ -233,30 +232,20 @@
             // gbBotoes
             // 
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.gbBotoes.Controls.Add(this.button1);
             this.gbBotoes.Controls.Add(this.bttAdicionar);
             this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
-            this.gbBotoes.Location = new System.Drawing.Point(119, 693);
+            this.gbBotoes.Location = new System.Drawing.Point(142, 615);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(1021, 74);
+            this.gbBotoes.Size = new System.Drawing.Size(680, 74);
             this.gbBotoes.TabIndex = 7;
             this.gbBotoes.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(782, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 43);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Fechar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 778);
+            this.ClientSize = new System.Drawing.Size(969, 700);
             this.Controls.Add(this.gbProcuraNome);
             this.Controls.Add(this.gbLista);
             this.Controls.Add(this.gbBotoes);
@@ -296,6 +285,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Endereço;
-        private System.Windows.Forms.Button button1;
     }
 }

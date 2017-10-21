@@ -10,7 +10,7 @@ namespace Buffet.Modelos
     {
         private string nome, nacionalidade, estadoCivil, profissao, rua, bairro, cidade, estado;
         private long rg, cpf, cep, telefone, celular;
-        private int numeroCasa;
+        private int numeroCasa,tipo;
 
         public string Nome
         {
@@ -194,7 +194,20 @@ namespace Buffet.Modelos
             }
         }
 
-        public ClienteFisico(string nome, string nacionalidade, string estadoCivil, string profissao, string rua, string bairro, string cidade, string estado, long rg, long cpf, long cep, long telefone, int numeroCasa, long celular)
+        public int Tipo
+        {
+            get
+            {
+                return tipo;
+            }
+
+            set
+            {
+                tipo = value;
+            }
+        }
+
+        public ClienteFisico(string nome, string nacionalidade, string estadoCivil, string profissao, string rua, string bairro, string cidade, string estado, long rg, long cpf, long cep, long telefone, int numeroCasa, long celular, int tipo)
         {
             this.Nome = nome;
             this.Nacionalidade = nacionalidade;
@@ -210,6 +223,7 @@ namespace Buffet.Modelos
             this.Telefone = telefone;
             this.NumeroCasa = numeroCasa;
             this.Celular = celular;
+            this.Tipo = tipo;
         }
 
         public ClienteFisico()

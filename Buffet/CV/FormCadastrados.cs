@@ -38,8 +38,7 @@ namespace Buffet
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            FormFisico tela = new FormFisico();
-            tela.Show();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -188,5 +187,24 @@ namespace Buffet
 
             }
         }
+
+        /*private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }*/
+
+
+
     }
 }
