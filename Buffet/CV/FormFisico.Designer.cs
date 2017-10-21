@@ -365,8 +365,11 @@
             this.ClientSize = new System.Drawing.Size(654, 262);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbFisico);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormFisico";
-            this.Text = "FormFisico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Fisico";
             this.gbFisico.ResumeLayout(false);
             this.gbFisico.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
