@@ -38,7 +38,7 @@ namespace Buffet
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            FormCadastroCliente tela = new FormCadastroCliente();
+            FormFisico tela = new FormFisico();
             tela.Show();
         }
 

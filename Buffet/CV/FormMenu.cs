@@ -14,7 +14,7 @@ namespace Buffet
     public partial class FormMenu : Form
     {
         private FormJuridico fj = new FormJuridico();
-        private FormCadastroCliente fcc = new FormCadastroCliente();
+        private FormFisico fcc = new FormFisico();
         private FormCadastrados fc = new FormCadastrados();
         private FormRepresentante fr = new FormRepresentante();
         public FormMenu()
