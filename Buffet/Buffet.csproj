@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CV\FormContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormContrato.Designer.cs">
+      <DependentUpon>FormContrato.cs</DependentUpon>
+    </Compile>
     <Compile Include="CV\FormFisico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CV\FormCadastrados.resx">
       <DependentUpon>FormCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormContrato.resx">
+      <DependentUpon>FormContrato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormFisico.resx">
       <DependentUpon>FormFisico.cs</DependentUpon>
