@@ -46,6 +46,7 @@
             this.txtBuscaNomeCPF = new System.Windows.Forms.TextBox();
             this.lbNomeCPF = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.bttFechar = new System.Windows.Forms.Button();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
@@ -120,7 +121,7 @@
             // 
             // bttAdicionar
             // 
-            this.bttAdicionar.Location = new System.Drawing.Point(64, 19);
+            this.bttAdicionar.Location = new System.Drawing.Point(74, 16);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
             this.bttAdicionar.TabIndex = 2;
@@ -130,7 +131,7 @@
             // 
             // bttRemove
             // 
-            this.bttRemove.Location = new System.Drawing.Point(292, 19);
+            this.bttRemove.Location = new System.Drawing.Point(302, 16);
             this.bttRemove.Name = "bttRemove";
             this.bttRemove.Size = new System.Drawing.Size(125, 43);
             this.bttRemove.TabIndex = 3;
@@ -140,7 +141,7 @@
             // 
             // bttEditar
             // 
-            this.bttEditar.Location = new System.Drawing.Point(515, 19);
+            this.bttEditar.Location = new System.Drawing.Point(530, 16);
             this.bttEditar.Name = "bttEditar";
             this.bttEditar.Size = new System.Drawing.Size(125, 43);
             this.bttEditar.TabIndex = 4;
@@ -232,23 +233,24 @@
             // gbBotoes
             // 
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.gbBotoes.Controls.Add(this.bttFechar);
             this.gbBotoes.Controls.Add(this.bttAdicionar);
             this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
-            this.gbBotoes.Location = new System.Drawing.Point(142, 615);
+            this.gbBotoes.Location = new System.Drawing.Point(6, 615);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(680, 74);
+            this.gbBotoes.Size = new System.Drawing.Size(956, 74);
             this.gbBotoes.TabIndex = 7;
             this.gbBotoes.TabStop = false;
             // 
-            // button1
+            // bttFechar
             // 
-            this.button1.Location = new System.Drawing.Point(783, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 43);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Fechar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bttFechar.Location = new System.Drawing.Point(758, 16);
+            this.bttFechar.Name = "bttFechar";
+            this.bttFechar.Size = new System.Drawing.Size(125, 43);
+            this.bttFechar.TabIndex = 5;
+            this.bttFechar.Text = "Fechar";
+            this.bttFechar.UseVisualStyleBackColor = true;
             // 
             // FormCadastrados
             // 
@@ -294,5 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Endereço;
+        private System.Windows.Forms.Button bttFechar;
     }
 }
