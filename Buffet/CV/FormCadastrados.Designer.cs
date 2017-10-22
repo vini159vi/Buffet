@@ -251,6 +251,7 @@
             this.bttFechar.TabIndex = 5;
             this.bttFechar.Text = "Fechar";
             this.bttFechar.UseVisualStyleBackColor = true;
+            this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
             // 
             // FormCadastrados
             // 

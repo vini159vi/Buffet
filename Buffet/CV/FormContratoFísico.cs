@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Buffet.CV
 {
-    public partial class FormContrato : Form
+    public partial class FormContratoFísico : Form
     {
         //Remove o botão de fechar
         private const int CP_NOCLOSE_BUTTON = 0x200;
@@ -24,9 +24,19 @@ namespace Buffet.CV
             }
         }
 
-        public FormContrato()
+        public FormContratoFísico()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCapacidade_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
