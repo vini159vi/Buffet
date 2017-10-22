@@ -220,6 +220,7 @@
             this.txtBuscaNomeCPF.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBuscaNomeCPF.Size = new System.Drawing.Size(876, 20);
             this.txtBuscaNomeCPF.TabIndex = 1;
+            this.txtBuscaNomeCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscaNomeCPF_KeyPress);
             // 
             // lbNomeCPF
             // 
@@ -251,6 +252,7 @@
             this.bttFechar.TabIndex = 5;
             this.bttFechar.Text = "Fechar";
             this.bttFechar.UseVisualStyleBackColor = true;
+            this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
             // 
             // FormCadastrados
             // 

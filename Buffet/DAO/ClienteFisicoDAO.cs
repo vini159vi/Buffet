@@ -16,9 +16,9 @@ namespace Buffet.DAO
         {
             Database dbCliente = Database.GetInstance();
 
-            string qry = String.Format("INSERT INTO ClienteFisico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}'", 
-                cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular);
+            string qry = String.Format("INSERT INTO ClienteFisico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular, tipo) VALUES " +
+                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}')", 
+                cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular, cf.Tipo);
 
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
             dbCliente.ExecuteNonQuery(qry);
@@ -47,16 +47,16 @@ namespace Buffet.DAO
             cf.Estado = dr["estado"].ToString();
             cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
             cf.Celular = long.Parse(dr["celular"].ToString());
-
+            cf.Tipo = int.Parse(dr["tipo"].ToString());
             return cf;
         }
 
         public void Update(ClienteFisico cf)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE ClienteFisico SET nome={0}, nacionalidade={1}, estadoCivil={2}, profissao={3}, cpf={4}, rg={5}, telefone={6}, cep={7}, rua={8}, bairro={9}, cidade={10}, estado={11}, numeroCasa={12}, celular={13}"
+            string qry = string.Format("UPDATE ClienteFisico SET nome={0}, nacionalidade={1}, estadoCivil={2}, profissao={3}, cpf={4}, rg={5}, telefone={6}, cep={7}, rua={8}, bairro={9}, cidade={10}, estado={11}, numeroCasa={12}, celular={13}, tipo={14}"
             + " WHERE cpf = {4}",
-            cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular);
+            cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular, cf.Tipo);
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
 
             db.ExecuteNonQuery(qry);
@@ -96,6 +96,7 @@ namespace Buffet.DAO
                 cf.Estado = dr["estado"].ToString();
                 cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 cf.Celular = long.Parse(dr["celular"].ToString());
+                cf.Tipo = int.Parse(dr["tipo"].ToString());
 
                 fisicos.Add(cf);
             }
@@ -128,9 +129,11 @@ namespace Buffet.DAO
                     cf.Estado = dr["estado"].ToString();
                     cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                     cf.Celular = long.Parse(dr["celular"].ToString());
+                    cf.Tipo = int.Parse(dr["tipo"].ToString());
+
+                    fisicos.Add(cf);
                 }
             }
-            fisicos.Add(cf);
             return fisicos;
         }
 
@@ -160,9 +163,11 @@ namespace Buffet.DAO
                     cf.Estado = dr["estado"].ToString();
                     cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                     cf.Celular = long.Parse(dr["celular"].ToString());
+                    cf.Tipo = int.Parse(dr["tipo"].ToString());
+
+                    fisicos.Add(cf);
                 }
             }
-            fisicos.Add(cf);
             return fisicos;
         }
     }

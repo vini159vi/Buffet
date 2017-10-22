@@ -111,9 +111,10 @@ namespace Buffet.DAO
                     cj.Estado = dr["estado"].ToString();
                     cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
                     cj.Tipo = int.Parse(dr["tipo"].ToString());
+
+                    clientes.Add(cj);
                 }
             }
-            clientes.Add(cj);
             return clientes;
         }
 
@@ -138,9 +139,10 @@ namespace Buffet.DAO
                     cj.Estado = dr["estado"].ToString();
                     cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
                     cj.Tipo = int.Parse(dr["tipo"].ToString());
+
+                    clientes.Add(cj);
                 }
             }
-            clientes.Add(cj);
             return clientes;
         }
 

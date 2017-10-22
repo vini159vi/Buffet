@@ -33,14 +33,13 @@
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoaFísicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoaJurídicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.representanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contratosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoaFísicaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoaJurídicaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.representanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,8 +47,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrosToolStripMenuItem,
-            this.contratosToolStripMenuItem,
-            this.agendaToolStripMenuItem});
+            this.contratosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(705, 24);
@@ -89,6 +87,13 @@
             this.pessoaJurídicaToolStripMenuItem.Text = "Pessoa Jurídica";
             this.pessoaJurídicaToolStripMenuItem.Click += new System.EventHandler(this.pessoaJurídicaToolStripMenuItem_Click);
             // 
+            // representanteToolStripMenuItem
+            // 
+            this.representanteToolStripMenuItem.Name = "representanteToolStripMenuItem";
+            this.representanteToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.representanteToolStripMenuItem.Text = "Representante";
+            this.representanteToolStripMenuItem.Click += new System.EventHandler(this.representanteToolStripMenuItem_Click);
+            // 
             // cadastrosToolStripMenuItem1
             // 
             this.cadastrosToolStripMenuItem1.Name = "cadastrosToolStripMenuItem1";
@@ -111,7 +116,7 @@
             this.pessoaFísicaToolStripMenuItem1,
             this.pessoaJurídicaToolStripMenuItem1});
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem1.Text = "Novo";
             // 
             // pessoaFísicaToolStripMenuItem1
@@ -129,21 +134,8 @@
             // consultaToolStripMenuItem2
             // 
             this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
-            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem2.Text = "Consulta";
-            // 
-            // agendaToolStripMenuItem
-            // 
-            this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.agendaToolStripMenuItem.Text = "Agenda";
-            // 
-            // representanteToolStripMenuItem
-            // 
-            this.representanteToolStripMenuItem.Name = "representanteToolStripMenuItem";
-            this.representanteToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.representanteToolStripMenuItem.Text = "Representante";
-            this.representanteToolStripMenuItem.Click += new System.EventHandler(this.representanteToolStripMenuItem_Click);
             // 
             // FormMenu
             // 
@@ -176,7 +168,6 @@
         private System.Windows.Forms.ToolStripMenuItem pessoaFísicaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pessoaJurídicaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem representanteToolStripMenuItem;
     }
 }

@@ -30,32 +30,32 @@
         {
             this.gbFisico = new System.Windows.Forms.GroupBox();
             this.lblCel = new System.Windows.Forms.Label();
-            this.txtEstadoRepresentante = new System.Windows.Forms.TextBox();
-            this.txtBairroRepresentante = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.lbEstadoRepresentante = new System.Windows.Forms.Label();
             this.lbBairroRepresentante = new System.Windows.Forms.Label();
             this.lbTelefone = new System.Windows.Forms.Label();
-            this.txtCidadeRepresentante = new System.Windows.Forms.TextBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.lbCidadeRepresentante = new System.Windows.Forms.Label();
-            this.txtRuaRepresentante = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
             this.txtEstadoCivil = new System.Windows.Forms.TextBox();
             this.lbEstadoCivil = new System.Windows.Forms.Label();
-            this.txtCEPRepresentante = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumeroRepresentante = new System.Windows.Forms.MaskedTextBox();
+            this.txtCEP = new System.Windows.Forms.MaskedTextBox();
+            this.txtNumero = new System.Windows.Forms.MaskedTextBox();
             this.lbCEPRepresentante = new System.Windows.Forms.Label();
             this.lbRuaRepresentante = new System.Windows.Forms.Label();
             this.lbNumeroRepresentante = new System.Windows.Forms.Label();
             this.lbCPFRepresentante = new System.Windows.Forms.Label();
-            this.txtCPFRepresentante = new System.Windows.Forms.MaskedTextBox();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtNacionalidade = new System.Windows.Forms.TextBox();
             this.lbNacionalidade = new System.Windows.Forms.Label();
             this.txtProfissao = new System.Windows.Forms.TextBox();
             this.lbProfissao = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.TextBox();
             this.lbRG = new System.Windows.Forms.Label();
-            this.txtNomeRepresentante = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNomeRepresentante = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.bttAdicionar = new System.Windows.Forms.Button();
@@ -67,32 +67,32 @@
             // gbFisico
             // 
             this.gbFisico.Controls.Add(this.lblCel);
-            this.gbFisico.Controls.Add(this.txtEstadoRepresentante);
-            this.gbFisico.Controls.Add(this.txtBairroRepresentante);
+            this.gbFisico.Controls.Add(this.txtEstado);
+            this.gbFisico.Controls.Add(this.txtBairro);
             this.gbFisico.Controls.Add(this.txtTelefone);
             this.gbFisico.Controls.Add(this.txtCelular);
             this.gbFisico.Controls.Add(this.lbEstadoRepresentante);
             this.gbFisico.Controls.Add(this.lbBairroRepresentante);
             this.gbFisico.Controls.Add(this.lbTelefone);
-            this.gbFisico.Controls.Add(this.txtCidadeRepresentante);
+            this.gbFisico.Controls.Add(this.txtCidade);
             this.gbFisico.Controls.Add(this.lbCidadeRepresentante);
-            this.gbFisico.Controls.Add(this.txtRuaRepresentante);
+            this.gbFisico.Controls.Add(this.txtRua);
             this.gbFisico.Controls.Add(this.txtEstadoCivil);
             this.gbFisico.Controls.Add(this.lbEstadoCivil);
-            this.gbFisico.Controls.Add(this.txtCEPRepresentante);
-            this.gbFisico.Controls.Add(this.txtNumeroRepresentante);
+            this.gbFisico.Controls.Add(this.txtCEP);
+            this.gbFisico.Controls.Add(this.txtNumero);
             this.gbFisico.Controls.Add(this.lbCEPRepresentante);
             this.gbFisico.Controls.Add(this.lbRuaRepresentante);
             this.gbFisico.Controls.Add(this.lbNumeroRepresentante);
             this.gbFisico.Controls.Add(this.lbCPFRepresentante);
-            this.gbFisico.Controls.Add(this.txtCPFRepresentante);
+            this.gbFisico.Controls.Add(this.txtCPF);
             this.gbFisico.Controls.Add(this.txtNacionalidade);
             this.gbFisico.Controls.Add(this.lbNacionalidade);
             this.gbFisico.Controls.Add(this.txtProfissao);
             this.gbFisico.Controls.Add(this.lbProfissao);
             this.gbFisico.Controls.Add(this.txtRG);
             this.gbFisico.Controls.Add(this.lbRG);
-            this.gbFisico.Controls.Add(this.txtNomeRepresentante);
+            this.gbFisico.Controls.Add(this.txtNome);
             this.gbFisico.Controls.Add(this.lbNomeRepresentante);
             this.gbFisico.Location = new System.Drawing.Point(10, 12);
             this.gbFisico.Name = "gbFisico";
@@ -109,19 +109,19 @@
             this.lblCel.TabIndex = 4;
             this.lblCel.Text = "Cel.:";
             // 
-            // txtEstadoRepresentante
+            // txtEstado
             // 
-            this.txtEstadoRepresentante.Location = new System.Drawing.Point(508, 127);
-            this.txtEstadoRepresentante.Name = "txtEstadoRepresentante";
-            this.txtEstadoRepresentante.Size = new System.Drawing.Size(120, 20);
-            this.txtEstadoRepresentante.TabIndex = 13;
+            this.txtEstado.Location = new System.Drawing.Point(508, 127);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(120, 20);
+            this.txtEstado.TabIndex = 13;
             // 
-            // txtBairroRepresentante
+            // txtBairro
             // 
-            this.txtBairroRepresentante.Location = new System.Drawing.Point(503, 101);
-            this.txtBairroRepresentante.Name = "txtBairroRepresentante";
-            this.txtBairroRepresentante.Size = new System.Drawing.Size(126, 20);
-            this.txtBairroRepresentante.TabIndex = 10;
+            this.txtBairro.Location = new System.Drawing.Point(503, 101);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(126, 20);
+            this.txtBairro.TabIndex = 10;
             // 
             // txtTelefone
             // 
@@ -166,12 +166,12 @@
             this.lbTelefone.TabIndex = 21;
             this.lbTelefone.Text = "Tel.:";
             // 
-            // txtCidadeRepresentante
+            // txtCidade
             // 
-            this.txtCidadeRepresentante.Location = new System.Drawing.Point(194, 127);
-            this.txtCidadeRepresentante.Name = "txtCidadeRepresentante";
-            this.txtCidadeRepresentante.Size = new System.Drawing.Size(259, 20);
-            this.txtCidadeRepresentante.TabIndex = 12;
+            this.txtCidade.Location = new System.Drawing.Point(194, 127);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(259, 20);
+            this.txtCidade.TabIndex = 12;
             // 
             // lbCidadeRepresentante
             // 
@@ -182,12 +182,12 @@
             this.lbCidadeRepresentante.TabIndex = 19;
             this.lbCidadeRepresentante.Text = "Cidade:";
             // 
-            // txtRuaRepresentante
+            // txtRua
             // 
-            this.txtRuaRepresentante.Location = new System.Drawing.Point(42, 101);
-            this.txtRuaRepresentante.Name = "txtRuaRepresentante";
-            this.txtRuaRepresentante.Size = new System.Drawing.Size(339, 20);
-            this.txtRuaRepresentante.TabIndex = 8;
+            this.txtRua.Location = new System.Drawing.Point(42, 101);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(339, 20);
+            this.txtRua.TabIndex = 8;
             // 
             // txtEstadoCivil
             // 
@@ -205,22 +205,22 @@
             this.lbEstadoCivil.TabIndex = 8;
             this.lbEstadoCivil.Text = "Estado Civil:";
             // 
-            // txtCEPRepresentante
+            // txtCEP
             // 
-            this.txtCEPRepresentante.Location = new System.Drawing.Point(43, 127);
-            this.txtCEPRepresentante.Mask = "00000-000";
-            this.txtCEPRepresentante.Name = "txtCEPRepresentante";
-            this.txtCEPRepresentante.Size = new System.Drawing.Size(96, 20);
-            this.txtCEPRepresentante.TabIndex = 11;
+            this.txtCEP.Location = new System.Drawing.Point(43, 127);
+            this.txtCEP.Mask = "00000-000";
+            this.txtCEP.Name = "txtCEP";
+            this.txtCEP.Size = new System.Drawing.Size(96, 20);
+            this.txtCEP.TabIndex = 11;
             // 
-            // txtNumeroRepresentante
+            // txtNumero
             // 
-            this.txtNumeroRepresentante.Location = new System.Drawing.Point(416, 101);
-            this.txtNumeroRepresentante.Mask = "0000";
-            this.txtNumeroRepresentante.Name = "txtNumeroRepresentante";
-            this.txtNumeroRepresentante.PromptChar = ' ';
-            this.txtNumeroRepresentante.Size = new System.Drawing.Size(38, 20);
-            this.txtNumeroRepresentante.TabIndex = 9;
+            this.txtNumero.Location = new System.Drawing.Point(416, 101);
+            this.txtNumero.Mask = "0000";
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.PromptChar = ' ';
+            this.txtNumero.Size = new System.Drawing.Size(38, 20);
+            this.txtNumero.TabIndex = 9;
             // 
             // lbCEPRepresentante
             // 
@@ -258,13 +258,13 @@
             this.lbCPFRepresentante.TabIndex = 11;
             this.lbCPFRepresentante.Text = "CPF:";
             // 
-            // txtCPFRepresentante
+            // txtCPF
             // 
-            this.txtCPFRepresentante.Location = new System.Drawing.Point(353, 23);
-            this.txtCPFRepresentante.Mask = "000.000.000-00";
-            this.txtCPFRepresentante.Name = "txtCPFRepresentante";
-            this.txtCPFRepresentante.Size = new System.Drawing.Size(100, 20);
-            this.txtCPFRepresentante.TabIndex = 1;
+            this.txtCPF.Location = new System.Drawing.Point(353, 23);
+            this.txtCPF.Mask = "000.000.000-00";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(100, 20);
+            this.txtCPF.TabIndex = 1;
             // 
             // txtNacionalidade
             // 
@@ -314,12 +314,12 @@
             this.lbRG.TabIndex = 2;
             this.lbRG.Text = "RG:";
             // 
-            // txtNomeRepresentante
+            // txtNome
             // 
-            this.txtNomeRepresentante.Location = new System.Drawing.Point(50, 23);
-            this.txtNomeRepresentante.Name = "txtNomeRepresentante";
-            this.txtNomeRepresentante.Size = new System.Drawing.Size(261, 20);
-            this.txtNomeRepresentante.TabIndex = 0;
+            this.txtNome.Location = new System.Drawing.Point(50, 23);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(261, 20);
+            this.txtNome.TabIndex = 0;
             // 
             // lbNomeRepresentante
             // 
@@ -348,6 +348,7 @@
             this.bttAdicionar.TabIndex = 0;
             this.bttAdicionar.Text = "Adicionar";
             this.bttAdicionar.UseVisualStyleBackColor = true;
+            this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
             // 
             // bttCancelar
             // 
@@ -357,6 +358,7 @@
             this.bttCancelar.TabIndex = 1;
             this.bttCancelar.Text = "Cancelar";
             this.bttCancelar.UseVisualStyleBackColor = true;
+            this.bttCancelar.Click += new System.EventHandler(this.bttCancelar_Click);
             // 
             // FormFisico
             // 
@@ -366,7 +368,7 @@
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbFisico);
             this.Name = "FormFisico";
-            this.Text = "FormFisico";
+            this.Text = "Cadastro Fisico";
             this.gbFisico.ResumeLayout(false);
             this.gbFisico.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
@@ -378,32 +380,32 @@
 
         private System.Windows.Forms.GroupBox gbFisico;
         private System.Windows.Forms.Label lblCel;
-        private System.Windows.Forms.TextBox txtEstadoRepresentante;
-        private System.Windows.Forms.TextBox txtBairroRepresentante;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.MaskedTextBox txtCelular;
         private System.Windows.Forms.Label lbEstadoRepresentante;
         private System.Windows.Forms.Label lbBairroRepresentante;
         private System.Windows.Forms.Label lbTelefone;
-        private System.Windows.Forms.TextBox txtCidadeRepresentante;
+        private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label lbCidadeRepresentante;
-        private System.Windows.Forms.TextBox txtRuaRepresentante;
+        private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.TextBox txtEstadoCivil;
         private System.Windows.Forms.Label lbEstadoCivil;
-        private System.Windows.Forms.MaskedTextBox txtCEPRepresentante;
-        private System.Windows.Forms.MaskedTextBox txtNumeroRepresentante;
+        private System.Windows.Forms.MaskedTextBox txtCEP;
+        private System.Windows.Forms.MaskedTextBox txtNumero;
         private System.Windows.Forms.Label lbCEPRepresentante;
         private System.Windows.Forms.Label lbRuaRepresentante;
         private System.Windows.Forms.Label lbNumeroRepresentante;
         private System.Windows.Forms.Label lbCPFRepresentante;
-        private System.Windows.Forms.MaskedTextBox txtCPFRepresentante;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
         private System.Windows.Forms.TextBox txtNacionalidade;
         private System.Windows.Forms.Label lbNacionalidade;
         private System.Windows.Forms.TextBox txtProfissao;
         private System.Windows.Forms.Label lbProfissao;
         private System.Windows.Forms.TextBox txtRG;
         private System.Windows.Forms.Label lbRG;
-        private System.Windows.Forms.TextBox txtNomeRepresentante;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbNomeRepresentante;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Button bttAdicionar;
