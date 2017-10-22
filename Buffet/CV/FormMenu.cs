@@ -1,12 +1,5 @@
 ﻿using Buffet.CV;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Buffet
@@ -14,9 +7,9 @@ namespace Buffet
     public partial class FormMenu : Form
     {
         private FormJuridico fj = new FormJuridico();
-        private FormFisico fcc = new FormFisico();
         private FormCadastrados fc = new FormCadastrados();
         private FormRepresentante fr = new FormRepresentante();
+        private FormFisico ff = new FormFisico();
         public FormMenu()
         {
             InitializeComponent();
@@ -41,10 +34,10 @@ namespace Buffet
 
         private void pessoaFísicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!fcc.Visible)
+            if (!ff.Visible)
             {
-                fcc.MdiParent = this;
-                fcc.Show();
+                ff.MdiParent = this;
+                ff.Show();
             }
         }
 
