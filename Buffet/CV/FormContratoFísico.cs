@@ -38,5 +38,10 @@ namespace Buffet.CV
         {
 
         }
+
+        private void dtHoraTerminoContratado_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
