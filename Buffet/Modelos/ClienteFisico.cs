@@ -10,7 +10,7 @@ namespace Buffet.Modelos
     {
         private string nome, nacionalidade, estadoCivil, profissao, rua, bairro, cidade, estado;
         private long rg, cpf, cep, telefone, celular;
-        private int numeroCasa,tipo;
+        private int numeroCasa, tipo;
 
         public string Nome
         {
