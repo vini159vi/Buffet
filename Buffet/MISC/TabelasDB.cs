@@ -11,18 +11,7 @@ namespace Buffet.MISC
         public override string ToString()
         {
 
-            return "CREATE TABLE Cliente(" +
-                   "nome VARCHAR(64) NOT NULL," +
-                   "endereco VARCHAR(64)," +
-                   "cpf BIGINT NOT NULL," +
-                   "telefone BIGINT," +
-                   "dataNasc DATE," +
-                   "celular BIGINT," +
-                   "numeroCasa INT," +
-
-                   "PRIMARY KEY(cpf));" +
-
-                   "CREATE TABLE ClienteFisico(" +
+            return "CREATE TABLE ClienteFisico(" +
                       "nome VARCHAR(64) NOT NULL," +
                       "nacionalidade VARCHAR(64) DEFAULT 'Brasileiro'," +
                       "estadoCivil VARCHAR(32)," +
