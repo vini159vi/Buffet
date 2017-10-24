@@ -237,6 +237,7 @@
             this.dtDataEvento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtDataEvento.Location = new System.Drawing.Point(50, 21);
             this.dtDataEvento.Name = "dtDataEvento";
+            this.dtDataEvento.ShowUpDown = true;
             this.dtDataEvento.Size = new System.Drawing.Size(97, 20);
             this.dtDataEvento.TabIndex = 0;
             // 
@@ -489,7 +490,6 @@
         private System.Windows.Forms.GroupBox gbEvento;
         private System.Windows.Forms.GroupBox gbContratado;
         private System.Windows.Forms.Label lbData;
-        private System.Windows.Forms.DateTimePicker dtDataEvento;
         private System.Windows.Forms.DateTimePicker dtHoraEvento;
         private System.Windows.Forms.TextBox txtConvidados;
         private System.Windows.Forms.Label lbConvidados;
@@ -523,5 +523,6 @@
         private System.Windows.Forms.Button bttGerarContrato;
         private System.Windows.Forms.Button bttCancelar;
         private System.Windows.Forms.GroupBox gbBotoes;
+        private System.Windows.Forms.DateTimePicker dtDataEvento;
     }
 }

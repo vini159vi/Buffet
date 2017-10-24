@@ -31,6 +31,43 @@ namespace Buffet.CV
             InitializeComponent();
         }
 
+        public FormFisico(ClienteFisico cf, int mode)
+        {
+            InitializeComponent();
+
+            if (mode == 1)
+            {
+                this.Text = "Editando " + cf.Nome;
+                this.bttAdicionar.Text = "Editar";
+                this.bttAdicionar.Click += new EventHandler(bttAdicionarUpdate_Click);
+                this.bttCancelar.Text = "Cancelar";
+                SetDTO(cf);
+
+            }
+            else
+            {
+                SetDTO(cf);
+                this.bttAdicionar.Hide();
+                this.bttCancelar.Text = "Fechar";
+
+                //Ativar só leitura nos txt do fisico
+                txtBairro.ReadOnly = true;
+                txtCelular.ReadOnly = true;
+                txtCEP.ReadOnly = true;
+                txtCidade.ReadOnly = true;
+                txtCPF.ReadOnly = true;
+                txtEstado.ReadOnly = true;
+                txtEstadoCivil.ReadOnly = true;
+                txtNacionalidade.ReadOnly = true;
+                txtNome.ReadOnly = true;
+                txtNumero.ReadOnly = true;
+                txtProfissao.ReadOnly = true;
+                txtRG.ReadOnly = true;
+                txtRua.ReadOnly = true;
+                txtTelefone.ReadOnly = true;
+            }
+        }
+
         private ClienteFisico GetDTO()
         {
             ClienteFisico cf = new ClienteFisico();
@@ -62,7 +99,7 @@ namespace Buffet.CV
         private void SetDTO(ClienteFisico cf)
         {
             txtNome.Text = cf.Nome.ToString();
-            txtCPF.Text = cf.Cep.ToString();
+            txtCPF.Text = cf.Cpf.ToString();
             txtRG.Text = cf.Rg.ToString();
             txtProfissao.Text = cf.Profissao;
             txtNacionalidade.Text = cf.Nacionalidade;
@@ -93,9 +130,27 @@ namespace Buffet.CV
             this.Hide();
         }
 
+        private void bttAdicionarUpdate_Click(object sender, EventArgs e)
+        {
+            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+            ClienteFisico cf = GetDTO();
+
+            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+
+            cfDAO.Update(cf);
+
+            if (f != null)
+            {
+                f.Fill();
+            }
+            this.Hide();
+        }
+
         private void bttCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
+
+
     }
 }
