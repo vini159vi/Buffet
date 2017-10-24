@@ -93,27 +93,27 @@ namespace Buffet.DAO
         public List<ClienteJuridico> ListByCNPJ(long cnpj)
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM ClienteJuridico WHERE cnpj=" + cnpj;
+            string qry = "SELECT * FROM ClienteJuridico WHERE cnpj LIKE '%" + cnpj + "%'";
             DataSet ds = bd.ExecuteQuery(qry);
             List<ClienteJuridico> clientes = new List<ClienteJuridico>();
-            ClienteJuridico cj = new ClienteJuridico();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if (long.Parse(dr["cnpj"].ToString()) == cnpj)
-                {
-                    cj.NomeEmpresa = dr["nomeEmpresa"].ToString();
-                    cj.Cnpj = long.Parse(dr["cnpj"].ToString());
-                    cj.Cep = long.Parse(dr["cep"].ToString());
-                    cj.Cidade = dr["cidade"].ToString();
-                    cj.Rua = dr["rua"].ToString();
-                    cj.Bairro = dr["bairro"].ToString();
-                    cj.Estado = dr["estado"].ToString();
-                    cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
-                    cj.Tipo = int.Parse(dr["tipo"].ToString());
 
-                    clientes.Add(cj);
-                }
+                ClienteJuridico cj = new ClienteJuridico();
+
+                cj.NomeEmpresa = dr["nomeEmpresa"].ToString();
+                cj.Cnpj = long.Parse(dr["cnpj"].ToString());
+                cj.Cep = long.Parse(dr["cep"].ToString());
+                cj.Cidade = dr["cidade"].ToString();
+                cj.Rua = dr["rua"].ToString();
+                cj.Bairro = dr["bairro"].ToString();
+                cj.Estado = dr["estado"].ToString();
+                cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
+                cj.Tipo = int.Parse(dr["tipo"].ToString());
+
+                clientes.Add(cj);
+                
             }
             return clientes;
         }

@@ -92,36 +92,32 @@ namespace Buffet
 
             dataGViewLista.Rows.Clear();
 
-            if(tipo == 1)
+            if(tipo == 1)//Fisico
             {
                 foreach (ClienteFisico cf in listcf)
                 {
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
-                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf, cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
+                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf.ToString(@"000\.000\.000\-00"), cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
                 }
             }
-            else if(tipo == 2)
+            else if(tipo == 2)//Juridico
             {
                 foreach (ClienteJuridico cj in listcj)
                 {
                     RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"00\.000\.000\\0000\-00";
-                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
+                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj.ToString(@"00\.000\.000\\0000\-00"), rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
                 }
             }
             else
             {
-                foreach (ClienteJuridico cj in listcj)
+                foreach (ClienteJuridico cj in listcj)//Todos
                 {
                     RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"00\.000\.000\\0000\-00";
-                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa+"- "+ cj.Cidade);
+                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj.ToString(@"00\.000\.000\\0000\-00"), rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa+"- "+ cj.Cidade);
                 }
 
                 foreach (ClienteFisico cf in listcf)
                 {
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
-                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf, cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
+                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf.ToString(@"000\.000\.000\-00"), cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
                 }
             }
 
@@ -130,6 +126,7 @@ namespace Buffet
 
         public void Fill(long num)
         {
+
             ClienteJuridicoDAO juridicos = new ClienteJuridicoDAO();
             ClienteFisicoDAO fisicos = new ClienteFisicoDAO();
             RepresentanteDAO representantes = new RepresentanteDAO();
@@ -142,8 +139,7 @@ namespace Buffet
 
                 foreach (ClienteFisico cf in listcf)
                 {
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
-                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf, cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
+                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf.ToString(@"000\.000\.000\-00"), cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
                 }
             }
             else if (tipo == 2)//Juridico
@@ -153,8 +149,7 @@ namespace Buffet
                 foreach (ClienteJuridico cj in listcj)
                 {
                     RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"00\.000\.000\\0000\-00";
-                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
+                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj.ToString(@"00\.000\.000\\0000\-00"), rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
                 }
             }
             else//Todos
@@ -165,66 +160,14 @@ namespace Buffet
                 foreach (ClienteJuridico cj in listcj)
                 {
                     RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"00\.000\.000\\0000\-00";
-                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
+                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj.ToString(@"00\.000\.000\\0000\-00"), rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
+
                 }
 
                 foreach (ClienteFisico cf in listcf)
                 {
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
-                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf, cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
-                }
-            }
 
-
-        }
-
-
-        public void Fill(string nome)
-        {
-            ClienteJuridicoDAO juridicos = new ClienteJuridicoDAO();
-            ClienteFisicoDAO fisicos = new ClienteFisicoDAO();
-            RepresentanteDAO representantes = new RepresentanteDAO();
-
-            dataGViewLista.Rows.Clear();
-
-            if (tipo == 1)//Fisico
-            {
-                List<ClienteFisico> listcf = fisicos.ListByName(nome);
-
-                foreach (ClienteFisico cf in listcf)
-                {
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
-                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf, cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
-                }
-            }
-            else if (tipo == 2)//Juridico
-            {
-                List<ClienteJuridico> listcj = juridicos.ListByName(nome);
-
-                foreach (ClienteJuridico cj in listcj)
-                {
-                    RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"00\.000\.000\\0000\-00";
-                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
-                }
-            }
-            else//Todos
-            {
-                List<ClienteJuridico> listcj = juridicos.ListByName(nome);
-                List<ClienteFisico> listcf = fisicos.ListByName(nome);
-
-                foreach (ClienteJuridico cj in listcj)
-                {
-                    RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"00\.000\.000\\0000\-00";
-                    dataGViewLista.Rows.Add(cj.NomeEmpresa, cj.Cnpj, rj.Telefone, rj.Celular, cj.Rua + ", " + cj.NumeroEmpresa + "- " + cj.Cidade);
-                }
-
-                foreach (ClienteFisico cf in listcf)
-                {
-                    dataGViewLista.Columns[1].DefaultCellStyle.Format = @"000\.000\.000\-00";
-                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf, cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
+                    dataGViewLista.Rows.Add(cf.Nome, cf.Cpf.ToString(@"000\.000\.000\-00"), cf.Telefone, cf.Celular, cf.Rua + ", " + cf.NumeroCasa + "- " + cf.Cidade);
                 }
             }
 
@@ -255,47 +198,42 @@ namespace Buffet
 
         private void dataGViewLista_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
-            Fill();
+            if (txtBuscaCpfCnpj.Text != "")
+                Fill(long.Parse(txtBuscaCpfCnpj.Text));
+            else
+                Fill();
         }
 
         private void radioBttJuridica_CheckedChanged(object sender, EventArgs e)
         {
             tipo = 2;
-            Fill();
+            if (txtBuscaCpfCnpj.Text != "")
+                Fill(long.Parse(txtBuscaCpfCnpj.Text));
+            else
+                Fill();
         }
 
         private void radioBttTodos_CheckedChanged(object sender, EventArgs e)
         {
             tipo = 0;
-            Fill();
+            if (txtBuscaCpfCnpj.Text != "")
+                Fill(long.Parse(txtBuscaCpfCnpj.Text));
+            else
+                Fill();
         }
 
         private void radioBttFisica_CheckedChanged(object sender, EventArgs e)
         {
             tipo = 1;
-            Fill();
+            if (txtBuscaCpfCnpj.Text != "")
+                Fill(long.Parse(txtBuscaCpfCnpj.Text));
+            else
+                Fill();
         }
 
         private void dataGViewLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = dataGViewLista.CurrentCell.ColumnIndex;
-
-            if (tipo == 1)
-            {
-
-            }
-            else if (tipo == 2)
-            {
-                ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-                ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[1].Value.ToString()));
-                FormJuridico fj = new FormJuridico(cj, 0);
-
-
-            }
-            else
-            {
-
-            }
+            //Tirar
         }
 
         private void bttFechar_Click(object sender, EventArgs e)
@@ -305,17 +243,41 @@ namespace Buffet
 
         private void txtBuscaNomeCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
             {
-
-                Fill(txtBuscaNomeCPF.Text);
-
-            }
-            else if (char.IsNumber(e.KeyChar))
-            {
-                Fill(txtBuscaNomeCPF.Text);
+                e.Handled = true;
             }
         }
+
+        private void dataGViewLista_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int index = dataGViewLista.CurrentCell.RowIndex;
+
+            if (tipo == 1)
+            {
+
+            }
+            else if (tipo == 2)
+            {
+                ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+                ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[1].Value.ToString().Replace(".", "").Replace(@"\","").Replace("-","")));
+                FormJuridico fj = new FormJuridico(cj, 0);
+                fj.Show();
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void txtBuscaCpfCnpj_TextChanged(object sender, EventArgs e)
+        {
+
+            if(txtBuscaCpfCnpj.Text != "")
+                Fill(long.Parse(txtBuscaCpfCnpj.Text));
+        }
+
 
         /*private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {

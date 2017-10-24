@@ -70,7 +70,7 @@
             this.pessoaJurídicaToolStripMenuItem,
             this.representanteToolStripMenuItem});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem.Text = "Novo";
             // 
             // pessoaFísicaToolStripMenuItem
@@ -97,7 +97,7 @@
             // cadastrosToolStripMenuItem1
             // 
             this.cadastrosToolStripMenuItem1.Name = "cadastrosToolStripMenuItem1";
-            this.cadastrosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cadastrosToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.cadastrosToolStripMenuItem1.Text = "Consulta";
             this.cadastrosToolStripMenuItem1.Click += new System.EventHandler(this.cadastrosToolStripMenuItem1_Click);
             // 
@@ -116,7 +116,7 @@
             this.pessoaFísicaToolStripMenuItem1,
             this.pessoaJurídicaToolStripMenuItem1});
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem1.Text = "Novo";
             // 
             // pessoaFísicaToolStripMenuItem1
@@ -124,17 +124,19 @@
             this.pessoaFísicaToolStripMenuItem1.Name = "pessoaFísicaToolStripMenuItem1";
             this.pessoaFísicaToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.pessoaFísicaToolStripMenuItem1.Text = "Pessoa Física";
+            this.pessoaFísicaToolStripMenuItem1.Click += new System.EventHandler(this.pessoaFísicaToolStripMenuItem1_Click);
             // 
             // pessoaJurídicaToolStripMenuItem1
             // 
             this.pessoaJurídicaToolStripMenuItem1.Name = "pessoaJurídicaToolStripMenuItem1";
             this.pessoaJurídicaToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.pessoaJurídicaToolStripMenuItem1.Text = "Pessoa Jurídica";
+            this.pessoaJurídicaToolStripMenuItem1.Click += new System.EventHandler(this.pessoaJurídicaToolStripMenuItem1_Click);
             // 
             // consultaToolStripMenuItem2
             // 
             this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
-            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem2.Text = "Consulta";
             // 
             // FormMenu

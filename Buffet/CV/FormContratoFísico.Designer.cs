@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.gbDevolucao = new System.Windows.Forms.GroupBox();
+            this.dtHoraDevolucao = new System.Windows.Forms.DateTimePicker();
+            this.dtDiaDevolucao = new System.Windows.Forms.DateTimePicker();
+            this.lbHoraDevolucao = new System.Windows.Forms.Label();
+            this.lbDiaDevolucao = new System.Windows.Forms.Label();
             this.gbEvento = new System.Windows.Forms.GroupBox();
             this.dtHoraTermino = new System.Windows.Forms.DateTimePicker();
             this.txtCapacidade = new System.Windows.Forms.TextBox();
@@ -45,25 +49,28 @@
             this.lbDataPagamento = new System.Windows.Forms.Label();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.lbPreco = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbQuantidadeDeCopeiros = new System.Windows.Forms.Label();
             this.txtHorasAntecedencia = new System.Windows.Forms.TextBox();
             this.dtHoraChegada = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbHoraAntecedencia = new System.Windows.Forms.Label();
             this.lbHoraChegada = new System.Windows.Forms.Label();
             this.txtCopeiros = new System.Windows.Forms.TextBox();
             this.txtGarcom = new System.Windows.Forms.TextBox();
-            this.lbQuantidadeDe = new System.Windows.Forms.Label();
+            this.lbQuantidadeDeGarcoes = new System.Windows.Forms.Label();
             this.dtHoraTerminoContratado = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbHoraTerminoContratado = new System.Windows.Forms.Label();
             this.dtHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.lbHoraInicioContratado = new System.Windows.Forms.Label();
-            this.dtHoraDevolucao = new System.Windows.Forms.DateTimePicker();
-            this.dtDiaDevolucao = new System.Windows.Forms.DateTimePicker();
-            this.lbHoraDevolucao = new System.Windows.Forms.Label();
-            this.lbDiaDevolucao = new System.Windows.Forms.Label();
+            this.gbBuscaPessoaFisica = new System.Windows.Forms.GroupBox();
+            this.cbBuscaPessoaFisica = new System.Windows.Forms.ComboBox();
+            this.bttGerarContrato = new System.Windows.Forms.Button();
+            this.bttCancelar = new System.Windows.Forms.Button();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.gbDevolucao.SuspendLayout();
             this.gbEvento.SuspendLayout();
             this.gbContratado.SuspendLayout();
+            this.gbBuscaPessoaFisica.SuspendLayout();
+            this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDevolucao
@@ -72,12 +79,46 @@
             this.gbDevolucao.Controls.Add(this.dtDiaDevolucao);
             this.gbDevolucao.Controls.Add(this.lbHoraDevolucao);
             this.gbDevolucao.Controls.Add(this.lbDiaDevolucao);
-            this.gbDevolucao.Location = new System.Drawing.Point(12, 171);
+            this.gbDevolucao.Location = new System.Drawing.Point(12, 233);
             this.gbDevolucao.Name = "gbDevolucao";
-            this.gbDevolucao.Size = new System.Drawing.Size(416, 276);
+            this.gbDevolucao.Size = new System.Drawing.Size(845, 60);
             this.gbDevolucao.TabIndex = 0;
             this.gbDevolucao.TabStop = false;
             this.gbDevolucao.Text = "Devolução";
+            // 
+            // dtHoraDevolucao
+            // 
+            this.dtHoraDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtHoraDevolucao.Location = new System.Drawing.Point(190, 19);
+            this.dtHoraDevolucao.Name = "dtHoraDevolucao";
+            this.dtHoraDevolucao.Size = new System.Drawing.Size(88, 20);
+            this.dtHoraDevolucao.TabIndex = 27;
+            // 
+            // dtDiaDevolucao
+            // 
+            this.dtDiaDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDiaDevolucao.Location = new System.Drawing.Point(38, 19);
+            this.dtDiaDevolucao.Name = "dtDiaDevolucao";
+            this.dtDiaDevolucao.Size = new System.Drawing.Size(95, 20);
+            this.dtDiaDevolucao.TabIndex = 26;
+            // 
+            // lbHoraDevolucao
+            // 
+            this.lbHoraDevolucao.AutoSize = true;
+            this.lbHoraDevolucao.Location = new System.Drawing.Point(151, 25);
+            this.lbHoraDevolucao.Name = "lbHoraDevolucao";
+            this.lbHoraDevolucao.Size = new System.Drawing.Size(33, 13);
+            this.lbHoraDevolucao.TabIndex = 25;
+            this.lbHoraDevolucao.Text = "Hora:";
+            // 
+            // lbDiaDevolucao
+            // 
+            this.lbDiaDevolucao.AutoSize = true;
+            this.lbDiaDevolucao.Location = new System.Drawing.Point(6, 25);
+            this.lbDiaDevolucao.Name = "lbDiaDevolucao";
+            this.lbDiaDevolucao.Size = new System.Drawing.Size(26, 13);
+            this.lbDiaDevolucao.TabIndex = 24;
+            this.lbDiaDevolucao.Text = "Dia:";
             // 
             // gbEvento
             // 
@@ -91,7 +132,7 @@
             this.gbEvento.Controls.Add(this.dtHoraEvento);
             this.gbEvento.Controls.Add(this.lbData);
             this.gbEvento.Controls.Add(this.dtDataEvento);
-            this.gbEvento.Location = new System.Drawing.Point(12, 12);
+            this.gbEvento.Location = new System.Drawing.Point(12, 74);
             this.gbEvento.Name = "gbEvento";
             this.gbEvento.Size = new System.Drawing.Size(845, 62);
             this.gbEvento.TabIndex = 1;
@@ -190,19 +231,19 @@
             this.gbContratado.Controls.Add(this.lbDataPagamento);
             this.gbContratado.Controls.Add(this.txtPreco);
             this.gbContratado.Controls.Add(this.lbPreco);
-            this.gbContratado.Controls.Add(this.label2);
+            this.gbContratado.Controls.Add(this.lbQuantidadeDeCopeiros);
             this.gbContratado.Controls.Add(this.txtHorasAntecedencia);
             this.gbContratado.Controls.Add(this.dtHoraChegada);
-            this.gbContratado.Controls.Add(this.label3);
+            this.gbContratado.Controls.Add(this.lbHoraAntecedencia);
             this.gbContratado.Controls.Add(this.lbHoraChegada);
             this.gbContratado.Controls.Add(this.txtCopeiros);
             this.gbContratado.Controls.Add(this.txtGarcom);
-            this.gbContratado.Controls.Add(this.lbQuantidadeDe);
+            this.gbContratado.Controls.Add(this.lbQuantidadeDeGarcoes);
             this.gbContratado.Controls.Add(this.dtHoraTerminoContratado);
-            this.gbContratado.Controls.Add(this.label1);
+            this.gbContratado.Controls.Add(this.lbHoraTerminoContratado);
             this.gbContratado.Controls.Add(this.dtHoraInicio);
             this.gbContratado.Controls.Add(this.lbHoraInicioContratado);
-            this.gbContratado.Location = new System.Drawing.Point(12, 80);
+            this.gbContratado.Location = new System.Drawing.Point(12, 142);
             this.gbContratado.Name = "gbContratado";
             this.gbContratado.Size = new System.Drawing.Size(845, 85);
             this.gbContratado.TabIndex = 2;
@@ -242,14 +283,14 @@
             this.lbPreco.TabIndex = 14;
             this.lbPreco.Text = "Preço a pagar: R$";
             // 
-            // label2
+            // lbQuantidadeDeCopeiros
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(445, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Quantidade de copeiros:";
+            this.lbQuantidadeDeCopeiros.AutoSize = true;
+            this.lbQuantidadeDeCopeiros.Location = new System.Drawing.Point(445, 51);
+            this.lbQuantidadeDeCopeiros.Name = "lbQuantidadeDeCopeiros";
+            this.lbQuantidadeDeCopeiros.Size = new System.Drawing.Size(123, 13);
+            this.lbQuantidadeDeCopeiros.TabIndex = 13;
+            this.lbQuantidadeDeCopeiros.Text = "Quantidade de copeiros:";
             // 
             // txtHorasAntecedencia
             // 
@@ -266,14 +307,14 @@
             this.dtHoraChegada.Size = new System.Drawing.Size(81, 20);
             this.dtHoraChegada.TabIndex = 11;
             // 
-            // label3
+            // lbHoraAntecedencia
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Horas de antecedência:";
+            this.lbHoraAntecedencia.AutoSize = true;
+            this.lbHoraAntecedencia.Location = new System.Drawing.Point(6, 49);
+            this.lbHoraAntecedencia.Name = "lbHoraAntecedencia";
+            this.lbHoraAntecedencia.Size = new System.Drawing.Size(121, 13);
+            this.lbHoraAntecedencia.TabIndex = 10;
+            this.lbHoraAntecedencia.Text = "Horas de antecedência:";
             // 
             // lbHoraChegada
             // 
@@ -298,14 +339,14 @@
             this.txtGarcom.Size = new System.Drawing.Size(55, 20);
             this.txtGarcom.TabIndex = 7;
             // 
-            // lbQuantidadeDe
+            // lbQuantidadeDeGarcoes
             // 
-            this.lbQuantidadeDe.AutoSize = true;
-            this.lbQuantidadeDe.Location = new System.Drawing.Point(445, 23);
-            this.lbQuantidadeDe.Name = "lbQuantidadeDe";
-            this.lbQuantidadeDe.Size = new System.Drawing.Size(121, 13);
-            this.lbQuantidadeDe.TabIndex = 4;
-            this.lbQuantidadeDe.Text = "Quantidade de garçons:";
+            this.lbQuantidadeDeGarcoes.AutoSize = true;
+            this.lbQuantidadeDeGarcoes.Location = new System.Drawing.Point(445, 23);
+            this.lbQuantidadeDeGarcoes.Name = "lbQuantidadeDeGarcoes";
+            this.lbQuantidadeDeGarcoes.Size = new System.Drawing.Size(121, 13);
+            this.lbQuantidadeDeGarcoes.TabIndex = 4;
+            this.lbQuantidadeDeGarcoes.Text = "Quantidade de garçons:";
             // 
             // dtHoraTerminoContratado
             // 
@@ -316,14 +357,14 @@
             this.dtHoraTerminoContratado.TabIndex = 3;
             this.dtHoraTerminoContratado.ValueChanged += new System.EventHandler(this.dtHoraTerminoContratado_ValueChanged);
             // 
-            // label1
+            // lbHoraTerminoContratado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(209, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Término do serviço:";
+            this.lbHoraTerminoContratado.AutoSize = true;
+            this.lbHoraTerminoContratado.Location = new System.Drawing.Point(209, 51);
+            this.lbHoraTerminoContratado.Name = "lbHoraTerminoContratado";
+            this.lbHoraTerminoContratado.Size = new System.Drawing.Size(100, 13);
+            this.lbHoraTerminoContratado.TabIndex = 2;
+            this.lbHoraTerminoContratado.Text = "Término do serviço:";
             // 
             // dtHoraInicio
             // 
@@ -342,45 +383,63 @@
             this.lbHoraInicioContratado.TabIndex = 0;
             this.lbHoraInicioContratado.Text = "Início do serviço:";
             // 
-            // dtHoraDevolucao
+            // gbBuscaPessoaFisica
             // 
-            this.dtHoraDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtHoraDevolucao.Location = new System.Drawing.Point(190, 19);
-            this.dtHoraDevolucao.Name = "dtHoraDevolucao";
-            this.dtHoraDevolucao.Size = new System.Drawing.Size(88, 20);
-            this.dtHoraDevolucao.TabIndex = 27;
+            this.gbBuscaPessoaFisica.Controls.Add(this.cbBuscaPessoaFisica);
+            this.gbBuscaPessoaFisica.Location = new System.Drawing.Point(12, 12);
+            this.gbBuscaPessoaFisica.Name = "gbBuscaPessoaFisica";
+            this.gbBuscaPessoaFisica.Size = new System.Drawing.Size(845, 56);
+            this.gbBuscaPessoaFisica.TabIndex = 3;
+            this.gbBuscaPessoaFisica.TabStop = false;
+            this.gbBuscaPessoaFisica.Text = "Pessoa Fisica";
             // 
-            // dtDiaDevolucao
+            // cbBuscaPessoaFisica
             // 
-            this.dtDiaDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDiaDevolucao.Location = new System.Drawing.Point(38, 20);
-            this.dtDiaDevolucao.Name = "dtDiaDevolucao";
-            this.dtDiaDevolucao.Size = new System.Drawing.Size(95, 20);
-            this.dtDiaDevolucao.TabIndex = 26;
+            this.cbBuscaPessoaFisica.FormattingEnabled = true;
+            this.cbBuscaPessoaFisica.Location = new System.Drawing.Point(9, 19);
+            this.cbBuscaPessoaFisica.Name = "cbBuscaPessoaFisica";
+            this.cbBuscaPessoaFisica.Size = new System.Drawing.Size(830, 21);
+            this.cbBuscaPessoaFisica.TabIndex = 0;
+            this.cbBuscaPessoaFisica.Click += new System.EventHandler(this.cbBuscaPessoaFisica_Click);
             // 
-            // lbHoraDevolucao
+            // bttGerarContrato
             // 
-            this.lbHoraDevolucao.AutoSize = true;
-            this.lbHoraDevolucao.Location = new System.Drawing.Point(151, 25);
-            this.lbHoraDevolucao.Name = "lbHoraDevolucao";
-            this.lbHoraDevolucao.Size = new System.Drawing.Size(33, 13);
-            this.lbHoraDevolucao.TabIndex = 25;
-            this.lbHoraDevolucao.Text = "Hora:";
+            this.bttGerarContrato.Location = new System.Drawing.Point(149, 19);
+            this.bttGerarContrato.Name = "bttGerarContrato";
+            this.bttGerarContrato.Size = new System.Drawing.Size(125, 43);
+            this.bttGerarContrato.TabIndex = 2;
+            this.bttGerarContrato.Text = "Gerar Contrato";
+            this.bttGerarContrato.UseVisualStyleBackColor = true;
+            this.bttGerarContrato.Click += new System.EventHandler(this.bttGerarContrato_Click);
             // 
-            // lbDiaDevolucao
+            // bttCancelar
             // 
-            this.lbDiaDevolucao.AutoSize = true;
-            this.lbDiaDevolucao.Location = new System.Drawing.Point(6, 26);
-            this.lbDiaDevolucao.Name = "lbDiaDevolucao";
-            this.lbDiaDevolucao.Size = new System.Drawing.Size(26, 13);
-            this.lbDiaDevolucao.TabIndex = 24;
-            this.lbDiaDevolucao.Text = "Dia:";
+            this.bttCancelar.Location = new System.Drawing.Point(574, 19);
+            this.bttCancelar.Name = "bttCancelar";
+            this.bttCancelar.Size = new System.Drawing.Size(125, 43);
+            this.bttCancelar.TabIndex = 3;
+            this.bttCancelar.Text = "Cancelar";
+            this.bttCancelar.UseVisualStyleBackColor = true;
+            this.bttCancelar.Click += new System.EventHandler(this.bttCancelar_Click);
+            // 
+            // gbBotoes
+            // 
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gbBotoes.Controls.Add(this.bttGerarContrato);
+            this.gbBotoes.Controls.Add(this.bttCancelar);
+            this.gbBotoes.Location = new System.Drawing.Point(12, 299);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(845, 74);
+            this.gbBotoes.TabIndex = 9;
+            this.gbBotoes.TabStop = false;
             // 
             // FormContratoFísico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 750);
+            this.ClientSize = new System.Drawing.Size(869, 388);
+            this.Controls.Add(this.gbBotoes);
+            this.Controls.Add(this.gbBuscaPessoaFisica);
             this.Controls.Add(this.gbContratado);
             this.Controls.Add(this.gbEvento);
             this.Controls.Add(this.gbDevolucao);
@@ -393,6 +452,8 @@
             this.gbEvento.PerformLayout();
             this.gbContratado.ResumeLayout(false);
             this.gbContratado.PerformLayout();
+            this.gbBuscaPessoaFisica.ResumeLayout(false);
+            this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -414,23 +475,28 @@
         private System.Windows.Forms.Label lbCapacidade;
         private System.Windows.Forms.TextBox txtCopeiros;
         private System.Windows.Forms.TextBox txtGarcom;
-        private System.Windows.Forms.Label lbQuantidadeDe;
+        private System.Windows.Forms.Label lbQuantidadeDeGarcoes;
         private System.Windows.Forms.DateTimePicker dtHoraTerminoContratado;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbHoraTerminoContratado;
         private System.Windows.Forms.DateTimePicker dtHoraInicio;
         private System.Windows.Forms.Label lbHoraInicioContratado;
         private System.Windows.Forms.DateTimePicker dtPagamento;
         private System.Windows.Forms.Label lbDataPagamento;
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label lbPreco;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbQuantidadeDeCopeiros;
         private System.Windows.Forms.TextBox txtHorasAntecedencia;
         private System.Windows.Forms.DateTimePicker dtHoraChegada;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbHoraAntecedencia;
         private System.Windows.Forms.Label lbHoraChegada;
         private System.Windows.Forms.DateTimePicker dtHoraDevolucao;
         private System.Windows.Forms.DateTimePicker dtDiaDevolucao;
         private System.Windows.Forms.Label lbHoraDevolucao;
         private System.Windows.Forms.Label lbDiaDevolucao;
+        private System.Windows.Forms.GroupBox gbBuscaPessoaFisica;
+        private System.Windows.Forms.ComboBox cbBuscaPessoaFisica;
+        private System.Windows.Forms.Button bttGerarContrato;
+        private System.Windows.Forms.Button bttCancelar;
+        private System.Windows.Forms.GroupBox gbBotoes;
     }
 }

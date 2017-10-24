@@ -106,15 +106,14 @@ namespace Buffet.DAO
         public List<ClienteFisico> ListByCPF(long cpf)
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM ClienteFisico WHERE cpf=" + cpf;
+            string qry = "SELECT * FROM ClienteFisico WHERE cpf LIKE '%" + cpf + "%'";
             DataSet ds = bd.ExecuteQuery(qry);
             List<ClienteFisico> fisicos = new List<ClienteFisico>();
-            ClienteFisico cf = new ClienteFisico();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if (long.Parse(dr["cpf"].ToString()) == cpf)
-                {
+                    ClienteFisico cf = new ClienteFisico();
+
                     cf.Nome = dr["nome"].ToString();
                     cf.Nacionalidade = dr["nacionalidade"].ToString();
                     cf.EstadoCivil = dr["estadoCivil"].ToString();
@@ -132,7 +131,6 @@ namespace Buffet.DAO
                     cf.Tipo = int.Parse(dr["tipo"].ToString());
 
                     fisicos.Add(cf);
-                }
             }
             return fisicos;
         }
@@ -143,30 +141,28 @@ namespace Buffet.DAO
             string qry = "SELECT * FROM ClienteFisico WHERE nome LIKE '%" + nome + "%'";
             DataSet ds = bd.ExecuteQuery(qry);
             List<ClienteFisico> fisicos = new List<ClienteFisico>();
-            ClienteFisico cf = new ClienteFisico();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if (dr["nome"].ToString() == nome)
-                {
-                    cf.Nome = dr["nome"].ToString();
-                    cf.Nacionalidade = dr["nacionalidade"].ToString();
-                    cf.EstadoCivil = dr["estadoCivil"].ToString();
-                    cf.Profissao = dr["profissao"].ToString();
-                    cf.Cpf = long.Parse(dr["cpf"].ToString());
-                    cf.Rg = long.Parse(dr["rg"].ToString());
-                    cf.Telefone = long.Parse(dr["Telefone"].ToString());
-                    cf.Cep = long.Parse(dr["cep"].ToString());
-                    cf.Rua = dr["rua"].ToString();
-                    cf.Bairro = dr["bairro"].ToString();
-                    cf.Cidade = dr["cidade"].ToString();
-                    cf.Estado = dr["estado"].ToString();
-                    cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
-                    cf.Celular = long.Parse(dr["celular"].ToString());
-                    cf.Tipo = int.Parse(dr["tipo"].ToString());
+                ClienteFisico cf = new ClienteFisico();
 
-                    fisicos.Add(cf);
-                }
+                cf.Nome = dr["nome"].ToString();
+                cf.Nacionalidade = dr["nacionalidade"].ToString();
+                cf.EstadoCivil = dr["estadoCivil"].ToString();
+                cf.Profissao = dr["profissao"].ToString();
+                cf.Cpf = long.Parse(dr["cpf"].ToString());
+                cf.Rg = long.Parse(dr["rg"].ToString());
+                cf.Telefone = long.Parse(dr["Telefone"].ToString());
+                cf.Cep = long.Parse(dr["cep"].ToString());
+                cf.Rua = dr["rua"].ToString();
+                cf.Bairro = dr["bairro"].ToString();
+                cf.Cidade = dr["cidade"].ToString();
+                cf.Estado = dr["estado"].ToString();
+                cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+                cf.Celular = long.Parse(dr["celular"].ToString());
+                cf.Tipo = int.Parse(dr["tipo"].ToString());
+
+                fisicos.Add(cf);
             }
             return fisicos;
         }

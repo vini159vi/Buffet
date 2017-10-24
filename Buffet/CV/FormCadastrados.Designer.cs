@@ -43,8 +43,8 @@
             this.radioBttJuridica = new System.Windows.Forms.RadioButton();
             this.radioBttFisica = new System.Windows.Forms.RadioButton();
             this.radioBttTodos = new System.Windows.Forms.RadioButton();
-            this.txtBuscaNomeCPF = new System.Windows.Forms.TextBox();
-            this.lbNomeCPF = new System.Windows.Forms.Label();
+            this.txtBuscaCpfCnpj = new System.Windows.Forms.TextBox();
+            this.lbCPFCNPJ = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.bttFechar = new System.Windows.Forms.Button();
             this.gbLista.SuspendLayout();
@@ -83,10 +83,13 @@
             this.dataGViewLista.Location = new System.Drawing.Point(3, 16);
             this.dataGViewLista.Name = "dataGViewLista";
             this.dataGViewLista.ReadOnly = true;
+            this.dataGViewLista.RowHeadersVisible = false;
+            this.dataGViewLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGViewLista.Size = new System.Drawing.Size(956, 524);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGViewLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGViewLista_CellDoubleClick);
+            this.dataGViewLista.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGViewLista_CellMouseDoubleClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
             // 
             // Nome
@@ -158,8 +161,8 @@
             this.gbProcuraNome.Controls.Add(this.radioBttJuridica);
             this.gbProcuraNome.Controls.Add(this.radioBttFisica);
             this.gbProcuraNome.Controls.Add(this.radioBttTodos);
-            this.gbProcuraNome.Controls.Add(this.txtBuscaNomeCPF);
-            this.gbProcuraNome.Controls.Add(this.lbNomeCPF);
+            this.gbProcuraNome.Controls.Add(this.txtBuscaCpfCnpj);
+            this.gbProcuraNome.Controls.Add(this.lbCPFCNPJ);
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
             this.gbProcuraNome.Name = "gbProcuraNome";
             this.gbProcuraNome.Size = new System.Drawing.Size(964, 88);
@@ -211,25 +214,26 @@
             this.radioBttTodos.UseVisualStyleBackColor = true;
             this.radioBttTodos.CheckedChanged += new System.EventHandler(this.radioBttTodos_CheckedChanged);
             // 
-            // txtBuscaNomeCPF
+            // txtBuscaCpfCnpj
             // 
-            this.txtBuscaNomeCPF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBuscaCpfCnpj.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscaNomeCPF.Location = new System.Drawing.Point(73, 23);
-            this.txtBuscaNomeCPF.Name = "txtBuscaNomeCPF";
-            this.txtBuscaNomeCPF.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBuscaNomeCPF.Size = new System.Drawing.Size(876, 20);
-            this.txtBuscaNomeCPF.TabIndex = 1;
-            this.txtBuscaNomeCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscaNomeCPF_KeyPress);
+            this.txtBuscaCpfCnpj.Location = new System.Drawing.Point(73, 23);
+            this.txtBuscaCpfCnpj.Name = "txtBuscaCpfCnpj";
+            this.txtBuscaCpfCnpj.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBuscaCpfCnpj.Size = new System.Drawing.Size(876, 20);
+            this.txtBuscaCpfCnpj.TabIndex = 1;
+            this.txtBuscaCpfCnpj.TextChanged += new System.EventHandler(this.txtBuscaCpfCnpj_TextChanged);
+            this.txtBuscaCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscaNomeCPF_KeyPress);
             // 
-            // lbNomeCPF
+            // lbCPFCNPJ
             // 
-            this.lbNomeCPF.AutoSize = true;
-            this.lbNomeCPF.Location = new System.Drawing.Point(7, 27);
-            this.lbNomeCPF.Name = "lbNomeCPF";
-            this.lbNomeCPF.Size = new System.Drawing.Size(63, 13);
-            this.lbNomeCPF.TabIndex = 0;
-            this.lbNomeCPF.Text = "Nome/CPF:";
+            this.lbCPFCNPJ.AutoSize = true;
+            this.lbCPFCNPJ.Location = new System.Drawing.Point(7, 27);
+            this.lbCPFCNPJ.Name = "lbCPFCNPJ";
+            this.lbCPFCNPJ.Size = new System.Drawing.Size(62, 13);
+            this.lbCPFCNPJ.TabIndex = 0;
+            this.lbCPFCNPJ.Text = "CPF/CNPJ:";
             // 
             // gbBotoes
             // 
@@ -281,13 +285,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbLista;
-        private System.Windows.Forms.DataGridView dataGViewLista;
         private System.Windows.Forms.Button bttAdicionar;
         private System.Windows.Forms.Button bttRemove;
         private System.Windows.Forms.Button bttEditar;
         private System.Windows.Forms.GroupBox gbProcuraNome;
-        private System.Windows.Forms.TextBox txtBuscaNomeCPF;
-        private System.Windows.Forms.Label lbNomeCPF;
+        private System.Windows.Forms.TextBox txtBuscaCpfCnpj;
+        private System.Windows.Forms.Label lbCPFCNPJ;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Label lblTipoPessoa;
         private System.Windows.Forms.RadioButton radioBttJuridica;
@@ -299,5 +302,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Endereço;
         private System.Windows.Forms.Button bttFechar;
+        private System.Windows.Forms.DataGridView dataGViewLista;
     }
 }

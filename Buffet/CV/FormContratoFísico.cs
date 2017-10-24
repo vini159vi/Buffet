@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Buffet.DAO;
+using Buffet.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +29,18 @@ namespace Buffet.CV
         public FormContratoFísico()
         {
             InitializeComponent();
+
+            List<ClienteFisico> listcf = new List<ClienteFisico>();
+            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+            listcf = cfDAO.List();
+
+            if (cbBuscaPessoaFisica.Items.Count == 0)
+                cbBuscaPessoaFisica.Items.Clear();
+
+
+            cbBuscaPessoaFisica.DisplayMember = "Nome";
+            cbBuscaPessoaFisica.ValueMember = "Cpf";
+            cbBuscaPessoaFisica.DataSource = listcf;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,6 +54,21 @@ namespace Buffet.CV
         }
 
         private void dtHoraTerminoContratado_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttGerarContrato_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void cbBuscaPessoaFisica_Click(object sender, EventArgs e)
         {
 
         }

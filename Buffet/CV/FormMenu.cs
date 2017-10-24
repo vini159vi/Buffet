@@ -6,10 +6,14 @@ namespace Buffet
 {
     public partial class FormMenu : Form
     {
+        //Telas que se abrirão atraves do menu
         private FormJuridico fj = new FormJuridico();
         private FormCadastrados fc = new FormCadastrados();
         private FormRepresentante fr = new FormRepresentante();
         private FormFisico ff = new FormFisico();
+        private FormContratoFísico fcf = new FormContratoFísico();
+        private FormContratoJuridico fcj = new FormContratoJuridico();
+
         public FormMenu()
         {
             InitializeComponent();
@@ -47,6 +51,24 @@ namespace Buffet
             {
                 fr.MdiParent = this;
                 fr.Show();
+            }
+        }
+
+        private void pessoaFísicaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (!fcf.Visible)
+            {
+                fcf.MdiParent = this;
+                fcf.Show();
+            }
+        }
+
+        private void pessoaJurídicaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (!fcj.Visible)
+            {
+                fcj.MdiParent = this;
+                fcj.Show();
             }
         }
     }
