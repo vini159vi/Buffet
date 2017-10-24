@@ -184,6 +184,7 @@
             this.dtHoraChegada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHoraChegada.Location = new System.Drawing.Point(105, 20);
             this.dtHoraChegada.Name = "dtHoraChegada";
+            this.dtHoraChegada.ShowUpDown = true;
             this.dtHoraChegada.Size = new System.Drawing.Size(81, 20);
             this.dtHoraChegada.TabIndex = 0;
             // 
@@ -233,6 +234,7 @@
             this.dtHoraTerminoContratado.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHoraTerminoContratado.Location = new System.Drawing.Point(315, 45);
             this.dtHoraTerminoContratado.Name = "dtHoraTerminoContratado";
+            this.dtHoraTerminoContratado.ShowUpDown = true;
             this.dtHoraTerminoContratado.Size = new System.Drawing.Size(81, 20);
             this.dtHoraTerminoContratado.TabIndex = 5;
             // 
@@ -250,6 +252,7 @@
             this.dtHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHoraInicio.Location = new System.Drawing.Point(315, 19);
             this.dtHoraInicio.Name = "dtHoraInicio";
+            this.dtHoraInicio.ShowUpDown = true;
             this.dtHoraInicio.Size = new System.Drawing.Size(81, 20);
             this.dtHoraInicio.TabIndex = 1;
             // 
@@ -286,6 +289,7 @@
             this.dtHoraTermino.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHoraTermino.Location = new System.Drawing.Point(366, 21);
             this.dtHoraTermino.Name = "dtHoraTermino";
+            this.dtHoraTermino.ShowUpDown = true;
             this.dtHoraTermino.Size = new System.Drawing.Size(80, 20);
             this.dtHoraTermino.TabIndex = 2;
             // 
@@ -344,6 +348,7 @@
             this.dtHoraEvento.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHoraEvento.Location = new System.Drawing.Point(190, 21);
             this.dtHoraEvento.Name = "dtHoraEvento";
+            this.dtHoraEvento.ShowUpDown = true;
             this.dtHoraEvento.Size = new System.Drawing.Size(81, 20);
             this.dtHoraEvento.TabIndex = 1;
             // 
@@ -383,6 +388,7 @@
             this.dtHoraDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHoraDevolucao.Location = new System.Drawing.Point(190, 19);
             this.dtHoraDevolucao.Name = "dtHoraDevolucao";
+            this.dtHoraDevolucao.ShowUpDown = true;
             this.dtHoraDevolucao.Size = new System.Drawing.Size(88, 20);
             this.dtHoraDevolucao.TabIndex = 1;
             // 
