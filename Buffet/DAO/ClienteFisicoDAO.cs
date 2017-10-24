@@ -54,8 +54,8 @@ namespace Buffet.DAO
         public void Update(ClienteFisico cf)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE ClienteFisico SET nome={0}, nacionalidade={1}, estadoCivil={2}, profissao={3}, cpf={4}, rg={5}, telefone={6}, cep={7}, rua={8}, bairro={9}, cidade={10}, estado={11}, numeroCasa={12}, celular={13}, tipo={14}"
-            + " WHERE cpf = {4}",
+            string qry = string.Format("UPDATE ClienteFisico SET nome='{0}', nacionalidade='{1}', estadoCivil='{2}', profissao='{3}', cpf='{4}', rg='{5}', telefone='{6}', cep='{7}', rua='{8}', bairro='{9}', cidade='{10}', estado='{11}', numeroCasa='{12}', celular='{13}', tipo='{14}'"
+            + " WHERE cpf = '{4}'",
             cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular, cf.Tipo);
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
 
@@ -166,5 +166,38 @@ namespace Buffet.DAO
             }
             return fisicos;
         }
+
+        public ClienteFisico FindByCPF(long cpf)
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM ClienteFisico WHERE cpf=" + cpf;
+            DataSet ds = bd.ExecuteQuery(qry);
+            ClienteFisico cf = new ClienteFisico();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                if (long.Parse(dr["cpf"].ToString()) == cpf)
+                {
+                    cf.Nome = dr["nome"].ToString();
+                    cf.Nacionalidade = dr["nacionalidade"].ToString();
+                    cf.EstadoCivil = dr["estadoCivil"].ToString();
+                    cf.Profissao = dr["profissao"].ToString();
+                    cf.Cpf = long.Parse(dr["cpf"].ToString());
+                    cf.Rg = long.Parse(dr["rg"].ToString());
+                    cf.Telefone = long.Parse(dr["Telefone"].ToString());
+                    cf.Cep = long.Parse(dr["cep"].ToString());
+                    cf.Rua = dr["rua"].ToString();
+                    cf.Bairro = dr["bairro"].ToString();
+                    cf.Cidade = dr["cidade"].ToString();
+                    cf.Estado = dr["estado"].ToString();
+                    cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+                    cf.Celular = long.Parse(dr["celular"].ToString());
+                    cf.Tipo = int.Parse(dr["tipo"].ToString());
+
+                }
+            }
+            return cf;
+        }
+
     }
 }
