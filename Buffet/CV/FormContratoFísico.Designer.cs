@@ -75,6 +75,7 @@
             // 
             // gbDevolucao
             // 
+            this.gbDevolucao.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbDevolucao.Controls.Add(this.dtHoraDevolucao);
             this.gbDevolucao.Controls.Add(this.dtDiaDevolucao);
             this.gbDevolucao.Controls.Add(this.lbHoraDevolucao);
@@ -82,7 +83,7 @@
             this.gbDevolucao.Location = new System.Drawing.Point(12, 233);
             this.gbDevolucao.Name = "gbDevolucao";
             this.gbDevolucao.Size = new System.Drawing.Size(845, 60);
-            this.gbDevolucao.TabIndex = 0;
+            this.gbDevolucao.TabIndex = 3;
             this.gbDevolucao.TabStop = false;
             this.gbDevolucao.Text = "Devolução";
             // 
@@ -92,7 +93,7 @@
             this.dtHoraDevolucao.Location = new System.Drawing.Point(190, 19);
             this.dtHoraDevolucao.Name = "dtHoraDevolucao";
             this.dtHoraDevolucao.Size = new System.Drawing.Size(88, 20);
-            this.dtHoraDevolucao.TabIndex = 27;
+            this.dtHoraDevolucao.TabIndex = 1;
             // 
             // dtDiaDevolucao
             // 
@@ -100,7 +101,7 @@
             this.dtDiaDevolucao.Location = new System.Drawing.Point(38, 19);
             this.dtDiaDevolucao.Name = "dtDiaDevolucao";
             this.dtDiaDevolucao.Size = new System.Drawing.Size(95, 20);
-            this.dtDiaDevolucao.TabIndex = 26;
+            this.dtDiaDevolucao.TabIndex = 0;
             // 
             // lbHoraDevolucao
             // 
@@ -122,6 +123,7 @@
             // 
             // gbEvento
             // 
+            this.gbEvento.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbEvento.Controls.Add(this.dtHoraTermino);
             this.gbEvento.Controls.Add(this.txtCapacidade);
             this.gbEvento.Controls.Add(this.lbHoraTermino);
@@ -141,22 +143,25 @@
             // 
             // dtHoraTermino
             // 
+            this.dtHoraTermino.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtHoraTermino.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHoraTermino.Location = new System.Drawing.Point(366, 21);
             this.dtHoraTermino.Name = "dtHoraTermino";
             this.dtHoraTermino.Size = new System.Drawing.Size(80, 20);
-            this.dtHoraTermino.TabIndex = 7;
+            this.dtHoraTermino.TabIndex = 2;
             // 
             // txtCapacidade
             // 
+            this.txtCapacidade.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCapacidade.Location = new System.Drawing.Point(769, 21);
             this.txtCapacidade.Name = "txtCapacidade";
             this.txtCapacidade.Size = new System.Drawing.Size(63, 20);
-            this.txtCapacidade.TabIndex = 9;
+            this.txtCapacidade.TabIndex = 4;
             this.txtCapacidade.TextChanged += new System.EventHandler(this.txtCapacidade_TextChanged);
             // 
             // lbHoraTermino
             // 
+            this.lbHoraTermino.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbHoraTermino.AutoSize = true;
             this.lbHoraTermino.Location = new System.Drawing.Point(276, 27);
             this.lbHoraTermino.Name = "lbHoraTermino";
@@ -166,6 +171,7 @@
             // 
             // lbCapacidade
             // 
+            this.lbCapacidade.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbCapacidade.AutoSize = true;
             this.lbCapacidade.Location = new System.Drawing.Point(619, 27);
             this.lbCapacidade.Name = "lbCapacidade";
@@ -175,13 +181,15 @@
             // 
             // txtConvidados
             // 
+            this.txtConvidados.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtConvidados.Location = new System.Drawing.Point(551, 21);
             this.txtConvidados.Name = "txtConvidados";
             this.txtConvidados.Size = new System.Drawing.Size(63, 20);
-            this.txtConvidados.TabIndex = 5;
+            this.txtConvidados.TabIndex = 3;
             // 
             // lbConvidados
             // 
+            this.lbConvidados.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbConvidados.AutoSize = true;
             this.lbConvidados.Location = new System.Drawing.Point(451, 27);
             this.lbConvidados.Name = "lbConvidados";
@@ -191,6 +199,7 @@
             // 
             // lbHora
             // 
+            this.lbHora.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbHora.AutoSize = true;
             this.lbHora.Location = new System.Drawing.Point(152, 27);
             this.lbHora.Name = "lbHora";
@@ -200,14 +209,16 @@
             // 
             // dtHoraEvento
             // 
+            this.dtHoraEvento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtHoraEvento.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtHoraEvento.Location = new System.Drawing.Point(190, 21);
             this.dtHoraEvento.Name = "dtHoraEvento";
             this.dtHoraEvento.Size = new System.Drawing.Size(81, 20);
-            this.dtHoraEvento.TabIndex = 2;
+            this.dtHoraEvento.TabIndex = 1;
             // 
             // lbData
             // 
+            this.lbData.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbData.AutoSize = true;
             this.lbData.Location = new System.Drawing.Point(12, 27);
             this.lbData.Name = "lbData";
@@ -218,6 +229,7 @@
             // 
             // dtDataEvento
             // 
+            this.dtDataEvento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtDataEvento.CustomFormat = "dd/MM/yyyy";
             this.dtDataEvento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtDataEvento.Location = new System.Drawing.Point(50, 21);
@@ -227,6 +239,7 @@
             // 
             // gbContratado
             // 
+            this.gbContratado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbContratado.Controls.Add(this.dtPagamento);
             this.gbContratado.Controls.Add(this.lbDataPagamento);
             this.gbContratado.Controls.Add(this.txtPreco);
@@ -256,7 +269,7 @@
             this.dtPagamento.Location = new System.Drawing.Point(737, 45);
             this.dtPagamento.Name = "dtPagamento";
             this.dtPagamento.Size = new System.Drawing.Size(95, 20);
-            this.dtPagamento.TabIndex = 17;
+            this.dtPagamento.TabIndex = 7;
             // 
             // lbDataPagamento
             // 
@@ -272,7 +285,7 @@
             this.txtPreco.Location = new System.Drawing.Point(756, 20);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(76, 20);
-            this.txtPreco.TabIndex = 15;
+            this.txtPreco.TabIndex = 3;
             // 
             // lbPreco
             // 
@@ -297,7 +310,7 @@
             this.txtHorasAntecedencia.Location = new System.Drawing.Point(133, 46);
             this.txtHorasAntecedencia.Name = "txtHorasAntecedencia";
             this.txtHorasAntecedencia.Size = new System.Drawing.Size(53, 20);
-            this.txtHorasAntecedencia.TabIndex = 12;
+            this.txtHorasAntecedencia.TabIndex = 4;
             // 
             // dtHoraChegada
             // 
@@ -305,7 +318,7 @@
             this.dtHoraChegada.Location = new System.Drawing.Point(105, 20);
             this.dtHoraChegada.Name = "dtHoraChegada";
             this.dtHoraChegada.Size = new System.Drawing.Size(81, 20);
-            this.dtHoraChegada.TabIndex = 11;
+            this.dtHoraChegada.TabIndex = 0;
             // 
             // lbHoraAntecedencia
             // 
@@ -330,14 +343,14 @@
             this.txtCopeiros.Location = new System.Drawing.Point(574, 48);
             this.txtCopeiros.Name = "txtCopeiros";
             this.txtCopeiros.Size = new System.Drawing.Size(55, 20);
-            this.txtCopeiros.TabIndex = 8;
+            this.txtCopeiros.TabIndex = 6;
             // 
             // txtGarcom
             // 
             this.txtGarcom.Location = new System.Drawing.Point(574, 20);
             this.txtGarcom.Name = "txtGarcom";
             this.txtGarcom.Size = new System.Drawing.Size(55, 20);
-            this.txtGarcom.TabIndex = 7;
+            this.txtGarcom.TabIndex = 2;
             // 
             // lbQuantidadeDeGarcoes
             // 
@@ -354,7 +367,7 @@
             this.dtHoraTerminoContratado.Location = new System.Drawing.Point(315, 45);
             this.dtHoraTerminoContratado.Name = "dtHoraTerminoContratado";
             this.dtHoraTerminoContratado.Size = new System.Drawing.Size(81, 20);
-            this.dtHoraTerminoContratado.TabIndex = 3;
+            this.dtHoraTerminoContratado.TabIndex = 5;
             this.dtHoraTerminoContratado.ValueChanged += new System.EventHandler(this.dtHoraTerminoContratado_ValueChanged);
             // 
             // lbHoraTerminoContratado
@@ -385,16 +398,20 @@
             // 
             // gbBuscaPessoaFisica
             // 
+            this.gbBuscaPessoaFisica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbBuscaPessoaFisica.Controls.Add(this.cbBuscaPessoaFisica);
             this.gbBuscaPessoaFisica.Location = new System.Drawing.Point(12, 12);
             this.gbBuscaPessoaFisica.Name = "gbBuscaPessoaFisica";
             this.gbBuscaPessoaFisica.Size = new System.Drawing.Size(845, 56);
-            this.gbBuscaPessoaFisica.TabIndex = 3;
+            this.gbBuscaPessoaFisica.TabIndex = 0;
             this.gbBuscaPessoaFisica.TabStop = false;
             this.gbBuscaPessoaFisica.Text = "Pessoa Fisica";
             // 
             // cbBuscaPessoaFisica
             // 
+            this.cbBuscaPessoaFisica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbBuscaPessoaFisica.FormattingEnabled = true;
             this.cbBuscaPessoaFisica.Location = new System.Drawing.Point(9, 19);
             this.cbBuscaPessoaFisica.Name = "cbBuscaPessoaFisica";
@@ -407,7 +424,7 @@
             this.bttGerarContrato.Location = new System.Drawing.Point(149, 19);
             this.bttGerarContrato.Name = "bttGerarContrato";
             this.bttGerarContrato.Size = new System.Drawing.Size(125, 43);
-            this.bttGerarContrato.TabIndex = 2;
+            this.bttGerarContrato.TabIndex = 0;
             this.bttGerarContrato.Text = "Gerar Contrato";
             this.bttGerarContrato.UseVisualStyleBackColor = true;
             this.bttGerarContrato.Click += new System.EventHandler(this.bttGerarContrato_Click);
@@ -417,14 +434,14 @@
             this.bttCancelar.Location = new System.Drawing.Point(574, 19);
             this.bttCancelar.Name = "bttCancelar";
             this.bttCancelar.Size = new System.Drawing.Size(125, 43);
-            this.bttCancelar.TabIndex = 3;
+            this.bttCancelar.TabIndex = 1;
             this.bttCancelar.Text = "Cancelar";
             this.bttCancelar.UseVisualStyleBackColor = true;
             this.bttCancelar.Click += new System.EventHandler(this.bttCancelar_Click);
             // 
             // gbBotoes
             // 
-            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbBotoes.Controls.Add(this.bttGerarContrato);
             this.gbBotoes.Controls.Add(this.bttCancelar);
             this.gbBotoes.Location = new System.Drawing.Point(12, 299);
@@ -444,7 +461,9 @@
             this.Controls.Add(this.gbEvento);
             this.Controls.Add(this.gbDevolucao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormContratoFísico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contrato de Pessoa Física";
             this.gbDevolucao.ResumeLayout(false);
             this.gbDevolucao.PerformLayout();

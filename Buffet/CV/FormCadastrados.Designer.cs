@@ -127,7 +127,7 @@
             this.bttAdicionar.Location = new System.Drawing.Point(74, 16);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
-            this.bttAdicionar.TabIndex = 2;
+            this.bttAdicionar.TabIndex = 0;
             this.bttAdicionar.Text = "Adicionar";
             this.bttAdicionar.UseVisualStyleBackColor = true;
             this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
@@ -137,7 +137,7 @@
             this.bttRemove.Location = new System.Drawing.Point(302, 16);
             this.bttRemove.Name = "bttRemove";
             this.bttRemove.Size = new System.Drawing.Size(125, 43);
-            this.bttRemove.TabIndex = 3;
+            this.bttRemove.TabIndex = 1;
             this.bttRemove.Text = "Remover";
             this.bttRemove.UseVisualStyleBackColor = true;
             this.bttRemove.Click += new System.EventHandler(this.bttRemove_Click);
@@ -147,7 +147,7 @@
             this.bttEditar.Location = new System.Drawing.Point(530, 16);
             this.bttEditar.Name = "bttEditar";
             this.bttEditar.Size = new System.Drawing.Size(125, 43);
-            this.bttEditar.TabIndex = 4;
+            this.bttEditar.TabIndex = 2;
             this.bttEditar.Text = "Editar";
             this.bttEditar.UseVisualStyleBackColor = true;
             this.bttEditar.Click += new System.EventHandler(this.bttEditar_Click);
@@ -166,7 +166,7 @@
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
             this.gbProcuraNome.Name = "gbProcuraNome";
             this.gbProcuraNome.Size = new System.Drawing.Size(964, 88);
-            this.gbProcuraNome.TabIndex = 5;
+            this.gbProcuraNome.TabIndex = 0;
             this.gbProcuraNome.TabStop = false;
             this.gbProcuraNome.Text = "Filtrar";
             // 
@@ -185,7 +185,7 @@
             this.radioBttJuridica.Location = new System.Drawing.Point(201, 52);
             this.radioBttJuridica.Name = "radioBttJuridica";
             this.radioBttJuridica.Size = new System.Drawing.Size(61, 17);
-            this.radioBttJuridica.TabIndex = 4;
+            this.radioBttJuridica.TabIndex = 3;
             this.radioBttJuridica.Text = "Juridica";
             this.radioBttJuridica.UseVisualStyleBackColor = true;
             this.radioBttJuridica.CheckedChanged += new System.EventHandler(this.radioBttJuridica_CheckedChanged);
@@ -196,7 +196,7 @@
             this.radioBttFisica.Location = new System.Drawing.Point(143, 52);
             this.radioBttFisica.Name = "radioBttFisica";
             this.radioBttFisica.Size = new System.Drawing.Size(52, 17);
-            this.radioBttFisica.TabIndex = 3;
+            this.radioBttFisica.TabIndex = 2;
             this.radioBttFisica.Text = "Fisica";
             this.radioBttFisica.UseVisualStyleBackColor = true;
             this.radioBttFisica.CheckedChanged += new System.EventHandler(this.radioBttFisica_CheckedChanged);
@@ -208,7 +208,7 @@
             this.radioBttTodos.Location = new System.Drawing.Point(82, 52);
             this.radioBttTodos.Name = "radioBttTodos";
             this.radioBttTodos.Size = new System.Drawing.Size(55, 17);
-            this.radioBttTodos.TabIndex = 2;
+            this.radioBttTodos.TabIndex = 1;
             this.radioBttTodos.TabStop = true;
             this.radioBttTodos.Text = "Todos";
             this.radioBttTodos.UseVisualStyleBackColor = true;
@@ -222,7 +222,7 @@
             this.txtBuscaCpfCnpj.Name = "txtBuscaCpfCnpj";
             this.txtBuscaCpfCnpj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBuscaCpfCnpj.Size = new System.Drawing.Size(876, 20);
-            this.txtBuscaCpfCnpj.TabIndex = 1;
+            this.txtBuscaCpfCnpj.TabIndex = 0;
             this.txtBuscaCpfCnpj.TextChanged += new System.EventHandler(this.txtBuscaCpfCnpj_TextChanged);
             this.txtBuscaCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscaNomeCPF_KeyPress);
             // 
@@ -245,7 +245,7 @@
             this.gbBotoes.Location = new System.Drawing.Point(6, 615);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(956, 74);
-            this.gbBotoes.TabIndex = 7;
+            this.gbBotoes.TabIndex = 1;
             this.gbBotoes.TabStop = false;
             // 
             // bttFechar
@@ -253,7 +253,7 @@
             this.bttFechar.Location = new System.Drawing.Point(758, 16);
             this.bttFechar.Name = "bttFechar";
             this.bttFechar.Size = new System.Drawing.Size(125, 43);
-            this.bttFechar.TabIndex = 5;
+            this.bttFechar.TabIndex = 3;
             this.bttFechar.Text = "Fechar";
             this.bttFechar.UseVisualStyleBackColor = true;
             this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
