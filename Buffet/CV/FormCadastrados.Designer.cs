@@ -30,7 +30,12 @@
         {
             this.gbLista = new System.Windows.Forms.GroupBox();
             this.dataGViewLista = new System.Windows.Forms.DataGridView();
-            this.bttAdicionar = new System.Windows.Forms.Button();
+            this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF_CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bttRemove = new System.Windows.Forms.Button();
             this.bttEditar = new System.Windows.Forms.Button();
             this.gbProcuraNome = new System.Windows.Forms.GroupBox();
@@ -42,12 +47,6 @@
             this.lbCPFCNPJ = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.bttFechar = new System.Windows.Forms.Button();
-            this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF_CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
@@ -94,19 +93,48 @@
             this.dataGViewLista.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGViewLista_CellMouseDoubleClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
             // 
-            // bttAdicionar
+            // cellTipo
             // 
-            this.bttAdicionar.Location = new System.Drawing.Point(74, 16);
-            this.bttAdicionar.Name = "bttAdicionar";
-            this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
-            this.bttAdicionar.TabIndex = 0;
-            this.bttAdicionar.Text = "Adicionar";
-            this.bttAdicionar.UseVisualStyleBackColor = true;
-            this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
+            this.cellTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cellTipo.HeaderText = "Tipo";
+            this.cellTipo.Name = "cellTipo";
+            this.cellTipo.ReadOnly = true;
+            this.cellTipo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cellTipo.Width = 53;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // CPF_CNPJ
+            // 
+            this.CPF_CNPJ.HeaderText = "CPF/CNPJ";
+            this.CPF_CNPJ.Name = "CPF_CNPJ";
+            this.CPF_CNPJ.ReadOnly = true;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            // 
+            // Celular
+            // 
+            this.Celular.HeaderText = "Celular";
+            this.Celular.Name = "Celular";
+            this.Celular.ReadOnly = true;
+            // 
+            // Endereço
+            // 
+            this.Endereço.HeaderText = "Endereço";
+            this.Endereço.Name = "Endereço";
+            this.Endereço.ReadOnly = true;
             // 
             // bttRemove
             // 
-            this.bttRemove.Location = new System.Drawing.Point(302, 16);
+            this.bttRemove.Location = new System.Drawing.Point(79, 16);
             this.bttRemove.Name = "bttRemove";
             this.bttRemove.Size = new System.Drawing.Size(125, 43);
             this.bttRemove.TabIndex = 1;
@@ -116,7 +144,7 @@
             // 
             // bttEditar
             // 
-            this.bttEditar.Location = new System.Drawing.Point(530, 16);
+            this.bttEditar.Location = new System.Drawing.Point(416, 16);
             this.bttEditar.Name = "bttEditar";
             this.bttEditar.Size = new System.Drawing.Size(125, 43);
             this.bttEditar.TabIndex = 2;
@@ -211,7 +239,6 @@
             // 
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbBotoes.Controls.Add(this.bttFechar);
-            this.gbBotoes.Controls.Add(this.bttAdicionar);
             this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
             this.gbBotoes.Location = new System.Drawing.Point(6, 615);
@@ -222,52 +249,13 @@
             // 
             // bttFechar
             // 
-            this.bttFechar.Location = new System.Drawing.Point(758, 16);
+            this.bttFechar.Location = new System.Drawing.Point(745, 16);
             this.bttFechar.Name = "bttFechar";
             this.bttFechar.Size = new System.Drawing.Size(125, 43);
             this.bttFechar.TabIndex = 3;
             this.bttFechar.Text = "Fechar";
             this.bttFechar.UseVisualStyleBackColor = true;
             this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
-            // 
-            // cellTipo
-            // 
-            this.cellTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cellTipo.HeaderText = "Tipo";
-            this.cellTipo.Name = "cellTipo";
-            this.cellTipo.ReadOnly = true;
-            this.cellTipo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cellTipo.Width = 53;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // CPF_CNPJ
-            // 
-            this.CPF_CNPJ.HeaderText = "CPF/CNPJ";
-            this.CPF_CNPJ.Name = "CPF_CNPJ";
-            this.CPF_CNPJ.ReadOnly = true;
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
-            // 
-            // Celular
-            // 
-            this.Celular.HeaderText = "Celular";
-            this.Celular.Name = "Celular";
-            this.Celular.ReadOnly = true;
-            // 
-            // Endereço
-            // 
-            this.Endereço.HeaderText = "Endereço";
-            this.Endereço.Name = "Endereço";
-            this.Endereço.ReadOnly = true;
             // 
             // FormCadastrados
             // 
@@ -296,7 +284,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbLista;
-        private System.Windows.Forms.Button bttAdicionar;
         private System.Windows.Forms.Button bttRemove;
         private System.Windows.Forms.Button bttEditar;
         private System.Windows.Forms.GroupBox gbProcuraNome;

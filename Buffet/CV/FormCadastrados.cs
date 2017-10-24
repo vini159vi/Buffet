@@ -78,7 +78,20 @@ namespace Buffet
             }
             else
             {
-               
+               if(dataGViewLista.Rows[index].Cells[0].Value.ToString() == "Fisico")
+                {
+                    ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+                    ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
+                    FormFisico ff = new FormFisico(cf, 1);
+                    ff.ShowDialog();
+                }
+                else
+                {
+                    ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+                    ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
+                    FormJuridico fj = new FormJuridico(cj, 1);
+                    fj.ShowDialog();
+                }
             }
         }
         public void Fill()
@@ -179,14 +192,33 @@ namespace Buffet
 
         private void bttRemove_Click(object sender, EventArgs e)
         {
-            ClienteJuridicoDAO juridicos = new ClienteJuridicoDAO();
-
-            ClienteFisicoDAO fisicos = new ClienteFisicoDAO();
-
             try
             {
-                int index = dataGViewLista.CurrentCell.ColumnIndex;
-                juridicos.Delete(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString()));
+                int index = dataGViewLista.CurrentCell.RowIndex;
+
+                if (tipo == 1)//Fisico
+                {
+                    ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+                    cfDAO.Delete(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
+                }
+                else if (tipo == 2)//Juridico
+                {
+                    ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+                    cjDAO.Delete(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
+                }
+                else//Todos
+                {
+                    if (dataGViewLista.Rows[index].Cells[0].Value.ToString() == "Fisico")
+                    {
+                        ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+                        cfDAO.Delete(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
+                    }
+                    else
+                    {
+                        ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+                        cjDAO.Delete(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
+                    }
+                }
             }
             catch(NullReferenceException)
             {
@@ -194,7 +226,10 @@ namespace Buffet
             }
             finally
             {
-                Fill();
+                if (txtBuscaCpfCnpj.Text != "")
+                    Fill(long.Parse(txtBuscaCpfCnpj.Text));
+                else
+                    Fill();
             }
         }
 
@@ -272,15 +307,30 @@ namespace Buffet
             }
             else//Todos
             {
-
+                if (dataGViewLista.Rows[index].Cells[0].Value.ToString() == "Fisico")
+                {
+                    ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+                    ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
+                    FormFisico ff = new FormFisico(cf, 0);
+                    ff.ShowDialog();
+                }
+                else
+                {
+                    ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+                    ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
+                    FormJuridico fj = new FormJuridico(cj, 0);
+                    fj.ShowDialog();
+                }
             }
         }
 
         private void txtBuscaCpfCnpj_TextChanged(object sender, EventArgs e)
         {
 
-            if(txtBuscaCpfCnpj.Text != "")
+            if (txtBuscaCpfCnpj.Text != "")
                 Fill(long.Parse(txtBuscaCpfCnpj.Text));
+            else
+                Fill();
         }
 
 

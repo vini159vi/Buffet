@@ -17,19 +17,6 @@ namespace Buffet.CV
         public FormRepresentante()
         {
             InitializeComponent();
-
-            List<ClienteJuridico> listcj = new List<ClienteJuridico>();
-            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-            listcj = cjDAO.List();
-
-            if (cbEmpresaBusca.Items.Count == 0)
-                cbEmpresaBusca.Items.Clear();
-
-
-            cbEmpresaBusca.DisplayMember = "NomeEmpresa";
-            cbEmpresaBusca.ValueMember = "Cnpj";
-            listcj.OrderBy(cj => cj.NomeEmpresa).ToList();
-            cbEmpresaBusca.DataSource = listcj;
         }
 
         public FormRepresentante(RepresentanteJuridico rj, int mode)
@@ -151,8 +138,23 @@ namespace Buffet.CV
 
         private void cbEmpresaBusca_Click(object sender, EventArgs e)
         {
+            FormRepresentante_VisibleChanged(this, new EventArgs());
+
+        }
+
+        private void FormRepresentante_VisibleChanged(object sender, EventArgs e)
+        {
+            List<ClienteJuridico> listcj = new List<ClienteJuridico>();
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+            listcj = cjDAO.List();
+
+            if (cbEmpresaBusca.Items.Count == 0)
+                cbEmpresaBusca.Items.Clear();
 
 
+            cbEmpresaBusca.DisplayMember = "NomeEmpresa";
+            cbEmpresaBusca.ValueMember = "Cnpj";
+            cbEmpresaBusca.DataSource = listcj;
         }
     }
 }

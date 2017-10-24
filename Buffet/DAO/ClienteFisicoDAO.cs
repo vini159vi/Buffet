@@ -51,12 +51,12 @@ namespace Buffet.DAO
             return cf;
         }
 
-        public void Update(ClienteFisico cf)
+        public void Update(ClienteFisico cf, long cpf)
         {
             Database db = Database.GetInstance();
             string qry = string.Format("UPDATE ClienteFisico SET nome='{0}', nacionalidade='{1}', estadoCivil='{2}', profissao='{3}', cpf='{4}', rg='{5}', telefone='{6}', cep='{7}', rua='{8}', bairro='{9}', cidade='{10}', estado='{11}', numeroCasa='{12}', celular='{13}', tipo='{14}'"
-            + " WHERE cpf = '{4}'",
-            cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular, cf.Tipo);
+            + " WHERE cpf = '{15}'",
+            cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular, cf.Tipo, cpf);
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
 
             db.ExecuteNonQuery(qry);

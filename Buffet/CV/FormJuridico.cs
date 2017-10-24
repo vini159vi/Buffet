@@ -14,12 +14,13 @@ namespace Buffet.CV
 {
     public partial class FormJuridico : Form
     {
+        long cnpj;
+
         public FormJuridico()
         {
             ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
 
             InitializeComponent();
-            //cbRepresentanteBusca.Items.Add(cjDAO.List());
         }
 
         public FormJuridico(ClienteJuridico cj,int mode)
@@ -28,8 +29,11 @@ namespace Buffet.CV
 
             if(mode == 1)
             {
-                this.Text = "Editando";
+                cnpj = cj.Cnpj;
+                this.Text = "Editando "+ cj.NomeEmpresa;
                 this.bttAdicionar.Text = "Editar";
+                this.bttAdicionar.Click -= new EventHandler(bttAdicionar_Click);
+                this.bttAdicionar.Click += new EventHandler(bttAdicionar_UpdateClick);
                 this.bttCancelar.Text = "Cancelar";
                 SetDTO(cj);
 
@@ -37,6 +41,7 @@ namespace Buffet.CV
             else
             {
                 SetDTO(cj);
+                this.Text = "Visualizando " + cj.NomeEmpresa;
                 this.bttAdicionar.Hide();
                 this.bttCancelar.Text = "Fechar";
 
@@ -130,6 +135,22 @@ namespace Buffet.CV
             ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
 
             cjDAO.Create(cj);
+
+            if (f != null)
+            {
+                f.Fill();
+            }
+            this.Hide();
+        }
+
+        private void bttAdicionar_UpdateClick(object sender, EventArgs e)
+        {
+            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+            ClienteJuridico cj = GetDTO();
+
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+
+            cjDAO.Update(cj, cnpj);
 
             if (f != null)
             {

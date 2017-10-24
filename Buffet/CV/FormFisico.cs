@@ -14,6 +14,8 @@ namespace Buffet.CV
 {
     public partial class FormFisico : Form
     {
+        private long cpf;
+
         //Remove o botão de fechar
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
@@ -37,8 +39,10 @@ namespace Buffet.CV
 
             if (mode == 1)
             {
+                cpf = cf.Cpf;
                 this.Text = "Editando " + cf.Nome;
                 this.bttAdicionar.Text = "Editar";
+                this.bttAdicionar.Click -= new EventHandler(bttAdicionar_Click);
                 this.bttAdicionar.Click += new EventHandler(bttAdicionarUpdate_Click);
                 this.bttCancelar.Text = "Cancelar";
                 SetDTO(cf);
@@ -46,9 +50,10 @@ namespace Buffet.CV
             }
             else
             {
+                this.Text = "Visualizando " + cf.Nome;
                 SetDTO(cf);
-                this.bttAdicionar.Hide();
-                this.bttCancelar.Text = "Fechar";
+                bttAdicionar.Hide();
+                bttCancelar.Text = "Fechar";
 
                 //Ativar só leitura nos txt do fisico
                 txtBairro.ReadOnly = true;
@@ -137,7 +142,7 @@ namespace Buffet.CV
 
             ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
 
-            cfDAO.Update(cf);
+            cfDAO.Update(cf,cpf);
 
             if (f != null)
             {

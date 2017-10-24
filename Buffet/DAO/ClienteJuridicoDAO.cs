@@ -45,12 +45,12 @@ namespace Buffet.DAO
             return cj;
         }
 
-        public void Update(ClienteJuridico cj)
+        public void Update(ClienteJuridico cj, long cnpj)
         {
             Database db = Database.GetInstance();
             string qry = string.Format("UPDATE ClienteJuridico SET nomeEmpresa='{0}', cnpj = '{1}', cep = '{2}', cidade = '{3}',  rua = '{4}', bairro= '{5}', estado = '{6}', numeroEmpresa = '{7}', tipo = '{8}'"
-            + " WHERE cnpj = '{1}'",
-            cj.NumeroEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, cj.Tipo);
+            + " WHERE cnpj = '{9}'",
+            cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, cj.Tipo, cnpj);
 
             db.ExecuteNonQuery(qry);
         }
