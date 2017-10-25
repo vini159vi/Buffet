@@ -71,5 +71,10 @@ namespace Buffet.CV
             this.Hide();
             e.Cancel = true;
         }
+
+        private void txtPreco_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtPreco.Focus();
+        }
     }
 }

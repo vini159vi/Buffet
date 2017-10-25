@@ -54,5 +54,10 @@ namespace Buffet.CV
             this.Hide();
             e.Cancel = true;
         }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
