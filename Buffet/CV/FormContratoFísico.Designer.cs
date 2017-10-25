@@ -45,6 +45,7 @@
             this.lbData = new System.Windows.Forms.Label();
             this.dtDataEvento = new System.Windows.Forms.DateTimePicker();
             this.gbContratado = new System.Windows.Forms.GroupBox();
+            this.txtPreco = new System.Windows.Forms.MaskedTextBox();
             this.dtPagamento = new System.Windows.Forms.DateTimePicker();
             this.lbDataPagamento = new System.Windows.Forms.Label();
             this.lbPreco = new System.Windows.Forms.Label();
@@ -65,7 +66,7 @@
             this.bttGerarContrato = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.txtPreco = new System.Windows.Forms.MaskedTextBox();
+            this.txtPessoaFisica = new System.Windows.Forms.TextBox();
             this.gbDevolucao.SuspendLayout();
             this.gbEvento.SuspendLayout();
             this.gbContratado.SuspendLayout();
@@ -267,6 +268,16 @@
             this.gbContratado.TabStop = false;
             this.gbContratado.Text = "Contratado";
             // 
+            // txtPreco
+            // 
+            this.txtPreco.Location = new System.Drawing.Point(756, 19);
+            this.txtPreco.Mask = "000.000,00";
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPreco.Size = new System.Drawing.Size(76, 20);
+            this.txtPreco.TabIndex = 6;
+            this.txtPreco.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPreco_MouseClick);
+            // 
             // dtPagamento
             // 
             this.dtPagamento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -400,6 +411,7 @@
             // 
             this.gbBuscaPessoaFisica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbBuscaPessoaFisica.Controls.Add(this.txtPessoaFisica);
             this.gbBuscaPessoaFisica.Controls.Add(this.cbBuscaPessoaFisica);
             this.gbBuscaPessoaFisica.Location = new System.Drawing.Point(12, 12);
             this.gbBuscaPessoaFisica.Name = "gbBuscaPessoaFisica";
@@ -450,15 +462,13 @@
             this.gbBotoes.TabIndex = 4;
             this.gbBotoes.TabStop = false;
             // 
-            // txtPreco
+            // txtPessoaFisica
             // 
-            this.txtPreco.Location = new System.Drawing.Point(756, 19);
-            this.txtPreco.Mask = "000.000,00";
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPreco.Size = new System.Drawing.Size(76, 20);
-            this.txtPreco.TabIndex = 6;
-            this.txtPreco.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPreco_MouseClick);
+            this.txtPessoaFisica.Location = new System.Drawing.Point(9, 19);
+            this.txtPessoaFisica.Name = "txtPessoaFisica";
+            this.txtPessoaFisica.Size = new System.Drawing.Size(830, 20);
+            this.txtPessoaFisica.TabIndex = 1;
+            this.txtPessoaFisica.Visible = false;
             // 
             // FormContratoFísico
             // 
@@ -484,6 +494,7 @@
             this.gbContratado.ResumeLayout(false);
             this.gbContratado.PerformLayout();
             this.gbBuscaPessoaFisica.ResumeLayout(false);
+            this.gbBuscaPessoaFisica.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -529,5 +540,6 @@
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.DateTimePicker dtDataEvento;
         private System.Windows.Forms.MaskedTextBox txtPreco;
+        private System.Windows.Forms.TextBox txtPessoaFisica;
     }
 }

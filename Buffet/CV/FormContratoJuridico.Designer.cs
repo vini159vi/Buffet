@@ -32,6 +32,7 @@
             this.bttGerarContrato = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.gbContratado = new System.Windows.Forms.GroupBox();
+            this.txtPreco = new System.Windows.Forms.MaskedTextBox();
             this.dtPagamento = new System.Windows.Forms.DateTimePicker();
             this.lbDataPagamento = new System.Windows.Forms.Label();
             this.lbPreco = new System.Windows.Forms.Label();
@@ -68,7 +69,8 @@
             this.lbRepresentante = new System.Windows.Forms.Label();
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.lbEmpresa = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.MaskedTextBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.txtRepresentante = new System.Windows.Forms.TextBox();
             this.gbBotoes.SuspendLayout();
             this.gbContratado.SuspendLayout();
             this.gbEvento.SuspendLayout();
@@ -94,6 +96,7 @@
             this.bttGerarContrato.TabIndex = 0;
             this.bttGerarContrato.Text = "Gerar Contrato";
             this.bttGerarContrato.UseVisualStyleBackColor = true;
+            this.bttGerarContrato.Click += new System.EventHandler(this.bttGerarContrato_Click);
             // 
             // bttCancelar
             // 
@@ -129,6 +132,16 @@
             this.gbContratado.TabIndex = 2;
             this.gbContratado.TabStop = false;
             this.gbContratado.Text = "Contratado";
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Location = new System.Drawing.Point(756, 19);
+            this.txtPreco.Mask = "000.000,00";
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPreco.Size = new System.Drawing.Size(76, 20);
+            this.txtPreco.TabIndex = 6;
+            this.txtPreco.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // dtPagamento
             // 
@@ -413,6 +426,8 @@
             // 
             // gbPessoaJuridica
             // 
+            this.gbPessoaJuridica.Controls.Add(this.txtRepresentante);
+            this.gbPessoaJuridica.Controls.Add(this.txtEmpresa);
             this.gbPessoaJuridica.Controls.Add(this.cbRepresentante);
             this.gbPessoaJuridica.Controls.Add(this.lbRepresentante);
             this.gbPessoaJuridica.Controls.Add(this.cbEmpresa);
@@ -459,15 +474,21 @@
             this.lbEmpresa.TabIndex = 0;
             this.lbEmpresa.Text = "Empresa:";
             // 
-            // txtPreco
+            // txtEmpresa
             // 
-            this.txtPreco.Location = new System.Drawing.Point(756, 19);
-            this.txtPreco.Mask = "000.000,00";
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPreco.Size = new System.Drawing.Size(76, 20);
-            this.txtPreco.TabIndex = 6;
-            this.txtPreco.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.txtEmpresa.Location = new System.Drawing.Point(69, 26);
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.Size = new System.Drawing.Size(763, 20);
+            this.txtEmpresa.TabIndex = 3;
+            this.txtEmpresa.Visible = false;
+            // 
+            // txtRepresentante
+            // 
+            this.txtRepresentante.Location = new System.Drawing.Point(98, 54);
+            this.txtRepresentante.Name = "txtRepresentante";
+            this.txtRepresentante.Size = new System.Drawing.Size(734, 20);
+            this.txtRepresentante.TabIndex = 4;
+            this.txtRepresentante.Visible = false;
             // 
             // FormContratoJuridico
             // 
@@ -542,5 +563,7 @@
         private System.Windows.Forms.ComboBox cbEmpresa;
         private System.Windows.Forms.Label lbEmpresa;
         private System.Windows.Forms.MaskedTextBox txtPreco;
+        private System.Windows.Forms.TextBox txtRepresentante;
+        private System.Windows.Forms.TextBox txtEmpresa;
     }
 }

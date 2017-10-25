@@ -66,8 +66,8 @@ namespace Buffet.MISC
                       ");" +
 
                     "CREATE TABLE Contrato(" +
-                      "id INTEGER PRIMARY KEY" +
-                      "tipo INTEGER" +
+                      "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                      "tipo INTEGER," +
                       "eventoData DATE," +
                       "eventoHora TIME," +
                       "eventoTerminoHora TIME," +

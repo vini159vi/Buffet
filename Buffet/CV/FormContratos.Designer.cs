@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
-            this.lbID = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.lblTipoPessoa = new System.Windows.Forms.Label();
             this.radioBttJuridica = new System.Windows.Forms.RadioButton();
             this.radioBttFisica = new System.Windows.Forms.RadioButton();
             this.radioBttTodos = new System.Windows.Forms.RadioButton();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.lbID = new System.Windows.Forms.Label();
             this.gbLista = new System.Windows.Forms.Panel();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.bttFechar = new System.Windows.Forms.Button();
-            this.bttEditar = new System.Windows.Forms.Button();
-            this.bttRemove = new System.Windows.Forms.Button();
             this.dataGViewLista = new System.Windows.Forms.DataGridView();
             this.cellID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellNomeEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellDataEvento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.bttFechar = new System.Windows.Forms.Button();
+            this.bttEditar = new System.Windows.Forms.Button();
+            this.bttRemove = new System.Windows.Forms.Button();
             this.gbFiltrar.SuspendLayout();
             this.gbLista.SuspendLayout();
-            this.gbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
+            this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbFiltrar
@@ -70,24 +70,6 @@
             this.gbFiltrar.TabStop = false;
             this.gbFiltrar.Text = "Filtrar";
             // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(6, 26);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(21, 13);
-            this.lbID.TabIndex = 1;
-            this.lbID.Text = "ID:";
-            // 
-            // txtID
-            // 
-            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtID.Location = new System.Drawing.Point(33, 23);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(921, 20);
-            this.txtID.TabIndex = 0;
-            // 
             // lblTipoPessoa
             // 
             this.lblTipoPessoa.AutoSize = true;
@@ -106,6 +88,7 @@
             this.radioBttJuridica.TabIndex = 3;
             this.radioBttJuridica.Text = "Jurídica";
             this.radioBttJuridica.UseVisualStyleBackColor = true;
+            this.radioBttJuridica.CheckedChanged += new System.EventHandler(this.radioBttJuridica_CheckedChanged);
             // 
             // radioBttFisica
             // 
@@ -116,6 +99,7 @@
             this.radioBttFisica.TabIndex = 2;
             this.radioBttFisica.Text = "Física";
             this.radioBttFisica.UseVisualStyleBackColor = true;
+            this.radioBttFisica.CheckedChanged += new System.EventHandler(this.radioBttFisica_CheckedChanged);
             // 
             // radioBttTodos
             // 
@@ -128,6 +112,27 @@
             this.radioBttTodos.TabStop = true;
             this.radioBttTodos.Text = "Todos";
             this.radioBttTodos.UseVisualStyleBackColor = true;
+            this.radioBttTodos.CheckedChanged += new System.EventHandler(this.radioBttTodos_CheckedChanged);
+            // 
+            // txtID
+            // 
+            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtID.Location = new System.Drawing.Point(33, 23);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(921, 20);
+            this.txtID.TabIndex = 0;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Location = new System.Drawing.Point(6, 26);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(21, 13);
+            this.lbID.TabIndex = 1;
+            this.lbID.Text = "ID:";
             // 
             // gbLista
             // 
@@ -140,46 +145,6 @@
             this.gbLista.Name = "gbLista";
             this.gbLista.Size = new System.Drawing.Size(960, 466);
             this.gbLista.TabIndex = 1;
-            // 
-            // gbBotoes
-            // 
-            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.gbBotoes.Controls.Add(this.bttFechar);
-            this.gbBotoes.Controls.Add(this.bttEditar);
-            this.gbBotoes.Controls.Add(this.bttRemove);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 580);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(960, 74);
-            this.gbBotoes.TabIndex = 1;
-            this.gbBotoes.TabStop = false;
-            // 
-            // bttFechar
-            // 
-            this.bttFechar.Location = new System.Drawing.Point(745, 16);
-            this.bttFechar.Name = "bttFechar";
-            this.bttFechar.Size = new System.Drawing.Size(125, 43);
-            this.bttFechar.TabIndex = 2;
-            this.bttFechar.Text = "Fechar";
-            this.bttFechar.UseVisualStyleBackColor = true;
-            this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
-            // 
-            // bttEditar
-            // 
-            this.bttEditar.Location = new System.Drawing.Point(416, 16);
-            this.bttEditar.Name = "bttEditar";
-            this.bttEditar.Size = new System.Drawing.Size(125, 43);
-            this.bttEditar.TabIndex = 1;
-            this.bttEditar.Text = "Editar";
-            this.bttEditar.UseVisualStyleBackColor = true;
-            // 
-            // bttRemove
-            // 
-            this.bttRemove.Location = new System.Drawing.Point(79, 16);
-            this.bttRemove.Name = "bttRemove";
-            this.bttRemove.Size = new System.Drawing.Size(125, 43);
-            this.bttRemove.TabIndex = 0;
-            this.bttRemove.Text = "Remover";
-            this.bttRemove.UseVisualStyleBackColor = true;
             // 
             // dataGViewLista
             // 
@@ -201,6 +166,8 @@
             this.dataGViewLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGViewLista.Size = new System.Drawing.Size(960, 466);
             this.dataGViewLista.TabIndex = 0;
+            this.dataGViewLista.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGViewLista_CellMouseDoubleClick);
+            this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
             // 
             // cellID
             // 
@@ -237,6 +204,48 @@
             this.cellPreco.ReadOnly = true;
             this.cellPreco.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // gbBotoes
+            // 
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.gbBotoes.Controls.Add(this.bttFechar);
+            this.gbBotoes.Controls.Add(this.bttEditar);
+            this.gbBotoes.Controls.Add(this.bttRemove);
+            this.gbBotoes.Location = new System.Drawing.Point(12, 580);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(960, 74);
+            this.gbBotoes.TabIndex = 1;
+            this.gbBotoes.TabStop = false;
+            // 
+            // bttFechar
+            // 
+            this.bttFechar.Location = new System.Drawing.Point(745, 16);
+            this.bttFechar.Name = "bttFechar";
+            this.bttFechar.Size = new System.Drawing.Size(125, 43);
+            this.bttFechar.TabIndex = 2;
+            this.bttFechar.Text = "Fechar";
+            this.bttFechar.UseVisualStyleBackColor = true;
+            this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
+            // 
+            // bttEditar
+            // 
+            this.bttEditar.Location = new System.Drawing.Point(416, 16);
+            this.bttEditar.Name = "bttEditar";
+            this.bttEditar.Size = new System.Drawing.Size(125, 43);
+            this.bttEditar.TabIndex = 1;
+            this.bttEditar.Text = "Editar";
+            this.bttEditar.UseVisualStyleBackColor = true;
+            this.bttEditar.Click += new System.EventHandler(this.bttEditar_Click);
+            // 
+            // bttRemove
+            // 
+            this.bttRemove.Location = new System.Drawing.Point(79, 16);
+            this.bttRemove.Name = "bttRemove";
+            this.bttRemove.Size = new System.Drawing.Size(125, 43);
+            this.bttRemove.TabIndex = 0;
+            this.bttRemove.Text = "Remover";
+            this.bttRemove.UseVisualStyleBackColor = true;
+            this.bttRemove.Click += new System.EventHandler(this.bttRemove_Click);
+            // 
             // FormContratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,8 +262,8 @@
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
             this.gbLista.ResumeLayout(false);
-            this.gbBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).EndInit();
+            this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

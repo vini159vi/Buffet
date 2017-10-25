@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Buffet.Modelos
 {
-    class Contrato
+    public class Contrato
     {
         private DateTime eventoData, eventoHora, eventoTerminoHora, contratadoHoraChegada, contratadoInicioServico, contratadoTerminoServico, contratadoDataPgto, devolucaoHora, devolucaoDia;
         private int id, eventoNConvidados, eventoCapMaxima, contratadoHoraAntecedencia, contratadoQuantGarcons, contratadoQuantCopeiros, tipo;
