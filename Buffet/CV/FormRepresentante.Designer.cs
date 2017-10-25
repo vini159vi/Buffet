@@ -64,6 +64,7 @@
             this.cbEmpresaBusca = new System.Windows.Forms.ComboBox();
             this.clienteJuridicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbRepresentanteBusca = new System.Windows.Forms.GroupBox();
+            this.txtEmpresaView = new System.Windows.Forms.TextBox();
             this.gbRepresentante.SuspendLayout();
             this.gbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).BeginInit();
@@ -387,12 +388,21 @@
             // 
             this.gbRepresentanteBusca.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbRepresentanteBusca.Controls.Add(this.cbEmpresaBusca);
+            this.gbRepresentanteBusca.Controls.Add(this.txtEmpresaView);
             this.gbRepresentanteBusca.Location = new System.Drawing.Point(12, 12);
             this.gbRepresentanteBusca.Name = "gbRepresentanteBusca";
             this.gbRepresentanteBusca.Size = new System.Drawing.Size(634, 56);
             this.gbRepresentanteBusca.TabIndex = 0;
             this.gbRepresentanteBusca.TabStop = false;
             this.gbRepresentanteBusca.Text = "Empresa";
+            // 
+            // txtEmpresaView
+            // 
+            this.txtEmpresaView.Location = new System.Drawing.Point(6, 19);
+            this.txtEmpresaView.Name = "txtEmpresaView";
+            this.txtEmpresaView.Size = new System.Drawing.Size(622, 20);
+            this.txtEmpresaView.TabIndex = 22;
+            this.txtEmpresaView.Visible = false;
             // 
             // FormRepresentante
             // 
@@ -413,6 +423,7 @@
             this.gbBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).EndInit();
             this.gbRepresentanteBusca.ResumeLayout(false);
+            this.gbRepresentanteBusca.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -454,5 +465,6 @@
         private System.Windows.Forms.ComboBox cbEmpresaBusca;
         private System.Windows.Forms.GroupBox gbRepresentanteBusca;
         private System.Windows.Forms.BindingSource clienteJuridicoBindingSource;
+        private System.Windows.Forms.TextBox txtEmpresaView;
     }
 }

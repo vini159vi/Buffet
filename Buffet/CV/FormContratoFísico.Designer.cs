@@ -472,6 +472,7 @@
             this.Name = "FormContratoFísico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contrato de Pessoa Física";
+            this.VisibleChanged += new System.EventHandler(this.FormContratoFísico_VisibleChanged);
             this.gbDevolucao.ResumeLayout(false);
             this.gbDevolucao.PerformLayout();
             this.gbEvento.ResumeLayout(false);

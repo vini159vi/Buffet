@@ -42,7 +42,9 @@ namespace Buffet.CV
             {
                 SetDTO(cj);
                 this.Text = "Visualizando " + cj.NomeEmpresa;
-                this.bttAdicionar.Hide();
+                this.bttAdicionar.Text = "Ver Representante";
+                this.bttAdicionar.Click -= new EventHandler(bttAdicionar_Click);
+                this.bttAdicionar.Click += new EventHandler(bttVerRepresentante_Click);
                 this.bttCancelar.Text = "Fechar";
 
                 //Ativar só leitura nos txt da Empresa
@@ -54,6 +56,7 @@ namespace Buffet.CV
                 txtCEPEmpresa.ReadOnly = true;
                 txtCidadeEmpresa.ReadOnly = true;
                 txtEstadoEmpresa.ReadOnly = true;
+
 
             }
         }
@@ -157,6 +160,27 @@ namespace Buffet.CV
                 f.Fill();
             }
             this.Hide();
+        }
+
+        private void bttVerRepresentante_Click(object sender, EventArgs e)
+        {
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+            ClienteJuridico cj = GetDTO();
+            RepresentanteJuridico rj = cjDAO.FindByRepresentante(cj.Cnpj);
+
+            if (rj.Cpf == 0)
+            {
+                MessageBox.Show("Essa pessoa juridica não tem representante cadastrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+            }
+            else
+            {
+                FormRepresentante fr = new FormRepresentante(rj, 0);
+                if (fr != null)
+                {
+                    fr.ShowDialog();
+                }
+            }
         }
 
         /*private void txtNome_KeyPress(object sender, KeyPressEventArgs e)

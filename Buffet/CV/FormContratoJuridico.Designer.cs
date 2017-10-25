@@ -455,6 +455,7 @@
             this.cbEmpresa.Name = "cbEmpresa";
             this.cbEmpresa.Size = new System.Drawing.Size(763, 21);
             this.cbEmpresa.TabIndex = 0;
+            this.cbEmpresa.SelectedIndexChanged += new System.EventHandler(this.cbEmpresa_SelectedIndexChanged);
             // 
             // lbEmpresa
             // 
@@ -480,6 +481,7 @@
             this.Name = "FormContratoJuridico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contrato de Pessoa Jurídica";
+            this.VisibleChanged += new System.EventHandler(this.FormContratoJuridico_VisibleChanged);
             this.gbBotoes.ResumeLayout(false);
             this.gbContratado.ResumeLayout(false);
             this.gbContratado.PerformLayout();

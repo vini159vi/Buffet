@@ -171,6 +171,39 @@ namespace Buffet.DAO
             return cj;
         }
 
+        public List<RepresentanteJuridico> ListByRepresentante(long cnpj)
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM RepresentanteJuridico rj " +
+                "JOIN ClienteJuridico cj ON cj.Cnpj=rj.EmpresaCnpj WHERE cnpj=" + cnpj;
+            DataSet ds = bd.ExecuteQuery(qry);
+            RepresentanteJuridico rj = new RepresentanteJuridico();
+            List<RepresentanteJuridico> listrj =  new List<RepresentanteJuridico>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                rj.Nome = dr["nome"].ToString();
+                rj.Nacionalidade = dr["nacionalidade"].ToString();
+                rj.EstadoCivil = dr["estadoCivil"].ToString();
+                rj.Profissao = dr["profissao"].ToString();
+                rj.Cpf = long.Parse(dr["cpf"].ToString());
+                rj.Rg = long.Parse(dr["rg"].ToString());
+                rj.Telefone = long.Parse(dr["Telefone"].ToString());
+                rj.Cep = long.Parse(dr["cep"].ToString());
+                rj.Rua = dr["rua"].ToString();
+                rj.Bairro = dr["bairro"].ToString();
+                rj.Cidade = dr["cidade"].ToString();
+                rj.Estado = dr["estado"].ToString();
+                rj.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+                rj.Celular = long.Parse(dr["celular"].ToString());
+                rj.Empresa.Cnpj = long.Parse(dr["empresaCnpj"].ToString());
+
+                listrj.Add(rj);
+            }
+            return listrj;
+
+        }
+
         public RepresentanteJuridico FindByRepresentante(long cnpj)
         {
             Database bd = Database.GetInstance();
@@ -196,6 +229,7 @@ namespace Buffet.DAO
                 rj.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 rj.Celular = long.Parse(dr["celular"].ToString());
                 rj.Empresa.Cnpj = long.Parse(dr["empresaCnpj"].ToString());
+
             }
             return rj;
 

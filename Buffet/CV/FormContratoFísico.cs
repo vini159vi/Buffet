@@ -30,17 +30,6 @@ namespace Buffet.CV
         {
             InitializeComponent();
 
-            List<ClienteFisico> listcf = new List<ClienteFisico>();
-            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
-            listcf = cfDAO.List();
-
-            if (cbBuscaPessoaFisica.Items.Count == 0)
-                cbBuscaPessoaFisica.Items.Clear();
-
-
-            cbBuscaPessoaFisica.DisplayMember = "Nome";
-            cbBuscaPessoaFisica.ValueMember = "Cpf";
-            cbBuscaPessoaFisica.DataSource = listcf;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -71,6 +60,21 @@ namespace Buffet.CV
         private void cbBuscaPessoaFisica_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormContratoFísico_VisibleChanged(object sender, EventArgs e)
+        {
+            List<ClienteFisico> listcf = new List<ClienteFisico>();
+            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+            listcf = cfDAO.List();
+
+            if (cbBuscaPessoaFisica.Items.Count == 0)
+                cbBuscaPessoaFisica.Items.Clear();
+
+
+            cbBuscaPessoaFisica.DisplayMember = "Nome";
+            cbBuscaPessoaFisica.ValueMember = "Cpf";
+            cbBuscaPessoaFisica.DataSource = listcf;
         }
     }
 }

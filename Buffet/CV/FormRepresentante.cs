@@ -14,6 +14,7 @@ namespace Buffet.CV
 {
     public partial class FormRepresentante : Form
     {
+        long cpf;
         public FormRepresentante()
         {
             InitializeComponent();
@@ -25,8 +26,11 @@ namespace Buffet.CV
 
             if (mode == 1)
             {
+                cpf = rj.Cpf;
                 this.Text = "Editando "+rj.Nome;
                 this.bttAdicionar.Text = "Editar";
+                this.bttAdicionar.Click -= new EventHandler(bttAdicionar_Click);
+                this.bttAdicionar.Click += new EventHandler(bttUpdate_Click);
                 this.bttCancelar.Text = "Cancelar";
                 SetDTO(rj);
 
@@ -34,7 +38,9 @@ namespace Buffet.CV
             else
             {
                 SetDTO(rj);
-                this.bttAdicionar.Hide();
+                this.bttAdicionar.Text = "Editar";
+                bttAdicionar.Click -= new EventHandler(bttAdicionar_Click);
+                bttAdicionar.Click += new EventHandler(bttEditar_Click);
                 this.bttCancelar.Text = "Fechar";
 
                 //Ativar só leitura nos txt do Representante
@@ -52,7 +58,9 @@ namespace Buffet.CV
                 txtEstadoRepresentante.ReadOnly = true;
                 txtTelefone.ReadOnly = true;
                 txtCelular.ReadOnly = true;
-
+                txtEmpresaView.Visible = true;
+                cbEmpresaBusca.Visible = false;
+                txtEmpresaView.ReadOnly = true;
             }
         }
 
@@ -99,8 +107,11 @@ namespace Buffet.CV
 
         private void SetDTO(RepresentanteJuridico rj)
         {
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+            ClienteJuridico aux = cjDAO.FindByCNPJ(rj.Empresa.Cnpj);
+
             txtNomeRepresentante.Text = rj.Nome.ToString();
-            txtCPFRepresentante.Text = rj.Cep.ToString();
+            txtCPFRepresentante.Text = rj.Cpf.ToString();
             txtRG.Text = rj.Rg.ToString();
             txtProfissao.Text = rj.Profissao;
             txtNacionalidade.Text = rj.Nacionalidade;
@@ -113,6 +124,7 @@ namespace Buffet.CV
             txtEstadoRepresentante.Text = rj.Estado;
             txtTelefone.Text = rj.Telefone.ToString();
             txtCelular.Text = rj.Celular.ToString();
+            txtEmpresaView.Text = aux.NomeEmpresa;
         }
 
         private void bttAdicionar_Click(object sender, EventArgs e)
@@ -131,9 +143,36 @@ namespace Buffet.CV
             this.Hide();
         }
 
+
         private void bttCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void bttEditar_Click(object sender, EventArgs e)
+        {
+            RepresentanteJuridico rj = GetDTO();
+
+            FormRepresentante fr = new FormRepresentante(rj,1);
+            this.Hide();
+            fr.ShowDialog();
+        }
+
+        private void bttUpdate_Click(object sender, EventArgs e)
+        {
+            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+            RepresentanteJuridico rj = GetDTO();
+
+            RepresentanteDAO rjDAO = new RepresentanteDAO();
+
+            rjDAO.Update(rj, cpf);
+
+            if (f != null)
+            {
+                f.Fill();
+            }
+            this.Hide();
+            
         }
 
         private void cbEmpresaBusca_Click(object sender, EventArgs e)
@@ -153,8 +192,13 @@ namespace Buffet.CV
 
 
             cbEmpresaBusca.DisplayMember = "NomeEmpresa";
-            cbEmpresaBusca.ValueMember = "Cnpj";
+            cbEmpresaBusca.ValueMember = "cnpj";
             cbEmpresaBusca.DataSource = listcj;
+        }
+
+        private void cbEmpresaBusca_keyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

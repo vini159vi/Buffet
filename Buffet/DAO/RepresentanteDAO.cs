@@ -54,8 +54,8 @@ namespace Buffet.DAO
         public void Update(RepresentanteJuridico rj, long cpf)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE RepresentanteJuridico SET nome={0}, nacionalidade={1}, estadoCivil={2}, profissao={3}, cpf={4}, rg={5}, telefone={6}, cep={7}, rua={8}, bairro={9}, cidade={10}, estado={11}, numeroCasa={12}, celular={13}, empresaCnpj={14}"
-            + " WHERE cpf = {15}",
+            string qry = string.Format("UPDATE RepresentanteJuridico SET nome='{0}', nacionalidade='{1}', estadoCivil='{2}', profissao='{3}', cpf='{4}', rg='{5}', telefone='{6}', cep='{7}', rua='{8}', bairro='{9}', cidade='{10}', estado='{11}', numeroCasa='{12}', celular='{13}', empresaCnpj='{14}'"
+            + " WHERE cpf = '{15}'",
             rj.Nome, rj.Nacionalidade, rj.EstadoCivil, rj.Profissao, rj.Cpf, rj.Rg, rj.Telefone, rj.Cep, rj.Rua, rj.Bairro, rj.Cidade, rj.Estado, rj.NumeroCasa, rj.Celular, rj.Empresa.Cnpj, cpf);
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
 
