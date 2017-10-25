@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="DAO\ClienteFisicoDAO.cs" />
     <Compile Include="DAO\ClienteJuridicoDAO.cs" />
+    <Compile Include="DAO\ContratoDAO.cs" />
     <Compile Include="DAO\RepresentanteDAO.cs" />
     <Compile Include="MISC\Database.cs" />
     <Compile Include="MISC\TabelasDB.cs" />

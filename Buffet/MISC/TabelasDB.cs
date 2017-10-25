@@ -62,7 +62,35 @@ namespace Buffet.MISC
                       "numeroEmpresa INTEGER," +
                       "tipo INT," +
 
-                      "PRIMARY KEY(cnpj));";
+                      "PRIMARY KEY(cnpj)" +
+                      ");" +
+
+                    "CREATE TABLE Contrato(" +
+                      "id INTEGER PRIMARY KEY" +
+                      "tipo INTEGER" +
+                      "eventoData DATE," +
+                      "eventoHora TIME," +
+                      "eventoTerminoHora TIME," +
+                      "eventoNConvidados INTEGER," +
+                      "eventoCapMaxima INTEGER," +
+                      "contratadoHoraChegada TIME," +
+                      "contratadoHoraAntecedencia INTEGER," +
+                      "contratadoInicioServico TIME," +
+                      "contratadoTerminoServico TIME," +
+                      "contratadoQuantGarcons INTEGER," +
+                      "contratadoQuantCopeiros INTEGER," +
+                      "contratadoPrecoPagar DOUBLE(8,2)," +
+                      "contratadoDataPgto DATE," +
+                      "devolucaoDia DATE," +
+                      "devolucaoHora TIME," +
+                      "pessoaFisicaCPF BIGINT NULL," +
+                      "pessoaJuridicaCNPJ BIGINT NULL," +
+                      "representanteCPF BIGINT NULL," +
+
+                      "FOREIGN KEY (pessoaFisicaCPF) REFERENCES ClienteFisico (cpf)," +
+                      "FOREIGN KEY (pessoaJuridicaCNPJ) REFERENCES ClienteJuridico (cnpj)," +
+                      "FOREIGN KEY (representanteCPF) REFERENCES RepresentanteJuridico (cpf)" +
+                      ");";
         }
     }
 }
