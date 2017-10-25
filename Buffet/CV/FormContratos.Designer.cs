@@ -43,7 +43,7 @@
             this.dataGViewLista = new System.Windows.Forms.DataGridView();
             this.cellID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cellNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellNomeEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellDataEvento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltrar.SuspendLayout();
@@ -190,7 +190,7 @@
             this.dataGViewLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cellID,
             this.cellTipo,
-            this.cellNome,
+            this.cellNomeEmpresa,
             this.cellDataEvento,
             this.cellPreco});
             this.dataGViewLista.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -217,11 +217,11 @@
             this.cellTipo.Name = "cellTipo";
             this.cellTipo.ReadOnly = true;
             // 
-            // cellNome
+            // cellNomeEmpresa
             // 
-            this.cellNome.HeaderText = "Nome";
-            this.cellNome.Name = "cellNome";
-            this.cellNome.ReadOnly = true;
+            this.cellNomeEmpresa.HeaderText = "Nome/Empresa";
+            this.cellNomeEmpresa.Name = "cellNomeEmpresa";
+            this.cellNomeEmpresa.ReadOnly = true;
             // 
             // cellDataEvento
             // 
@@ -277,7 +277,7 @@
         private System.Windows.Forms.DataGridView dataGViewLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn cellID;
         private System.Windows.Forms.DataGridViewTextBoxColumn cellTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cellNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cellNomeEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn cellDataEvento;
         private System.Windows.Forms.DataGridViewTextBoxColumn cellPreco;
     }
