@@ -372,6 +372,7 @@
             this.Name = "FormFisico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Fisico";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormFisico_FormClosing);
             this.gbFisico.ResumeLayout(false);
             this.gbFisico.PerformLayout();
             this.gbBotoes.ResumeLayout(false);

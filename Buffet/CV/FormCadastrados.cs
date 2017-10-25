@@ -15,17 +15,6 @@ namespace Buffet
 {
     public partial class FormCadastrados : Form
     {
-        //Remove o botão de fechar
-        private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
-                return myCp;
-            }
-        }
         //Global
             private int tipo;
             private long num;
@@ -358,14 +347,14 @@ namespace Buffet
                 ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                 ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
                 FormFisico ff = new FormFisico(cf, 0);
-                ff.ShowDialog();
+                ff.Show();
             }
             else if (tipo == 2)//Juridico
             {
                 ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
                 ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\","").Replace("-","")));
                 FormJuridico fj = new FormJuridico(cj, 0);
-                fj.ShowDialog();
+                fj.Show();
 
             }
             else//Todos
@@ -375,14 +364,14 @@ namespace Buffet
                     ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                     ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
                     FormFisico ff = new FormFisico(cf, 0);
-                    ff.ShowDialog();
+                    ff.Show();
                 }
                 else
                 {
                     ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
                     ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
                     FormJuridico fj = new FormJuridico(cj, 0);
-                    fj.ShowDialog();
+                    fj.Show();
                 }
             }
         }
@@ -394,6 +383,12 @@ namespace Buffet
             else
                 Fill();
 
+        }
+
+        private void FormCadastrados_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
 
         /*private void txtNome_KeyPress(object sender, KeyPressEventArgs e)

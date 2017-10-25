@@ -284,6 +284,7 @@
             this.Name = "FormJuridico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Juridico";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormJuridico_FormClosing);
             this.gbEmpresa.ResumeLayout(false);
             this.gbEmpresa.PerformLayout();
             this.gbBotoes.ResumeLayout(false);

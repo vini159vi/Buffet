@@ -14,17 +14,6 @@ namespace Buffet.CV
 {
     public partial class FormContratoFísico : Form
     {
-        //Remove o botão de fechar
-        private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
-                return myCp;
-            }
-        }
 
         public FormContratoFísico()
         {
@@ -75,6 +64,12 @@ namespace Buffet.CV
             cbBuscaPessoaFisica.DisplayMember = "Nome";
             cbBuscaPessoaFisica.ValueMember = "Cpf";
             cbBuscaPessoaFisica.DataSource = listcf;
+        }
+
+        private void FormContratoFísico_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }

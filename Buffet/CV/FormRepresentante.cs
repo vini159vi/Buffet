@@ -37,6 +37,7 @@ namespace Buffet.CV
             }
             else
             {
+                cpf = rj.Cpf;
                 SetDTO(rj);
                 this.bttAdicionar.Text = "Editar";
                 bttAdicionar.Click -= new EventHandler(bttAdicionar_Click);
@@ -61,18 +62,6 @@ namespace Buffet.CV
                 txtEmpresaView.Visible = true;
                 cbEmpresaBusca.Visible = false;
                 txtEmpresaView.ReadOnly = true;
-            }
-        }
-
-        //Remove o botão de fechar
-        private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
-                return myCp;
             }
         }
 
@@ -153,9 +142,32 @@ namespace Buffet.CV
         {
             RepresentanteJuridico rj = GetDTO();
 
-            FormRepresentante fr = new FormRepresentante(rj,1);
-            this.Hide();
-            fr.ShowDialog();
+            this.Text = "Editando " + rj.Nome;
+            this.bttAdicionar.Text = "Editar";
+            this.bttAdicionar.Click -= new EventHandler(bttAdicionar_Click);
+            this.bttAdicionar.Click += new EventHandler(bttUpdate_Click);
+            this.bttCancelar.Text = "Cancelar";
+
+            txtNomeRepresentante.ReadOnly = false;
+            txtCPFRepresentante.ReadOnly = false;
+            txtRG.ReadOnly = false;
+            txtProfissao.ReadOnly = false;
+            txtNacionalidade.ReadOnly = false;
+            txtEstadoCivil.ReadOnly = false;
+            txtRuaRepresentante.ReadOnly = false;
+            txtNumeroRepresentante.ReadOnly = false;
+            txtBairroRepresentante.ReadOnly = false;
+            txtCEPRepresentante.ReadOnly = false;
+            txtCidadeRepresentante.ReadOnly = false;
+            txtEstadoRepresentante.ReadOnly = false;
+            txtTelefone.ReadOnly = false;
+            txtCelular.ReadOnly = false;
+            txtEmpresaView.Visible = false;
+            cbEmpresaBusca.Visible = true;
+            txtEmpresaView.ReadOnly = false;
+
+            SetDTO(rj);
+
         }
 
         private void bttUpdate_Click(object sender, EventArgs e)
@@ -199,6 +211,12 @@ namespace Buffet.CV
         private void cbEmpresaBusca_keyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void FormRepresentante_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }

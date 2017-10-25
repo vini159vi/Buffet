@@ -86,18 +86,6 @@ namespace Buffet.CV
             this.Hide();
         }
 
-        //Remove o botão de fechar
-        private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
-                return myCp;
-            }
-        }
-
         private ClienteJuridico GetDTO()
         {
             ClienteJuridico cj = new ClienteJuridico();
@@ -261,6 +249,12 @@ namespace Buffet.CV
             {
                 e.Handled = true;
             }
+        }
+
+        private void FormJuridico_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }

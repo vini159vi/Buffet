@@ -481,6 +481,7 @@
             this.Name = "FormContratoJuridico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contrato de Pessoa Jurídica";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormContratoJuridico_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.FormContratoJuridico_VisibleChanged);
             this.gbBotoes.ResumeLayout(false);
             this.gbContratado.ResumeLayout(false);

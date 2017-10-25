@@ -417,6 +417,7 @@
             this.Name = "FormRepresentante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Representante";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRepresentante_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.FormRepresentante_VisibleChanged);
             this.gbRepresentante.ResumeLayout(false);
             this.gbRepresentante.PerformLayout();

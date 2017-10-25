@@ -14,18 +14,6 @@ namespace Buffet.CV
 {
     public partial class FormContratoJuridico : Form
     {
-        //Remove o botão de fechar
-        private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
-                return myCp;
-            }
-        }
-
         public FormContratoJuridico()
         {
             InitializeComponent();
@@ -59,6 +47,12 @@ namespace Buffet.CV
             cbRepresentante.DisplayMember = "Nome";
             cbRepresentante.ValueMember = "Cpf";
             cbRepresentante.DataSource = listrj;
+        }
+
+        private void FormContratoJuridico_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }
