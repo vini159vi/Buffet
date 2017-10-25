@@ -248,7 +248,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormContratos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormContratos";
+            this.Text = "Contratos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormContratos_FormClosing);
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
