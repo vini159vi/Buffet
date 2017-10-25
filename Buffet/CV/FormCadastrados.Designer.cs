@@ -177,29 +177,29 @@
             this.lblTipoPessoa.AutoSize = true;
             this.lblTipoPessoa.Location = new System.Drawing.Point(7, 54);
             this.lblTipoPessoa.Name = "lblTipoPessoa";
-            this.lblTipoPessoa.Size = new System.Drawing.Size(69, 13);
+            this.lblTipoPessoa.Size = new System.Drawing.Size(31, 13);
             this.lblTipoPessoa.TabIndex = 5;
-            this.lblTipoPessoa.Text = "Tipo Pessoa:";
+            this.lblTipoPessoa.Text = "Tipo:";
             // 
             // radioBttJuridica
             // 
             this.radioBttJuridica.AutoSize = true;
-            this.radioBttJuridica.Location = new System.Drawing.Point(201, 52);
+            this.radioBttJuridica.Location = new System.Drawing.Point(163, 52);
             this.radioBttJuridica.Name = "radioBttJuridica";
-            this.radioBttJuridica.Size = new System.Drawing.Size(61, 17);
+            this.radioBttJuridica.Size = new System.Drawing.Size(63, 17);
             this.radioBttJuridica.TabIndex = 3;
-            this.radioBttJuridica.Text = "Juridica";
+            this.radioBttJuridica.Text = "Jurídica";
             this.radioBttJuridica.UseVisualStyleBackColor = true;
             this.radioBttJuridica.CheckedChanged += new System.EventHandler(this.radioBttJuridica_CheckedChanged);
             // 
             // radioBttFisica
             // 
             this.radioBttFisica.AutoSize = true;
-            this.radioBttFisica.Location = new System.Drawing.Point(143, 52);
+            this.radioBttFisica.Location = new System.Drawing.Point(105, 52);
             this.radioBttFisica.Name = "radioBttFisica";
-            this.radioBttFisica.Size = new System.Drawing.Size(52, 17);
+            this.radioBttFisica.Size = new System.Drawing.Size(54, 17);
             this.radioBttFisica.TabIndex = 2;
-            this.radioBttFisica.Text = "Fisica";
+            this.radioBttFisica.Text = "Física";
             this.radioBttFisica.UseVisualStyleBackColor = true;
             this.radioBttFisica.CheckedChanged += new System.EventHandler(this.radioBttFisica_CheckedChanged);
             // 
@@ -207,7 +207,7 @@
             // 
             this.radioBttTodos.AutoSize = true;
             this.radioBttTodos.Checked = true;
-            this.radioBttTodos.Location = new System.Drawing.Point(82, 52);
+            this.radioBttTodos.Location = new System.Drawing.Point(44, 52);
             this.radioBttTodos.Name = "radioBttTodos";
             this.radioBttTodos.Size = new System.Drawing.Size(55, 17);
             this.radioBttTodos.TabIndex = 1;

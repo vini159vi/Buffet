@@ -93,35 +93,35 @@
             this.lblTipoPessoa.AutoSize = true;
             this.lblTipoPessoa.Location = new System.Drawing.Point(6, 56);
             this.lblTipoPessoa.Name = "lblTipoPessoa";
-            this.lblTipoPessoa.Size = new System.Drawing.Size(69, 13);
+            this.lblTipoPessoa.Size = new System.Drawing.Size(31, 13);
             this.lblTipoPessoa.TabIndex = 9;
-            this.lblTipoPessoa.Text = "Tipo Pessoa:";
+            this.lblTipoPessoa.Text = "Tipo:";
             // 
             // radioBttJuridica
             // 
             this.radioBttJuridica.AutoSize = true;
-            this.radioBttJuridica.Location = new System.Drawing.Point(200, 54);
+            this.radioBttJuridica.Location = new System.Drawing.Point(162, 54);
             this.radioBttJuridica.Name = "radioBttJuridica";
-            this.radioBttJuridica.Size = new System.Drawing.Size(61, 17);
+            this.radioBttJuridica.Size = new System.Drawing.Size(63, 17);
             this.radioBttJuridica.TabIndex = 3;
-            this.radioBttJuridica.Text = "Juridica";
+            this.radioBttJuridica.Text = "Jurídica";
             this.radioBttJuridica.UseVisualStyleBackColor = true;
             // 
             // radioBttFisica
             // 
             this.radioBttFisica.AutoSize = true;
-            this.radioBttFisica.Location = new System.Drawing.Point(142, 54);
+            this.radioBttFisica.Location = new System.Drawing.Point(104, 54);
             this.radioBttFisica.Name = "radioBttFisica";
-            this.radioBttFisica.Size = new System.Drawing.Size(52, 17);
+            this.radioBttFisica.Size = new System.Drawing.Size(54, 17);
             this.radioBttFisica.TabIndex = 2;
-            this.radioBttFisica.Text = "Fisica";
+            this.radioBttFisica.Text = "Física";
             this.radioBttFisica.UseVisualStyleBackColor = true;
             // 
             // radioBttTodos
             // 
             this.radioBttTodos.AutoSize = true;
             this.radioBttTodos.Checked = true;
-            this.radioBttTodos.Location = new System.Drawing.Point(81, 54);
+            this.radioBttTodos.Location = new System.Drawing.Point(43, 54);
             this.radioBttTodos.Name = "radioBttTodos";
             this.radioBttTodos.Size = new System.Drawing.Size(55, 17);
             this.radioBttTodos.TabIndex = 1;
