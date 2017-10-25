@@ -83,6 +83,12 @@
     <Compile Include="CV\FormContratoJuridico.Designer.cs">
       <DependentUpon>FormContratoJuridico.cs</DependentUpon>
     </Compile>
+    <Compile Include="CV\FormContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormContratos.Designer.cs">
+      <DependentUpon>FormContratos.cs</DependentUpon>
+    </Compile>
     <Compile Include="CV\FormFisico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormContratoJuridico.resx">
       <DependentUpon>FormContratoJuridico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormContratos.resx">
+      <DependentUpon>FormContratos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormFisico.resx">
       <DependentUpon>FormFisico.cs</DependentUpon>

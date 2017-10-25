@@ -63,7 +63,7 @@
             this.gbLista.Location = new System.Drawing.Point(3, 76);
             this.gbLista.Name = "gbLista";
             this.gbLista.Size = new System.Drawing.Size(962, 543);
-            this.gbLista.TabIndex = 1;
+            this.gbLista.TabIndex = 2;
             this.gbLista.TabStop = false;
             this.gbLista.Enter += new System.EventHandler(this.gbLista_Enter);
             // 
@@ -139,7 +139,7 @@
             this.bttRemove.Location = new System.Drawing.Point(79, 16);
             this.bttRemove.Name = "bttRemove";
             this.bttRemove.Size = new System.Drawing.Size(125, 43);
-            this.bttRemove.TabIndex = 1;
+            this.bttRemove.TabIndex = 0;
             this.bttRemove.Text = "Remover";
             this.bttRemove.UseVisualStyleBackColor = true;
             this.bttRemove.Click += new System.EventHandler(this.bttRemove_Click);
@@ -149,7 +149,7 @@
             this.bttEditar.Location = new System.Drawing.Point(416, 16);
             this.bttEditar.Name = "bttEditar";
             this.bttEditar.Size = new System.Drawing.Size(125, 43);
-            this.bttEditar.TabIndex = 2;
+            this.bttEditar.TabIndex = 1;
             this.bttEditar.Text = "Editar";
             this.bttEditar.UseVisualStyleBackColor = true;
             this.bttEditar.Click += new System.EventHandler(this.bttEditar_Click);
@@ -254,7 +254,7 @@
             this.bttFechar.Location = new System.Drawing.Point(745, 16);
             this.bttFechar.Name = "bttFechar";
             this.bttFechar.Size = new System.Drawing.Size(125, 43);
-            this.bttFechar.TabIndex = 3;
+            this.bttFechar.TabIndex = 2;
             this.bttFechar.Text = "Fechar";
             this.bttFechar.UseVisualStyleBackColor = true;
             this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
@@ -270,7 +270,7 @@
             this.Controls.Add(this.gbBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormCadastrados";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrados";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastrados_FormClosing);
             this.Load += new System.EventHandler(this.FormCadastrados_Load);

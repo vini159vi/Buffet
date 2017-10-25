@@ -47,7 +47,6 @@
             this.gbContratado = new System.Windows.Forms.GroupBox();
             this.dtPagamento = new System.Windows.Forms.DateTimePicker();
             this.lbDataPagamento = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.TextBox();
             this.lbPreco = new System.Windows.Forms.Label();
             this.lbQuantidadeDeCopeiros = new System.Windows.Forms.Label();
             this.txtHorasAntecedencia = new System.Windows.Forms.TextBox();
@@ -66,6 +65,7 @@
             this.bttGerarContrato = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.txtPreco = new System.Windows.Forms.MaskedTextBox();
             this.gbDevolucao.SuspendLayout();
             this.gbEvento.SuspendLayout();
             this.gbContratado.SuspendLayout();
@@ -244,9 +244,9 @@
             // gbContratado
             // 
             this.gbContratado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.gbContratado.Controls.Add(this.txtPreco);
             this.gbContratado.Controls.Add(this.dtPagamento);
             this.gbContratado.Controls.Add(this.lbDataPagamento);
-            this.gbContratado.Controls.Add(this.txtPreco);
             this.gbContratado.Controls.Add(this.lbPreco);
             this.gbContratado.Controls.Add(this.lbQuantidadeDeCopeiros);
             this.gbContratado.Controls.Add(this.txtHorasAntecedencia);
@@ -284,13 +284,6 @@
             this.lbDataPagamento.TabIndex = 16;
             this.lbDataPagamento.Text = "Data de pgto.:";
             // 
-            // txtPreco
-            // 
-            this.txtPreco.Location = new System.Drawing.Point(756, 20);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(76, 20);
-            this.txtPreco.TabIndex = 3;
-            // 
             // lbPreco
             // 
             this.lbPreco.AutoSize = true;
@@ -314,7 +307,7 @@
             this.txtHorasAntecedencia.Location = new System.Drawing.Point(133, 46);
             this.txtHorasAntecedencia.Name = "txtHorasAntecedencia";
             this.txtHorasAntecedencia.Size = new System.Drawing.Size(53, 20);
-            this.txtHorasAntecedencia.TabIndex = 4;
+            this.txtHorasAntecedencia.TabIndex = 1;
             // 
             // dtHoraChegada
             // 
@@ -348,14 +341,14 @@
             this.txtCopeiros.Location = new System.Drawing.Point(574, 48);
             this.txtCopeiros.Name = "txtCopeiros";
             this.txtCopeiros.Size = new System.Drawing.Size(55, 20);
-            this.txtCopeiros.TabIndex = 6;
+            this.txtCopeiros.TabIndex = 5;
             // 
             // txtGarcom
             // 
             this.txtGarcom.Location = new System.Drawing.Point(574, 20);
             this.txtGarcom.Name = "txtGarcom";
             this.txtGarcom.Size = new System.Drawing.Size(55, 20);
-            this.txtGarcom.TabIndex = 2;
+            this.txtGarcom.TabIndex = 4;
             // 
             // lbQuantidadeDeGarcoes
             // 
@@ -373,7 +366,7 @@
             this.dtHoraTerminoContratado.Name = "dtHoraTerminoContratado";
             this.dtHoraTerminoContratado.ShowUpDown = true;
             this.dtHoraTerminoContratado.Size = new System.Drawing.Size(81, 20);
-            this.dtHoraTerminoContratado.TabIndex = 5;
+            this.dtHoraTerminoContratado.TabIndex = 3;
             this.dtHoraTerminoContratado.ValueChanged += new System.EventHandler(this.dtHoraTerminoContratado_ValueChanged);
             // 
             // lbHoraTerminoContratado
@@ -392,7 +385,7 @@
             this.dtHoraInicio.Name = "dtHoraInicio";
             this.dtHoraInicio.ShowUpDown = true;
             this.dtHoraInicio.Size = new System.Drawing.Size(81, 20);
-            this.dtHoraInicio.TabIndex = 1;
+            this.dtHoraInicio.TabIndex = 2;
             // 
             // lbHoraInicioContratado
             // 
@@ -454,8 +447,18 @@
             this.gbBotoes.Location = new System.Drawing.Point(12, 299);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(845, 74);
-            this.gbBotoes.TabIndex = 9;
+            this.gbBotoes.TabIndex = 4;
             this.gbBotoes.TabStop = false;
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Location = new System.Drawing.Point(756, 19);
+            this.txtPreco.Mask = "000.000,00";
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPreco.Size = new System.Drawing.Size(76, 20);
+            this.txtPreco.TabIndex = 6;
+            this.txtPreco.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPreco_MouseClick);
             // 
             // FormContratoFísico
             // 
@@ -509,7 +512,6 @@
         private System.Windows.Forms.Label lbHoraInicioContratado;
         private System.Windows.Forms.DateTimePicker dtPagamento;
         private System.Windows.Forms.Label lbDataPagamento;
-        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label lbPreco;
         private System.Windows.Forms.Label lbQuantidadeDeCopeiros;
         private System.Windows.Forms.TextBox txtHorasAntecedencia;
@@ -526,5 +528,6 @@
         private System.Windows.Forms.Button bttCancelar;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.DateTimePicker dtDataEvento;
+        private System.Windows.Forms.MaskedTextBox txtPreco;
     }
 }

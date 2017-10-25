@@ -13,6 +13,7 @@ namespace Buffet
         private FormFisico ff = new FormFisico();
         private FormContratoFísico fcf = new FormContratoFísico();
         private FormContratoJuridico fcj = new FormContratoJuridico();
+        private FormContratos fcon = new FormContratos();
 
         public FormMenu()
         {
@@ -69,6 +70,15 @@ namespace Buffet
             {
                 fcj.MdiParent = this;
                 fcj.Show();
+            }
+        }
+
+        private void consultaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (!fcon.Visible)
+            {
+                fcon.MdiParent = this;
+                fcon.Show();
             }
         }
     }
