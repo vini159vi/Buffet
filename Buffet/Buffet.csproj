@@ -83,6 +83,12 @@
     <Compile Include="CV\FormContratoJuridico.Designer.cs">
       <DependentUpon>FormContratoJuridico.cs</DependentUpon>
     </Compile>
+    <Compile Include="CV\FormContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormContratos.Designer.cs">
+      <DependentUpon>FormContratos.cs</DependentUpon>
+    </Compile>
     <Compile Include="CV\FormFisico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="CV\FormJuridico.Designer.cs">
       <DependentUpon>FormJuridico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormMenuModern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormMenuModern.Designer.cs">
+      <DependentUpon>FormMenuModern.cs</DependentUpon>
     </Compile>
     <Compile Include="CV\FormRepresentante.cs">
       <SubType>Form</SubType>
@@ -136,6 +148,9 @@
     <EmbeddedResource Include="CV\FormContratoJuridico.resx">
       <DependentUpon>FormContratoJuridico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormContratos.resx">
+      <DependentUpon>FormContratos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CV\FormFisico.resx">
       <DependentUpon>FormFisico.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,19 +160,16 @@
     <EmbeddedResource Include="CV\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormMenuModern.resx">
+      <DependentUpon>FormMenuModern.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CV\FormRepresentante.resx">
       <DependentUpon>FormRepresentante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="bin\Debug\Banco.db" />
     <None Include="bin\Debug\System.Data.SQLite.dll.config">
       <SubType>Designer</SubType>
@@ -187,10 +199,20 @@
     </Content>
     <Content Include="bin\Debug\x64\SQLite.Interop.dll" />
     <Content Include="bin\Debug\x86\SQLite.Interop.dll" />
+    <None Include="Resources\Logo1.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\MenuIcon.png" />
+    <None Include="Resources\MaximizeIcon.png" />
+    <None Include="Resources\IconSair.png" />
+    <None Include="Resources\IconRelatorio.png" />
+    <None Include="Resources\IconMinimize.png" />
+    <None Include="Resources\IconContrato.png" />
+    <None Include="Resources\IconConsulta2.png" />
+    <None Include="Resources\IconCardapio.png" />
+    <None Include="Resources\IconCadastro.png" />
+    <None Include="Resources\IconAgenda.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net451\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Buffet.CV;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Buffet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenu());
+            Application.Run(new FormMenuModern());
         }
     }
 }

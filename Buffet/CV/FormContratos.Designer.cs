@@ -151,6 +151,8 @@
             this.dataGViewLista.AllowUserToAddRows = false;
             this.dataGViewLista.AllowUserToDeleteRows = false;
             this.dataGViewLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGViewLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGViewLista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGViewLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cellID,
@@ -159,6 +161,7 @@
             this.cellDataEvento,
             this.cellPreco});
             this.dataGViewLista.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGViewLista.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGViewLista.Location = new System.Drawing.Point(0, 0);
             this.dataGViewLista.Name = "dataGViewLista";
             this.dataGViewLista.ReadOnly = true;
