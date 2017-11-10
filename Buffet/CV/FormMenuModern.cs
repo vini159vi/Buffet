@@ -124,14 +124,27 @@ namespace Buffet.CV
             if(panelSlideCadastro.Size.Height >= 85)
             {
                 timerCadastroOut.Stop();
+                timerCadastroOut.Enabled = false;
             }
             else
             {
-                panelSlideCadastro.Height += 5;
+                panelSlideCadastro.Height += 10;
             }
         }
 
-
+        private void timerCadastroIn_Tick(object sender, EventArgs e)
+        {
+            if (panelSlideCadastro.Size.Height <= 5)
+            {
+                timerCadastroIn.Stop();
+                timerCadastroIn.Enabled = false;
+                panelSlideCadastro.Visible = false;
+            }
+            else
+            {
+                panelSlideCadastro.Height -= 10;
+            }
+        }
 
 
 
@@ -178,8 +191,19 @@ namespace Buffet.CV
             timerSelecao.Enabled = true;
             timerSelecao.Start();
             panelSlideCadastro.Visible = true;
-            timerCadastroOut.Enabled = true;
-            timerCadastroOut.Start();
+
+            /*if (panelSlideCadastro.Size.Height >= 80)
+            {
+                timerCadastroIn.Enabled = true;
+                timerCadastroIn.Start();
+            }
+            else
+            {
+                panelSlideCadastro.Visible = true;
+                timerCadastroOut.Enabled = true;
+                timerCadastroOut.Start();
+            }*/
+
 
 
         }
@@ -224,6 +248,13 @@ namespace Buffet.CV
         private void panelCadastro_MouseMove(object sender, MouseEventArgs e)
         {
             panelCadastro.BackColor = Color.FromArgb(86, 80, 84);
+            if (timerCadastroIn.Enabled == false)
+            {
+                panelSlideCadastro.Visible = true;
+
+                timerCadastroOut.Enabled = true;
+                timerCadastroOut.Start();
+            }
         }
 
 
@@ -255,6 +286,9 @@ namespace Buffet.CV
         private void panelCadastro_MouseLeave(object sender, EventArgs e)
         {
             panelCadastro.BackColor = Color.FromArgb(42, 39, 41);
+
+            timerCadastroIn.Enabled = true;
+            timerCadastroIn.Start();
         }
         private void panelAgendamento_MouseLeave(object sender, EventArgs e)
         {
@@ -273,5 +307,6 @@ namespace Buffet.CV
             y = posicao;
         }
 
+        
     }
 }

@@ -33,10 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuModern));
             this.timerSlideInBarra = new System.Windows.Forms.Timer(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelSlideCadastro = new System.Windows.Forms.Panel();
-            this.lblCadastroRepresentante = new System.Windows.Forms.Label();
-            this.lblCadastroJuridico = new System.Windows.Forms.Label();
-            this.lblCadastroFisica = new System.Windows.Forms.Label();
             this.panelSelecao = new System.Windows.Forms.Panel();
             this.bttMenu = new System.Windows.Forms.Button();
             this.panelRelatorio = new System.Windows.Forms.Panel();
@@ -57,6 +53,10 @@
             this.panelCardapio = new System.Windows.Forms.Panel();
             this.pbCardapio = new System.Windows.Forms.PictureBox();
             this.lblCardapio = new System.Windows.Forms.Label();
+            this.panelSlideCadastro = new System.Windows.Forms.Panel();
+            this.lblCadastroRepresentante = new System.Windows.Forms.Label();
+            this.lblCadastroJuridico = new System.Windows.Forms.Label();
+            this.lblCadastroFisica = new System.Windows.Forms.Label();
             this.topPage = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bttMaximize = new System.Windows.Forms.Button();
@@ -66,8 +66,8 @@
             this.timerSelecao = new System.Windows.Forms.Timer(this.components);
             this.timerCadastroOut = new System.Windows.Forms.Timer(this.components);
             this.panelWorkstation = new System.Windows.Forms.Panel();
+            this.timerCadastroIn = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
-            this.panelSlideCadastro.SuspendLayout();
             this.panelRelatorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRelatorio)).BeginInit();
             this.panelConsulta.SuspendLayout();
@@ -80,8 +80,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAgenda)).BeginInit();
             this.panelCardapio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCardapio)).BeginInit();
+            this.panelSlideCadastro.SuspendLayout();
             this.topPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.panelWorkstation.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerSlideInBarra
@@ -92,68 +94,19 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
-            this.panelMenu.Controls.Add(this.panelSlideCadastro);
+            this.panelMenu.Controls.Add(this.panelAgendamento);
             this.panelMenu.Controls.Add(this.panelSelecao);
             this.panelMenu.Controls.Add(this.bttMenu);
             this.panelMenu.Controls.Add(this.panelRelatorio);
             this.panelMenu.Controls.Add(this.panelConsulta);
             this.panelMenu.Controls.Add(this.panelContrato);
             this.panelMenu.Controls.Add(this.panelCadastro);
-            this.panelMenu.Controls.Add(this.panelAgendamento);
             this.panelMenu.Controls.Add(this.panelCardapio);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 79);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(168, 673);
             this.panelMenu.TabIndex = 0;
-            // 
-            // panelSlideCadastro
-            // 
-            this.panelSlideCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSlideCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
-            this.panelSlideCadastro.Controls.Add(this.lblCadastroRepresentante);
-            this.panelSlideCadastro.Controls.Add(this.lblCadastroJuridico);
-            this.panelSlideCadastro.Controls.Add(this.lblCadastroFisica);
-            this.panelSlideCadastro.Location = new System.Drawing.Point(18, 239);
-            this.panelSlideCadastro.Name = "panelSlideCadastro";
-            this.panelSlideCadastro.Size = new System.Drawing.Size(150, 10);
-            this.panelSlideCadastro.TabIndex = 7;
-            this.panelSlideCadastro.Visible = false;
-            // 
-            // lblCadastroRepresentante
-            // 
-            this.lblCadastroRepresentante.AutoSize = true;
-            this.lblCadastroRepresentante.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroRepresentante.ForeColor = System.Drawing.Color.White;
-            this.lblCadastroRepresentante.Location = new System.Drawing.Point(22, 57);
-            this.lblCadastroRepresentante.Name = "lblCadastroRepresentante";
-            this.lblCadastroRepresentante.Size = new System.Drawing.Size(106, 20);
-            this.lblCadastroRepresentante.TabIndex = 14;
-            this.lblCadastroRepresentante.Text = "Representante";
-            // 
-            // lblCadastroJuridico
-            // 
-            this.lblCadastroJuridico.AutoSize = true;
-            this.lblCadastroJuridico.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroJuridico.ForeColor = System.Drawing.Color.White;
-            this.lblCadastroJuridico.Location = new System.Drawing.Point(22, 30);
-            this.lblCadastroJuridico.Name = "lblCadastroJuridico";
-            this.lblCadastroJuridico.Size = new System.Drawing.Size(111, 20);
-            this.lblCadastroJuridico.TabIndex = 13;
-            this.lblCadastroJuridico.Text = "Pessoa Juridica";
-            // 
-            // lblCadastroFisica
-            // 
-            this.lblCadastroFisica.AutoSize = true;
-            this.lblCadastroFisica.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroFisica.ForeColor = System.Drawing.Color.White;
-            this.lblCadastroFisica.Location = new System.Drawing.Point(22, 3);
-            this.lblCadastroFisica.Name = "lblCadastroFisica";
-            this.lblCadastroFisica.Size = new System.Drawing.Size(98, 20);
-            this.lblCadastroFisica.TabIndex = 12;
-            this.lblCadastroFisica.Text = "Pessoa Fisica";
             // 
             // panelSelecao
             // 
@@ -281,7 +234,7 @@
             this.lblContrato.AutoSize = true;
             this.lblContrato.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContrato.ForeColor = System.Drawing.Color.White;
-            this.lblContrato.Location = new System.Drawing.Point(52, 10);
+            this.lblContrato.Location = new System.Drawing.Point(50, 10);
             this.lblContrato.Name = "lblContrato";
             this.lblContrato.Size = new System.Drawing.Size(98, 29);
             this.lblContrato.TabIndex = 12;
@@ -337,7 +290,7 @@
             this.lblCadastro.AutoSize = true;
             this.lblCadastro.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadastro.ForeColor = System.Drawing.Color.White;
-            this.lblCadastro.Location = new System.Drawing.Point(52, 12);
+            this.lblCadastro.Location = new System.Drawing.Point(49, 9);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(101, 29);
             this.lblCadastro.TabIndex = 9;
@@ -363,7 +316,7 @@
             // 
             this.pbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pbAgenda.Image = ((System.Drawing.Image)(resources.GetObject("pbAgenda.Image")));
-            this.pbAgenda.Location = new System.Drawing.Point(-7, 0);
+            this.pbAgenda.Location = new System.Drawing.Point(-6, 0);
             this.pbAgenda.Name = "pbAgenda";
             this.pbAgenda.Size = new System.Drawing.Size(52, 47);
             this.pbAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -379,7 +332,7 @@
             this.lblAgenda.AutoSize = true;
             this.lblAgenda.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgenda.ForeColor = System.Drawing.Color.White;
-            this.lblAgenda.Location = new System.Drawing.Point(52, 9);
+            this.lblAgenda.Location = new System.Drawing.Point(55, 9);
             this.lblAgenda.Name = "lblAgenda";
             this.lblAgenda.Size = new System.Drawing.Size(86, 29);
             this.lblAgenda.TabIndex = 0;
@@ -429,6 +382,54 @@
             this.lblCardapio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCardapio_MouseClick);
             this.lblCardapio.MouseLeave += new System.EventHandler(this.panelCardapio_MouseLeave);
             this.lblCardapio.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCardapio_MouseMove);
+            // 
+            // panelSlideCadastro
+            // 
+            this.panelSlideCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSlideCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
+            this.panelSlideCadastro.Controls.Add(this.lblCadastroRepresentante);
+            this.panelSlideCadastro.Controls.Add(this.lblCadastroJuridico);
+            this.panelSlideCadastro.Controls.Add(this.lblCadastroFisica);
+            this.panelSlideCadastro.Location = new System.Drawing.Point(-7, 193);
+            this.panelSlideCadastro.Name = "panelSlideCadastro";
+            this.panelSlideCadastro.Size = new System.Drawing.Size(150, 5);
+            this.panelSlideCadastro.TabIndex = 7;
+            this.panelSlideCadastro.Visible = false;
+            // 
+            // lblCadastroRepresentante
+            // 
+            this.lblCadastroRepresentante.AutoSize = true;
+            this.lblCadastroRepresentante.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastroRepresentante.ForeColor = System.Drawing.Color.White;
+            this.lblCadastroRepresentante.Location = new System.Drawing.Point(22, 57);
+            this.lblCadastroRepresentante.Name = "lblCadastroRepresentante";
+            this.lblCadastroRepresentante.Size = new System.Drawing.Size(106, 20);
+            this.lblCadastroRepresentante.TabIndex = 14;
+            this.lblCadastroRepresentante.Text = "Representante";
+            // 
+            // lblCadastroJuridico
+            // 
+            this.lblCadastroJuridico.AutoSize = true;
+            this.lblCadastroJuridico.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastroJuridico.ForeColor = System.Drawing.Color.White;
+            this.lblCadastroJuridico.Location = new System.Drawing.Point(22, 30);
+            this.lblCadastroJuridico.Name = "lblCadastroJuridico";
+            this.lblCadastroJuridico.Size = new System.Drawing.Size(111, 20);
+            this.lblCadastroJuridico.TabIndex = 13;
+            this.lblCadastroJuridico.Text = "Pessoa Juridica";
+            // 
+            // lblCadastroFisica
+            // 
+            this.lblCadastroFisica.AutoSize = true;
+            this.lblCadastroFisica.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastroFisica.ForeColor = System.Drawing.Color.White;
+            this.lblCadastroFisica.Location = new System.Drawing.Point(22, 3);
+            this.lblCadastroFisica.Name = "lblCadastroFisica";
+            this.lblCadastroFisica.Size = new System.Drawing.Size(98, 20);
+            this.lblCadastroFisica.TabIndex = 12;
+            this.lblCadastroFisica.Text = "Pessoa Fisica";
             // 
             // topPage
             // 
@@ -523,6 +524,7 @@
             // 
             this.panelWorkstation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelWorkstation.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelWorkstation.Controls.Add(this.panelSlideCadastro);
             this.panelWorkstation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkstation.ForeColor = System.Drawing.Color.Black;
             this.panelWorkstation.Location = new System.Drawing.Point(168, 79);
@@ -530,24 +532,28 @@
             this.panelWorkstation.Size = new System.Drawing.Size(856, 673);
             this.panelWorkstation.TabIndex = 3;
             // 
+            // timerCadastroIn
+            // 
+            this.timerCadastroIn.Interval = 25;
+            this.timerCadastroIn.Tick += new System.EventHandler(this.timerCadastroIn_Tick);
+            // 
             // FormMenuModern
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 752);
             this.Controls.Add(this.panelWorkstation);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.topPage);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.Transparent;
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuModern";
             this.Text = "FormMenuModern";
-            this.TransparencyKey = System.Drawing.Color.Black;
+            this.TransparencyKey = System.Drawing.SystemColors.ActiveBorder;
             this.panelMenu.ResumeLayout(false);
-            this.panelSlideCadastro.ResumeLayout(false);
-            this.panelSlideCadastro.PerformLayout();
             this.panelRelatorio.ResumeLayout(false);
             this.panelRelatorio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRelatorio)).EndInit();
@@ -566,8 +572,11 @@
             this.panelCardapio.ResumeLayout(false);
             this.panelCardapio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCardapio)).EndInit();
+            this.panelSlideCadastro.ResumeLayout(false);
+            this.panelSlideCadastro.PerformLayout();
             this.topPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.panelWorkstation.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -609,5 +618,6 @@
         private System.Windows.Forms.Label lblCadastroFisica;
         private System.Windows.Forms.Timer timerCadastroOut;
         private System.Windows.Forms.Panel panelWorkstation;
+        private System.Windows.Forms.Timer timerCadastroIn;
     }
 }
