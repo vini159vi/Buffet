@@ -66,6 +66,7 @@
             this.timerSelecao = new System.Windows.Forms.Timer(this.components);
             this.timerCadastroOut = new System.Windows.Forms.Timer(this.components);
             this.panelWorkstation = new System.Windows.Forms.Panel();
+            this.timerCadastroIn = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panelRelatorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRelatorio)).BeginInit();
@@ -93,13 +94,13 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelMenu.Controls.Add(this.panelAgendamento);
             this.panelMenu.Controls.Add(this.panelSelecao);
             this.panelMenu.Controls.Add(this.bttMenu);
             this.panelMenu.Controls.Add(this.panelRelatorio);
             this.panelMenu.Controls.Add(this.panelConsulta);
             this.panelMenu.Controls.Add(this.panelContrato);
             this.panelMenu.Controls.Add(this.panelCadastro);
-            this.panelMenu.Controls.Add(this.panelAgendamento);
             this.panelMenu.Controls.Add(this.panelCardapio);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 79);
@@ -109,9 +110,10 @@
             // 
             // panelSelecao
             // 
+            this.panelSelecao.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelSelecao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(125)))));
             this.panelSelecao.ForeColor = System.Drawing.Color.Transparent;
-            this.panelSelecao.Location = new System.Drawing.Point(1, 106);
+            this.panelSelecao.Location = new System.Drawing.Point(0, 446);
             this.panelSelecao.Name = "panelSelecao";
             this.panelSelecao.Size = new System.Drawing.Size(8, 47);
             this.panelSelecao.TabIndex = 3;
@@ -232,7 +234,7 @@
             this.lblContrato.AutoSize = true;
             this.lblContrato.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContrato.ForeColor = System.Drawing.Color.White;
-            this.lblContrato.Location = new System.Drawing.Point(52, 10);
+            this.lblContrato.Location = new System.Drawing.Point(50, 10);
             this.lblContrato.Name = "lblContrato";
             this.lblContrato.Size = new System.Drawing.Size(98, 29);
             this.lblContrato.TabIndex = 12;
@@ -288,7 +290,7 @@
             this.lblCadastro.AutoSize = true;
             this.lblCadastro.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadastro.ForeColor = System.Drawing.Color.White;
-            this.lblCadastro.Location = new System.Drawing.Point(52, 12);
+            this.lblCadastro.Location = new System.Drawing.Point(49, 9);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(101, 29);
             this.lblCadastro.TabIndex = 9;
@@ -314,7 +316,7 @@
             // 
             this.pbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pbAgenda.Image = ((System.Drawing.Image)(resources.GetObject("pbAgenda.Image")));
-            this.pbAgenda.Location = new System.Drawing.Point(-7, 0);
+            this.pbAgenda.Location = new System.Drawing.Point(-6, 0);
             this.pbAgenda.Name = "pbAgenda";
             this.pbAgenda.Size = new System.Drawing.Size(52, 47);
             this.pbAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -330,7 +332,7 @@
             this.lblAgenda.AutoSize = true;
             this.lblAgenda.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgenda.ForeColor = System.Drawing.Color.White;
-            this.lblAgenda.Location = new System.Drawing.Point(52, 9);
+            this.lblAgenda.Location = new System.Drawing.Point(55, 9);
             this.lblAgenda.Name = "lblAgenda";
             this.lblAgenda.Size = new System.Drawing.Size(86, 29);
             this.lblAgenda.TabIndex = 0;
@@ -390,9 +392,9 @@
             this.panelSlideCadastro.Controls.Add(this.lblCadastroRepresentante);
             this.panelSlideCadastro.Controls.Add(this.lblCadastroJuridico);
             this.panelSlideCadastro.Controls.Add(this.lblCadastroFisica);
-            this.panelSlideCadastro.Location = new System.Drawing.Point(0, 237);
+            this.panelSlideCadastro.Location = new System.Drawing.Point(-7, 193);
             this.panelSlideCadastro.Name = "panelSlideCadastro";
-            this.panelSlideCadastro.Size = new System.Drawing.Size(150, 10);
+            this.panelSlideCadastro.Size = new System.Drawing.Size(150, 5);
             this.panelSlideCadastro.TabIndex = 7;
             this.panelSlideCadastro.Visible = false;
             // 
@@ -530,21 +532,27 @@
             this.panelWorkstation.Size = new System.Drawing.Size(856, 673);
             this.panelWorkstation.TabIndex = 3;
             // 
+            // timerCadastroIn
+            // 
+            this.timerCadastroIn.Interval = 25;
+            this.timerCadastroIn.Tick += new System.EventHandler(this.timerCadastroIn_Tick);
+            // 
             // FormMenuModern
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 752);
             this.Controls.Add(this.panelWorkstation);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.topPage);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.Transparent;
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuModern";
             this.Text = "FormMenuModern";
-            this.TransparencyKey = System.Drawing.Color.Black;
+            this.TransparencyKey = System.Drawing.SystemColors.ActiveBorder;
             this.panelMenu.ResumeLayout(false);
             this.panelRelatorio.ResumeLayout(false);
             this.panelRelatorio.PerformLayout();
@@ -610,5 +618,6 @@
         private System.Windows.Forms.Label lblCadastroFisica;
         private System.Windows.Forms.Timer timerCadastroOut;
         private System.Windows.Forms.Panel panelWorkstation;
+        private System.Windows.Forms.Timer timerCadastroIn;
     }
 }
