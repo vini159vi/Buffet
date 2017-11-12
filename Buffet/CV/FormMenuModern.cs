@@ -277,27 +277,27 @@ namespace Buffet.CV
         //Paineis MouseLeave
         private void panelCardapio_MouseLeave(object sender, EventArgs e)
         {
-            panelCardapio.BackColor = Color.FromArgb(42, 39, 41);
+            panelCardapio.BackColor = Color.FromArgb(20, 20, 20);
         }
         private void panelRelatorio_MouseLeave(object sender, EventArgs e)
         {
-            panelRelatorio.BackColor = Color.FromArgb(42, 39, 41);
+            panelRelatorio.BackColor = Color.FromArgb(20, 20, 20);
         }
         private void panelConsulta_MouseLeave(object sender, EventArgs e)
         {
-            panelConsulta.BackColor = Color.FromArgb(42, 39, 41);
+            panelConsulta.BackColor = Color.FromArgb(20, 20, 20);
         }
         private void panelContrato_MouseLeave(object sender, EventArgs e)
         {
-            panelContrato.BackColor = Color.FromArgb(42, 39, 41);
+            panelContrato.BackColor = Color.FromArgb(20, 20, 20);
         }
         private void panelCadastro_MouseLeave(object sender, EventArgs e)
         {
-            panelCadastro.BackColor = Color.FromArgb(42, 39, 41);
+            panelCadastro.BackColor = Color.FromArgb(20, 20, 20);
         }
         private void panelAgendamento_MouseLeave(object sender, EventArgs e)
         {
-            panelAgendamento.BackColor = Color.FromArgb(42, 39, 41);
+            panelAgendamento.BackColor = Color.FromArgb(20, 20, 20);
         }
 
         //MouseUp

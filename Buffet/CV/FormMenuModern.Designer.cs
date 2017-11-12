@@ -97,7 +97,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelMenu.Controls.Add(this.panelSubMenu);
             this.panelMenu.Controls.Add(this.panelAgendamento);
             this.panelMenu.Controls.Add(this.panelSelecao);
@@ -201,7 +201,7 @@
             // 
             // panelAgendamento
             // 
-            this.panelAgendamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelAgendamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelAgendamento.Controls.Add(this.pbAgenda);
             this.panelAgendamento.Controls.Add(this.lblAgenda);
             this.panelAgendamento.Location = new System.Drawing.Point(8, 106);
@@ -265,7 +265,7 @@
             // 
             // panelRelatorio
             // 
-            this.panelRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelRelatorio.Controls.Add(this.lblRelatorio);
             this.panelRelatorio.Controls.Add(this.pbRelatorio);
             this.panelRelatorio.Location = new System.Drawing.Point(8, 531);
@@ -307,7 +307,7 @@
             // 
             // panelConsulta
             // 
-            this.panelConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelConsulta.Controls.Add(this.lblConsulta);
             this.panelConsulta.Controls.Add(this.pbConsulta);
             this.panelConsulta.Location = new System.Drawing.Point(8, 446);
@@ -349,7 +349,7 @@
             // 
             // panelContrato
             // 
-            this.panelContrato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelContrato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelContrato.Controls.Add(this.lblContrato);
             this.panelContrato.Controls.Add(this.pbContrato);
             this.panelContrato.Location = new System.Drawing.Point(8, 276);
@@ -391,7 +391,7 @@
             // 
             // panelCadastro
             // 
-            this.panelCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelCadastro.Controls.Add(this.pbCadastro);
             this.panelCadastro.Controls.Add(this.lblCadastro);
             this.panelCadastro.Location = new System.Drawing.Point(8, 191);
@@ -433,7 +433,7 @@
             // 
             // panelCardapio
             // 
-            this.panelCardapio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelCardapio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelCardapio.Controls.Add(this.pbCardapio);
             this.panelCardapio.Controls.Add(this.lblCardapio);
             this.panelCardapio.Location = new System.Drawing.Point(8, 361);
@@ -475,7 +475,7 @@
             // 
             // topPage
             // 
-            this.topPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.topPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.topPage.Controls.Add(this.bttHome);
             this.topPage.Controls.Add(this.pbLogo);
             this.topPage.Controls.Add(this.bttMaximize);
@@ -578,6 +578,7 @@
             // 
             this.panelWorkstation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelWorkstation.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelWorkstation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelWorkstation.BackgroundImage")));
             this.panelWorkstation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkstation.ForeColor = System.Drawing.Color.Black;
             this.panelWorkstation.Location = new System.Drawing.Point(168, 79);
