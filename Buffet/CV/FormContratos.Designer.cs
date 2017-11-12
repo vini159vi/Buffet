@@ -65,7 +65,7 @@
             this.gbFiltrar.Controls.Add(this.lbID);
             this.gbFiltrar.Location = new System.Drawing.Point(6, 12);
             this.gbFiltrar.Name = "gbFiltrar";
-            this.gbFiltrar.Size = new System.Drawing.Size(973, 90);
+            this.gbFiltrar.Size = new System.Drawing.Size(844, 90);
             this.gbFiltrar.TabIndex = 0;
             this.gbFiltrar.TabStop = false;
             this.gbFiltrar.Text = "Filtrar";
@@ -120,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtID.Location = new System.Drawing.Point(33, 23);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(934, 20);
+            this.txtID.Size = new System.Drawing.Size(805, 20);
             this.txtID.TabIndex = 0;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
@@ -143,7 +143,7 @@
             this.gbLista.Controls.Add(this.dataGViewLista);
             this.gbLista.Location = new System.Drawing.Point(12, 108);
             this.gbLista.Name = "gbLista";
-            this.gbLista.Size = new System.Drawing.Size(960, 466);
+            this.gbLista.Size = new System.Drawing.Size(832, 473);
             this.gbLista.TabIndex = 1;
             // 
             // dataGViewLista
@@ -151,7 +151,7 @@
             this.dataGViewLista.AllowUserToAddRows = false;
             this.dataGViewLista.AllowUserToDeleteRows = false;
             this.dataGViewLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGViewLista.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGViewLista.BackgroundColor = System.Drawing.Color.White;
             this.dataGViewLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGViewLista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -169,7 +169,7 @@
             this.dataGViewLista.ReadOnly = true;
             this.dataGViewLista.RowHeadersVisible = false;
             this.dataGViewLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGViewLista.Size = new System.Drawing.Size(960, 466);
+            this.dataGViewLista.Size = new System.Drawing.Size(832, 473);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGViewLista_CellMouseDoubleClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
@@ -215,7 +215,7 @@
             this.gbBotoes.Controls.Add(this.bttFechar);
             this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
-            this.gbBotoes.Location = new System.Drawing.Point(6, 580);
+            this.gbBotoes.Location = new System.Drawing.Point(-58, 587);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(960, 74);
             this.gbBotoes.TabIndex = 1;
@@ -255,8 +255,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(984, 666);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(856, 673);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbLista);
             this.Controls.Add(this.gbFiltrar);

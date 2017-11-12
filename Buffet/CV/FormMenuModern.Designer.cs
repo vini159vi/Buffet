@@ -33,6 +33,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuModern));
             this.timerSlideInBarra = new System.Windows.Forms.Timer(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelSubMenu = new System.Windows.Forms.Panel();
+            this.lblOpcao = new System.Windows.Forms.Label();
+            this.bttOpcao3 = new System.Windows.Forms.Button();
+            this.bttOpcao2 = new System.Windows.Forms.Button();
+            this.panelSelecao2 = new System.Windows.Forms.Panel();
+            this.bttOpcao1 = new System.Windows.Forms.Button();
+            this.bttMenuVoltar = new System.Windows.Forms.Button();
+            this.panelAgendamento = new System.Windows.Forms.Panel();
+            this.pbAgenda = new System.Windows.Forms.PictureBox();
+            this.lblAgenda = new System.Windows.Forms.Label();
             this.panelSelecao = new System.Windows.Forms.Panel();
             this.bttMenu = new System.Windows.Forms.Button();
             this.panelRelatorio = new System.Windows.Forms.Panel();
@@ -47,27 +57,25 @@
             this.panelCadastro = new System.Windows.Forms.Panel();
             this.pbCadastro = new System.Windows.Forms.PictureBox();
             this.lblCadastro = new System.Windows.Forms.Label();
-            this.panelAgendamento = new System.Windows.Forms.Panel();
-            this.pbAgenda = new System.Windows.Forms.PictureBox();
-            this.lblAgenda = new System.Windows.Forms.Label();
             this.panelCardapio = new System.Windows.Forms.Panel();
             this.pbCardapio = new System.Windows.Forms.PictureBox();
             this.lblCardapio = new System.Windows.Forms.Label();
-            this.panelSlideCadastro = new System.Windows.Forms.Panel();
-            this.lblCadastroRepresentante = new System.Windows.Forms.Label();
-            this.lblCadastroJuridico = new System.Windows.Forms.Label();
-            this.lblCadastroFisica = new System.Windows.Forms.Label();
             this.topPage = new System.Windows.Forms.Panel();
+            this.bttHome = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bttMaximize = new System.Windows.Forms.Button();
             this.bttExit = new System.Windows.Forms.Button();
             this.bttMinimize = new System.Windows.Forms.Button();
             this.timerSlideOutBarra = new System.Windows.Forms.Timer(this.components);
             this.timerSelecao = new System.Windows.Forms.Timer(this.components);
-            this.timerCadastroOut = new System.Windows.Forms.Timer(this.components);
             this.panelWorkstation = new System.Windows.Forms.Panel();
-            this.timerCadastroIn = new System.Windows.Forms.Timer(this.components);
+            this.timerSubMenuOut = new System.Windows.Forms.Timer(this.components);
+            this.timerSubMenuIn = new System.Windows.Forms.Timer(this.components);
+            this.timerSelecao2 = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
+            this.panelSubMenu.SuspendLayout();
+            this.panelAgendamento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAgenda)).BeginInit();
             this.panelRelatorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRelatorio)).BeginInit();
             this.panelConsulta.SuspendLayout();
@@ -76,14 +84,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbContrato)).BeginInit();
             this.panelCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCadastro)).BeginInit();
-            this.panelAgendamento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAgenda)).BeginInit();
             this.panelCardapio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCardapio)).BeginInit();
-            this.panelSlideCadastro.SuspendLayout();
             this.topPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            this.panelWorkstation.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerSlideInBarra
@@ -94,6 +98,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelMenu.Controls.Add(this.panelSubMenu);
             this.panelMenu.Controls.Add(this.panelAgendamento);
             this.panelMenu.Controls.Add(this.panelSelecao);
             this.panelMenu.Controls.Add(this.bttMenu);
@@ -108,12 +113,139 @@
             this.panelMenu.Size = new System.Drawing.Size(168, 673);
             this.panelMenu.TabIndex = 0;
             // 
+            // panelSubMenu
+            // 
+            this.panelSubMenu.Controls.Add(this.lblOpcao);
+            this.panelSubMenu.Controls.Add(this.bttOpcao3);
+            this.panelSubMenu.Controls.Add(this.bttOpcao2);
+            this.panelSubMenu.Controls.Add(this.panelSelecao2);
+            this.panelSubMenu.Controls.Add(this.bttOpcao1);
+            this.panelSubMenu.Controls.Add(this.bttMenuVoltar);
+            this.panelSubMenu.Location = new System.Drawing.Point(-180, 0);
+            this.panelSubMenu.Name = "panelSubMenu";
+            this.panelSubMenu.Size = new System.Drawing.Size(168, 673);
+            this.panelSubMenu.TabIndex = 7;
+            this.panelSubMenu.Visible = false;
+            // 
+            // lblOpcao
+            // 
+            this.lblOpcao.AutoSize = true;
+            this.lblOpcao.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpcao.Location = new System.Drawing.Point(58, 20);
+            this.lblOpcao.Name = "lblOpcao";
+            this.lblOpcao.Size = new System.Drawing.Size(92, 26);
+            this.lblOpcao.TabIndex = 7;
+            this.lblOpcao.Text = "Cadastro";
+            // 
+            // bttOpcao3
+            // 
+            this.bttOpcao3.FlatAppearance.BorderSize = 0;
+            this.bttOpcao3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttOpcao3.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttOpcao3.ForeColor = System.Drawing.Color.White;
+            this.bttOpcao3.Location = new System.Drawing.Point(11, 171);
+            this.bttOpcao3.Name = "bttOpcao3";
+            this.bttOpcao3.Size = new System.Drawing.Size(154, 47);
+            this.bttOpcao3.TabIndex = 6;
+            this.bttOpcao3.Text = "opcao3";
+            this.bttOpcao3.UseVisualStyleBackColor = true;
+            // 
+            // bttOpcao2
+            // 
+            this.bttOpcao2.FlatAppearance.BorderSize = 0;
+            this.bttOpcao2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttOpcao2.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttOpcao2.ForeColor = System.Drawing.Color.White;
+            this.bttOpcao2.Location = new System.Drawing.Point(11, 118);
+            this.bttOpcao2.Name = "bttOpcao2";
+            this.bttOpcao2.Size = new System.Drawing.Size(154, 47);
+            this.bttOpcao2.TabIndex = 5;
+            this.bttOpcao2.Text = "opcao2";
+            this.bttOpcao2.UseVisualStyleBackColor = true;
+            // 
+            // panelSelecao2
+            // 
+            this.panelSelecao2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(125)))));
+            this.panelSelecao2.ForeColor = System.Drawing.Color.Transparent;
+            this.panelSelecao2.Location = new System.Drawing.Point(0, 65);
+            this.panelSelecao2.Name = "panelSelecao2";
+            this.panelSelecao2.Size = new System.Drawing.Size(8, 47);
+            this.panelSelecao2.TabIndex = 4;
+            // 
+            // bttOpcao1
+            // 
+            this.bttOpcao1.FlatAppearance.BorderSize = 0;
+            this.bttOpcao1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttOpcao1.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttOpcao1.ForeColor = System.Drawing.Color.White;
+            this.bttOpcao1.Location = new System.Drawing.Point(11, 65);
+            this.bttOpcao1.Name = "bttOpcao1";
+            this.bttOpcao1.Size = new System.Drawing.Size(154, 47);
+            this.bttOpcao1.TabIndex = 1;
+            this.bttOpcao1.Text = "opcao1";
+            this.bttOpcao1.UseVisualStyleBackColor = true;
+            // 
+            // bttMenuVoltar
+            // 
+            this.bttMenuVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bttMenuVoltar.BackgroundImage")));
+            this.bttMenuVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bttMenuVoltar.CausesValidation = false;
+            this.bttMenuVoltar.FlatAppearance.BorderSize = 0;
+            this.bttMenuVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttMenuVoltar.Location = new System.Drawing.Point(8, 6);
+            this.bttMenuVoltar.Name = "bttMenuVoltar";
+            this.bttMenuVoltar.Size = new System.Drawing.Size(43, 43);
+            this.bttMenuVoltar.TabIndex = 0;
+            this.bttMenuVoltar.UseVisualStyleBackColor = true;
+            this.bttMenuVoltar.Click += new System.EventHandler(this.bttMenuVoltar_Click);
+            // 
+            // panelAgendamento
+            // 
+            this.panelAgendamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
+            this.panelAgendamento.Controls.Add(this.pbAgenda);
+            this.panelAgendamento.Controls.Add(this.lblAgenda);
+            this.panelAgendamento.Location = new System.Drawing.Point(8, 106);
+            this.panelAgendamento.Name = "panelAgendamento";
+            this.panelAgendamento.Size = new System.Drawing.Size(154, 47);
+            this.panelAgendamento.TabIndex = 0;
+            this.panelAgendamento.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseClick);
+            this.panelAgendamento.MouseLeave += new System.EventHandler(this.panelAgendamento_MouseLeave);
+            this.panelAgendamento.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseMove);
+            // 
+            // pbAgenda
+            // 
+            this.pbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pbAgenda.Image = ((System.Drawing.Image)(resources.GetObject("pbAgenda.Image")));
+            this.pbAgenda.Location = new System.Drawing.Point(-8, 0);
+            this.pbAgenda.Name = "pbAgenda";
+            this.pbAgenda.Size = new System.Drawing.Size(52, 47);
+            this.pbAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAgenda.TabIndex = 12;
+            this.pbAgenda.TabStop = false;
+            this.pbAgenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseClick);
+            this.pbAgenda.MouseLeave += new System.EventHandler(this.panelAgendamento_MouseLeave);
+            this.pbAgenda.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseMove);
+            // 
+            // lblAgenda
+            // 
+            this.lblAgenda.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAgenda.AutoSize = true;
+            this.lblAgenda.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgenda.ForeColor = System.Drawing.Color.White;
+            this.lblAgenda.Location = new System.Drawing.Point(55, 9);
+            this.lblAgenda.Name = "lblAgenda";
+            this.lblAgenda.Size = new System.Drawing.Size(86, 29);
+            this.lblAgenda.TabIndex = 0;
+            this.lblAgenda.Text = "Agenda";
+            this.lblAgenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseClick);
+            this.lblAgenda.MouseLeave += new System.EventHandler(this.panelAgendamento_MouseLeave);
+            this.lblAgenda.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseMove);
+            // 
             // panelSelecao
             // 
-            this.panelSelecao.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelSelecao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(125)))));
             this.panelSelecao.ForeColor = System.Drawing.Color.Transparent;
-            this.panelSelecao.Location = new System.Drawing.Point(0, 446);
+            this.panelSelecao.Location = new System.Drawing.Point(0, 106);
             this.panelSelecao.Name = "panelSelecao";
             this.panelSelecao.Size = new System.Drawing.Size(8, 47);
             this.panelSelecao.TabIndex = 3;
@@ -299,48 +431,6 @@
             this.lblCadastro.MouseLeave += new System.EventHandler(this.panelCadastro_MouseLeave);
             this.lblCadastro.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCadastro_MouseMove);
             // 
-            // panelAgendamento
-            // 
-            this.panelAgendamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
-            this.panelAgendamento.Controls.Add(this.pbAgenda);
-            this.panelAgendamento.Controls.Add(this.lblAgenda);
-            this.panelAgendamento.Location = new System.Drawing.Point(8, 106);
-            this.panelAgendamento.Name = "panelAgendamento";
-            this.panelAgendamento.Size = new System.Drawing.Size(154, 47);
-            this.panelAgendamento.TabIndex = 0;
-            this.panelAgendamento.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseClick);
-            this.panelAgendamento.MouseLeave += new System.EventHandler(this.panelAgendamento_MouseLeave);
-            this.panelAgendamento.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseMove);
-            // 
-            // pbAgenda
-            // 
-            this.pbAgenda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pbAgenda.Image = ((System.Drawing.Image)(resources.GetObject("pbAgenda.Image")));
-            this.pbAgenda.Location = new System.Drawing.Point(-6, 0);
-            this.pbAgenda.Name = "pbAgenda";
-            this.pbAgenda.Size = new System.Drawing.Size(52, 47);
-            this.pbAgenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAgenda.TabIndex = 12;
-            this.pbAgenda.TabStop = false;
-            this.pbAgenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseClick);
-            this.pbAgenda.MouseLeave += new System.EventHandler(this.panelAgendamento_MouseLeave);
-            this.pbAgenda.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseMove);
-            // 
-            // lblAgenda
-            // 
-            this.lblAgenda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblAgenda.AutoSize = true;
-            this.lblAgenda.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgenda.ForeColor = System.Drawing.Color.White;
-            this.lblAgenda.Location = new System.Drawing.Point(55, 9);
-            this.lblAgenda.Name = "lblAgenda";
-            this.lblAgenda.Size = new System.Drawing.Size(86, 29);
-            this.lblAgenda.TabIndex = 0;
-            this.lblAgenda.Text = "Agenda";
-            this.lblAgenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseClick);
-            this.lblAgenda.MouseLeave += new System.EventHandler(this.panelAgendamento_MouseLeave);
-            this.lblAgenda.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelAgendamento_MouseMove);
-            // 
             // panelCardapio
             // 
             this.panelCardapio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(39)))), ((int)(((byte)(41)))));
@@ -383,57 +473,10 @@
             this.lblCardapio.MouseLeave += new System.EventHandler(this.panelCardapio_MouseLeave);
             this.lblCardapio.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCardapio_MouseMove);
             // 
-            // panelSlideCadastro
-            // 
-            this.panelSlideCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSlideCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
-            this.panelSlideCadastro.Controls.Add(this.lblCadastroRepresentante);
-            this.panelSlideCadastro.Controls.Add(this.lblCadastroJuridico);
-            this.panelSlideCadastro.Controls.Add(this.lblCadastroFisica);
-            this.panelSlideCadastro.Location = new System.Drawing.Point(-7, 193);
-            this.panelSlideCadastro.Name = "panelSlideCadastro";
-            this.panelSlideCadastro.Size = new System.Drawing.Size(150, 5);
-            this.panelSlideCadastro.TabIndex = 7;
-            this.panelSlideCadastro.Visible = false;
-            // 
-            // lblCadastroRepresentante
-            // 
-            this.lblCadastroRepresentante.AutoSize = true;
-            this.lblCadastroRepresentante.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroRepresentante.ForeColor = System.Drawing.Color.White;
-            this.lblCadastroRepresentante.Location = new System.Drawing.Point(22, 57);
-            this.lblCadastroRepresentante.Name = "lblCadastroRepresentante";
-            this.lblCadastroRepresentante.Size = new System.Drawing.Size(106, 20);
-            this.lblCadastroRepresentante.TabIndex = 14;
-            this.lblCadastroRepresentante.Text = "Representante";
-            // 
-            // lblCadastroJuridico
-            // 
-            this.lblCadastroJuridico.AutoSize = true;
-            this.lblCadastroJuridico.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroJuridico.ForeColor = System.Drawing.Color.White;
-            this.lblCadastroJuridico.Location = new System.Drawing.Point(22, 30);
-            this.lblCadastroJuridico.Name = "lblCadastroJuridico";
-            this.lblCadastroJuridico.Size = new System.Drawing.Size(111, 20);
-            this.lblCadastroJuridico.TabIndex = 13;
-            this.lblCadastroJuridico.Text = "Pessoa Juridica";
-            // 
-            // lblCadastroFisica
-            // 
-            this.lblCadastroFisica.AutoSize = true;
-            this.lblCadastroFisica.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroFisica.ForeColor = System.Drawing.Color.White;
-            this.lblCadastroFisica.Location = new System.Drawing.Point(22, 3);
-            this.lblCadastroFisica.Name = "lblCadastroFisica";
-            this.lblCadastroFisica.Size = new System.Drawing.Size(98, 20);
-            this.lblCadastroFisica.TabIndex = 12;
-            this.lblCadastroFisica.Text = "Pessoa Fisica";
-            // 
             // topPage
             // 
             this.topPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(0)))), ((int)(((byte)(1)))));
+            this.topPage.Controls.Add(this.bttHome);
             this.topPage.Controls.Add(this.pbLogo);
             this.topPage.Controls.Add(this.bttMaximize);
             this.topPage.Controls.Add(this.bttExit);
@@ -444,6 +487,22 @@
             this.topPage.Name = "topPage";
             this.topPage.Size = new System.Drawing.Size(1024, 79);
             this.topPage.TabIndex = 1;
+            this.topPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topPage_MouseDown);
+            this.topPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPage_MouseMove);
+            this.topPage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.topPage_MouseUp);
+            // 
+            // bttHome
+            // 
+            this.bttHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bttHome.BackgroundImage")));
+            this.bttHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bttHome.FlatAppearance.BorderSize = 0;
+            this.bttHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttHome.Location = new System.Drawing.Point(199, 8);
+            this.bttHome.Name = "bttHome";
+            this.bttHome.Size = new System.Drawing.Size(64, 64);
+            this.bttHome.TabIndex = 0;
+            this.bttHome.UseVisualStyleBackColor = true;
+            this.bttHome.Click += new System.EventHandler(this.bttHome_Click);
             // 
             // pbLogo
             // 
@@ -515,16 +574,10 @@
             this.timerSelecao.Interval = 1;
             this.timerSelecao.Tick += new System.EventHandler(this.timerSelecao_Tick);
             // 
-            // timerCadastroOut
-            // 
-            this.timerCadastroOut.Interval = 25;
-            this.timerCadastroOut.Tick += new System.EventHandler(this.timerCadastroOut_Tick);
-            // 
             // panelWorkstation
             // 
             this.panelWorkstation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelWorkstation.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelWorkstation.Controls.Add(this.panelSlideCadastro);
             this.panelWorkstation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkstation.ForeColor = System.Drawing.Color.Black;
             this.panelWorkstation.Location = new System.Drawing.Point(168, 79);
@@ -532,10 +585,20 @@
             this.panelWorkstation.Size = new System.Drawing.Size(856, 673);
             this.panelWorkstation.TabIndex = 3;
             // 
-            // timerCadastroIn
+            // timerSubMenuOut
             // 
-            this.timerCadastroIn.Interval = 25;
-            this.timerCadastroIn.Tick += new System.EventHandler(this.timerCadastroIn_Tick);
+            this.timerSubMenuOut.Interval = 25;
+            this.timerSubMenuOut.Tick += new System.EventHandler(this.timerSubMenuOut_Tick);
+            // 
+            // timerSubMenuIn
+            // 
+            this.timerSubMenuIn.Interval = 25;
+            this.timerSubMenuIn.Tick += new System.EventHandler(this.timerSubMenuIn_Tick);
+            // 
+            // timerSelecao2
+            // 
+            this.timerSelecao2.Interval = 1;
+            this.timerSelecao2.Tick += new System.EventHandler(this.timerSelecao2_Tick);
             // 
             // FormMenuModern
             // 
@@ -553,7 +616,13 @@
             this.Name = "FormMenuModern";
             this.Text = "FormMenuModern";
             this.TransparencyKey = System.Drawing.SystemColors.ActiveBorder;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
+            this.panelSubMenu.ResumeLayout(false);
+            this.panelSubMenu.PerformLayout();
+            this.panelAgendamento.ResumeLayout(false);
+            this.panelAgendamento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAgenda)).EndInit();
             this.panelRelatorio.ResumeLayout(false);
             this.panelRelatorio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRelatorio)).EndInit();
@@ -566,17 +635,11 @@
             this.panelCadastro.ResumeLayout(false);
             this.panelCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCadastro)).EndInit();
-            this.panelAgendamento.ResumeLayout(false);
-            this.panelAgendamento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAgenda)).EndInit();
             this.panelCardapio.ResumeLayout(false);
             this.panelCardapio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCardapio)).EndInit();
-            this.panelSlideCadastro.ResumeLayout(false);
-            this.panelSlideCadastro.PerformLayout();
             this.topPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            this.panelWorkstation.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -612,12 +675,17 @@
         private System.Windows.Forms.Button bttMenu;
         private System.Windows.Forms.Panel panelSelecao;
         private System.Windows.Forms.Timer timerSelecao;
-        private System.Windows.Forms.Panel panelSlideCadastro;
-        private System.Windows.Forms.Label lblCadastroRepresentante;
-        private System.Windows.Forms.Label lblCadastroJuridico;
-        private System.Windows.Forms.Label lblCadastroFisica;
-        private System.Windows.Forms.Timer timerCadastroOut;
         private System.Windows.Forms.Panel panelWorkstation;
-        private System.Windows.Forms.Timer timerCadastroIn;
+        private System.Windows.Forms.Panel panelSubMenu;
+        private System.Windows.Forms.Button bttOpcao3;
+        private System.Windows.Forms.Button bttOpcao2;
+        private System.Windows.Forms.Panel panelSelecao2;
+        private System.Windows.Forms.Button bttOpcao1;
+        private System.Windows.Forms.Button bttMenuVoltar;
+        private System.Windows.Forms.Timer timerSubMenuOut;
+        private System.Windows.Forms.Timer timerSubMenuIn;
+        private System.Windows.Forms.Label lblOpcao;
+        private System.Windows.Forms.Button bttHome;
+        private System.Windows.Forms.Timer timerSelecao2;
     }
 }

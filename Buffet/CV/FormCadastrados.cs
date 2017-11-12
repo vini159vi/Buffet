@@ -40,11 +40,6 @@ namespace Buffet
         }
 
 
-        private void FormCadastrados_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void gbLista_Enter(object sender, EventArgs e)
         {
             
@@ -390,6 +385,7 @@ namespace Buffet
             this.Hide();
             e.Cancel = true;
         }
+
 
         /*private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {

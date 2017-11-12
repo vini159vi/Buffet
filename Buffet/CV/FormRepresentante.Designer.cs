@@ -352,6 +352,7 @@
             // 
             // bttAdicionar
             // 
+            this.bttAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttAdicionar.Location = new System.Drawing.Point(149, 19);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
@@ -362,6 +363,7 @@
             // 
             // bttCancelar
             // 
+            this.bttCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttCancelar.Location = new System.Drawing.Point(377, 19);
             this.bttCancelar.Name = "bttCancelar";
             this.bttCancelar.Size = new System.Drawing.Size(125, 43);
@@ -408,15 +410,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(658, 329);
             this.Controls.Add(this.gbRepresentanteBusca);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbRepresentante);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FormRepresentante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Representante";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRepresentante_FormClosing);
             this.VisibleChanged += new System.EventHandler(this.FormRepresentante_VisibleChanged);
             this.gbRepresentante.ResumeLayout(false);

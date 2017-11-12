@@ -342,6 +342,7 @@
             // 
             // bttAdicionar
             // 
+            this.bttAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttAdicionar.Location = new System.Drawing.Point(149, 19);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(125, 43);
@@ -352,6 +353,7 @@
             // 
             // bttCancelar
             // 
+            this.bttCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttCancelar.Location = new System.Drawing.Point(377, 19);
             this.bttCancelar.Name = "bttCancelar";
             this.bttCancelar.Size = new System.Drawing.Size(125, 43);
@@ -364,14 +366,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(654, 262);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbFisico);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormFisico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Fisico";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormFisico_FormClosing);
             this.gbFisico.ResumeLayout(false);
             this.gbFisico.PerformLayout();

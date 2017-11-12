@@ -62,11 +62,11 @@
             this.dtHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.lbHoraInicioContratado = new System.Windows.Forms.Label();
             this.gbBuscaPessoaFisica = new System.Windows.Forms.GroupBox();
+            this.txtPessoaFisica = new System.Windows.Forms.TextBox();
             this.cbBuscaPessoaFisica = new System.Windows.Forms.ComboBox();
             this.bttGerarContrato = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.txtPessoaFisica = new System.Windows.Forms.TextBox();
             this.gbDevolucao.SuspendLayout();
             this.gbEvento.SuspendLayout();
             this.gbContratado.SuspendLayout();
@@ -81,7 +81,7 @@
             this.gbDevolucao.Controls.Add(this.dtDiaDevolucao);
             this.gbDevolucao.Controls.Add(this.lbHoraDevolucao);
             this.gbDevolucao.Controls.Add(this.lbDiaDevolucao);
-            this.gbDevolucao.Location = new System.Drawing.Point(12, 233);
+            this.gbDevolucao.Location = new System.Drawing.Point(56, 233);
             this.gbDevolucao.Name = "gbDevolucao";
             this.gbDevolucao.Size = new System.Drawing.Size(845, 60);
             this.gbDevolucao.TabIndex = 3;
@@ -136,7 +136,7 @@
             this.gbEvento.Controls.Add(this.dtHoraEvento);
             this.gbEvento.Controls.Add(this.lbData);
             this.gbEvento.Controls.Add(this.dtDataEvento);
-            this.gbEvento.Location = new System.Drawing.Point(12, 74);
+            this.gbEvento.Location = new System.Drawing.Point(56, 74);
             this.gbEvento.Name = "gbEvento";
             this.gbEvento.Size = new System.Drawing.Size(845, 62);
             this.gbEvento.TabIndex = 1;
@@ -261,7 +261,7 @@
             this.gbContratado.Controls.Add(this.lbHoraTerminoContratado);
             this.gbContratado.Controls.Add(this.dtHoraInicio);
             this.gbContratado.Controls.Add(this.lbHoraInicioContratado);
-            this.gbContratado.Location = new System.Drawing.Point(12, 142);
+            this.gbContratado.Location = new System.Drawing.Point(56, 142);
             this.gbContratado.Name = "gbContratado";
             this.gbContratado.Size = new System.Drawing.Size(845, 85);
             this.gbContratado.TabIndex = 2;
@@ -415,10 +415,18 @@
             this.gbBuscaPessoaFisica.Controls.Add(this.cbBuscaPessoaFisica);
             this.gbBuscaPessoaFisica.Location = new System.Drawing.Point(12, 12);
             this.gbBuscaPessoaFisica.Name = "gbBuscaPessoaFisica";
-            this.gbBuscaPessoaFisica.Size = new System.Drawing.Size(845, 56);
+            this.gbBuscaPessoaFisica.Size = new System.Drawing.Size(933, 56);
             this.gbBuscaPessoaFisica.TabIndex = 0;
             this.gbBuscaPessoaFisica.TabStop = false;
             this.gbBuscaPessoaFisica.Text = "Pessoa Fisica";
+            // 
+            // txtPessoaFisica
+            // 
+            this.txtPessoaFisica.Location = new System.Drawing.Point(9, 19);
+            this.txtPessoaFisica.Name = "txtPessoaFisica";
+            this.txtPessoaFisica.Size = new System.Drawing.Size(918, 20);
+            this.txtPessoaFisica.TabIndex = 1;
+            this.txtPessoaFisica.Visible = false;
             // 
             // cbBuscaPessoaFisica
             // 
@@ -427,12 +435,13 @@
             this.cbBuscaPessoaFisica.FormattingEnabled = true;
             this.cbBuscaPessoaFisica.Location = new System.Drawing.Point(9, 19);
             this.cbBuscaPessoaFisica.Name = "cbBuscaPessoaFisica";
-            this.cbBuscaPessoaFisica.Size = new System.Drawing.Size(830, 21);
+            this.cbBuscaPessoaFisica.Size = new System.Drawing.Size(918, 21);
             this.cbBuscaPessoaFisica.TabIndex = 0;
             this.cbBuscaPessoaFisica.Click += new System.EventHandler(this.cbBuscaPessoaFisica_Click);
             // 
             // bttGerarContrato
             // 
+            this.bttGerarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bttGerarContrato.Location = new System.Drawing.Point(149, 19);
             this.bttGerarContrato.Name = "bttGerarContrato";
             this.bttGerarContrato.Size = new System.Drawing.Size(125, 43);
@@ -443,6 +452,7 @@
             // 
             // bttCancelar
             // 
+            this.bttCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bttCancelar.Location = new System.Drawing.Point(574, 19);
             this.bttCancelar.Name = "bttCancelar";
             this.bttCancelar.Size = new System.Drawing.Size(125, 43);
@@ -456,31 +466,24 @@
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbBotoes.Controls.Add(this.bttGerarContrato);
             this.gbBotoes.Controls.Add(this.bttCancelar);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 299);
+            this.gbBotoes.Location = new System.Drawing.Point(56, 299);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(845, 74);
             this.gbBotoes.TabIndex = 4;
             this.gbBotoes.TabStop = false;
             // 
-            // txtPessoaFisica
-            // 
-            this.txtPessoaFisica.Location = new System.Drawing.Point(9, 19);
-            this.txtPessoaFisica.Name = "txtPessoaFisica";
-            this.txtPessoaFisica.Size = new System.Drawing.Size(830, 20);
-            this.txtPessoaFisica.TabIndex = 1;
-            this.txtPessoaFisica.Visible = false;
-            // 
             // FormContratoFísico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 388);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(957, 388);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbBuscaPessoaFisica);
             this.Controls.Add(this.gbContratado);
             this.Controls.Add(this.gbEvento);
             this.Controls.Add(this.gbDevolucao);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FormContratoFísico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

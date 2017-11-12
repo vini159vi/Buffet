@@ -62,7 +62,7 @@
             this.gbLista.Controls.Add(this.dataGViewLista);
             this.gbLista.Location = new System.Drawing.Point(3, 76);
             this.gbLista.Name = "gbLista";
-            this.gbLista.Size = new System.Drawing.Size(962, 543);
+            this.gbLista.Size = new System.Drawing.Size(963, 516);
             this.gbLista.TabIndex = 2;
             this.gbLista.TabStop = false;
             this.gbLista.Enter += new System.EventHandler(this.gbLista_Enter);
@@ -72,6 +72,7 @@
             this.dataGViewLista.AllowUserToAddRows = false;
             this.dataGViewLista.AllowUserToDeleteRows = false;
             this.dataGViewLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGViewLista.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGViewLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cellTipo,
@@ -86,7 +87,7 @@
             this.dataGViewLista.ReadOnly = true;
             this.dataGViewLista.RowHeadersVisible = false;
             this.dataGViewLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGViewLista.Size = new System.Drawing.Size(956, 524);
+            this.dataGViewLista.Size = new System.Drawing.Size(957, 497);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGViewLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGViewLista_CellDoubleClick);
@@ -136,9 +137,10 @@
             // 
             // bttRemove
             // 
-            this.bttRemove.Location = new System.Drawing.Point(79, 16);
+            this.bttRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttRemove.Location = new System.Drawing.Point(29, 16);
             this.bttRemove.Name = "bttRemove";
-            this.bttRemove.Size = new System.Drawing.Size(125, 43);
+            this.bttRemove.Size = new System.Drawing.Size(119, 43);
             this.bttRemove.TabIndex = 0;
             this.bttRemove.Text = "Remover";
             this.bttRemove.UseVisualStyleBackColor = true;
@@ -146,9 +148,10 @@
             // 
             // bttEditar
             // 
-            this.bttEditar.Location = new System.Drawing.Point(416, 16);
+            this.bttEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttEditar.Location = new System.Drawing.Point(366, 16);
             this.bttEditar.Name = "bttEditar";
-            this.bttEditar.Size = new System.Drawing.Size(125, 43);
+            this.bttEditar.Size = new System.Drawing.Size(119, 43);
             this.bttEditar.TabIndex = 1;
             this.bttEditar.Text = "Editar";
             this.bttEditar.UseVisualStyleBackColor = true;
@@ -159,6 +162,7 @@
             this.gbProcuraNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbProcuraNome.AutoSize = true;
+            this.gbProcuraNome.BackColor = System.Drawing.Color.White;
             this.gbProcuraNome.Controls.Add(this.lblTipoPessoa);
             this.gbProcuraNome.Controls.Add(this.radioBttJuridica);
             this.gbProcuraNome.Controls.Add(this.radioBttFisica);
@@ -167,7 +171,7 @@
             this.gbProcuraNome.Controls.Add(this.lbCPFCNPJ);
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 1);
             this.gbProcuraNome.Name = "gbProcuraNome";
-            this.gbProcuraNome.Size = new System.Drawing.Size(964, 88);
+            this.gbProcuraNome.Size = new System.Drawing.Size(963, 88);
             this.gbProcuraNome.TabIndex = 0;
             this.gbProcuraNome.TabStop = false;
             this.gbProcuraNome.Text = "Filtrar";
@@ -223,7 +227,7 @@
             this.txtBuscaCpfCnpj.Location = new System.Drawing.Point(73, 23);
             this.txtBuscaCpfCnpj.Name = "txtBuscaCpfCnpj";
             this.txtBuscaCpfCnpj.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBuscaCpfCnpj.Size = new System.Drawing.Size(876, 20);
+            this.txtBuscaCpfCnpj.Size = new System.Drawing.Size(885, 20);
             this.txtBuscaCpfCnpj.TabIndex = 0;
             this.txtBuscaCpfCnpj.TextChanged += new System.EventHandler(this.txtBuscaCpfCnpj_TextChanged);
             this.txtBuscaCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscaNomeCPF_KeyPress);
@@ -243,17 +247,18 @@
             this.gbBotoes.Controls.Add(this.bttFechar);
             this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
-            this.gbBotoes.Location = new System.Drawing.Point(6, 615);
+            this.gbBotoes.Location = new System.Drawing.Point(64, 588);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(956, 74);
+            this.gbBotoes.Size = new System.Drawing.Size(843, 74);
             this.gbBotoes.TabIndex = 1;
             this.gbBotoes.TabStop = false;
             // 
             // bttFechar
             // 
-            this.bttFechar.Location = new System.Drawing.Point(745, 16);
+            this.bttFechar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttFechar.Location = new System.Drawing.Point(695, 16);
             this.bttFechar.Name = "bttFechar";
-            this.bttFechar.Size = new System.Drawing.Size(125, 43);
+            this.bttFechar.Size = new System.Drawing.Size(119, 43);
             this.bttFechar.TabIndex = 2;
             this.bttFechar.Text = "Fechar";
             this.bttFechar.UseVisualStyleBackColor = true;
@@ -263,17 +268,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(969, 700);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(973, 673);
             this.Controls.Add(this.gbProcuraNome);
             this.Controls.Add(this.gbLista);
             this.Controls.Add(this.gbBotoes);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCadastrados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrados";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastrados_FormClosing);
-            this.Load += new System.EventHandler(this.FormCadastrados_Load);
             this.gbLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).EndInit();
             this.gbProcuraNome.ResumeLayout(false);
