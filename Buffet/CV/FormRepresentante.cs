@@ -200,7 +200,7 @@ namespace Buffet.CV
             listcj = cjDAO.List();
 
             if (cbEmpresaBusca.Items.Count == 0)
-                cbEmpresaBusca.Items.Clear();
+                //cbEmpresaBusca.Items.Clear();
 
 
             cbEmpresaBusca.DisplayMember = "NomeEmpresa";

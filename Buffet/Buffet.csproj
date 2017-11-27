@@ -79,6 +79,18 @@
     <Compile Include="CV\FormAgenda.Designer.cs">
       <DependentUpon>FormAgenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="CV\FormCadastroItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCadastroItem.Designer.cs">
+      <DependentUpon>FormCadastroItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CV\FormCardapio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormCardapio.Designer.cs">
+      <DependentUpon>FormCardapio.cs</DependentUpon>
+    </Compile>
     <Compile Include="CV\FormContratoFísico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCadastrados.resx">
       <DependentUpon>FormCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCadastroItem.resx">
+      <DependentUpon>FormCadastroItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormCardapio.resx">
+      <DependentUpon>FormCardapio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormContratoFísico.resx">
       <DependentUpon>FormContratoFísico.cs</DependentUpon>

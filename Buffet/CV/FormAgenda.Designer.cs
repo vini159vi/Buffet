@@ -29,25 +29,30 @@
         private void InitializeComponent()
         {
             this.panelAtributos = new System.Windows.Forms.Panel();
+            this.dtData = new System.Windows.Forms.DateTimePicker();
+            this.lblData = new System.Windows.Forms.Label();
+            this.panelBotoes = new System.Windows.Forms.Panel();
+            this.bttAdicionar = new System.Windows.Forms.Button();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.panelAgenda = new System.Windows.Forms.Panel();
             this.dgvAgenda = new System.Windows.Forms.DataGridView();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.panelBotoes = new System.Windows.Forms.Panel();
-            this.lblData = new System.Windows.Forms.Label();
-            this.dtData = new System.Windows.Forms.DateTimePicker();
-            this.bttAdicionar = new System.Windows.Forms.Button();
             this.ColumnRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.lblTelefone = new System.Windows.Forms.Label();
             this.panelAtributos.SuspendLayout();
+            this.panelBotoes.SuspendLayout();
             this.panelAgenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgenda)).BeginInit();
-            this.panelBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAtributos
             // 
+            this.panelAtributos.Controls.Add(this.lblTelefone);
+            this.panelAtributos.Controls.Add(this.txtTelefone);
             this.panelAtributos.Controls.Add(this.dtData);
             this.panelAtributos.Controls.Add(this.lblData);
             this.panelAtributos.Controls.Add(this.panelBotoes);
@@ -58,6 +63,61 @@
             this.panelAtributos.Name = "panelAtributos";
             this.panelAtributos.Size = new System.Drawing.Size(856, 174);
             this.panelAtributos.TabIndex = 0;
+            // 
+            // dtData
+            // 
+            this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtData.Location = new System.Drawing.Point(61, 75);
+            this.dtData.Name = "dtData";
+            this.dtData.Size = new System.Drawing.Size(102, 20);
+            this.dtData.TabIndex = 4;
+            this.dtData.Value = new System.DateTime(2017, 11, 12, 0, 0, 0, 0);
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Location = new System.Drawing.Point(21, 75);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(34, 15);
+            this.lblData.TabIndex = 3;
+            this.lblData.Text = "Data:";
+            // 
+            // panelBotoes
+            // 
+            this.panelBotoes.Controls.Add(this.bttAdicionar);
+            this.panelBotoes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBotoes.Location = new System.Drawing.Point(0, 111);
+            this.panelBotoes.Name = "panelBotoes";
+            this.panelBotoes.Size = new System.Drawing.Size(856, 63);
+            this.panelBotoes.TabIndex = 2;
+            // 
+            // bttAdicionar
+            // 
+            this.bttAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttAdicionar.Location = new System.Drawing.Point(160, 16);
+            this.bttAdicionar.Name = "bttAdicionar";
+            this.bttAdicionar.Size = new System.Drawing.Size(529, 32);
+            this.bttAdicionar.TabIndex = 0;
+            this.bttAdicionar.Text = "Adicionar";
+            this.bttAdicionar.UseVisualStyleBackColor = true;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(61, 23);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(783, 20);
+            this.txtNome.TabIndex = 1;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(21, 25);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(39, 15);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome:";
             // 
             // panelAgenda
             // 
@@ -79,6 +139,7 @@
             this.dgvAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNome,
+            this.ColumnTelefone,
             this.ColumnData,
             this.ColumnRemove});
             this.dgvAgenda.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,6 +152,7 @@
             this.dgvAgenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAgenda.Size = new System.Drawing.Size(856, 499);
             this.dgvAgenda.TabIndex = 0;
+            this.dgvAgenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgenda_CellClick);
             // 
             // ColumnNome
             // 
@@ -98,72 +160,42 @@
             this.ColumnNome.Name = "ColumnNome";
             this.ColumnNome.ReadOnly = true;
             // 
+            // ColumnTelefone
+            // 
+            this.ColumnTelefone.HeaderText = "Telefone";
+            this.ColumnTelefone.Name = "ColumnTelefone";
+            this.ColumnTelefone.ReadOnly = true;
+            // 
             // ColumnData
             // 
             this.ColumnData.HeaderText = "Data";
             this.ColumnData.Name = "ColumnData";
             this.ColumnData.ReadOnly = true;
             // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(21, 25);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(39, 15);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(61, 23);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(783, 20);
-            this.txtNome.TabIndex = 1;
-            // 
-            // panelBotoes
-            // 
-            this.panelBotoes.Controls.Add(this.bttAdicionar);
-            this.panelBotoes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotoes.Location = new System.Drawing.Point(0, 111);
-            this.panelBotoes.Name = "panelBotoes";
-            this.panelBotoes.Size = new System.Drawing.Size(856, 63);
-            this.panelBotoes.TabIndex = 2;
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(21, 74);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(34, 15);
-            this.lblData.TabIndex = 3;
-            this.lblData.Text = "Data:";
-            // 
-            // dtData
-            // 
-            this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtData.Location = new System.Drawing.Point(61, 72);
-            this.dtData.Name = "dtData";
-            this.dtData.Size = new System.Drawing.Size(102, 20);
-            this.dtData.TabIndex = 4;
-            this.dtData.Value = new System.DateTime(2017, 11, 12, 0, 0, 0, 0);
-            // 
-            // bttAdicionar
-            // 
-            this.bttAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttAdicionar.Location = new System.Drawing.Point(160, 16);
-            this.bttAdicionar.Name = "bttAdicionar";
-            this.bttAdicionar.Size = new System.Drawing.Size(529, 32);
-            this.bttAdicionar.TabIndex = 0;
-            this.bttAdicionar.Text = "Adicionar";
-            this.bttAdicionar.UseVisualStyleBackColor = true;
-            // 
             // ColumnRemove
             // 
+            this.ColumnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ColumnRemove.HeaderText = "Remover";
             this.ColumnRemove.Name = "ColumnRemove";
             this.ColumnRemove.ReadOnly = true;
+            this.ColumnRemove.Text = "Remover";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(81, 49);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(763, 20);
+            this.txtTelefone.TabIndex = 5;
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.Location = new System.Drawing.Point(21, 51);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(56, 15);
+            this.lblTelefone.TabIndex = 6;
+            this.lblTelefone.Text = "Telefone:";
             // 
             // FormAgenda
             // 
@@ -179,9 +211,9 @@
             this.Text = "FormAgenda";
             this.panelAtributos.ResumeLayout(false);
             this.panelAtributos.PerformLayout();
+            this.panelBotoes.ResumeLayout(false);
             this.panelAgenda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgenda)).EndInit();
-            this.panelBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -194,11 +226,14 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.DataGridView dgvAgenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnData;
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Button bttAdicionar;
+        private System.Windows.Forms.Label lblTelefone;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnData;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnRemove;
     }
 }
