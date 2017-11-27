@@ -108,9 +108,9 @@
             this.panelMenu.Controls.Add(this.panelCadastro);
             this.panelMenu.Controls.Add(this.panelCardapio);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 79);
+            this.panelMenu.Location = new System.Drawing.Point(0, 78);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(168, 673);
+            this.panelMenu.Size = new System.Drawing.Size(164, 690);
             this.panelMenu.TabIndex = 0;
             // 
             // panelSubMenu
@@ -204,7 +204,7 @@
             this.panelAgendamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelAgendamento.Controls.Add(this.pbAgenda);
             this.panelAgendamento.Controls.Add(this.lblAgenda);
-            this.panelAgendamento.Location = new System.Drawing.Point(8, 106);
+            this.panelAgendamento.Location = new System.Drawing.Point(8, 100);
             this.panelAgendamento.Name = "panelAgendamento";
             this.panelAgendamento.Size = new System.Drawing.Size(154, 47);
             this.panelAgendamento.TabIndex = 0;
@@ -245,7 +245,7 @@
             // 
             this.panelSelecao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(125)))));
             this.panelSelecao.ForeColor = System.Drawing.Color.Transparent;
-            this.panelSelecao.Location = new System.Drawing.Point(0, 106);
+            this.panelSelecao.Location = new System.Drawing.Point(0, 100);
             this.panelSelecao.Name = "panelSelecao";
             this.panelSelecao.Size = new System.Drawing.Size(8, 47);
             this.panelSelecao.TabIndex = 3;
@@ -261,6 +261,7 @@
             this.bttMenu.Size = new System.Drawing.Size(43, 43);
             this.bttMenu.TabIndex = 6;
             this.bttMenu.UseVisualStyleBackColor = true;
+            this.bttMenu.Visible = false;
             this.bttMenu.Click += new System.EventHandler(this.bttMenu_Click_1);
             // 
             // panelRelatorio
@@ -268,7 +269,7 @@
             this.panelRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelRelatorio.Controls.Add(this.lblRelatorio);
             this.panelRelatorio.Controls.Add(this.pbRelatorio);
-            this.panelRelatorio.Location = new System.Drawing.Point(8, 531);
+            this.panelRelatorio.Location = new System.Drawing.Point(8, 600);
             this.panelRelatorio.Name = "panelRelatorio";
             this.panelRelatorio.Size = new System.Drawing.Size(154, 47);
             this.panelRelatorio.TabIndex = 5;
@@ -310,7 +311,7 @@
             this.panelConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelConsulta.Controls.Add(this.lblConsulta);
             this.panelConsulta.Controls.Add(this.pbConsulta);
-            this.panelConsulta.Location = new System.Drawing.Point(8, 446);
+            this.panelConsulta.Location = new System.Drawing.Point(8, 500);
             this.panelConsulta.Name = "panelConsulta";
             this.panelConsulta.Size = new System.Drawing.Size(158, 47);
             this.panelConsulta.TabIndex = 4;
@@ -352,7 +353,7 @@
             this.panelContrato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelContrato.Controls.Add(this.lblContrato);
             this.panelContrato.Controls.Add(this.pbContrato);
-            this.panelContrato.Location = new System.Drawing.Point(8, 276);
+            this.panelContrato.Location = new System.Drawing.Point(8, 300);
             this.panelContrato.Name = "panelContrato";
             this.panelContrato.Size = new System.Drawing.Size(154, 47);
             this.panelContrato.TabIndex = 2;
@@ -394,7 +395,7 @@
             this.panelCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelCadastro.Controls.Add(this.pbCadastro);
             this.panelCadastro.Controls.Add(this.lblCadastro);
-            this.panelCadastro.Location = new System.Drawing.Point(8, 191);
+            this.panelCadastro.Location = new System.Drawing.Point(8, 200);
             this.panelCadastro.Name = "panelCadastro";
             this.panelCadastro.Size = new System.Drawing.Size(154, 47);
             this.panelCadastro.TabIndex = 1;
@@ -436,7 +437,7 @@
             this.panelCardapio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelCardapio.Controls.Add(this.pbCardapio);
             this.panelCardapio.Controls.Add(this.lblCardapio);
-            this.panelCardapio.Location = new System.Drawing.Point(8, 361);
+            this.panelCardapio.Location = new System.Drawing.Point(8, 400);
             this.panelCardapio.Name = "panelCardapio";
             this.panelCardapio.Size = new System.Drawing.Size(154, 47);
             this.panelCardapio.TabIndex = 3;
@@ -485,7 +486,7 @@
             this.topPage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.topPage.Location = new System.Drawing.Point(0, 0);
             this.topPage.Name = "topPage";
-            this.topPage.Size = new System.Drawing.Size(1024, 79);
+            this.topPage.Size = new System.Drawing.Size(1024, 78);
             this.topPage.TabIndex = 1;
             this.topPage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topPage_MouseDown);
             this.topPage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPage_MouseMove);
@@ -499,7 +500,7 @@
             this.bttHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttHome.Location = new System.Drawing.Point(199, 8);
             this.bttHome.Name = "bttHome";
-            this.bttHome.Size = new System.Drawing.Size(64, 64);
+            this.bttHome.Size = new System.Drawing.Size(57, 64);
             this.bttHome.TabIndex = 0;
             this.bttHome.UseVisualStyleBackColor = true;
             this.bttHome.Click += new System.EventHandler(this.bttHome_Click);
@@ -507,7 +508,7 @@
             // pbLogo
             // 
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(12, 3);
+            this.pbLogo.Location = new System.Drawing.Point(9, 1);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(147, 76);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -576,14 +577,13 @@
             // 
             // panelWorkstation
             // 
-            this.panelWorkstation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelWorkstation.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelWorkstation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelWorkstation.BackgroundImage")));
             this.panelWorkstation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkstation.ForeColor = System.Drawing.Color.Black;
-            this.panelWorkstation.Location = new System.Drawing.Point(168, 79);
+            this.panelWorkstation.Location = new System.Drawing.Point(164, 78);
             this.panelWorkstation.Name = "panelWorkstation";
-            this.panelWorkstation.Size = new System.Drawing.Size(856, 673);
+            this.panelWorkstation.Size = new System.Drawing.Size(860, 690);
             this.panelWorkstation.TabIndex = 3;
             // 
             // timerSubMenuOut
@@ -607,7 +607,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1024, 752);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.panelWorkstation);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.topPage);

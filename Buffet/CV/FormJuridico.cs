@@ -101,7 +101,6 @@ namespace Buffet.CV
             cj.Cep = long.Parse(txtCEPEmpresa.Text);
             cj.Cidade = txtCidadeEmpresa.Text;
             cj.Estado = txtEstadoEmpresa.Text;
-            cj.Tipo = 2;
             return cj;
         }
 

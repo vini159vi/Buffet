@@ -10,7 +10,10 @@ namespace Buffet.Modelos
     {
         private string nome, nacionalidade, estadoCivil, profissao, rua, bairro, cidade, estado;
         private long rg, cpf, cep, telefone, celular;
-        private int numeroCasa, tipo;
+        private int numeroCasa;
+        private DateTime dataCriacao;
+
+        ClienteJuridico empresa = new ClienteJuridico();
 
         public string Nome
         {
@@ -194,20 +197,30 @@ namespace Buffet.Modelos
             }
         }
 
-        public int Tipo
+        public DateTime DataCriacao
         {
             get
             {
-                return tipo;
+                return dataCriacao;
             }
-
             set
             {
-                tipo = value;
+                dataCriacao = value;
+            }
+        }
+        public ClienteJuridico Empresa
+        {
+            get
+            {
+                return empresa;
+            }
+            set
+            {
+                empresa = value;
             }
         }
 
-        public ClienteFisico(string nome, string nacionalidade, string estadoCivil, string profissao, string rua, string bairro, string cidade, string estado, long rg, long cpf, long cep, long telefone, int numeroCasa, long celular, int tipo)
+        public ClienteFisico(string nome, string nacionalidade, string estadoCivil, string profissao, string rua, string bairro, string cidade, string estado, long rg, long cpf, long cep, long telefone, int numeroCasa, long celular, DateTime dataCriacao, ClienteJuridico empresa)
         {
             this.Nome = nome;
             this.Nacionalidade = nacionalidade;
@@ -223,7 +236,8 @@ namespace Buffet.Modelos
             this.Telefone = telefone;
             this.NumeroCasa = numeroCasa;
             this.Celular = celular;
-            this.Tipo = tipo;
+            this.DataCriacao = dataCriacao;
+            this.Empresa = empresa;
         }
 
         public ClienteFisico()

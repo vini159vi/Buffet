@@ -10,7 +10,8 @@ namespace Buffet.Modelos
     {
         private string nomeEmpresa, cidade, rua, bairro, estado;
         private long cep, cnpj;
-        private int numeroEmpresa, tipo;
+        private int numeroEmpresa;
+        private DateTime dataCriacao;
 
         public string NomeEmpresa
         {
@@ -116,22 +117,19 @@ namespace Buffet.Modelos
             }
         }
 
-        public int Tipo
+        public DateTime DataCriacao
         {
             get
             {
-                return tipo;
+                return dataCriacao;
             }
-
             set
             {
-                tipo = value;
-
+                dataCriacao = value;
             }
         }
 
-
-        public ClienteJuridico(string nomeEmpresa, string cidade, string rua, string bairro, string estado, long cep, long cnpj, int numeroEmpresa, int tipo)
+        public ClienteJuridico(string nomeEmpresa, string cidade, string rua, string bairro, string estado, long cep, long cnpj, int numeroEmpresa, DateTime dataCriacao)
         {
             this.NomeEmpresa = nomeEmpresa;
             this.Cidade = cidade;
@@ -141,7 +139,7 @@ namespace Buffet.Modelos
             this.Cep = cep;
             this.Cnpj = cnpj;
             this.NumeroEmpresa = numeroEmpresa;
-            this.Tipo = tipo;
+            this.DataCriacao = dataCriacao;
         }
 
         public ClienteJuridico()

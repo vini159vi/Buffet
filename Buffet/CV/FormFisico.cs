@@ -84,7 +84,6 @@ namespace Buffet.CV
             cf.Telefone = long.Parse(txtTelefone.Text);
             txtCelular.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             cf.Celular = long.Parse(txtCelular.Text);
-            cf.Tipo = 1;
 
             return cf;
         }

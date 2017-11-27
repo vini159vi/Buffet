@@ -139,9 +139,12 @@
     <Compile Include="CV\FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Agenda.cs" />
+    <Compile Include="Modelos\Cardapio.cs" />
     <Compile Include="Modelos\ClienteFisico.cs" />
     <Compile Include="Modelos\ClienteJuridico.cs" />
     <Compile Include="Modelos\Contrato.cs" />
+    <Compile Include="Modelos\Item.cs" />
     <Compile Include="Modelos\RepresentanteJuridico.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

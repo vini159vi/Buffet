@@ -406,7 +406,6 @@ namespace Buffet.DAO
                 cf.Estado = dr["estado"].ToString();
                 cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 cf.Celular = long.Parse(dr["celular"].ToString());
-                cf.Tipo = int.Parse(dr["tipo"].ToString());
 
             }
             return cf;
@@ -431,7 +430,6 @@ namespace Buffet.DAO
                 cj.Bairro = dr["bairro"].ToString();
                 cj.Estado = dr["estado"].ToString();
                 cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
-                cj.Tipo = int.Parse(dr["tipo"].ToString());
 
             }
             return cj;

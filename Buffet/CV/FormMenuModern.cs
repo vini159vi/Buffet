@@ -13,7 +13,7 @@ namespace Buffet.CV
     public partial class FormMenuModern : Form
     {
         private int y;
-        private bool moving;
+        private bool moving, slideFechado;
         private int fX, fY;
 
         private FormCadastrados fc = new FormCadastrados();
@@ -107,8 +107,8 @@ namespace Buffet.CV
                 }
                 else
                 {
-                    //x += 5;
-                    panelSelecao.Location = new Point(0,y);
+                    x += 20;
+                    panelSelecao.Location = new Point(0,x);
                 }
             }
             else
@@ -119,8 +119,8 @@ namespace Buffet.CV
                 }
                 else
                 {
-                    //x -= 5;
-                    panelSelecao.Location = new Point(0,y);
+                    x -= 20;
+                    panelSelecao.Location = new Point(0,x);
                 }
             }
         }
