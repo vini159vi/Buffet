@@ -62,13 +62,13 @@
             this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.cbEmpresaBusca = new System.Windows.Forms.ComboBox();
-            this.clienteJuridicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbRepresentanteBusca = new System.Windows.Forms.GroupBox();
             this.txtEmpresaView = new System.Windows.Forms.TextBox();
+            this.clienteJuridicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbRepresentante.SuspendLayout();
             this.gbBotoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).BeginInit();
             this.gbRepresentanteBusca.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCel
@@ -231,7 +231,7 @@
             this.gbRepresentante.Size = new System.Drawing.Size(634, 162);
             this.gbRepresentante.TabIndex = 1;
             this.gbRepresentante.TabStop = false;
-            this.gbRepresentante.Text = "Representante";
+            this.gbRepresentante.Text = "Pessoa Fisica";
             // 
             // txtEstadoCivil
             // 
@@ -376,15 +376,13 @@
             // 
             this.cbEmpresaBusca.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clienteJuridicoBindingSource, "Cnpj", true));
             this.cbEmpresaBusca.FormattingEnabled = true;
+            this.cbEmpresaBusca.Items.AddRange(new object[] {
+            "Nenhuma"});
             this.cbEmpresaBusca.Location = new System.Drawing.Point(6, 19);
             this.cbEmpresaBusca.Name = "cbEmpresaBusca";
             this.cbEmpresaBusca.Size = new System.Drawing.Size(622, 21);
             this.cbEmpresaBusca.TabIndex = 0;
             this.cbEmpresaBusca.Click += new System.EventHandler(this.cbEmpresaBusca_Click);
-            // 
-            // clienteJuridicoBindingSource
-            // 
-            this.clienteJuridicoBindingSource.DataSource = typeof(Buffet.Modelos.ClienteJuridico);
             // 
             // gbRepresentanteBusca
             // 
@@ -406,6 +404,10 @@
             this.txtEmpresaView.TabIndex = 22;
             this.txtEmpresaView.Visible = false;
             // 
+            // clienteJuridicoBindingSource
+            // 
+            this.clienteJuridicoBindingSource.DataSource = typeof(Buffet.Modelos.ClienteJuridico);
+            // 
             // FormRepresentante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,9 +428,9 @@
             this.gbRepresentante.ResumeLayout(false);
             this.gbRepresentante.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).EndInit();
             this.gbRepresentanteBusca.ResumeLayout(false);
             this.gbRepresentanteBusca.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

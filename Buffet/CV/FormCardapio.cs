@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Buffet.CV
 {
-    public partial class FormAgenda : Form
+    public partial class FormCardapio : Form
     {
-        public FormAgenda()
+        public FormCardapio()
         {
             InitializeComponent();
-        }
-
-        private void dgvAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.ColumnIndex == dgvAgenda.Columns["ColumnRemove"].Index)
-            {
-
-            }
         }
     }
 }

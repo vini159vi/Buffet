@@ -47,6 +47,7 @@
             this.lbCPFCNPJ = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.bttFechar = new System.Windows.Forms.Button();
+            this.checkBoxHistorico = new System.Windows.Forms.CheckBox();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
@@ -163,6 +164,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbProcuraNome.AutoSize = true;
             this.gbProcuraNome.BackColor = System.Drawing.Color.White;
+            this.gbProcuraNome.Controls.Add(this.checkBoxHistorico);
             this.gbProcuraNome.Controls.Add(this.lblTipoPessoa);
             this.gbProcuraNome.Controls.Add(this.radioBttJuridica);
             this.gbProcuraNome.Controls.Add(this.radioBttFisica);
@@ -264,6 +266,18 @@
             this.bttFechar.UseVisualStyleBackColor = true;
             this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
             // 
+            // checkBoxHistorico
+            // 
+            this.checkBoxHistorico.AutoSize = true;
+            this.checkBoxHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxHistorico.Location = new System.Drawing.Point(232, 52);
+            this.checkBoxHistorico.Name = "checkBoxHistorico";
+            this.checkBoxHistorico.Size = new System.Drawing.Size(123, 17);
+            this.checkBoxHistorico.TabIndex = 6;
+            this.checkBoxHistorico.Text = "Usuarios no Historico";
+            this.checkBoxHistorico.UseVisualStyleBackColor = true;
+            this.checkBoxHistorico.CheckedChanged += new System.EventHandler(this.checkBoxHistorico_CheckedChanged);
+            // 
             // FormCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,5 +326,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Endereço;
+        private System.Windows.Forms.CheckBox checkBoxHistorico;
     }
 }

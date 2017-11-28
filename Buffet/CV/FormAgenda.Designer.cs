@@ -38,8 +38,11 @@
             this.panelAgenda = new System.Windows.Forms.Panel();
             this.dgvAgenda = new System.Windows.Forms.DataGridView();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.lblTelefone = new System.Windows.Forms.Label();
             this.panelAtributos.SuspendLayout();
             this.panelBotoes.SuspendLayout();
             this.panelAgenda.SuspendLayout();
@@ -48,6 +51,8 @@
             // 
             // panelAtributos
             // 
+            this.panelAtributos.Controls.Add(this.lblTelefone);
+            this.panelAtributos.Controls.Add(this.txtTelefone);
             this.panelAtributos.Controls.Add(this.dtData);
             this.panelAtributos.Controls.Add(this.lblData);
             this.panelAtributos.Controls.Add(this.panelBotoes);
@@ -62,7 +67,7 @@
             // dtData
             // 
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtData.Location = new System.Drawing.Point(61, 72);
+            this.dtData.Location = new System.Drawing.Point(61, 75);
             this.dtData.Name = "dtData";
             this.dtData.Size = new System.Drawing.Size(102, 20);
             this.dtData.TabIndex = 4;
@@ -72,7 +77,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(21, 74);
+            this.lblData.Location = new System.Drawing.Point(21, 75);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(34, 15);
             this.lblData.TabIndex = 3;
@@ -84,7 +89,7 @@
             this.panelBotoes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBotoes.Location = new System.Drawing.Point(0, 111);
             this.panelBotoes.Name = "panelBotoes";
-            this.panelBotoes.Size = new System.Drawing.Size(860, 63);
+            this.panelBotoes.Size = new System.Drawing.Size(856, 63);
             this.panelBotoes.TabIndex = 2;
             // 
             // bttAdicionar
@@ -134,6 +139,7 @@
             this.dgvAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNome,
+            this.ColumnTelefone,
             this.ColumnData,
             this.ColumnRemove});
             this.dgvAgenda.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -146,12 +152,19 @@
             this.dgvAgenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAgenda.Size = new System.Drawing.Size(860, 516);
             this.dgvAgenda.TabIndex = 0;
+            this.dgvAgenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgenda_CellClick);
             // 
             // ColumnNome
             // 
             this.ColumnNome.HeaderText = "Nome";
             this.ColumnNome.Name = "ColumnNome";
             this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnTelefone
+            // 
+            this.ColumnTelefone.HeaderText = "Telefone";
+            this.ColumnTelefone.Name = "ColumnTelefone";
+            this.ColumnTelefone.ReadOnly = true;
             // 
             // ColumnData
             // 
@@ -161,9 +174,28 @@
             // 
             // ColumnRemove
             // 
+            this.ColumnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ColumnRemove.HeaderText = "Remover";
             this.ColumnRemove.Name = "ColumnRemove";
             this.ColumnRemove.ReadOnly = true;
+            this.ColumnRemove.Text = "Remover";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(81, 49);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(763, 20);
+            this.txtTelefone.TabIndex = 5;
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.Location = new System.Drawing.Point(21, 51);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(56, 15);
+            this.lblTelefone.TabIndex = 6;
+            this.lblTelefone.Text = "Telefone:";
             // 
             // FormAgenda
             // 
@@ -194,11 +226,14 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.DataGridView dgvAgenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnData;
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Button bttAdicionar;
+        private System.Windows.Forms.Label lblTelefone;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnData;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnRemove;
     }
 }

@@ -16,8 +16,8 @@ namespace Buffet
     public partial class FormCadastrados : Form
     {
         //Global
-            private int tipo;
-            private long num;
+        private int tipo;
+        private bool check=false;
         public FormCadastrados()
         {
             InitializeComponent();
@@ -384,6 +384,18 @@ namespace Buffet
         {
             this.Hide();
             e.Cancel = true;
+        }
+
+        private void checkBoxHistorico_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHistorico.Checked == true)
+            {
+                check = true;
+            }
+            else
+            {
+                check = false;
+            }
         }
 
 
