@@ -29,9 +29,9 @@ namespace Buffet.CV
             {
                 id = c.Id;
                 this.Text = "Editando ";
-                this.bttGerarContrato.Text = "Editar Contrato";
-                this.bttGerarContrato.Click -= new EventHandler(bttGerarContrato_Click);
-                this.bttGerarContrato.Click += new EventHandler(bttUpdate_Click);
+                this.bttAvancar.Text = "Editar Contrato";
+                this.bttAvancar.Click -= new EventHandler(bttGerarContrato_Click);
+                this.bttAvancar.Click += new EventHandler(bttUpdate_Click);
                 this.bttCancelar.Text = "Cancelar";
                 SetDTO(c);
 
@@ -40,7 +40,7 @@ namespace Buffet.CV
             {
                 id = c.Id;
                 SetDTO(c);
-                this.bttGerarContrato.Visible = false;
+                this.bttAvancar.Visible = false;
                 this.bttCancelar.Text = "Fechar";
 
                 //Ativar só leitura nos txt do Representante

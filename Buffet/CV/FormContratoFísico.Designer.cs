@@ -45,6 +45,7 @@
             this.lbData = new System.Windows.Forms.Label();
             this.dtDataEvento = new System.Windows.Forms.DateTimePicker();
             this.gbContratado = new System.Windows.Forms.GroupBox();
+            this.checkBoxNotaFiscal = new System.Windows.Forms.CheckBox();
             this.txtPreco = new System.Windows.Forms.MaskedTextBox();
             this.dtPagamento = new System.Windows.Forms.DateTimePicker();
             this.lbDataPagamento = new System.Windows.Forms.Label();
@@ -64,17 +65,17 @@
             this.gbBuscaPessoaFisica = new System.Windows.Forms.GroupBox();
             this.txtPessoaFisica = new System.Windows.Forms.TextBox();
             this.cbBuscaPessoaFisica = new System.Windows.Forms.ComboBox();
-            this.bttGerarContrato = new System.Windows.Forms.Button();
+            this.bttAvancar = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.gbOpcao = new System.Windows.Forms.GroupBox();
-            this.radioBttFisica = new System.Windows.Forms.RadioButton();
             this.radioBttJuridica = new System.Windows.Forms.RadioButton();
+            this.radioBttFisica = new System.Windows.Forms.RadioButton();
             this.gbTipoContrato = new System.Windows.Forms.GroupBox();
+            this.radioBttEmpresa = new System.Windows.Forms.RadioButton();
+            this.radioBtt15anos = new System.Windows.Forms.RadioButton();
             this.radioBttCasamento = new System.Windows.Forms.RadioButton();
             this.radioBttAniversario = new System.Windows.Forms.RadioButton();
-            this.radioBtt15anos = new System.Windows.Forms.RadioButton();
-            this.radioBttEmpresa = new System.Windows.Forms.RadioButton();
             this.gbPessoaJuridica = new System.Windows.Forms.GroupBox();
             this.txtRepresentante = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
@@ -82,7 +83,6 @@
             this.lbRepresentante = new System.Windows.Forms.Label();
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.lbEmpresa = new System.Windows.Forms.Label();
-            this.checkBoxNotaFiscal = new System.Windows.Forms.CheckBox();
             this.gbDevolucao.SuspendLayout();
             this.gbEvento.SuspendLayout();
             this.gbContratado.SuspendLayout();
@@ -288,6 +288,16 @@
             this.gbContratado.TabStop = false;
             this.gbContratado.Text = "Contratado";
             // 
+            // checkBoxNotaFiscal
+            // 
+            this.checkBoxNotaFiscal.AutoSize = true;
+            this.checkBoxNotaFiscal.Location = new System.Drawing.Point(671, 62);
+            this.checkBoxNotaFiscal.Name = "checkBoxNotaFiscal";
+            this.checkBoxNotaFiscal.Size = new System.Drawing.Size(79, 17);
+            this.checkBoxNotaFiscal.TabIndex = 4;
+            this.checkBoxNotaFiscal.Text = "Nota Fiscal";
+            this.checkBoxNotaFiscal.UseVisualStyleBackColor = true;
+            // 
             // txtPreco
             // 
             this.txtPreco.Location = new System.Drawing.Point(756, 19);
@@ -459,16 +469,16 @@
             this.cbBuscaPessoaFisica.TabIndex = 0;
             this.cbBuscaPessoaFisica.Click += new System.EventHandler(this.cbBuscaPessoaFisica_Click);
             // 
-            // bttGerarContrato
+            // bttAvancar
             // 
-            this.bttGerarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bttGerarContrato.Location = new System.Drawing.Point(149, 19);
-            this.bttGerarContrato.Name = "bttGerarContrato";
-            this.bttGerarContrato.Size = new System.Drawing.Size(125, 43);
-            this.bttGerarContrato.TabIndex = 0;
-            this.bttGerarContrato.Text = "Gerar Contrato";
-            this.bttGerarContrato.UseVisualStyleBackColor = true;
-            this.bttGerarContrato.Click += new System.EventHandler(this.bttGerarContrato_Click);
+            this.bttAvancar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttAvancar.Location = new System.Drawing.Point(149, 19);
+            this.bttAvancar.Name = "bttAvancar";
+            this.bttAvancar.Size = new System.Drawing.Size(125, 43);
+            this.bttAvancar.TabIndex = 0;
+            this.bttAvancar.Text = "Avançar";
+            this.bttAvancar.UseVisualStyleBackColor = true;
+            this.bttAvancar.Click += new System.EventHandler(this.bttGerarContrato_Click);
             // 
             // bttCancelar
             // 
@@ -484,7 +494,7 @@
             // gbBotoes
             // 
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.gbBotoes.Controls.Add(this.bttGerarContrato);
+            this.gbBotoes.Controls.Add(this.bttAvancar);
             this.gbBotoes.Controls.Add(this.bttCancelar);
             this.gbBotoes.Location = new System.Drawing.Point(12, 522);
             this.gbBotoes.Name = "gbBotoes";
@@ -503,17 +513,6 @@
             this.gbOpcao.TabStop = false;
             this.gbOpcao.Text = "Opção";
             // 
-            // radioBttFisica
-            // 
-            this.radioBttFisica.AutoSize = true;
-            this.radioBttFisica.Location = new System.Drawing.Point(14, 19);
-            this.radioBttFisica.Name = "radioBttFisica";
-            this.radioBttFisica.Size = new System.Drawing.Size(90, 17);
-            this.radioBttFisica.TabIndex = 0;
-            this.radioBttFisica.TabStop = true;
-            this.radioBttFisica.Text = "Pessoa Fisica";
-            this.radioBttFisica.UseVisualStyleBackColor = true;
-            // 
             // radioBttJuridica
             // 
             this.radioBttJuridica.AutoSize = true;
@@ -524,6 +523,17 @@
             this.radioBttJuridica.TabStop = true;
             this.radioBttJuridica.Text = "Pessoa Juridica";
             this.radioBttJuridica.UseVisualStyleBackColor = true;
+            // 
+            // radioBttFisica
+            // 
+            this.radioBttFisica.AutoSize = true;
+            this.radioBttFisica.Location = new System.Drawing.Point(14, 19);
+            this.radioBttFisica.Name = "radioBttFisica";
+            this.radioBttFisica.Size = new System.Drawing.Size(90, 17);
+            this.radioBttFisica.TabIndex = 0;
+            this.radioBttFisica.TabStop = true;
+            this.radioBttFisica.Text = "Pessoa Fisica";
+            this.radioBttFisica.UseVisualStyleBackColor = true;
             // 
             // gbTipoContrato
             // 
@@ -537,6 +547,28 @@
             this.gbTipoContrato.TabIndex = 6;
             this.gbTipoContrato.TabStop = false;
             this.gbTipoContrato.Text = "Tipo de Contrato";
+            // 
+            // radioBttEmpresa
+            // 
+            this.radioBttEmpresa.AutoSize = true;
+            this.radioBttEmpresa.Location = new System.Drawing.Point(297, 19);
+            this.radioBttEmpresa.Name = "radioBttEmpresa";
+            this.radioBttEmpresa.Size = new System.Drawing.Size(66, 17);
+            this.radioBttEmpresa.TabIndex = 3;
+            this.radioBttEmpresa.TabStop = true;
+            this.radioBttEmpresa.Text = "Empresa";
+            this.radioBttEmpresa.UseVisualStyleBackColor = true;
+            // 
+            // radioBtt15anos
+            // 
+            this.radioBtt15anos.AutoSize = true;
+            this.radioBtt15anos.Location = new System.Drawing.Point(212, 19);
+            this.radioBtt15anos.Name = "radioBtt15anos";
+            this.radioBtt15anos.Size = new System.Drawing.Size(64, 17);
+            this.radioBtt15anos.TabIndex = 2;
+            this.radioBtt15anos.TabStop = true;
+            this.radioBtt15anos.Text = "15 Anos";
+            this.radioBtt15anos.UseVisualStyleBackColor = true;
             // 
             // radioBttCasamento
             // 
@@ -559,28 +591,6 @@
             this.radioBttAniversario.TabStop = true;
             this.radioBttAniversario.Text = "Aniversario";
             this.radioBttAniversario.UseVisualStyleBackColor = true;
-            // 
-            // radioBtt15anos
-            // 
-            this.radioBtt15anos.AutoSize = true;
-            this.radioBtt15anos.Location = new System.Drawing.Point(212, 19);
-            this.radioBtt15anos.Name = "radioBtt15anos";
-            this.radioBtt15anos.Size = new System.Drawing.Size(64, 17);
-            this.radioBtt15anos.TabIndex = 2;
-            this.radioBtt15anos.TabStop = true;
-            this.radioBtt15anos.Text = "15 Anos";
-            this.radioBtt15anos.UseVisualStyleBackColor = true;
-            // 
-            // radioBttEmpresa
-            // 
-            this.radioBttEmpresa.AutoSize = true;
-            this.radioBttEmpresa.Location = new System.Drawing.Point(297, 19);
-            this.radioBttEmpresa.Name = "radioBttEmpresa";
-            this.radioBttEmpresa.Size = new System.Drawing.Size(66, 17);
-            this.radioBttEmpresa.TabIndex = 3;
-            this.radioBttEmpresa.TabStop = true;
-            this.radioBttEmpresa.Text = "Empresa";
-            this.radioBttEmpresa.UseVisualStyleBackColor = true;
             // 
             // gbPessoaJuridica
             // 
@@ -646,16 +656,6 @@
             this.lbEmpresa.Size = new System.Drawing.Size(51, 13);
             this.lbEmpresa.TabIndex = 0;
             this.lbEmpresa.Text = "Empresa:";
-            // 
-            // checkBoxNotaFiscal
-            // 
-            this.checkBoxNotaFiscal.AutoSize = true;
-            this.checkBoxNotaFiscal.Location = new System.Drawing.Point(671, 62);
-            this.checkBoxNotaFiscal.Name = "checkBoxNotaFiscal";
-            this.checkBoxNotaFiscal.Size = new System.Drawing.Size(79, 17);
-            this.checkBoxNotaFiscal.TabIndex = 4;
-            this.checkBoxNotaFiscal.Text = "Nota Fiscal";
-            this.checkBoxNotaFiscal.UseVisualStyleBackColor = true;
             // 
             // FormContratoFísico
             // 
@@ -732,7 +732,7 @@
         private System.Windows.Forms.Label lbDiaDevolucao;
         private System.Windows.Forms.GroupBox gbBuscaPessoaFisica;
         private System.Windows.Forms.ComboBox cbBuscaPessoaFisica;
-        private System.Windows.Forms.Button bttGerarContrato;
+        private System.Windows.Forms.Button bttAvancar;
         private System.Windows.Forms.Button bttCancelar;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.DateTimePicker dtDataEvento;
