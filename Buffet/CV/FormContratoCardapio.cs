@@ -16,5 +16,35 @@ namespace Buffet.CV
         {
             InitializeComponent();
         }
+
+        private void radioBttTipo1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioBttTipo2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttRemover_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttGerarContrato_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,15 +16,15 @@ namespace Buffet.DAO
         {
             Database dbContrato = Database.GetInstance();
 
-            string qry = string.Format("INSERT INTO Contrato(tipo, eventoData, eventoHora, eventoTerminoHora, eventoNConvidados, eventoCapMaxima," +
+            string qry = string.Format("INSERT INTO Contrato(id, tipo, eventoData, eventoHora, eventoTerminoHora, eventoNConvidados, eventoCapMaxima," +
                 "contratadoHoraChegada, contratadoHoraAntecedencia, contratadoInicioServico, contratadoTerminoServico, contratadoQuantGarcons, contratadoQuantCopeiros, contratadoPrecoPagar, contratadoDataPgto," +
                 "devolucaoDia, devolucaoHora," +
-                "pessoaFisicaCPF, pessoaJuridicaCNPJ, representanteCPF) " +
+                "pessoaFisicaCPF, pessoaJuridicaCNPJ, dataCriacao, notaFiscal) " +
 
-                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}','{13}', '{14}', '{15}', '{16}', '{17}', '{18}')",
-                c.Tipo, c.EventoData, c.EventoHora, c.EventoTerminoHora, c.EventoNConvidados, c.EventoCapMaxima, c.ContratadoHoraChegada, c.ContratadoHoraAntecedencia, 
+                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}','{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}')",
+                c.Id ,c.Tipo, c.EventoData, c.EventoHora, c.EventoTerminoHora, c.EventoNConvidados, c.EventoCapMaxima, c.ContratadoHoraChegada, c.ContratadoHoraAntecedencia, 
                 c.ContratadoInicioServico, c.ContratadoTerminoServico, c.ContratadoQuantGarcons, c.ContratadoQuantCopeiros, c.ContratadoPrecoPagar, c.ContratadoDataPgto,
-                c.DevolucaoDia, c.DevolucaoHora, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, c.Representante.Cpf);
+                c.DevolucaoDia, c.DevolucaoHora, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, c.DataCriacao.Date, c.NotaFiscal);
 
             dbContrato.ExecuteNonQuery(qry);
         }
@@ -36,6 +36,7 @@ namespace Buffet.DAO
             DataSet ds = bd.ExecuteQuery(qry);
             Contrato c = new Contrato();
             DataRow dr = ds.Tables[0].Rows[0];
+            int aux;
 
             c.Id = int.Parse(dr["id"].ToString());
             c.Tipo = int.Parse(dr["tipo"].ToString());
@@ -56,7 +57,16 @@ namespace Buffet.DAO
             c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
             c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
             c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-            c.Representante.Cpf = long.Parse(dr["representanteCPF"].ToString());
+            c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+            aux = int.Parse(dr["notaFiscal"].ToString());
+            if (aux == 1)
+            {
+                c.NotaFiscal = true;
+            }
+            else
+            {
+                c.NotaFiscal = false;
+            }
 
             return c;
         }
@@ -64,11 +74,11 @@ namespace Buffet.DAO
         public void Update(Contrato c, int id)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE Contrato SET id='{20}', tipo = '{0}', eventoData = '{1}', eventoHora = '{2}',  eventoTerminoHora = '{3}', eventoNConvidados= '{4}', eventoCapMaxima = '{5}', contratadoHoraChegada = '{6}', contratadoHoraAntecedencia = '{7}', contratadoInicioServico = '{8}', contratadoTerminoServico = '{9}', contratadoQuantGarcons = '{10}', contratadoQuantCopeiros = '{11}', contratadoPrecoPagar = '{12}', contratadoDataPgto = '{13}', devolucaoDia = '{14}', devolucaoHora = '{15}', pessoaFisicaCPF = '{16}', pessoaJuridicaCNPJ = '{17}', representanteCPF = '{18}'"
+            string qry = string.Format("UPDATE Contrato SET id='{18}', tipo = '{0}', eventoData = '{1}', eventoHora = '{2}',  eventoTerminoHora = '{3}', eventoNConvidados= '{4}', eventoCapMaxima = '{5}', contratadoHoraChegada = '{6}', contratadoHoraAntecedencia = '{7}', contratadoInicioServico = '{8}', contratadoTerminoServico = '{9}', contratadoQuantGarcons = '{10}', contratadoQuantCopeiros = '{11}', contratadoPrecoPagar = '{12}', contratadoDataPgto = '{13}', devolucaoDia = '{14}', devolucaoHora = '{15}', pessoaFisicaCPF = '{16}', pessoaJuridicaCNPJ = '{17}', dataCriacao='{18}', notaFiscal = '{19}'"
             + " WHERE id = '{20}'",
             c.Tipo, c.EventoData, c.EventoHora, c.EventoTerminoHora, c.EventoNConvidados, c.EventoCapMaxima, c.ContratadoHoraChegada, c.ContratadoHoraAntecedencia,
                 c.ContratadoInicioServico, c.ContratadoTerminoServico, c.ContratadoQuantGarcons, c.ContratadoQuantCopeiros, c.ContratadoPrecoPagar, c.ContratadoDataPgto,
-                c.DevolucaoDia, c.DevolucaoHora, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, c.Representante.Cpf, id);
+                c.DevolucaoDia, c.DevolucaoHora, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, c.DataCriacao.Date, c.NotaFiscal, id);
 
             db.ExecuteNonQuery(qry);
         }
@@ -87,6 +97,7 @@ namespace Buffet.DAO
             string qry = "SELECT * FROM Contrato";
             DataSet ds = bd.ExecuteQuery(qry);
             List<Contrato> contratos = new List<Contrato>();
+            int aux;
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -111,7 +122,16 @@ namespace Buffet.DAO
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
                 c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                c.Representante.Cpf = long.Parse(dr["representanteCPF"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
 
                 contratos.Add(c);
             }
@@ -124,6 +144,7 @@ namespace Buffet.DAO
             string qry = "SELECT * FROM Contrato WHERE id LIKE '%" + id + "%'";
             DataSet ds = bd.ExecuteQuery(qry);
             List<Contrato> contratos = new List<Contrato>();
+            int aux;
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -149,7 +170,16 @@ namespace Buffet.DAO
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
                 c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                c.Representante.Cpf = long.Parse(dr["representanteCPF"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
 
                 contratos.Add(c);
 
@@ -163,6 +193,7 @@ namespace Buffet.DAO
             string qry = "SELECT * FROM Contrato WHERE id LIKE '%" + id + "%' WHERE tipo=1";
             DataSet ds = bd.ExecuteQuery(qry);
             List<Contrato> contratos = new List<Contrato>();
+            int aux;
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -188,7 +219,16 @@ namespace Buffet.DAO
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
                 c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                c.Representante.Cpf = long.Parse(dr["representanteCPF"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
 
                 contratos.Add(c);
 
@@ -202,6 +242,7 @@ namespace Buffet.DAO
             string qry = "SELECT * FROM Contrato WHERE id LIKE '%" + id + "%' WHERE tipo=2";
             DataSet ds = bd.ExecuteQuery(qry);
             List<Contrato> contratos = new List<Contrato>();
+            int aux;
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -227,7 +268,16 @@ namespace Buffet.DAO
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
                 c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                c.Representante.Cpf = long.Parse(dr["representanteCPF"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
 
                 contratos.Add(c);
 
@@ -243,6 +293,7 @@ namespace Buffet.DAO
             string qry = "SELECT * FROM Contrato WHERE tipo=1";
             DataSet ds = bd.ExecuteQuery(qry);
             List<Contrato> contratos = new List<Contrato>();
+            int aux;
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -268,7 +319,16 @@ namespace Buffet.DAO
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
                 c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                c.Representante.Cpf = long.Parse(dr["representanteCPF"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
 
                 contratos.Add(c);
 
@@ -282,6 +342,7 @@ namespace Buffet.DAO
             string qry = "SELECT * FROM Contrato WHERE tipo=2";
             DataSet ds = bd.ExecuteQuery(qry);
             List<Contrato> contratos = new List<Contrato>();
+            int aux;
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -307,7 +368,16 @@ namespace Buffet.DAO
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
                 c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                c.Representante.Cpf = long.Parse(dr["representanteCPF"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
 
                 contratos.Add(c);
 
@@ -321,6 +391,7 @@ namespace Buffet.DAO
             string qry = "SELECT * FROM Contrato WHERE id=" + id;
             DataSet ds = bd.ExecuteQuery(qry);
             Contrato c = new Contrato();
+            int aux;
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -345,41 +416,19 @@ namespace Buffet.DAO
                     c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
                     c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
                     c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                    c.Representante.Cpf = long.Parse(dr["representanteCPF"].ToString());
+                    c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                    aux = int.Parse(dr["notaFiscal"].ToString());
+                    if (aux == 1)
+                    {
+                        c.NotaFiscal = true;
+                    }
+                    else
+                    {
+                        c.NotaFiscal = false;
+                    }
                 }
             }
             return c;
-        }
-
-        public RepresentanteJuridico FindByRepresentante(long cpf)
-        {
-            Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM RepresentanteJuridico rj " +
-                "JOIN Contrato c ON c.representanteCPF=rj.cpf WHERE cpf=" + cpf;
-            DataSet ds = bd.ExecuteQuery(qry);
-            RepresentanteJuridico rj = new RepresentanteJuridico();
-
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-                rj.Nome = dr["nome"].ToString();
-                rj.Nacionalidade = dr["nacionalidade"].ToString();
-                rj.EstadoCivil = dr["estadoCivil"].ToString();
-                rj.Profissao = dr["profissao"].ToString();
-                rj.Cpf = long.Parse(dr["cpf"].ToString());
-                rj.Rg = long.Parse(dr["rg"].ToString());
-                rj.Telefone = long.Parse(dr["Telefone"].ToString());
-                rj.Cep = long.Parse(dr["cep"].ToString());
-                rj.Rua = dr["rua"].ToString();
-                rj.Bairro = dr["bairro"].ToString();
-                rj.Cidade = dr["cidade"].ToString();
-                rj.Estado = dr["estado"].ToString();
-                rj.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
-                rj.Celular = long.Parse(dr["celular"].ToString());
-                rj.Empresa.Cnpj = long.Parse(dr["empresaCnpj"].ToString());
-
-            }
-            return rj;
-
         }
 
         public ClienteFisico FindByFisico(long cpf)
@@ -406,6 +455,8 @@ namespace Buffet.DAO
                 cf.Estado = dr["estado"].ToString();
                 cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 cf.Celular = long.Parse(dr["celular"].ToString());
+                cf.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                cf.Empresa.Cnpj = Int64.Parse(dr["cnpjEmpresa"].ToString());
 
             }
             return cf;
@@ -430,6 +481,7 @@ namespace Buffet.DAO
                 cj.Bairro = dr["bairro"].ToString();
                 cj.Estado = dr["estado"].ToString();
                 cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
+                cj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
 
             }
             return cj;

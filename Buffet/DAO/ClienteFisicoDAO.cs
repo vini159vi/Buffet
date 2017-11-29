@@ -16,9 +16,9 @@ namespace Buffet.DAO
         {
             Database dbCliente = Database.GetInstance();
 
-            string qry = String.Format("INSERT INTO ClienteFisico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular, tipo) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}')", 
-                cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular);
+            string qry = String.Format("INSERT INTO ClienteFisico(nome, nacionalidade, estadoCivil, profissao, cpf, rg, telefone, cep, rua, bairro, cidade, estado, numeroCasa, celular, dataCriacao, cnpjEmpresa) VALUES " +
+                "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}')", 
+                cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular, cf.DataCriacao.Date, cf.Empresa.Cnpj);
 
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
             dbCliente.ExecuteNonQuery(qry);
@@ -47,15 +47,18 @@ namespace Buffet.DAO
             cf.Estado = dr["estado"].ToString();
             cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
             cf.Celular = long.Parse(dr["celular"].ToString());
+            cf.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+            cf.Empresa.Cnpj = Int64.Parse(dr["cnpjEmpresa"].ToString());
+
             return cf;
         }
 
         public void Update(ClienteFisico cf, long cpf)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE ClienteFisico SET nome='{0}', nacionalidade='{1}', estadoCivil='{2}', profissao='{3}', cpf='{4}', rg='{5}', telefone='{6}', cep='{7}', rua='{8}', bairro='{9}', cidade='{10}', estado='{11}', numeroCasa='{12}', celular='{13}'"
-            + " WHERE cpf = '{14}'",
-            cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular, cpf);
+            string qry = string.Format("UPDATE ClienteFisico SET nome='{0}', nacionalidade='{1}', estadoCivil='{2}', profissao='{3}', cpf='{4}', rg='{5}', telefone='{6}', cep='{7}', rua='{8}', bairro='{9}', cidade='{10}', estado='{11}', numeroCasa='{12}', celular='{13}', dataCriacao = '{14}', cnpjEmpresa = '{15}'"
+            + " WHERE cpf = '{16}'",
+            cf.Nome, cf.Nacionalidade, cf.EstadoCivil, cf.Profissao, cf.Cpf, cf.Rg, cf.Telefone, cf.Cep, cf.Rua, cf.Bairro, cf.Cidade, cf.Estado, cf.NumeroCasa, cf.Celular, cf.DataCriacao.Date, cf.Empresa.Cnpj ,cpf);
             SQLiteCommand comm = new SQLiteCommand(qry, bd);
 
             db.ExecuteNonQuery(qry);
@@ -95,6 +98,8 @@ namespace Buffet.DAO
                 cf.Estado = dr["estado"].ToString();
                 cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 cf.Celular = long.Parse(dr["celular"].ToString());
+                cf.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                cf.Empresa.Cnpj = Int64.Parse(dr["cnpjEmpresa"].ToString());
 
                 fisicos.Add(cf);
             }
@@ -110,24 +115,26 @@ namespace Buffet.DAO
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                    ClienteFisico cf = new ClienteFisico();
+                ClienteFisico cf = new ClienteFisico();
 
-                    cf.Nome = dr["nome"].ToString();
-                    cf.Nacionalidade = dr["nacionalidade"].ToString();
-                    cf.EstadoCivil = dr["estadoCivil"].ToString();
-                    cf.Profissao = dr["profissao"].ToString();
-                    cf.Cpf = long.Parse(dr["cpf"].ToString());
-                    cf.Rg = long.Parse(dr["rg"].ToString());
-                    cf.Telefone = long.Parse(dr["Telefone"].ToString());
-                    cf.Cep = long.Parse(dr["cep"].ToString());
-                    cf.Rua = dr["rua"].ToString();
-                    cf.Bairro = dr["bairro"].ToString();
-                    cf.Cidade = dr["cidade"].ToString();
-                    cf.Estado = dr["estado"].ToString();
-                    cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
-                    cf.Celular = long.Parse(dr["celular"].ToString());
+                cf.Nome = dr["nome"].ToString();
+                cf.Nacionalidade = dr["nacionalidade"].ToString();
+                cf.EstadoCivil = dr["estadoCivil"].ToString();
+                cf.Profissao = dr["profissao"].ToString();
+                cf.Cpf = long.Parse(dr["cpf"].ToString());
+                cf.Rg = long.Parse(dr["rg"].ToString());
+                cf.Telefone = long.Parse(dr["Telefone"].ToString());
+                cf.Cep = long.Parse(dr["cep"].ToString());
+                cf.Rua = dr["rua"].ToString();
+                cf.Bairro = dr["bairro"].ToString();
+                cf.Cidade = dr["cidade"].ToString();
+                cf.Estado = dr["estado"].ToString();
+                cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
+                cf.Celular = long.Parse(dr["celular"].ToString());
+                cf.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                cf.Empresa.Cnpj = Int64.Parse(dr["cnpjEmpresa"].ToString());
 
-                    fisicos.Add(cf);
+                fisicos.Add(cf);
             }
             return fisicos;
         }
@@ -157,6 +164,8 @@ namespace Buffet.DAO
                 cf.Estado = dr["estado"].ToString();
                 cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 cf.Celular = long.Parse(dr["celular"].ToString());
+                cf.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                cf.Empresa.Cnpj = Int64.Parse(dr["cnpjEmpresa"].ToString());
 
                 fisicos.Add(cf);
             }
@@ -188,6 +197,8 @@ namespace Buffet.DAO
                     cf.Estado = dr["estado"].ToString();
                     cf.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                     cf.Celular = long.Parse(dr["celular"].ToString());
+                    cf.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                    cf.Empresa.Cnpj = Int64.Parse(dr["cnpjEmpresa"].ToString());
 
                 }
             }

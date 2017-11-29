@@ -146,6 +146,7 @@
     <Compile Include="CV\FormRepresentante.Designer.cs">
       <DependentUpon>FormRepresentante.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\AgendaDAO.cs" />
     <Compile Include="DAO\ClienteFisicoDAO.cs" />
     <Compile Include="DAO\ClienteJuridicoDAO.cs" />
     <Compile Include="DAO\ContratoDAO.cs" />

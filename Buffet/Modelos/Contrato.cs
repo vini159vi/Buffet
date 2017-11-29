@@ -11,12 +11,12 @@ namespace Buffet.Modelos
         private DateTime eventoData, eventoHora, eventoTerminoHora, contratadoHoraChegada, contratadoInicioServico, contratadoTerminoServico, contratadoDataPgto, devolucaoHora, devolucaoDia, dataCriacao;
         private int id, eventoNConvidados, eventoCapMaxima, contratadoHoraAntecedencia, contratadoQuantGarcons, contratadoQuantCopeiros, tipo;
         private double contratadoPrecoPagar;
+        private bool notaFiscal;
 
         ClienteFisico pessoaFisica = new ClienteFisico();
         ClienteJuridico pessoaJuridica = new ClienteJuridico();
-        RepresentanteJuridico representante = new RepresentanteJuridico();
 
-        public Contrato(DateTime eventoData, DateTime eventoHora, DateTime eventoTerminoHora, DateTime contratadoHoraChegada, DateTime contratadoInicioServico, DateTime contratadoTerminoServico, DateTime contratadoDataPgto, DateTime devolucaoHora, int id, int eventoNConvidados, int eventoCapMaxima, int contratadoHoraAntecedencia, int contratadoQuantGarcons, int contratadoQuantCopeiros, int tipo, double contratadoPrecoPagar, ClienteFisico pessoaFisica, ClienteJuridico pessoaJuridica, RepresentanteJuridico representante, DateTime devolucaoDia, DateTime dataCriacao)
+        public Contrato(DateTime eventoData, DateTime eventoHora, DateTime eventoTerminoHora, DateTime contratadoHoraChegada, DateTime contratadoInicioServico, DateTime contratadoTerminoServico, DateTime contratadoDataPgto, DateTime devolucaoHora, int id, int eventoNConvidados, int eventoCapMaxima, int contratadoHoraAntecedencia, int contratadoQuantGarcons, int contratadoQuantCopeiros, int tipo, double contratadoPrecoPagar, ClienteFisico pessoaFisica, ClienteJuridico pessoaJuridica, DateTime devolucaoDia, DateTime dataCriacao, bool notaFiscal)
         {
             this.EventoData = eventoData;
             this.EventoHora = eventoHora;
@@ -36,15 +36,16 @@ namespace Buffet.Modelos
             this.ContratadoPrecoPagar = contratadoPrecoPagar;
             this.PessoaFisica = pessoaFisica;
             this.PessoaJuridica = pessoaJuridica;
-            this.Representante = representante;
             this.DevolucaoDia = devolucaoDia;
-            this.dataCriacao = dataCriacao;
+            this.DataCriacao = dataCriacao;
+            this.NotaFiscal = notaFiscal;
         }
 
         public Contrato()
         {
 
         }
+
         public DateTime EventoData { get { return eventoData; } set { eventoData = value; } }
         public DateTime EventoHora { get { return eventoHora; } set { eventoHora = value; } }
         public DateTime EventoTerminoHora { get { return eventoTerminoHora; } set { eventoTerminoHora = value; } }
@@ -63,8 +64,8 @@ namespace Buffet.Modelos
         public double ContratadoPrecoPagar { get { return contratadoPrecoPagar; } set { contratadoPrecoPagar = value; } }
         public ClienteFisico PessoaFisica { get { return pessoaFisica; } set { pessoaFisica = value; } }
         public ClienteJuridico PessoaJuridica { get { return pessoaJuridica; } set { pessoaJuridica = value; } }
-        public RepresentanteJuridico Representante { get { return representante; } set { representante = value; } }
         public DateTime DevolucaoDia { get { return devolucaoDia; } set { devolucaoDia = value; } }
         public DateTime DataCriacao { get { return dataCriacao; } set { dataCriacao = value; } }
+        public bool NotaFiscal { get { return notaFiscal; } set { notaFiscal = value; } }
     }
 }

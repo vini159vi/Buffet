@@ -116,7 +116,6 @@ namespace Buffet.CV
 
             //Fisico
             c.PessoaJuridica.Cnpj = Convert.ToInt64(cbEmpresa.SelectedValue);
-            c.Representante.Cpf = Convert.ToInt64(cbRepresentante.SelectedValue);
             c.EventoData = DateTime.Parse(dtDataEvento.Text);
             c.EventoHora = DateTime.Parse(dtHoraEvento.Text);
             c.EventoTerminoHora = DateTime.Parse(dtHoraTermino.Text);
@@ -142,7 +141,7 @@ namespace Buffet.CV
         {
             ContratoDAO cDAO = new ContratoDAO();
             ClienteJuridico aux = cDAO.FindByJuridico(c.Id);
-            RepresentanteJuridico aux2 = cDAO.FindByRepresentante(c.Id);
+
 
             dtDataEvento.Text = c.EventoData.ToString("dd/mm/yyyy");
             dtHoraEvento.Text = c.EventoHora.ToString("hh:mm");
@@ -160,7 +159,6 @@ namespace Buffet.CV
             dtDiaDevolucao.Text = c.DevolucaoDia.ToString("dd/mm/yyyy");
             dtHoraDevolucao.Text = c.DevolucaoHora.ToString("hh:mm");
             txtEmpresa.Text = aux.NomeEmpresa;
-            txtRepresentante.Text = aux2.Nome;
         }
 
         private void bttGerarContrato_Click(object sender, EventArgs e)

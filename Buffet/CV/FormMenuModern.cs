@@ -20,7 +20,7 @@ namespace Buffet.CV
         private FormFisico ff = new FormFisico();
         private FormJuridico fj = new FormJuridico();
         private FormRepresentante fr = new FormRepresentante();
-
+        private FormAgenda fa = new FormAgenda();
         public FormMenuModern()
         {
             InitializeComponent();
@@ -231,6 +231,13 @@ namespace Buffet.CV
             LocalizacaoNova(panelAgendamento.Location.Y);
             timerSelecao.Enabled = true;
             timerSelecao.Start();
+
+            if (!fa.Visible)
+            {
+                fa.TopLevel = false;
+                panelWorkstation.Controls.Add(fa);
+                fa.Show();
+            }
         }
 
         private void bttHome_Click(object sender, EventArgs e)

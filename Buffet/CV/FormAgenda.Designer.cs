@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelAtributos = new System.Windows.Forms.Panel();
+            this.lblTelefone = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
             this.lblData = new System.Windows.Forms.Label();
             this.panelBotoes = new System.Windows.Forms.Panel();
@@ -41,8 +43,6 @@
             this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRemove = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.lblTelefone = new System.Windows.Forms.Label();
             this.panelAtributos.SuspendLayout();
             this.panelBotoes.SuspendLayout();
             this.panelAgenda.SuspendLayout();
@@ -64,6 +64,23 @@
             this.panelAtributos.Size = new System.Drawing.Size(860, 174);
             this.panelAtributos.TabIndex = 0;
             // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblTelefone.Location = new System.Drawing.Point(21, 52);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(52, 13);
+            this.lblTelefone.TabIndex = 6;
+            this.lblTelefone.Text = "Telefone:";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(79, 49);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(765, 20);
+            this.txtTelefone.TabIndex = 5;
+            // 
             // dtData
             // 
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -76,10 +93,10 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(21, 75);
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblData.Location = new System.Drawing.Point(21, 82);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(34, 15);
+            this.lblData.Size = new System.Drawing.Size(33, 13);
             this.lblData.TabIndex = 3;
             this.lblData.Text = "Data:";
             // 
@@ -89,7 +106,7 @@
             this.panelBotoes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBotoes.Location = new System.Drawing.Point(0, 111);
             this.panelBotoes.Name = "panelBotoes";
-            this.panelBotoes.Size = new System.Drawing.Size(856, 63);
+            this.panelBotoes.Size = new System.Drawing.Size(860, 63);
             this.panelBotoes.TabIndex = 2;
             // 
             // bttAdicionar
@@ -101,6 +118,7 @@
             this.bttAdicionar.TabIndex = 0;
             this.bttAdicionar.Text = "Adicionar";
             this.bttAdicionar.UseVisualStyleBackColor = true;
+            this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
             // 
             // txtNome
             // 
@@ -112,10 +130,10 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblNome.Location = new System.Drawing.Point(21, 25);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(39, 15);
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
@@ -180,23 +198,6 @@
             this.ColumnRemove.ReadOnly = true;
             this.ColumnRemove.Text = "Remover";
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(81, 49);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(763, 20);
-            this.txtTelefone.TabIndex = 5;
-            // 
-            // lblTelefone
-            // 
-            this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone.Location = new System.Drawing.Point(21, 51);
-            this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(56, 15);
-            this.lblTelefone.TabIndex = 6;
-            this.lblTelefone.Text = "Telefone:";
-            // 
             // FormAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +210,7 @@
             this.Name = "FormAgenda";
             this.ShowInTaskbar = false;
             this.Text = "FormAgenda";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelAtributos.ResumeLayout(false);
             this.panelAtributos.PerformLayout();
             this.panelBotoes.ResumeLayout(false);

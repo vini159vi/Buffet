@@ -17,9 +17,9 @@ namespace Buffet.DAO
         { 
             Database dbCliente = Database.GetInstance();
 
-            string qry = string.Format("INSERT INTO ClienteJuridico(nomeEmpresa, cnpj, cep, cidade, rua, bairro, estado, numeroEmpresa, tipo) "+
-                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",
-                cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa);
+            string qry = string.Format("INSERT INTO ClienteJuridico(nomeEmpresa, cnpj, cep, cidade, rua, bairro, estado, numeroEmpresa, dataCriacao) "+
+                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
+                cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, cj.DataCriacao.Date);
 
             dbCliente.ExecuteNonQuery(qry);
         }
@@ -40,16 +40,16 @@ namespace Buffet.DAO
             cj.Bairro = dr["bairro"].ToString();
             cj.Estado = dr["estado"].ToString();
             cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
-
+            cj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
             return cj;
         }
 
         public void Update(ClienteJuridico cj, long cnpj)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE ClienteJuridico SET nomeEmpresa='{0}', cnpj = '{1}', cep = '{2}', cidade = '{3}',  rua = '{4}', bairro= '{5}', estado = '{6}', numeroEmpresa = '{7}'"
-            + " WHERE cnpj = '{8}'",
-            cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, cnpj);
+            string qry = string.Format("UPDATE ClienteJuridico SET nomeEmpresa='{0}', cnpj = '{1}', cep = '{2}', cidade = '{3}',  rua = '{4}', bairro= '{5}', estado = '{6}', numeroEmpresa = '{7}', dataCriacao = '{8}'"
+            + " WHERE cnpj = '{9}'",
+            cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, cj.DataCriacao, cnpj);
 
             db.ExecuteNonQuery(qry);
         }
@@ -82,6 +82,7 @@ namespace Buffet.DAO
                 cj.Bairro = dr["bairro"].ToString();
                 cj.Estado = dr["estado"].ToString();
                 cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
+                cj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
 
                 clientes.Add(cj);
             }
@@ -108,6 +109,7 @@ namespace Buffet.DAO
                 cj.Bairro = dr["bairro"].ToString();
                 cj.Estado = dr["estado"].ToString();
                 cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
+                cj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
 
                 clientes.Add(cj);
                 
@@ -135,6 +137,7 @@ namespace Buffet.DAO
                     cj.Bairro = dr["bairro"].ToString();
                     cj.Estado = dr["estado"].ToString();
                     cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
+                    cj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
 
                     clientes.Add(cj);
                 }
@@ -161,11 +164,13 @@ namespace Buffet.DAO
                     cj.Bairro = dr["bairro"].ToString();
                     cj.Estado = dr["estado"].ToString();
                     cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
+                    cj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
                 }
             }
             return cj;
         }
 
+        
         public List<RepresentanteJuridico> ListByRepresentante(long cnpj)
         {
             Database bd = Database.GetInstance();
@@ -198,7 +203,7 @@ namespace Buffet.DAO
             return listrj;
 
         }
-
+        
         public RepresentanteJuridico FindByRepresentante(long cnpj)
         {
             Database bd = Database.GetInstance();
@@ -229,5 +234,6 @@ namespace Buffet.DAO
             return rj;
 
         }
+        
     }
 }
