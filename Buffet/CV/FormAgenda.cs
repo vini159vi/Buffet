@@ -14,6 +14,7 @@ namespace Buffet.CV
 {
     public partial class FormAgenda : Form
     {
+        bool check=false;
         public FormAgenda()
         {
             InitializeComponent();
@@ -22,9 +23,12 @@ namespace Buffet.CV
 
         private void dgvAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == dgvAgenda.Columns["ColumnRemove"].Index)
+            int index = dgvAgenda.CurrentCell.RowIndex;
+            if (e.ColumnIndex == dgvAgenda.Columns["ColumnRemove"].Index)
             {
-
+                AgendaDAO aDAO = new AgendaDAO();
+                aDAO.Delete(int.Parse(dgvAgenda.Rows[index].Cells[0].Value.ToString()));
+                Fill();
             }
         }
 
@@ -41,7 +45,6 @@ namespace Buffet.CV
         private void Fill()
         {
             AgendaDAO aDAO = new AgendaDAO();
-            List<Agenda> listA = aDAO.List();
 
 
             ColumnRemove.HeaderText = "Remover";
@@ -50,14 +53,47 @@ namespace Buffet.CV
 
             dgvAgenda.Rows.Clear();
 
-            foreach (Agenda a in listA)
+            if (check != true)
             {
-                int index = dgvAgenda.Rows.Add();
+                List<Agenda> listA = aDAO.List();
+                foreach (Agenda a in listA)
+                {
+                    int index = dgvAgenda.Rows.Add(), n = a.Telefone.ToString().Length;
+                    string data = a.Data.ToString("dd/MM/yyyy");
 
-                dgvAgenda.Rows[index].Cells[0].Value = a.Nome;
-                dgvAgenda.Rows[index].Cells[1].Value = a.Telefone.ToString(@"(00)");
-                dgvAgenda.Rows[index].Cells[2].Value = a.Data.Date;
-                //dgvAgenda.Rows[index].Cells["ColumnRemove"]
+                    dgvAgenda.Rows[index].Cells[0].Value = a.Id;
+                    dgvAgenda.Rows[index].Cells[1].Value = a.Nome;
+                    if (n == 9)
+                    {
+                        dgvAgenda.Rows[index].Cells[2].Value = a.Telefone.ToString(@"(00) 00000-0000");
+                    }
+                    else
+                    {
+                        dgvAgenda.Rows[index].Cells[2].Value = a.Telefone.ToString(@"(00) 0000-0000");
+                    }
+                    dgvAgenda.Rows[index].Cells[3].Value = data;
+                }
+            }
+            else
+            {
+                List<Agenda> listA = aDAO.ListHistorico();
+                foreach (Agenda a in listA)
+                {
+                    int index = dgvAgenda.Rows.Add(), n = a.Telefone.ToString().Length;
+                    string data = a.Data.ToString("dd/MM/yyyy");
+
+                    dgvAgenda.Rows[index].Cells[0].Value = a.Id;
+                    dgvAgenda.Rows[index].Cells[1].Value = a.Nome;
+                    if (n == 9)
+                    {
+                        dgvAgenda.Rows[index].Cells[2].Value = a.Telefone.ToString(@"(00) 00000-0000");
+                    }
+                    else
+                    {
+                        dgvAgenda.Rows[index].Cells[2].Value = a.Telefone.ToString(@"(00) 0000-0000");
+                    }
+                    dgvAgenda.Rows[index].Cells[3].Value = data;
+                }
             }
         }
 
@@ -85,5 +121,14 @@ namespace Buffet.CV
             dtData.Value = a.Data.Date; 
         }
 
+        private void checkBoxHistorico_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHistorico.Checked)
+                check = true;
+            else
+                check = false;
+
+            Fill();
+        }
     }
 }

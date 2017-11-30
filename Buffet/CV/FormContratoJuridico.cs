@@ -90,8 +90,8 @@ namespace Buffet.CV
         private void cbEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
             ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-            RepresentanteJuridico rj = cjDAO.FindByRepresentante(Convert.ToInt64(cbEmpresa.SelectedValue));
-            List<RepresentanteJuridico> listrj =  new List<RepresentanteJuridico>();
+            ClienteFisico rj = cjDAO.FindByRepresentante(Convert.ToInt64(cbEmpresa.SelectedValue));
+            List<ClienteFisico> listrj =  new List<ClienteFisico>();
             listrj.Add(rj);
 
             cbRepresentante.DisplayMember = "Nome";

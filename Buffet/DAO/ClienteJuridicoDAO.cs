@@ -16,10 +16,10 @@ namespace Buffet.DAO
         public void Create(ClienteJuridico cj)
         { 
             Database dbCliente = Database.GetInstance();
-
+            string aux = cj.DataCriacao.ToString("yyyy-MM-dd");
             string qry = string.Format("INSERT INTO ClienteJuridico(nomeEmpresa, cnpj, cep, cidade, rua, bairro, estado, numeroEmpresa, dataCriacao) "+
                 "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
-                cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, cj.DataCriacao.Date);
+                cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, aux);
 
             dbCliente.ExecuteNonQuery(qry);
         }
@@ -204,13 +204,13 @@ namespace Buffet.DAO
 
         }
         
-        public RepresentanteJuridico FindByRepresentante(long cnpj)
+        public ClienteFisico FindByRepresentante(long cnpj)
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM RepresentanteJuridico rj " +
+            string qry = "SELECT * FROM ClienteFisico rj " +
                 "JOIN ClienteJuridico cj ON cj.Cnpj=rj.EmpresaCnpj WHERE cnpj=" + cnpj;
             DataSet ds = bd.ExecuteQuery(qry);
-            RepresentanteJuridico rj = new RepresentanteJuridico();
+            ClienteFisico rj = new ClienteFisico();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -229,6 +229,7 @@ namespace Buffet.DAO
                 rj.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 rj.Celular = long.Parse(dr["celular"].ToString());
                 rj.Empresa.Cnpj = long.Parse(dr["empresaCnpj"].ToString());
+                rj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
 
             }
             return rj;

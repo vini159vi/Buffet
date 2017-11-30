@@ -232,6 +232,8 @@ namespace Buffet.CV
             timerSelecao.Enabled = true;
             timerSelecao.Start();
 
+            FecharTelas();
+
             if (!fa.Visible)
             {
                 fa.TopLevel = false;
@@ -409,6 +411,11 @@ namespace Buffet.CV
             return y;
         }
 
+        private void FormMenuModern_Resize(object sender, EventArgs e)
+        {
+
+        }
+
         private void opcaoCadastro()
         {
             bttOpcao1.Text = "Pessoa Fisica";
@@ -441,6 +448,11 @@ namespace Buffet.CV
             if (fr.Visible)
             {
                 fr.Hide();
+            }
+
+            if (fa.Visible)
+            {
+                fa.Hide();
             }
         }
 

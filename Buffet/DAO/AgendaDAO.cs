@@ -15,10 +15,11 @@ namespace Buffet.DAO
         public void Create(Agenda a)
         {
             Database dbCliente = Database.GetInstance();
+            string dataSQL = a.Data.ToString("yyyy-MM-dd");
 
-            string qry = string.Format("INSERT INTO Agenda(id, nome, data, telefone, ativo) " +
-                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}')",
-                a.Id, a.Nome, a.Data.Date, a.Telefone, a.Ativo);
+            string qry = string.Format("INSERT INTO Agenda(nome, data, telefone, ativo) " +
+                "VALUES('{0}', '{1}', '{2}', '{3}')",
+                a.Nome, dataSQL, a.Telefone, a.Ativo);
 
             dbCliente.ExecuteNonQuery(qry);
         }
@@ -71,6 +72,39 @@ namespace Buffet.DAO
         {
             Database bd = Database.GetInstance();
             string qry = "SELECT * FROM Agenda WHERE ativo = 'True'";
+            DataSet ds = bd.ExecuteQuery(qry);
+            List<Agenda> agenda = new List<Agenda>();
+            int aux;
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                Agenda a = new Agenda();
+
+
+                a.Id = int.Parse(dr["id"].ToString());
+                a.Nome = dr["nome"].ToString();
+                a.Data = DateTime.Parse(dr["data"].ToString()).Date;
+                a.Telefone = Int64.Parse(dr["telefone"].ToString());
+                aux = int.Parse(dr["ativo"].ToString());
+                if (aux == 1)
+                {
+                    a.Ativo = true;
+                }
+                else
+                {
+                    a.Ativo = false;
+                }
+
+                agenda.Add(a);
+            }
+            return agenda;
+        }
+
+
+        public List<Agenda> ListHistorico()
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM Agenda";
             DataSet ds = bd.ExecuteQuery(qry);
             List<Agenda> agenda = new List<Agenda>();
             int aux;

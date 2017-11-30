@@ -20,7 +20,7 @@ namespace Buffet.CV
             InitializeComponent();
         }
 
-        public FormRepresentante(RepresentanteJuridico rj, int mode)
+        public FormRepresentante(ClienteFisico rj, int mode)
         {
             InitializeComponent();
 
@@ -65,9 +65,9 @@ namespace Buffet.CV
             }
         }
 
-        private RepresentanteJuridico GetDTO()
+        private ClienteFisico GetDTO()
         {
-            RepresentanteJuridico rj = new RepresentanteJuridico();
+            ClienteFisico rj = new ClienteFisico();
 
             //Representante
             rj.Nome = txtNomeRepresentante.Text;
@@ -89,41 +89,40 @@ namespace Buffet.CV
             txtCelular.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             rj.Celular = long.Parse(txtCelular.Text);
             rj.Empresa.Cnpj = Convert.ToInt64(cbEmpresaBusca.SelectedValue);
-
+            rj.DataCriacao = DateTime.Now;
 
             return rj;
         }
 
-        private void SetDTO(RepresentanteJuridico rj)
+        private void SetDTO(ClienteFisico cf)
         {
             ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-            ClienteJuridico aux = cjDAO.FindByCNPJ(rj.Empresa.Cnpj);
+            ClienteJuridico aux = cjDAO.FindByCNPJ(cf.Empresa.Cnpj);
 
-            txtNomeRepresentante.Text = rj.Nome.ToString();
-            txtCPFRepresentante.Text = rj.Cpf.ToString();
-            txtRG.Text = rj.Rg.ToString();
-            txtProfissao.Text = rj.Profissao;
-            txtNacionalidade.Text = rj.Nacionalidade;
-            txtEstadoCivil.Text = rj.EstadoCivil;
-            txtRuaRepresentante.Text = rj.Rua;
-            txtNumeroRepresentante.Text = rj.NumeroCasa.ToString();
-            txtBairroRepresentante.Text = rj.Bairro;
-            txtCEPRepresentante.Text = rj.Cep.ToString();
-            txtCidadeRepresentante.Text = rj.Cidade;
-            txtEstadoRepresentante.Text = rj.Estado;
-            txtTelefone.Text = rj.Telefone.ToString();
-            txtCelular.Text = rj.Celular.ToString();
+            txtNomeRepresentante.Text = cf.Nome.ToString();
+            txtCPFRepresentante.Text = cf.Cpf.ToString();
+            txtRG.Text = cf.Rg.ToString();
+            txtProfissao.Text = cf.Profissao;
+            txtNacionalidade.Text = cf.Nacionalidade;
+            txtEstadoCivil.Text = cf.EstadoCivil;
+            txtRuaRepresentante.Text = cf.Rua;
+            txtNumeroRepresentante.Text = cf.NumeroCasa.ToString();
+            txtBairroRepresentante.Text = cf.Bairro;
+            txtCEPRepresentante.Text = cf.Cep.ToString();
+            txtCidadeRepresentante.Text = cf.Cidade;
+            txtEstadoRepresentante.Text = cf.Estado;
+            txtTelefone.Text = cf.Telefone.ToString();
+            txtCelular.Text = cf.Celular.ToString();
             txtEmpresaView.Text = aux.NomeEmpresa;
         }
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
             FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
-            RepresentanteJuridico rj = GetDTO();
+            ClienteFisico cf = GetDTO();
+            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
 
-            RepresentanteDAO rjDAO = new RepresentanteDAO();
-
-            rjDAO.Create(rj);
+            cfDAO.Create(cf);
 
             if (f != null)
             {
@@ -140,7 +139,7 @@ namespace Buffet.CV
 
         private void bttEditar_Click(object sender, EventArgs e)
         {
-            RepresentanteJuridico rj = GetDTO();
+            ClienteFisico rj = GetDTO();
 
             this.Text = "Editando " + rj.Nome;
             this.bttAdicionar.Text = "Editar";
@@ -173,11 +172,11 @@ namespace Buffet.CV
         private void bttUpdate_Click(object sender, EventArgs e)
         {
             FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
-            RepresentanteJuridico rj = GetDTO();
+            ClienteFisico cf = GetDTO();
 
-            RepresentanteDAO rjDAO = new RepresentanteDAO();
+            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
 
-            rjDAO.Update(rj, cpf);
+            cfDAO.Update(cf, cpf);
 
             if (f != null)
             {
@@ -198,9 +197,12 @@ namespace Buffet.CV
             List<ClienteJuridico> listcj = new List<ClienteJuridico>();
             ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
             listcj = cjDAO.List();
+            listcj.Add(SemEmpresa());
+
+
 
             if (cbEmpresaBusca.Items.Count == 0)
-                //cbEmpresaBusca.Items.Clear();
+               // cbEmpresaBusca.Items.Clear();
 
 
             cbEmpresaBusca.DisplayMember = "NomeEmpresa";
@@ -217,6 +219,18 @@ namespace Buffet.CV
         {
             this.Hide();
             e.Cancel = true;
+        }
+
+        private void FormRepresentante_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private ClienteJuridico SemEmpresa()
+        {
+            ClienteJuridico cj = new ClienteJuridico();
+            cj.NomeEmpresa = "Nenhuma";
+            return cj;
         }
     }
 }

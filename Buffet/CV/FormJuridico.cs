@@ -101,6 +101,7 @@ namespace Buffet.CV
             cj.Cep = long.Parse(txtCEPEmpresa.Text);
             cj.Cidade = txtCidadeEmpresa.Text;
             cj.Estado = txtEstadoEmpresa.Text;
+            cj.DataCriacao = DateTime.Now;
             return cj;
         }
 
@@ -153,7 +154,7 @@ namespace Buffet.CV
         {
             ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
             ClienteJuridico cj = GetDTO();
-            RepresentanteJuridico rj = cjDAO.FindByRepresentante(cj.Cnpj);
+            ClienteFisico rj = cjDAO.FindByRepresentante(cj.Cnpj);
 
             if (rj.Cpf == 0)
             {

@@ -261,7 +261,6 @@
             this.bttMenu.Size = new System.Drawing.Size(43, 43);
             this.bttMenu.TabIndex = 6;
             this.bttMenu.UseVisualStyleBackColor = true;
-            this.bttMenu.Visible = false;
             this.bttMenu.Click += new System.EventHandler(this.bttMenu_Click_1);
             // 
             // panelRelatorio
@@ -579,6 +578,7 @@
             // 
             this.panelWorkstation.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelWorkstation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelWorkstation.BackgroundImage")));
+            this.panelWorkstation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelWorkstation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkstation.ForeColor = System.Drawing.Color.Black;
             this.panelWorkstation.Location = new System.Drawing.Point(164, 78);
@@ -618,6 +618,7 @@
             this.Text = "FormMenuModern";
             this.TransparencyKey = System.Drawing.SystemColors.ActiveBorder;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Resize += new System.EventHandler(this.FormMenuModern_Resize);
             this.panelMenu.ResumeLayout(false);
             this.panelSubMenu.ResumeLayout(false);
             this.panelSubMenu.PerformLayout();

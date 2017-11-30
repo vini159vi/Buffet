@@ -87,8 +87,6 @@ namespace Buffet
         {
             ClienteJuridicoDAO juridicos = new ClienteJuridicoDAO();
             ClienteFisicoDAO fisicos = new ClienteFisicoDAO();
-            RepresentanteDAO representantes = new RepresentanteDAO();
-
             dataGViewLista.Rows.Clear();
 
 
@@ -115,7 +113,7 @@ namespace Buffet
 
                 foreach (ClienteJuridico cj in listcj)
                 {
-                    RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
+                    ClienteFisico rj = juridicos.FindByRepresentante(cj.Cnpj);
                     int index = dataGViewLista.Rows.Add();
                     dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Juridico";
                     dataGViewLista.Rows[index].Cells["Nome"].Value = cj.NomeEmpresa;
@@ -133,7 +131,7 @@ namespace Buffet
 
                 foreach (ClienteJuridico cj in listcj)
                 {
-                    RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
+                    ClienteFisico rj = juridicos.FindByRepresentante(cj.Cnpj);
                     int index = dataGViewLista.Rows.Add();
                     dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Juridico";
                     dataGViewLista.Rows[index].Cells["Nome"].Value = cj.NomeEmpresa;
@@ -163,7 +161,6 @@ namespace Buffet
         {
             ClienteJuridicoDAO juridicos = new ClienteJuridicoDAO();
             ClienteFisicoDAO fisicos = new ClienteFisicoDAO();
-            RepresentanteDAO representantes = new RepresentanteDAO();
 
             dataGViewLista.Rows.Clear();
 
@@ -188,7 +185,7 @@ namespace Buffet
 
                 foreach (ClienteJuridico cj in listcj)
                 {
-                    RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
+                    ClienteFisico rj = juridicos.FindByRepresentante(cj.Cnpj);
                     List<RepresentanteJuridico> listRepresentante = juridicos.ListByRepresentante(cj.Cnpj);
 
                     int index = dataGViewLista.Rows.Add();
@@ -208,7 +205,7 @@ namespace Buffet
 
                 foreach (ClienteJuridico cj in listcj)
                 {
-                    RepresentanteJuridico rj = juridicos.FindByRepresentante(cj.Cnpj);
+                    ClienteFisico rj = juridicos.FindByRepresentante(cj.Cnpj);
                     int index = dataGViewLista.Rows.Add();
                     dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Juridico";
                     dataGViewLista.Rows[index].Cells["Nome"].Value = cj.NomeEmpresa;

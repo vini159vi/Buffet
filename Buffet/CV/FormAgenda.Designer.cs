@@ -39,10 +39,12 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.panelAgenda = new System.Windows.Forms.Panel();
             this.dgvAgenda = new System.Windows.Forms.DataGridView();
+            this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.checkBoxHistorico = new System.Windows.Forms.CheckBox();
             this.panelAtributos.SuspendLayout();
             this.panelBotoes.SuspendLayout();
             this.panelAgenda.SuspendLayout();
@@ -51,6 +53,7 @@
             // 
             // panelAtributos
             // 
+            this.panelAtributos.Controls.Add(this.checkBoxHistorico);
             this.panelAtributos.Controls.Add(this.lblTelefone);
             this.panelAtributos.Controls.Add(this.txtTelefone);
             this.panelAtributos.Controls.Add(this.dtData);
@@ -94,7 +97,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblData.Location = new System.Drawing.Point(21, 82);
+            this.lblData.Location = new System.Drawing.Point(21, 75);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(33, 13);
             this.lblData.TabIndex = 3;
@@ -156,6 +159,7 @@
             this.dgvAgenda.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnID,
             this.ColumnNome,
             this.ColumnTelefone,
             this.ColumnData,
@@ -171,6 +175,12 @@
             this.dgvAgenda.Size = new System.Drawing.Size(860, 516);
             this.dgvAgenda.TabIndex = 0;
             this.dgvAgenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgenda_CellClick);
+            // 
+            // ColumnID
+            // 
+            this.ColumnID.HeaderText = "ID";
+            this.ColumnID.Name = "ColumnID";
+            this.ColumnID.ReadOnly = true;
             // 
             // ColumnNome
             // 
@@ -197,6 +207,17 @@
             this.ColumnRemove.Name = "ColumnRemove";
             this.ColumnRemove.ReadOnly = true;
             this.ColumnRemove.Text = "Remover";
+            // 
+            // checkBoxHistorico
+            // 
+            this.checkBoxHistorico.AutoSize = true;
+            this.checkBoxHistorico.Location = new System.Drawing.Point(185, 78);
+            this.checkBoxHistorico.Name = "checkBoxHistorico";
+            this.checkBoxHistorico.Size = new System.Drawing.Size(119, 17);
+            this.checkBoxHistorico.TabIndex = 7;
+            this.checkBoxHistorico.Text = "Incluir os removidos";
+            this.checkBoxHistorico.UseVisualStyleBackColor = true;
+            this.checkBoxHistorico.CheckedChanged += new System.EventHandler(this.checkBoxHistorico_CheckedChanged);
             // 
             // FormAgenda
             // 
@@ -233,9 +254,11 @@
         private System.Windows.Forms.Button bttAdicionar;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTelefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnData;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnRemove;
+        private System.Windows.Forms.CheckBox checkBoxHistorico;
     }
 }
