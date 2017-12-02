@@ -62,7 +62,6 @@
             this.lblCardapio = new System.Windows.Forms.Label();
             this.topPage = new System.Windows.Forms.Panel();
             this.bttHome = new System.Windows.Forms.Button();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bttMaximize = new System.Windows.Forms.Button();
             this.bttExit = new System.Windows.Forms.Button();
             this.bttMinimize = new System.Windows.Forms.Button();
@@ -72,6 +71,7 @@
             this.timerSubMenuOut = new System.Windows.Forms.Timer(this.components);
             this.timerSubMenuIn = new System.Windows.Forms.Timer(this.components);
             this.timerSelecao2 = new System.Windows.Forms.Timer(this.components);
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bttOpcao4 = new System.Windows.Forms.Button();
             this.bttOpcao5 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
@@ -512,16 +512,6 @@
             this.bttHome.UseVisualStyleBackColor = true;
             this.bttHome.Click += new System.EventHandler(this.bttHome_Click);
             // 
-            // pbLogo
-            // 
-            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(9, 1);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(147, 76);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 13;
-            this.pbLogo.TabStop = false;
-            // 
             // bttMaximize
             // 
             this.bttMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -586,6 +576,7 @@
             // 
             this.panelWorkstation.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelWorkstation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelWorkstation.BackgroundImage")));
+            this.panelWorkstation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelWorkstation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkstation.ForeColor = System.Drawing.Color.Black;
             this.panelWorkstation.Location = new System.Drawing.Point(164, 78);
@@ -708,7 +699,6 @@
         private System.Windows.Forms.Button bttMinimize;
         private System.Windows.Forms.Button bttMaximize;
         private System.Windows.Forms.Button bttExit;
-        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button bttMenu;
         private System.Windows.Forms.Panel panelSelecao;
         private System.Windows.Forms.Timer timerSelecao;
@@ -724,6 +714,7 @@
         private System.Windows.Forms.Label lblOpcao;
         private System.Windows.Forms.Button bttHome;
         private System.Windows.Forms.Timer timerSelecao2;
+        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button bttOpcao5;
         private System.Windows.Forms.Button bttOpcao4;
     }
