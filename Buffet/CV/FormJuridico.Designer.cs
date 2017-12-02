@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gbEmpresa = new System.Windows.Forms.GroupBox();
             this.txtEstadoEmpresa = new System.Windows.Forms.TextBox();
             this.lbEstadoEmpresa = new System.Windows.Forms.Label();
@@ -49,14 +48,8 @@
             this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.representanteJuridicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.representanteJuridicoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.representanteJuridicoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.gbEmpresa.SuspendLayout();
             this.gbBotoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.representanteJuridicoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.representanteJuridicoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.representanteJuridicoBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // gbEmpresa
@@ -261,18 +254,6 @@
             this.gbBotoes.TabIndex = 8;
             this.gbBotoes.TabStop = false;
             // 
-            // representanteJuridicoBindingSource
-            // 
-            this.representanteJuridicoBindingSource.DataSource = typeof(Buffet.Modelos.ClienteFisico);
-            // 
-            // representanteJuridicoBindingSource1
-            // 
-            this.representanteJuridicoBindingSource1.DataSource = typeof(Buffet.Modelos.RepresentanteJuridico);
-            // 
-            // representanteJuridicoBindingSource2
-            // 
-            this.representanteJuridicoBindingSource2.DataSource = typeof(Buffet.Modelos.RepresentanteJuridico);
-            // 
             // FormJuridico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,9 +273,6 @@
             this.gbEmpresa.ResumeLayout(false);
             this.gbEmpresa.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.representanteJuridicoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.representanteJuridicoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.representanteJuridicoBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,8 +299,5 @@
         private System.Windows.Forms.Button bttAdicionar;
         private System.Windows.Forms.Button bttCancelar;
         private System.Windows.Forms.GroupBox gbBotoes;
-        private System.Windows.Forms.BindingSource representanteJuridicoBindingSource;
-        private System.Windows.Forms.BindingSource representanteJuridicoBindingSource1;
-        private System.Windows.Forms.BindingSource representanteJuridicoBindingSource2;
     }
 }

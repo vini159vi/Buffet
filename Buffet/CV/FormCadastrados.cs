@@ -87,12 +87,21 @@ namespace Buffet
         {
             ClienteJuridicoDAO juridicos = new ClienteJuridicoDAO();
             ClienteFisicoDAO fisicos = new ClienteFisicoDAO();
-            dataGViewLista.Rows.Clear();
+            List<ClienteFisico> listcf = new List<ClienteFisico>();
+            List<ClienteJuridico> listcj = new List<ClienteJuridico>();
 
+            dataGViewLista.Rows.Clear();
 
             if (tipo == 1)//Fisico
             {
-                List<ClienteFisico> listcf = fisicos.List();
+                if (check)
+                {
+                    listcf = fisicos.ListHistorico();
+                }
+                else
+                {
+                    listcf = fisicos.List();
+                }
 
                 foreach (ClienteFisico cf in listcf)
                 {
@@ -109,7 +118,14 @@ namespace Buffet
             }
             else if (tipo == 2)//Juridico
             {
-                List<ClienteJuridico> listcj = juridicos.List();
+                if (check)
+                {
+                    listcj = juridicos.ListHistorico();
+                }
+                else
+                {
+                    listcj = juridicos.List();
+                }
 
                 foreach (ClienteJuridico cj in listcj)
                 {
@@ -126,8 +142,16 @@ namespace Buffet
             }
             else
             {
-                List<ClienteJuridico> listcj = juridicos.List();
-                List<ClienteFisico> listcf = fisicos.List();
+                if (check)
+                {
+                    listcj = juridicos.ListHistorico();
+                    listcf = fisicos.ListHistorico();
+                }
+                else
+                {
+                    listcj = juridicos.List();
+                    listcf = fisicos.List();
+                }
 
                 foreach (ClienteJuridico cj in listcj)
                 {
@@ -161,12 +185,21 @@ namespace Buffet
         {
             ClienteJuridicoDAO juridicos = new ClienteJuridicoDAO();
             ClienteFisicoDAO fisicos = new ClienteFisicoDAO();
+            List<ClienteFisico> listcf = new List<ClienteFisico>();
+            List<ClienteJuridico> listcj = new List<ClienteJuridico>();
 
             dataGViewLista.Rows.Clear();
 
             if (tipo == 1)//Fisico
             {
-                List<ClienteFisico> listcf = fisicos.ListByCPF(num);
+                if (check)
+                {
+                    listcf = fisicos.ListByCpfHistorico(num);
+                }
+                else
+                {
+                    listcf = fisicos.ListByCPF(num);
+                }
 
                 foreach (ClienteFisico cf in listcf)
                 {
@@ -181,12 +214,20 @@ namespace Buffet
             }
             else if (tipo == 2 )//Juridico
             {
-                List<ClienteJuridico> listcj = juridicos.ListByCNPJ(num);
+                if (check)
+                {
+                    listcj = juridicos.ListByCNPJHistorico(num);
+                }
+                else
+                {
+                    listcj = juridicos.ListByCNPJ(num);
+                }
+
 
                 foreach (ClienteJuridico cj in listcj)
                 {
                     ClienteFisico rj = juridicos.FindByRepresentante(cj.Cnpj);
-                    List<RepresentanteJuridico> listRepresentante = juridicos.ListByRepresentante(cj.Cnpj);
+                    List<ClienteFisico> listRepresentante = juridicos.ListByRepresentante(cj.Cnpj);
 
                     int index = dataGViewLista.Rows.Add();
                     dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Juridico";
@@ -200,8 +241,16 @@ namespace Buffet
             }
             else if (tipo == 0)//Todos
             {
-                List<ClienteJuridico> listcj = juridicos.ListByCNPJ(num);
-                List<ClienteFisico> listcf = fisicos.ListByCPF(num);
+                if (check)
+                {
+                    listcj = juridicos.ListByCNPJHistorico(num);
+                    listcf = fisicos.ListByCpfHistorico(num);
+                }
+                else
+                {
+                    listcj = juridicos.ListByCNPJ(num);
+                    listcf = fisicos.ListByCPF(num);
+                }
 
                 foreach (ClienteJuridico cj in listcj)
                 {
@@ -370,10 +419,7 @@ namespace Buffet
 
         private void txtBuscaCpfCnpj_TextChanged(object sender, EventArgs e)
         {
-            if (txtBuscaCpfCnpj.Text != "")
-                Fill(long.Parse(txtBuscaCpfCnpj.Text));
-            else
-                Fill();
+            UpdateFill();
 
         }
 
@@ -385,16 +431,25 @@ namespace Buffet
 
         private void checkBoxHistorico_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxHistorico.Checked == true)
+            if (checkBoxHistorico.Checked != true)
             {
-                check = true;
+                check = false;
+                UpdateFill();
             }
             else
             {
-                check = false;
+                check = true;
+                UpdateFill();
             }
         }
 
+        private void UpdateFill()
+        {
+            if (txtBuscaCpfCnpj.Text != "")
+                Fill(long.Parse(txtBuscaCpfCnpj.Text));
+            else
+                Fill();
+        }
 
         /*private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {

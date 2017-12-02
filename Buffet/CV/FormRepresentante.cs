@@ -15,6 +15,7 @@ namespace Buffet.CV
     public partial class FormRepresentante : Form
     {
         long cpf;
+        bool check=false;
         public FormRepresentante()
         {
             InitializeComponent();
@@ -62,6 +63,7 @@ namespace Buffet.CV
                 txtEmpresaView.Visible = true;
                 cbEmpresaBusca.Visible = false;
                 txtEmpresaView.ReadOnly = true;
+
             }
         }
 
@@ -73,7 +75,7 @@ namespace Buffet.CV
             rj.Nome = txtNomeRepresentante.Text;
             txtCPFRepresentante.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             rj.Cpf = long.Parse(txtCPFRepresentante.Text);
-            rj.Rg = long.Parse(txtRG.Text);
+            rj.Rg = txtRG.Text;
             rj.Profissao = txtProfissao.Text;
             rj.Nacionalidade = txtNacionalidade.Text;
             rj.EstadoCivil = txtEstadoCivil.Text;
@@ -88,7 +90,14 @@ namespace Buffet.CV
             rj.Telefone = long.Parse(txtTelefone.Text);
             txtCelular.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             rj.Celular = long.Parse(txtCelular.Text);
-            rj.Empresa.Cnpj = Convert.ToInt64(cbEmpresaBusca.SelectedValue);
+            if (check)
+            {
+                rj.Empresa.Cnpj = 0;
+            }
+            else
+            {
+                rj.Empresa.Cnpj = Convert.ToInt64(cbEmpresaBusca.SelectedValue);
+            }
             rj.DataCriacao = DateTime.Now;
 
             return rj;
@@ -114,6 +123,14 @@ namespace Buffet.CV
             txtTelefone.Text = cf.Telefone.ToString();
             txtCelular.Text = cf.Celular.ToString();
             txtEmpresaView.Text = aux.NomeEmpresa;
+            if(cf.Empresa.Cnpj == 0)
+            {
+                checkBoxNenhumaEmpresa.Checked = true;
+            }
+            else
+            {
+                checkBoxNenhumaEmpresa.Checked = false;
+            }
         }
 
         private void bttAdicionar_Click(object sender, EventArgs e)
@@ -188,26 +205,13 @@ namespace Buffet.CV
 
         private void cbEmpresaBusca_Click(object sender, EventArgs e)
         {
-            FormRepresentante_VisibleChanged(this, new EventArgs());
+            UpdateComboBox();
 
         }
 
         private void FormRepresentante_VisibleChanged(object sender, EventArgs e)
         {
-            List<ClienteJuridico> listcj = new List<ClienteJuridico>();
-            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-            listcj = cjDAO.List();
-            listcj.Add(SemEmpresa());
-
-
-
-            if (cbEmpresaBusca.Items.Count == 0)
-               // cbEmpresaBusca.Items.Clear();
-
-
-            cbEmpresaBusca.DisplayMember = "NomeEmpresa";
-            cbEmpresaBusca.ValueMember = "cnpj";
-            cbEmpresaBusca.DataSource = listcj;
+            UpdateComboBox();
         }
 
         private void cbEmpresaBusca_keyPress(object sender, KeyPressEventArgs e)
@@ -226,11 +230,33 @@ namespace Buffet.CV
             
         }
 
-        private ClienteJuridico SemEmpresa()
+        private void checkBoxNenhumaEmpresa_CheckedChanged(object sender, EventArgs e)
         {
-            ClienteJuridico cj = new ClienteJuridico();
-            cj.NomeEmpresa = "Nenhuma";
-            return cj;
+            if(check != true)
+            {
+                check = true;
+                cbEmpresaBusca.Visible = false;
+                txtEmpresaView.Visible = true;
+                txtEmpresaView.ReadOnly = true;
+            }
+            else
+            {
+                check = false;
+                cbEmpresaBusca.Visible = true;
+                txtEmpresaView.Visible = false;
+                txtEmpresaView.ReadOnly = false;
+            }
+        }
+
+        private void UpdateComboBox()
+        {
+            List<ClienteJuridico> listcj = new List<ClienteJuridico>();
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+            listcj = cjDAO.List();
+
+            cbEmpresaBusca.DisplayMember = "NomeEmpresa";
+            cbEmpresaBusca.ValueMember = "cnpj";
+            cbEmpresaBusca.DataSource = listcj;
         }
     }
 }

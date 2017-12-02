@@ -69,7 +69,7 @@ namespace Buffet.CV
             cf.Nome = txtNome.Text;
             txtCPF.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             cf.Cpf = long.Parse(txtCPF.Text);
-            cf.Rg = long.Parse(txtRG.Text);
+            cf.Rg = txtRG.Text;
             cf.Profissao = txtProfissao.Text;
             cf.Nacionalidade = txtNacionalidade.Text;
             cf.EstadoCivil = txtEstadoCivil.Text;

@@ -8,8 +8,8 @@ namespace Buffet.Modelos
 {
     public class ClienteFisico
     {
-        private string nome, nacionalidade, estadoCivil, profissao, rua, bairro, cidade, estado;
-        private long rg, cpf, cep, telefone, celular;
+        private string nome, nacionalidade, estadoCivil, profissao, rua, bairro, cidade, estado, rg;
+        private long cpf, cep, telefone, celular;
         private int numeroCasa;
         private DateTime dataCriacao;
 
@@ -119,7 +119,7 @@ namespace Buffet.Modelos
             }
         }
 
-        public long Rg
+        public string Rg
         {
             get
             {
@@ -220,7 +220,7 @@ namespace Buffet.Modelos
             }
         }
 
-        public ClienteFisico(string nome, string nacionalidade, string estadoCivil, string profissao, string rua, string bairro, string cidade, string estado, long rg, long cpf, long cep, long telefone, int numeroCasa, long celular, DateTime dataCriacao, ClienteJuridico empresa)
+        public ClienteFisico(string nome, string nacionalidade, string estadoCivil, string profissao, string rua, string bairro, string cidade, string estado, string rg, long cpf, long cep, long telefone, int numeroCasa, long celular, DateTime dataCriacao, ClienteJuridico empresa)
         {
             this.Nome = nome;
             this.Nacionalidade = nacionalidade;

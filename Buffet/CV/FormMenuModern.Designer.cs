@@ -72,6 +72,8 @@
             this.timerSubMenuOut = new System.Windows.Forms.Timer(this.components);
             this.timerSubMenuIn = new System.Windows.Forms.Timer(this.components);
             this.timerSelecao2 = new System.Windows.Forms.Timer(this.components);
+            this.bttOpcao4 = new System.Windows.Forms.Button();
+            this.bttOpcao5 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelSubMenu.SuspendLayout();
             this.panelAgendamento.SuspendLayout();
@@ -115,6 +117,8 @@
             // 
             // panelSubMenu
             // 
+            this.panelSubMenu.Controls.Add(this.bttOpcao5);
+            this.panelSubMenu.Controls.Add(this.bttOpcao4);
             this.panelSubMenu.Controls.Add(this.lblOpcao);
             this.panelSubMenu.Controls.Add(this.bttOpcao3);
             this.panelSubMenu.Controls.Add(this.bttOpcao2);
@@ -123,7 +127,7 @@
             this.panelSubMenu.Controls.Add(this.bttMenuVoltar);
             this.panelSubMenu.Location = new System.Drawing.Point(-180, 0);
             this.panelSubMenu.Name = "panelSubMenu";
-            this.panelSubMenu.Size = new System.Drawing.Size(168, 673);
+            this.panelSubMenu.Size = new System.Drawing.Size(164, 690);
             this.panelSubMenu.TabIndex = 7;
             this.panelSubMenu.Visible = false;
             // 
@@ -140,6 +144,7 @@
             // bttOpcao3
             // 
             this.bttOpcao3.FlatAppearance.BorderSize = 0;
+            this.bttOpcao3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
             this.bttOpcao3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttOpcao3.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttOpcao3.ForeColor = System.Drawing.Color.White;
@@ -153,6 +158,7 @@
             // bttOpcao2
             // 
             this.bttOpcao2.FlatAppearance.BorderSize = 0;
+            this.bttOpcao2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
             this.bttOpcao2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttOpcao2.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttOpcao2.ForeColor = System.Drawing.Color.White;
@@ -175,6 +181,7 @@
             // bttOpcao1
             // 
             this.bttOpcao1.FlatAppearance.BorderSize = 0;
+            this.bttOpcao1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
             this.bttOpcao1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttOpcao1.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttOpcao1.ForeColor = System.Drawing.Color.White;
@@ -261,6 +268,7 @@
             this.bttMenu.Size = new System.Drawing.Size(43, 43);
             this.bttMenu.TabIndex = 6;
             this.bttMenu.UseVisualStyleBackColor = true;
+            this.bttMenu.Visible = false;
             this.bttMenu.Click += new System.EventHandler(this.bttMenu_Click_1);
             // 
             // panelRelatorio
@@ -578,7 +586,6 @@
             // 
             this.panelWorkstation.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelWorkstation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelWorkstation.BackgroundImage")));
-            this.panelWorkstation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelWorkstation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkstation.ForeColor = System.Drawing.Color.Black;
             this.panelWorkstation.Location = new System.Drawing.Point(164, 78);
@@ -600,6 +607,34 @@
             // 
             this.timerSelecao2.Interval = 1;
             this.timerSelecao2.Tick += new System.EventHandler(this.timerSelecao2_Tick);
+            // 
+            // bttOpcao4
+            // 
+            this.bttOpcao4.FlatAppearance.BorderSize = 0;
+            this.bttOpcao4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
+            this.bttOpcao4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttOpcao4.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttOpcao4.ForeColor = System.Drawing.Color.White;
+            this.bttOpcao4.Location = new System.Drawing.Point(11, 224);
+            this.bttOpcao4.Name = "bttOpcao4";
+            this.bttOpcao4.Size = new System.Drawing.Size(154, 47);
+            this.bttOpcao4.TabIndex = 8;
+            this.bttOpcao4.Text = "opcao4";
+            this.bttOpcao4.UseVisualStyleBackColor = true;
+            // 
+            // bttOpcao5
+            // 
+            this.bttOpcao5.FlatAppearance.BorderSize = 0;
+            this.bttOpcao5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
+            this.bttOpcao5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttOpcao5.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttOpcao5.ForeColor = System.Drawing.Color.White;
+            this.bttOpcao5.Location = new System.Drawing.Point(11, 277);
+            this.bttOpcao5.Name = "bttOpcao5";
+            this.bttOpcao5.Size = new System.Drawing.Size(154, 47);
+            this.bttOpcao5.TabIndex = 9;
+            this.bttOpcao5.Text = "opcao5";
+            this.bttOpcao5.UseVisualStyleBackColor = true;
             // 
             // FormMenuModern
             // 
@@ -689,5 +724,7 @@
         private System.Windows.Forms.Label lblOpcao;
         private System.Windows.Forms.Button bttHome;
         private System.Windows.Forms.Timer timerSelecao2;
+        private System.Windows.Forms.Button bttOpcao5;
+        private System.Windows.Forms.Button bttOpcao4;
     }
 }

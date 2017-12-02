@@ -17,9 +17,10 @@ namespace Buffet.DAO
         { 
             Database dbCliente = Database.GetInstance();
             string aux = cj.DataCriacao.ToString("yyyy-MM-dd");
-            string qry = string.Format("INSERT INTO ClienteJuridico(nomeEmpresa, cnpj, cep, cidade, rua, bairro, estado, numeroEmpresa, dataCriacao) "+
-                "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
-                cj.NomeEmpresa, cj.Cnpj, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, aux);
+
+            string qry = string.Format("INSERT INTO ClienteJuridico(cnpj , nomeEmpresa, cep, cidade, rua, bairro, estado, numeroEmpresa, dataCriacao) "+
+                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
+                 cj.Cnpj, cj.NomeEmpresa, cj.Cep, cj.Cidade, cj.Rua, cj.Bairro, cj.Estado, cj.NumeroEmpresa, aux);
 
             dbCliente.ExecuteNonQuery(qry);
         }
@@ -171,14 +172,14 @@ namespace Buffet.DAO
         }
 
         
-        public List<RepresentanteJuridico> ListByRepresentante(long cnpj)
+        public List<ClienteFisico> ListByRepresentante(long cnpj)
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM RepresentanteJuridico rj " +
-                "JOIN ClienteJuridico cj ON cj.Cnpj=rj.EmpresaCnpj WHERE cnpj=" + cnpj;
+            string qry = "SELECT * FROM ClienteFisico rj " +
+                "JOIN ClienteJuridico cj ON cj.Cnpj=rj.cnpjEmpresa WHERE cnpj=" + cnpj;
             DataSet ds = bd.ExecuteQuery(qry);
-            RepresentanteJuridico rj = new RepresentanteJuridico();
-            List<RepresentanteJuridico> listrj =  new List<RepresentanteJuridico>();
+            ClienteFisico rj = new ClienteFisico();
+            List<ClienteFisico> listrj =  new List<ClienteFisico>();
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -187,7 +188,7 @@ namespace Buffet.DAO
                 rj.EstadoCivil = dr["estadoCivil"].ToString();
                 rj.Profissao = dr["profissao"].ToString();
                 rj.Cpf = long.Parse(dr["cpf"].ToString());
-                rj.Rg = long.Parse(dr["rg"].ToString());
+                rj.Rg = dr["rg"].ToString();
                 rj.Telefone = long.Parse(dr["Telefone"].ToString());
                 rj.Cep = long.Parse(dr["cep"].ToString());
                 rj.Rua = dr["rua"].ToString();
@@ -196,7 +197,7 @@ namespace Buffet.DAO
                 rj.Estado = dr["estado"].ToString();
                 rj.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 rj.Celular = long.Parse(dr["celular"].ToString());
-                rj.Empresa.Cnpj = long.Parse(dr["empresaCnpj"].ToString());
+                rj.Empresa.Cnpj = long.Parse(dr["cnpjEmpresa"].ToString());
 
                 listrj.Add(rj);
             }
@@ -208,7 +209,7 @@ namespace Buffet.DAO
         {
             Database bd = Database.GetInstance();
             string qry = "SELECT * FROM ClienteFisico rj " +
-                "JOIN ClienteJuridico cj ON cj.Cnpj=rj.EmpresaCnpj WHERE cnpj=" + cnpj;
+                "JOIN ClienteJuridico cj ON cj.Cnpj=rj.cnpjEmpresa WHERE cnpj=" + cnpj;
             DataSet ds = bd.ExecuteQuery(qry);
             ClienteFisico rj = new ClienteFisico();
 
@@ -219,7 +220,7 @@ namespace Buffet.DAO
                 rj.EstadoCivil = dr["estadoCivil"].ToString();
                 rj.Profissao = dr["profissao"].ToString();
                 rj.Cpf = long.Parse(dr["cpf"].ToString());
-                rj.Rg = long.Parse(dr["rg"].ToString());
+                rj.Rg = dr["rg"].ToString();
                 rj.Telefone = long.Parse(dr["Telefone"].ToString());
                 rj.Cep = long.Parse(dr["cep"].ToString());
                 rj.Rua = dr["rua"].ToString();
@@ -236,5 +237,60 @@ namespace Buffet.DAO
 
         }
         
+
+        public List<ClienteJuridico> ListHistorico()
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM ClienteJuridicoHistorico";
+            DataSet ds = bd.ExecuteQuery(qry);
+            List<ClienteJuridico> clientes = new List<ClienteJuridico>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                ClienteJuridico cj = new ClienteJuridico();
+
+
+                cj.NomeEmpresa = dr["nomeEmpresa"].ToString();
+                cj.Cnpj = long.Parse(dr["cnpj"].ToString());
+                cj.Cep = long.Parse(dr["cep"].ToString());
+                cj.Cidade = dr["cidade"].ToString();
+                cj.Rua = dr["rua"].ToString();
+                cj.Bairro = dr["bairro"].ToString();
+                cj.Estado = dr["estado"].ToString();
+                cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
+                cj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+
+                clientes.Add(cj);
+            }
+            return clientes;
+        }
+
+        public List<ClienteJuridico> ListByCNPJHistorico(long cnpj)
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM ClienteJuridico WHERE cnpj LIKE '%" + cnpj + "%'";
+            DataSet ds = bd.ExecuteQuery(qry);
+            List<ClienteJuridico> clientes = new List<ClienteJuridico>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+
+                ClienteJuridico cj = new ClienteJuridico();
+
+                cj.NomeEmpresa = dr["nomeEmpresa"].ToString();
+                cj.Cnpj = long.Parse(dr["cnpj"].ToString());
+                cj.Cep = long.Parse(dr["cep"].ToString());
+                cj.Cidade = dr["cidade"].ToString();
+                cj.Rua = dr["rua"].ToString();
+                cj.Bairro = dr["bairro"].ToString();
+                cj.Estado = dr["estado"].ToString();
+                cj.NumeroEmpresa = int.Parse(dr["numeroEmpresa"].ToString());
+                cj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+
+                clientes.Add(cj);
+
+            }
+            return clientes;
+        }
     }
 }

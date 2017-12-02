@@ -36,18 +36,12 @@ namespace Buffet.CV
             if (WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
-                if (fc.Visible)
-                {
-                    fc.WindowState = FormWindowState.Normal;
-                }
+                StateNormal();
             }
             else
             {
                 this.WindowState = FormWindowState.Maximized;
-                if (fc.Visible)
-                {
-                    fc.WindowState = FormWindowState.Maximized;
-                }
+                StateMaximized();
             }
         }
         private void bttMinimize_Click(object sender, EventArgs e)
@@ -67,6 +61,11 @@ namespace Buffet.CV
                 timerSlideInBarra.Enabled = true;
                 timerSlideInBarra.Start();
             }
+        }
+
+        private void FormMenuModern_Resize(object sender, EventArgs e)
+        {
+
         }
 
         //Timers
@@ -134,7 +133,7 @@ namespace Buffet.CV
             }
             else
             {
-                x += 15;
+                x += 30;
                 panelSubMenu.Location = new Point(x , 0);
             }
         }
@@ -148,7 +147,7 @@ namespace Buffet.CV
             }
             else
             {
-                x.X -= 15;
+                x.X -= 30;
                 panelSubMenu.Location = x;
             }
         }
@@ -382,7 +381,7 @@ namespace Buffet.CV
         private void CadastroRepresentante_Click(object sender, EventArgs e)
         {
             FecharTelas();
-            LocalizacaoNova(bttOpcao3.Location.Y);
+            LocalizacaoNova(bttOpcao1.Location.Y);
             timerSelecao2.Enabled = true;
             timerSelecao2.Start();
 
@@ -411,23 +410,29 @@ namespace Buffet.CV
             return y;
         }
 
-        private void FormMenuModern_Resize(object sender, EventArgs e)
-        {
-
-        }
-
         private void opcaoCadastro()
         {
             bttOpcao1.Text = "Pessoa Fisica";
             bttOpcao2.Text = "Pessoa Juridica";
-            bttOpcao3.Text = "Representante";
+            bttOpcao3.Visible = false;
+            bttOpcao4.Visible = false;
+            bttOpcao5.Visible = false;
+
             lblOpcao.Text = "Cadastro";
 
-            bttOpcao1.Click += new EventHandler(CadastroFisico_Click);
+            bttOpcao1.Click += new EventHandler(CadastroRepresentante_Click);
             bttOpcao2.Click += new EventHandler(CadastroJuridico_Click);
-            bttOpcao3.Click += new EventHandler(CadastroRepresentante_Click);
         }
 
+        private void opcaoCardapio()
+        {
+
+        }
+
+        private void opcaoRelatorio()
+        {
+
+        }
         private void FecharTelas()
         {
             if (ff.Visible)
@@ -457,6 +462,60 @@ namespace Buffet.CV
         }
 
 
+        private void StateNormal()
+        {
+            if (ff.Visible)
+            {
+                ff.WindowState = FormWindowState.Normal;
+            }
 
+            if (fc.Visible)
+            {
+                fc.WindowState = FormWindowState.Normal;
+            }
+
+            if (fj.Visible)
+            {
+                fj.WindowState = FormWindowState.Normal;
+            }
+
+            if (fr.Visible)
+            {
+                fr.WindowState = FormWindowState.Normal;
+            }
+
+            if (fa.Visible)
+            {
+                fa.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void StateMaximized()
+        {
+            if (ff.Visible)
+            {
+                ff.WindowState = FormWindowState.Maximized;
+            }
+
+            if (fc.Visible)
+            {
+                fc.WindowState = FormWindowState.Maximized;
+            }
+
+            if (fj.Visible)
+            {
+                fj.WindowState = FormWindowState.Maximized;
+            }
+
+            if (fr.Visible)
+            {
+                fr.WindowState = FormWindowState.Maximized;
+            }
+
+            if (fa.Visible)
+            {
+                fa.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

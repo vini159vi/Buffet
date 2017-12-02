@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelAtributos = new System.Windows.Forms.Panel();
+            this.checkBoxHistorico = new System.Windows.Forms.CheckBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
@@ -44,7 +45,6 @@
             this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRemove = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.checkBoxHistorico = new System.Windows.Forms.CheckBox();
             this.panelAtributos.SuspendLayout();
             this.panelBotoes.SuspendLayout();
             this.panelAgenda.SuspendLayout();
@@ -67,6 +67,17 @@
             this.panelAtributos.Size = new System.Drawing.Size(860, 174);
             this.panelAtributos.TabIndex = 0;
             // 
+            // checkBoxHistorico
+            // 
+            this.checkBoxHistorico.AutoSize = true;
+            this.checkBoxHistorico.Location = new System.Drawing.Point(185, 78);
+            this.checkBoxHistorico.Name = "checkBoxHistorico";
+            this.checkBoxHistorico.Size = new System.Drawing.Size(119, 17);
+            this.checkBoxHistorico.TabIndex = 3;
+            this.checkBoxHistorico.Text = "Incluir os removidos";
+            this.checkBoxHistorico.UseVisualStyleBackColor = true;
+            this.checkBoxHistorico.CheckedChanged += new System.EventHandler(this.checkBoxHistorico_CheckedChanged);
+            // 
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
@@ -82,7 +93,7 @@
             this.txtTelefone.Location = new System.Drawing.Point(79, 49);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(765, 20);
-            this.txtTelefone.TabIndex = 5;
+            this.txtTelefone.TabIndex = 1;
             // 
             // dtData
             // 
@@ -90,7 +101,7 @@
             this.dtData.Location = new System.Drawing.Point(61, 75);
             this.dtData.Name = "dtData";
             this.dtData.Size = new System.Drawing.Size(102, 20);
-            this.dtData.TabIndex = 4;
+            this.dtData.TabIndex = 2;
             this.dtData.Value = new System.DateTime(2017, 11, 12, 0, 0, 0, 0);
             // 
             // lblData
@@ -128,7 +139,7 @@
             this.txtNome.Location = new System.Drawing.Point(61, 23);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(783, 20);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 0;
             // 
             // lblNome
             // 
@@ -207,17 +218,6 @@
             this.ColumnRemove.Name = "ColumnRemove";
             this.ColumnRemove.ReadOnly = true;
             this.ColumnRemove.Text = "Remover";
-            // 
-            // checkBoxHistorico
-            // 
-            this.checkBoxHistorico.AutoSize = true;
-            this.checkBoxHistorico.Location = new System.Drawing.Point(185, 78);
-            this.checkBoxHistorico.Name = "checkBoxHistorico";
-            this.checkBoxHistorico.Size = new System.Drawing.Size(119, 17);
-            this.checkBoxHistorico.TabIndex = 7;
-            this.checkBoxHistorico.Text = "Incluir os removidos";
-            this.checkBoxHistorico.UseVisualStyleBackColor = true;
-            this.checkBoxHistorico.CheckedChanged += new System.EventHandler(this.checkBoxHistorico_CheckedChanged);
             // 
             // FormAgenda
             // 

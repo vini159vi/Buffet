@@ -446,7 +446,7 @@ namespace Buffet.DAO
                 cf.EstadoCivil = dr["estadoCivil"].ToString();
                 cf.Profissao = dr["profissao"].ToString();
                 cf.Cpf = long.Parse(dr["cpf"].ToString());
-                cf.Rg = long.Parse(dr["rg"].ToString());
+                cf.Rg = dr["rg"].ToString();
                 cf.Telefone = long.Parse(dr["Telefone"].ToString());
                 cf.Cep = long.Parse(dr["cep"].ToString());
                 cf.Rua = dr["rua"].ToString();

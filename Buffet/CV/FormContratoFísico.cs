@@ -57,7 +57,6 @@ namespace Buffet.CV
                 dtHoraChegada.Enabled = false;
                 dtHoraInicio.Enabled = false;
                 txtGarcom.ReadOnly = true;
-                txtPreco.ReadOnly = true;
                 txtHorasAntecedencia.ReadOnly = true;
                 dtHoraTerminoContratado.Enabled = false;
                 txtCopeiros.ReadOnly = true;
@@ -126,11 +125,6 @@ namespace Buffet.CV
             e.Cancel = true;
         }
 
-        private void txtPreco_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtPreco.Focus();
-        }
-
 
         private Contrato GetDTO()
         {
@@ -146,8 +140,6 @@ namespace Buffet.CV
             c.ContratadoHoraChegada = DateTime.Parse(dtHoraChegada.Text);
             c.ContratadoInicioServico = DateTime.Parse(dtHoraInicio.Text);
             c.ContratadoQuantGarcons = int.Parse(txtGarcom.Text);
-            txtPreco.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            c.ContratadoPrecoPagar = double.Parse(txtPreco.Text);
             c.ContratadoHoraAntecedencia = int.Parse(txtHorasAntecedencia.Text);
             c.ContratadoTerminoServico = DateTime.Parse(dtHoraTerminoContratado.Text);
             c.ContratadoQuantCopeiros = int.Parse(txtCopeiros.Text);
@@ -172,7 +164,6 @@ namespace Buffet.CV
             dtHoraChegada.Text = c.ContratadoHoraChegada.ToString("hh:mm");
             dtHoraInicio.Text = c.ContratadoInicioServico.ToString("hh:mm");
             txtGarcom.Text = c.ContratadoQuantGarcons.ToString();
-            txtPreco.Text = c.ContratadoPrecoPagar.ToString();
             txtHorasAntecedencia.Text = c.ContratadoHoraAntecedencia.ToString();
             dtHoraTerminoContratado.Text = c.ContratadoTerminoServico.ToString("hh:mm");
             txtCopeiros.Text = c.ContratadoQuantCopeiros.ToString();

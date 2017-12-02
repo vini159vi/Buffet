@@ -158,6 +158,14 @@
         xTh2YaP3/eNIwYxiiQFIk255IW2NGjVq1GhJmzb/AUAsx4SiMv94AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="bttMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAJJJREFUeF7t
+        1KEBACAAhMDff2ktDKCJwk1AYkmSJEmSJL+OjAwPHRoyPHRoyPDQoSHDQ4eGDA8dGjI8dGjI8NChISNJ
+        HLxIQ4aHDg0ZHjo0ZHjo0JDhoUNDhocODRkeOjRkeOjQkJEkDl6kIcNDh4YMDx0aMjx0aMjw0KEhw0OH
+        hgwPHRoyPHRoyEiSJEmSJHm0XUF79KYB+MJ9AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pbAgenda.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAABGdBTUEAALGPC/xhBQAAAzJJREFUeF7t
@@ -175,14 +183,6 @@
         x3qMNHEekSbOI9JPyC4HPLe3GFnjWI+RJs4j0sR5RPqRbZcDtu0tSsnGm7f0D3p8wunp6ZPvUs9dDig5
         51ZKNu4+5J2cnLxnYcPm0vhP+I4hlwNKzrmV2Dg2z377u7I577Meyf39/ZeLi4vHi4v0e2czzkZ/gCVH
         I8+PG2Zp0aj1cEMtJRqx0Wg0Go1Go9FoNBqvhtXqH5/4FyXGVCXrAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="bttMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAJJJREFUeF7t
-        1KEBACAAhMDff2ktDKCJwk1AYkmSJEmSJL+OjAwPHRoyPHRoyPDQoSHDQ4eGDA8dGjI8dGjI8NChISNJ
-        HLxIQ4aHDg0ZHjo0ZHjo0JDhoUNDhocODRkeOjRkeOjQkJEkDl6kIcNDh4YMDx0aMjx0aMjw0KEhw0OH
-        hgwPHRoyPHRoyEiSJEmSJHm0XUF79KYB+MJ9AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="pbRelatorio.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -15069,6 +15069,6 @@
     <value>729, 21</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>65</value>
   </metadata>
 </root>
