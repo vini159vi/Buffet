@@ -229,7 +229,7 @@ namespace Buffet.DAO
                 rj.Estado = dr["estado"].ToString();
                 rj.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 rj.Celular = long.Parse(dr["celular"].ToString());
-                rj.Empresa.Cnpj = long.Parse(dr["empresaCnpj"].ToString());
+                rj.Empresa.Cnpj = long.Parse(dr["cnpjEmpresa"].ToString());
                 rj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
 
             }

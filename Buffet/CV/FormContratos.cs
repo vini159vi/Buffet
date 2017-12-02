@@ -268,8 +268,8 @@ namespace Buffet.CV
             {
                 ContratoDAO cDAO = new ContratoDAO();
                 Contrato c = cDAO.FindByID(int.Parse(dataGViewLista.Rows[index].Cells[0].Value.ToString()));
-                FormContratoJuridico fcj = new FormContratoJuridico(c, 0);
-                fcj.Show();
+                //FormContratoJuridico fcj = new FormContratoJuridico(c, 0);
+                //fcj.Show();
             }
             else if (tipo == 0)
             {
@@ -284,8 +284,8 @@ namespace Buffet.CV
                 {
                     ContratoDAO cDAO = new ContratoDAO();
                     Contrato c = cDAO.FindByID(int.Parse(dataGViewLista.Rows[index].Cells[0].Value.ToString()));
-                    FormContratoJuridico fcj = new FormContratoJuridico(c, 0);
-                    fcj.Show();
+                    //FormContratoJuridico fcj = new FormContratoJuridico(c, 0);
+                    //fcj.Show();
                 }
             }
         }
@@ -313,8 +313,8 @@ namespace Buffet.CV
             {
                 ContratoDAO cDAO = new ContratoDAO();
                 Contrato c = cDAO.FindByID(int.Parse(dataGViewLista.Rows[index].Cells[0].Value.ToString()));
-                FormContratoJuridico fcj = new FormContratoJuridico(c, 1);
-                fcj.Show();
+                //FormContratoJuridico fcj = new FormContratoJuridico(c, 1);
+                //fcj.Show();
             }
             else if (tipo == 0)
             {
@@ -329,8 +329,8 @@ namespace Buffet.CV
                 {
                     ContratoDAO cDAO = new ContratoDAO();
                     Contrato c = cDAO.FindByID(int.Parse(dataGViewLista.Rows[index].Cells[0].Value.ToString()));
-                    FormContratoJuridico fcj = new FormContratoJuridico(c, 1);
-                    fcj.Show();
+                    //FormContratoJuridico fcj = new FormContratoJuridico(c, 1);
+                    //fcj.Show();
                 }
             }
         }
