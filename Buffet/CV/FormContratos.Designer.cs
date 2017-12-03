@@ -37,15 +37,16 @@
             this.lbID = new System.Windows.Forms.Label();
             this.gbLista = new System.Windows.Forms.Panel();
             this.dataGViewLista = new System.Windows.Forms.DataGridView();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.bttFechar = new System.Windows.Forms.Button();
+            this.bttEditar = new System.Windows.Forms.Button();
+            this.bttRemove = new System.Windows.Forms.Button();
             this.cellID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellNomeEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellDataEvento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.bttFechar = new System.Windows.Forms.Button();
-            this.bttEditar = new System.Windows.Forms.Button();
-            this.bttRemove = new System.Windows.Forms.Button();
+            this.CellNotaFiscal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltrar.SuspendLayout();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
@@ -141,9 +142,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbLista.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gbLista.Controls.Add(this.dataGViewLista);
-            this.gbLista.Location = new System.Drawing.Point(12, 108);
+            this.gbLista.Location = new System.Drawing.Point(6, 108);
             this.gbLista.Name = "gbLista";
-            this.gbLista.Size = new System.Drawing.Size(832, 473);
+            this.gbLista.Size = new System.Drawing.Size(844, 473);
             this.gbLista.TabIndex = 1;
             // 
             // dataGViewLista
@@ -160,7 +161,8 @@
             this.cellTipo,
             this.cellNomeEmpresa,
             this.cellDataEvento,
-            this.cellPreco});
+            this.cellPreco,
+            this.CellNotaFiscal});
             this.dataGViewLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGViewLista.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGViewLista.GridColor = System.Drawing.Color.Black;
@@ -169,45 +171,10 @@
             this.dataGViewLista.ReadOnly = true;
             this.dataGViewLista.RowHeadersVisible = false;
             this.dataGViewLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGViewLista.Size = new System.Drawing.Size(832, 473);
+            this.dataGViewLista.Size = new System.Drawing.Size(844, 473);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGViewLista_CellMouseDoubleClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
-            // 
-            // cellID
-            // 
-            this.cellID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cellID.HeaderText = "ID";
-            this.cellID.Name = "cellID";
-            this.cellID.ReadOnly = true;
-            this.cellID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cellID.Width = 43;
-            // 
-            // cellTipo
-            // 
-            this.cellTipo.HeaderText = "Tipo";
-            this.cellTipo.Name = "cellTipo";
-            this.cellTipo.ReadOnly = true;
-            // 
-            // cellNomeEmpresa
-            // 
-            this.cellNomeEmpresa.HeaderText = "Nome/Empresa";
-            this.cellNomeEmpresa.Name = "cellNomeEmpresa";
-            this.cellNomeEmpresa.ReadOnly = true;
-            // 
-            // cellDataEvento
-            // 
-            this.cellDataEvento.HeaderText = "Data do Evento";
-            this.cellDataEvento.Name = "cellDataEvento";
-            this.cellDataEvento.ReadOnly = true;
-            this.cellDataEvento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // cellPreco
-            // 
-            this.cellPreco.HeaderText = "Preço";
-            this.cellPreco.Name = "cellPreco";
-            this.cellPreco.ReadOnly = true;
-            this.cellPreco.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // gbBotoes
             // 
@@ -251,6 +218,47 @@
             this.bttRemove.UseVisualStyleBackColor = true;
             this.bttRemove.Click += new System.EventHandler(this.bttRemove_Click);
             // 
+            // cellID
+            // 
+            this.cellID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cellID.HeaderText = "ID";
+            this.cellID.Name = "cellID";
+            this.cellID.ReadOnly = true;
+            this.cellID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cellID.Width = 43;
+            // 
+            // cellTipo
+            // 
+            this.cellTipo.HeaderText = "Tipo";
+            this.cellTipo.Name = "cellTipo";
+            this.cellTipo.ReadOnly = true;
+            // 
+            // cellNomeEmpresa
+            // 
+            this.cellNomeEmpresa.HeaderText = "Nome/Empresa";
+            this.cellNomeEmpresa.Name = "cellNomeEmpresa";
+            this.cellNomeEmpresa.ReadOnly = true;
+            // 
+            // cellDataEvento
+            // 
+            this.cellDataEvento.HeaderText = "Data do Evento";
+            this.cellDataEvento.Name = "cellDataEvento";
+            this.cellDataEvento.ReadOnly = true;
+            this.cellDataEvento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // cellPreco
+            // 
+            this.cellPreco.HeaderText = "Preço";
+            this.cellPreco.Name = "cellPreco";
+            this.cellPreco.ReadOnly = true;
+            this.cellPreco.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // CellNotaFiscal
+            // 
+            this.CellNotaFiscal.HeaderText = "Nota Fiscal";
+            this.CellNotaFiscal.Name = "CellNotaFiscal";
+            this.CellNotaFiscal.ReadOnly = true;
+            // 
             // FormContratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +272,7 @@
             this.Name = "FormContratos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contratos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormContratos_FormClosing);
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
@@ -295,5 +304,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cellNomeEmpresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn cellDataEvento;
         private System.Windows.Forms.DataGridViewTextBoxColumn cellPreco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CellNotaFiscal;
     }
 }

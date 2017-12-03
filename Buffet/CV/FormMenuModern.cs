@@ -17,10 +17,12 @@ namespace Buffet.CV
         private int fX, fY;
 
         private FormCadastrados fc = new FormCadastrados();
-        private FormFisico ff = new FormFisico();
         private FormJuridico fj = new FormJuridico();
         private FormRepresentante fr = new FormRepresentante();
         private FormAgenda fa = new FormAgenda();
+        private FormContratoFísico fcf = new FormContratoFísico();
+        private FormContratos fcontratos = new FormContratos();
+
         public FormMenuModern()
         {
             InitializeComponent();
@@ -213,6 +215,11 @@ namespace Buffet.CV
             LocalizacaoNova(panelContrato.Location.Y);
             timerSelecao.Enabled = true;
             timerSelecao.Start();
+
+            opcaoContrato();
+            panelSubMenu.Visible = true;
+            timerSubMenuOut.Enabled = true;
+            timerSubMenuOut.Start();
         }
         private void panelCadastro_MouseClick(object sender, MouseEventArgs e)
         {
@@ -347,14 +354,6 @@ namespace Buffet.CV
             timerSelecao2.Enabled = true;
             timerSelecao2.Start();
 
-
-            if (!ff.Visible)
-            {
-                ff.TopLevel = false;
-                panelWorkstation.Controls.Add(ff);
-                ff.Show();
-            }
-
             bttOpcao1.Click -= new EventHandler(CadastroFisico_Click);
             timerSubMenuIn.Enabled = true;
             timerSubMenuIn.Start();
@@ -378,6 +377,45 @@ namespace Buffet.CV
             timerSubMenuIn.Enabled = true;
             timerSubMenuIn.Start();
         }
+
+        private void GerarContrato_Click(object sender, EventArgs e)
+        {
+            FecharTelas();
+            LocalizacaoNova(bttOpcao1.Location.Y);
+            timerSelecao2.Enabled = true;
+            timerSelecao2.Start();
+
+            if (!fcf.Visible)
+            {
+                fcf.TopLevel = false;
+                panelWorkstation.Controls.Add(fcf);
+                fcf.Show();
+            }
+
+            bttOpcao1.Click -= new EventHandler(GerarContrato_Click);
+            timerSubMenuIn.Enabled = true;
+            timerSubMenuIn.Start();
+        }
+
+        private void VisualizarContrato_Click(object sender, EventArgs e)
+        {
+            FecharTelas();
+            LocalizacaoNova(bttOpcao2.Location.Y);
+            timerSelecao2.Enabled = true;
+            timerSelecao2.Start();
+
+            if (!fcontratos.Visible)
+            {
+                fcontratos.TopLevel = false;
+                panelWorkstation.Controls.Add(fcontratos);
+                fcontratos.Show();
+            }
+
+            bttOpcao2.Click -= new EventHandler(VisualizarContrato_Click);
+            timerSubMenuIn.Enabled = true;
+            timerSubMenuIn.Start();
+        }
+
         private void CadastroRepresentante_Click(object sender, EventArgs e)
         {
             FecharTelas();
@@ -395,10 +433,8 @@ namespace Buffet.CV
             bttOpcao3.Click -= new EventHandler(CadastroRepresentante_Click);
             timerSubMenuIn.Enabled = true;
             timerSubMenuIn.Start();
+
         }
-
-
-
 
         //------------------------------------------------------------------------------------------------------
         //Gerais
@@ -431,15 +467,24 @@ namespace Buffet.CV
 
         private void opcaoRelatorio()
         {
+            
+        }
 
+        private void opcaoContrato()
+        {
+            bttOpcao1.Text = "Gerar Contrato";
+            bttOpcao2.Text = "Visualizar Contratos";
+            bttOpcao3.Visible = false;
+            bttOpcao4.Visible = false;
+            bttOpcao5.Visible = false;
+
+            lblOpcao.Text = "Contrato";
+
+            bttOpcao1.Click += new EventHandler(GerarContrato_Click);
+            bttOpcao2.Click += new EventHandler(VisualizarContrato_Click);
         }
         private void FecharTelas()
         {
-            if (ff.Visible)
-            {
-                ff.Hide();
-            }
-
             if (fc.Visible)
             {
                 fc.Hide();
@@ -459,16 +504,21 @@ namespace Buffet.CV
             {
                 fa.Hide();
             }
+
+            if (fcf.Visible)
+            {
+                fcf.Hide();
+            }
+
+            if (fcontratos.Visible)
+            {
+                fcontratos.Hide();
+            }
         }
 
 
         private void StateNormal()
         {
-            if (ff.Visible)
-            {
-                ff.WindowState = FormWindowState.Normal;
-            }
-
             if (fc.Visible)
             {
                 fc.WindowState = FormWindowState.Normal;
@@ -488,15 +538,15 @@ namespace Buffet.CV
             {
                 fa.WindowState = FormWindowState.Normal;
             }
+
+            if (fcf.Visible)
+            {
+                fcf.WindowState = FormWindowState.Normal;
+            }
         }
 
         private void StateMaximized()
         {
-            if (ff.Visible)
-            {
-                ff.WindowState = FormWindowState.Maximized;
-            }
-
             if (fc.Visible)
             {
                 fc.WindowState = FormWindowState.Maximized;
@@ -515,6 +565,11 @@ namespace Buffet.CV
             if (fa.Visible)
             {
                 fa.WindowState = FormWindowState.Maximized;
+            }
+
+            if (fcf.Visible)
+            {
+                fcf.WindowState = FormWindowState.Maximized;
             }
         }
     }

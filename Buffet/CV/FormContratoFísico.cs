@@ -14,10 +14,22 @@ namespace Buffet.CV
 {
     public partial class FormContratoFísico : Form
     {
-        int id;
+        int id, tipo, contrato;
+        bool check = false;
+
         public FormContratoFísico()
         {
             InitializeComponent();
+            cbBuscaPessoaFisica.Visible = false;
+            cbEmpresa.Visible = false;
+            cbRepresentante.Visible = false;
+            txtEmpresa.Visible = true;
+            txtEmpresa.ReadOnly = true;
+            txtRepresentante.Visible = true;
+            txtRepresentante.ReadOnly = true;
+            txtPessoaFisica.Visible = true;
+            txtPessoaFisica.ReadOnly = true;
+            txtNomeAniversario.ReadOnly = true;
 
         }
 
@@ -66,33 +78,20 @@ namespace Buffet.CV
 
             }
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void txtCapacidade_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtHoraTerminoContratado_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void bttGerarContrato_Click(object sender, EventArgs e)
         {
-            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+            FormContratos fc = Application.OpenForms["FormContratos"] as FormContratos;
             Contrato c = GetDTO();
 
             ContratoDAO cDAO = new ContratoDAO();
 
             cDAO.Create(c);
 
-            if (f != null)
+            if (fc != null)
             {
-                f.Fill();
+                fc.Fill();
             }
             this.Hide();
         }
@@ -102,21 +101,23 @@ namespace Buffet.CV
             this.Hide();
         }
 
-        private void cbBuscaPessoaFisica_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormContratoFísico_VisibleChanged(object sender, EventArgs e)
         {
             List<ClienteFisico> listcf = new List<ClienteFisico>();
-            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
-            listcf = cfDAO.List();
+            List<ClienteJuridico> listcj = new List<ClienteJuridico>();
 
+            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+            listcf = cfDAO.List();
+            listcj = cjDAO.List();
 
             cbBuscaPessoaFisica.DisplayMember = "Nome";
             cbBuscaPessoaFisica.ValueMember = "Cpf";
             cbBuscaPessoaFisica.DataSource = listcf;
+
+            cbEmpresa.DisplayMember = "NomeEmpresa";
+            cbEmpresa.ValueMember = "Cnpj";
+            cbEmpresa.DataSource = listcj;
         }
 
         private void FormContratoFísico_FormClosing(object sender, FormClosingEventArgs e)
@@ -129,9 +130,15 @@ namespace Buffet.CV
         private Contrato GetDTO()
         {
             Contrato c = new Contrato();
-
-            //Fisico
-            c.PessoaFisica.Cpf = Convert.ToInt64(cbBuscaPessoaFisica.SelectedValue);
+            if(tipo == 0)
+            {
+                c.PessoaFisica.Cpf = Convert.ToInt64(cbBuscaPessoaFisica.SelectedValue);
+            }
+            else
+            {
+                c.PessoaFisica.Cpf = Convert.ToInt64(cbRepresentante.SelectedValue);
+                c.PessoaJuridica.Cnpj = Convert.ToInt64(cbEmpresa.SelectedValue);
+            }
             c.EventoData = DateTime.Parse(dtDataEvento.Text);
             c.EventoHora = DateTime.Parse(dtHoraEvento.Text);
             c.EventoTerminoHora = DateTime.Parse(dtHoraTermino.Text);
@@ -146,8 +153,13 @@ namespace Buffet.CV
             c.ContratadoDataPgto = DateTime.Parse(dtPagamento.Text);
             c.DevolucaoDia = DateTime.Parse(dtDiaDevolucao.Text);
             c.DevolucaoHora = DateTime.Parse(dtHoraDevolucao.Text);
-            c.Tipo = 1;
-
+            c.DataCriacao = DateTime.Now;
+            c.NomeAniversariante = txtNomeAniversario.Text;
+            if (checkBoxNotaFiscal.Checked)
+                c.NotaFiscal = true;
+            else
+                c.NotaFiscal = false;
+            c.Tipo = contrato;
             return c;
         }
 
@@ -191,5 +203,112 @@ namespace Buffet.CV
 
         }
 
+        private void radioBttFisica_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioBttFisica.Checked)
+            {
+                tipo = 0;
+                cbEmpresa.Visible = false;
+                cbRepresentante.Visible = false;
+                cbBuscaPessoaFisica.Visible = true;
+                txtEmpresa.Visible = true;
+                txtEmpresa.ReadOnly = true;
+                txtRepresentante.Visible = true;
+                txtRepresentante.ReadOnly = true;
+                txtPessoaFisica.ReadOnly = false;
+                txtPessoaFisica.Visible = false;
+            }
+        }
+
+        private void radioBttJuridica_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioBttJuridica.Checked)
+            {
+                tipo = 1;
+                cbEmpresa.Visible = true;
+                cbRepresentante.Visible = true;
+                cbBuscaPessoaFisica.Visible = false;
+                txtEmpresa.Visible = false;
+                txtEmpresa.ReadOnly = false;
+                txtRepresentante.Visible = false;
+                txtRepresentante.ReadOnly = false;
+                txtPessoaFisica.ReadOnly = true;
+                txtPessoaFisica.Visible = true;
+            }
+        }
+        private void cbEmpresa_DropDownClosed(object sender, EventArgs e)
+        {
+            List<ClienteFisico> listRepresentantes = new List<ClienteFisico>();
+            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+
+            listRepresentantes = cjDAO.ListByRepresentante(Convert.ToInt64(cbEmpresa.SelectedValue));
+
+            cbRepresentante.DisplayMember = "Nome";
+            cbRepresentante.ValueMember = "Cpf";
+            cbRepresentante.DataSource = listRepresentantes;
+        }
+
+        private void radioBttAniversario_CheckedChanged(object sender, EventArgs e)
+        {
+            contrato = 0;
+            txtNomeAniversario.ReadOnly = false;
+        }
+
+        private void radioBttCasamento_CheckedChanged(object sender, EventArgs e)
+        {
+            contrato = 1;
+            txtNomeAniversario.ReadOnly = true;
+        }
+
+        private void radioBtt15anos_CheckedChanged(object sender, EventArgs e)
+        {
+            contrato = 2;
+            txtNomeAniversario.ReadOnly = false;
+        }
+
+        private void checkBoxNotaFiscal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxNotaFiscal.Checked)
+            {
+                check = true;
+            }
+            else
+            {
+                check = false;
+            }
+                
+        }
+
+
+        private void radioBttEmpresa_CheckedChanged(object sender, EventArgs e)
+        {
+            contrato = 3;
+            txtNomeAniversario.ReadOnly = true;
+        }
+
+        private void radioBttEventosGerais_CheckedChanged(object sender, EventArgs e)
+        {
+            contrato = 4;
+            txtNomeAniversario.ReadOnly = true;
+        }
+
+        private void SomenteLetras(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este Campo aceita apenas Letras!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+
+        private void SomenteNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este Campo aceita apenas Numeros!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

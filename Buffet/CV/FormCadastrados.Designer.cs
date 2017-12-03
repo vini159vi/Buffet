@@ -39,6 +39,7 @@
             this.bttRemove = new System.Windows.Forms.Button();
             this.bttEditar = new System.Windows.Forms.Button();
             this.gbProcuraNome = new System.Windows.Forms.GroupBox();
+            this.checkBoxHistorico = new System.Windows.Forms.CheckBox();
             this.lblTipoPessoa = new System.Windows.Forms.Label();
             this.radioBttJuridica = new System.Windows.Forms.RadioButton();
             this.radioBttFisica = new System.Windows.Forms.RadioButton();
@@ -47,7 +48,6 @@
             this.lbCPFCNPJ = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.bttFechar = new System.Windows.Forms.Button();
-            this.checkBoxHistorico = new System.Windows.Forms.CheckBox();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
             this.gbProcuraNome.SuspendLayout();
@@ -63,7 +63,7 @@
             this.gbLista.Controls.Add(this.dataGViewLista);
             this.gbLista.Location = new System.Drawing.Point(3, 87);
             this.gbLista.Name = "gbLista";
-            this.gbLista.Size = new System.Drawing.Size(846, 516);
+            this.gbLista.Size = new System.Drawing.Size(850, 533);
             this.gbLista.TabIndex = 2;
             this.gbLista.TabStop = false;
             this.gbLista.Enter += new System.EventHandler(this.gbLista_Enter);
@@ -88,7 +88,7 @@
             this.dataGViewLista.ReadOnly = true;
             this.dataGViewLista.RowHeadersVisible = false;
             this.dataGViewLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGViewLista.Size = new System.Drawing.Size(840, 497);
+            this.dataGViewLista.Size = new System.Drawing.Size(844, 514);
             this.dataGViewLista.TabIndex = 0;
             this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGViewLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGViewLista_CellDoubleClick);
@@ -173,10 +173,22 @@
             this.gbProcuraNome.Controls.Add(this.lbCPFCNPJ);
             this.gbProcuraNome.Location = new System.Drawing.Point(3, 12);
             this.gbProcuraNome.Name = "gbProcuraNome";
-            this.gbProcuraNome.Size = new System.Drawing.Size(846, 88);
+            this.gbProcuraNome.Size = new System.Drawing.Size(850, 88);
             this.gbProcuraNome.TabIndex = 0;
             this.gbProcuraNome.TabStop = false;
             this.gbProcuraNome.Text = "Filtrar";
+            // 
+            // checkBoxHistorico
+            // 
+            this.checkBoxHistorico.AutoSize = true;
+            this.checkBoxHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxHistorico.Location = new System.Drawing.Point(232, 52);
+            this.checkBoxHistorico.Name = "checkBoxHistorico";
+            this.checkBoxHistorico.Size = new System.Drawing.Size(123, 17);
+            this.checkBoxHistorico.TabIndex = 6;
+            this.checkBoxHistorico.Text = "Usuarios no Historico";
+            this.checkBoxHistorico.UseVisualStyleBackColor = true;
+            this.checkBoxHistorico.CheckedChanged += new System.EventHandler(this.checkBoxHistorico_CheckedChanged);
             // 
             // lblTipoPessoa
             // 
@@ -229,10 +241,10 @@
             this.txtBuscaCpfCnpj.Location = new System.Drawing.Point(73, 23);
             this.txtBuscaCpfCnpj.Name = "txtBuscaCpfCnpj";
             this.txtBuscaCpfCnpj.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBuscaCpfCnpj.Size = new System.Drawing.Size(768, 20);
+            this.txtBuscaCpfCnpj.Size = new System.Drawing.Size(772, 20);
             this.txtBuscaCpfCnpj.TabIndex = 0;
             this.txtBuscaCpfCnpj.TextChanged += new System.EventHandler(this.txtBuscaCpfCnpj_TextChanged);
-            this.txtBuscaCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscaNomeCPF_KeyPress);
+            this.txtBuscaCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // lbCPFCNPJ
             // 
@@ -249,7 +261,7 @@
             this.gbBotoes.Controls.Add(this.bttFechar);
             this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
-            this.gbBotoes.Location = new System.Drawing.Point(6, 596);
+            this.gbBotoes.Location = new System.Drawing.Point(8, 613);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(843, 74);
             this.gbBotoes.TabIndex = 1;
@@ -266,24 +278,12 @@
             this.bttFechar.UseVisualStyleBackColor = true;
             this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
             // 
-            // checkBoxHistorico
-            // 
-            this.checkBoxHistorico.AutoSize = true;
-            this.checkBoxHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBoxHistorico.Location = new System.Drawing.Point(232, 52);
-            this.checkBoxHistorico.Name = "checkBoxHistorico";
-            this.checkBoxHistorico.Size = new System.Drawing.Size(123, 17);
-            this.checkBoxHistorico.TabIndex = 6;
-            this.checkBoxHistorico.Text = "Usuarios no Historico";
-            this.checkBoxHistorico.UseVisualStyleBackColor = true;
-            this.checkBoxHistorico.CheckedChanged += new System.EventHandler(this.checkBoxHistorico_CheckedChanged);
-            // 
             // FormCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(856, 673);
+            this.ClientSize = new System.Drawing.Size(860, 690);
             this.Controls.Add(this.gbProcuraNome);
             this.Controls.Add(this.gbLista);
             this.Controls.Add(this.gbBotoes);

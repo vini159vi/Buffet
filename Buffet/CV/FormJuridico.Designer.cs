@@ -71,7 +71,7 @@
             this.gbEmpresa.Controls.Add(this.lbCNPJ);
             this.gbEmpresa.Controls.Add(this.txtNomeEmpresa);
             this.gbEmpresa.Controls.Add(this.lbNomeEmpresa);
-            this.gbEmpresa.Location = new System.Drawing.Point(10, 12);
+            this.gbEmpresa.Location = new System.Drawing.Point(106, 12);
             this.gbEmpresa.Name = "gbEmpresa";
             this.gbEmpresa.Size = new System.Drawing.Size(634, 112);
             this.gbEmpresa.TabIndex = 0;
@@ -84,7 +84,7 @@
             this.txtEstadoEmpresa.Name = "txtEstadoEmpresa";
             this.txtEstadoEmpresa.Size = new System.Drawing.Size(120, 20);
             this.txtEstadoEmpresa.TabIndex = 7;
-            this.txtEstadoEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstadoEmpresa_KeyPress);
+            this.txtEstadoEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbEstadoEmpresa
             // 
@@ -101,7 +101,7 @@
             this.txtCidadeEmpresa.Name = "txtCidadeEmpresa";
             this.txtCidadeEmpresa.Size = new System.Drawing.Size(259, 20);
             this.txtCidadeEmpresa.TabIndex = 6;
-            this.txtCidadeEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCidadeEmpresa_KeyPress);
+            this.txtCidadeEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbCidadeEmpresa
             // 
@@ -120,7 +120,7 @@
             this.txtCEPEmpresa.Name = "txtCEPEmpresa";
             this.txtCEPEmpresa.Size = new System.Drawing.Size(96, 20);
             this.txtCEPEmpresa.TabIndex = 5;
-            this.txtCEPEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCEPEmpresa_KeyPress);
+            this.txtCEPEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // lbCEPEmpresa
             // 
@@ -137,7 +137,7 @@
             this.txtBairroEmpresa.Name = "txtBairroEmpresa";
             this.txtBairroEmpresa.Size = new System.Drawing.Size(126, 20);
             this.txtBairroEmpresa.TabIndex = 4;
-            this.txtBairroEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBairroEmpresa_KeyPress);
+            this.txtBairroEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbBairroEmpresa
             // 
@@ -156,7 +156,7 @@
             this.txtNumeroEmpresa.PromptChar = ' ';
             this.txtNumeroEmpresa.Size = new System.Drawing.Size(38, 20);
             this.txtNumeroEmpresa.TabIndex = 3;
-            this.txtNumeroEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroEmpresa_KeyPress);
+            this.txtNumeroEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // lbNumeroEmpresa
             // 
@@ -174,7 +174,7 @@
             this.txtRuaEmpresa.Name = "txtRuaEmpresa";
             this.txtRuaEmpresa.Size = new System.Drawing.Size(339, 20);
             this.txtRuaEmpresa.TabIndex = 2;
-            this.txtRuaEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuaEmpresa_KeyPress);
+            this.txtRuaEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbRuaEmpresa
             // 
@@ -193,7 +193,7 @@
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(126, 20);
             this.txtCNPJ.TabIndex = 1;
-            this.txtCNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJ_KeyPress);
+            this.txtCNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // lbCNPJ
             // 
@@ -210,7 +210,7 @@
             this.txtNomeEmpresa.Name = "txtNomeEmpresa";
             this.txtNomeEmpresa.Size = new System.Drawing.Size(344, 20);
             this.txtNomeEmpresa.TabIndex = 0;
-            this.txtNomeEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeEmpresa_KeyPress);
+            this.txtNomeEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbNomeEmpresa
             // 
@@ -248,7 +248,7 @@
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbBotoes.Controls.Add(this.bttAdicionar);
             this.gbBotoes.Controls.Add(this.bttCancelar);
-            this.gbBotoes.Location = new System.Drawing.Point(10, 130);
+            this.gbBotoes.Location = new System.Drawing.Point(106, 130);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(634, 74);
             this.gbBotoes.TabIndex = 8;
@@ -260,7 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(669, 215);
+            this.ClientSize = new System.Drawing.Size(860, 690);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbEmpresa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

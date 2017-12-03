@@ -138,12 +138,6 @@
     <Compile Include="CV\FormCardapio.Designer.cs">
       <DependentUpon>FormCardapio.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormCardapioBarman.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CV\FormCardapioBarman.Designer.cs">
-      <DependentUpon>FormCardapioBarman.cs</DependentUpon>
-    </Compile>
     <Compile Include="CV\FormContratoCardapio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,12 +161,6 @@
     </Compile>
     <Compile Include="CV\FormCrystal.Designer.cs">
       <DependentUpon>FormCrystal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CV\FormFisico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CV\FormFisico.Designer.cs">
-      <DependentUpon>FormFisico.cs</DependentUpon>
     </Compile>
     <Compile Include="CV\FormJuridico.cs">
       <SubType>Form</SubType>
@@ -245,9 +233,6 @@
     <EmbeddedResource Include="CV\FormCardapio.resx">
       <DependentUpon>FormCardapio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormCardapioBarman.resx">
-      <DependentUpon>FormCardapioBarman.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CV\FormContratoCardapio.resx">
       <DependentUpon>FormContratoCardapio.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormCrystal.resx">
       <DependentUpon>FormCrystal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormFisico.resx">
-      <DependentUpon>FormFisico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormJuridico.resx">
       <DependentUpon>FormJuridico.cs</DependentUpon>

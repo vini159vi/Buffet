@@ -197,6 +197,7 @@ namespace Buffet.DAO
                 rj.Estado = dr["estado"].ToString();
                 rj.NumeroCasa = int.Parse(dr["numeroCasa"].ToString());
                 rj.Celular = long.Parse(dr["celular"].ToString());
+                rj.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
                 rj.Empresa.Cnpj = long.Parse(dr["cnpjEmpresa"].ToString());
 
                 listrj.Add(rj);
@@ -215,6 +216,7 @@ namespace Buffet.DAO
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
+
                 rj.Nome = dr["nome"].ToString();
                 rj.Nacionalidade = dr["nacionalidade"].ToString();
                 rj.EstadoCivil = dr["estadoCivil"].ToString();

@@ -15,16 +15,26 @@ namespace Buffet.DAO
         public void Create(Contrato c)
         {
             Database dbContrato = Database.GetInstance();
+            string dataEvento = c.EventoData.ToString("yyyy-MM-dd");
+            string horaEvento = c.EventoHora.ToString("HH:mm");
+            string horaTerminoEvento = c.EventoTerminoHora.ToString("HH:mm");
+            string horaChegada = c.ContratadoHoraChegada.ToString("HH:mm");
+            string inicioServico = c.ContratadoInicioServico.ToString("HH:mm");
+            string terminoServico = c.ContratadoTerminoServico.ToString("HH:mm");
+            string dataPgto = c.ContratadoDataPgto.ToString("yyyy-MM-dd");
+            string diaDevolucao = c.DevolucaoDia.ToString("yyyy-MM-dd");
+            string horaDevolucao = c.DevolucaoHora.ToString("yyyy-MM-dd");
+            string dataCriacao = c.DataCriacao.ToString("yyyy-MM-dd");
 
-            string qry = string.Format("INSERT INTO Contrato(id, tipo, eventoData, eventoHora, eventoTerminoHora, eventoNConvidados, eventoCapMaxima," +
+            string qry = string.Format("INSERT INTO Contrato(tipo, eventoData, eventoHora, eventoTerminoHora, eventoNConvidados, eventoCapMaxima," +
                 "contratadoHoraChegada, contratadoHoraAntecedencia, contratadoInicioServico, contratadoTerminoServico, contratadoQuantGarcons, contratadoQuantCopeiros, contratadoPrecoPagar, contratadoDataPgto," +
                 "devolucaoDia, devolucaoHora," +
-                "pessoaFisicaCPF, pessoaJuridicaCNPJ, dataCriacao, notaFiscal) " +
+                "pessoaFisicaCPF, pessoaJuridicaCNPJ, dataCriacao, notaFiscal, nomeAniversariante) " +
 
                 "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}','{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}')",
-                c.Id ,c.Tipo, c.EventoData, c.EventoHora, c.EventoTerminoHora, c.EventoNConvidados, c.EventoCapMaxima, c.ContratadoHoraChegada, c.ContratadoHoraAntecedencia, 
-                c.ContratadoInicioServico, c.ContratadoTerminoServico, c.ContratadoQuantGarcons, c.ContratadoQuantCopeiros, c.ContratadoPrecoPagar, c.ContratadoDataPgto,
-                c.DevolucaoDia, c.DevolucaoHora, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, c.DataCriacao.Date, c.NotaFiscal);
+                c.Tipo, dataEvento, horaEvento, horaTerminoEvento, c.EventoNConvidados, c.EventoCapMaxima, horaChegada, c.ContratadoHoraAntecedencia, 
+                inicioServico, terminoServico, c.ContratadoQuantGarcons, c.ContratadoQuantCopeiros, c.ContratadoPrecoPagar, dataPgto,
+                diaDevolucao, horaDevolucao, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, dataCriacao, c.NotaFiscal, c.NomeAniversariante);
 
             dbContrato.ExecuteNonQuery(qry);
         }
@@ -55,7 +65,7 @@ namespace Buffet.DAO
             c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
             c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
             c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
-            c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
+            c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
             c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
             c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
             aux = int.Parse(dr["notaFiscal"].ToString());
@@ -67,18 +77,29 @@ namespace Buffet.DAO
             {
                 c.NotaFiscal = false;
             }
-
+            c.NomeAniversariante = dr["nomeAniversariante"].ToString();
             return c;
         }
 
         public void Update(Contrato c, int id)
         {
             Database db = Database.GetInstance();
-            string qry = string.Format("UPDATE Contrato SET id='{18}', tipo = '{0}', eventoData = '{1}', eventoHora = '{2}',  eventoTerminoHora = '{3}', eventoNConvidados= '{4}', eventoCapMaxima = '{5}', contratadoHoraChegada = '{6}', contratadoHoraAntecedencia = '{7}', contratadoInicioServico = '{8}', contratadoTerminoServico = '{9}', contratadoQuantGarcons = '{10}', contratadoQuantCopeiros = '{11}', contratadoPrecoPagar = '{12}', contratadoDataPgto = '{13}', devolucaoDia = '{14}', devolucaoHora = '{15}', pessoaFisicaCPF = '{16}', pessoaJuridicaCNPJ = '{17}', dataCriacao='{18}', notaFiscal = '{19}'"
-            + " WHERE id = '{20}'",
-            c.Tipo, c.EventoData, c.EventoHora, c.EventoTerminoHora, c.EventoNConvidados, c.EventoCapMaxima, c.ContratadoHoraChegada, c.ContratadoHoraAntecedencia,
-                c.ContratadoInicioServico, c.ContratadoTerminoServico, c.ContratadoQuantGarcons, c.ContratadoQuantCopeiros, c.ContratadoPrecoPagar, c.ContratadoDataPgto,
-                c.DevolucaoDia, c.DevolucaoHora, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, c.DataCriacao.Date, c.NotaFiscal, id);
+            string dataEvento = c.EventoData.ToString("yyyy-MM-dd");
+            string horaEvento = c.EventoHora.ToString("HH:mm");
+            string horaTerminoEvento = c.EventoTerminoHora.ToString("HH:mm");
+            string horaChegada = c.ContratadoHoraChegada.ToString("HH:mm");
+            string inicioServico = c.ContratadoInicioServico.ToString("HH:mm");
+            string terminoServico = c.ContratadoTerminoServico.ToString("HH:mm");
+            string dataPgto = c.ContratadoDataPgto.ToString("yyyy-MM-dd");
+            string diaDevolucao = c.DevolucaoDia.ToString("yyyy-MM-dd");
+            string horaDevolucao = c.DevolucaoHora.ToString("yyyy-MM-dd");
+            string dataCriacao = c.DataCriacao.ToString("yyyy-MM-dd");
+
+            string qry = string.Format("UPDATE Contrato SET tipo = '{0}', eventoData = '{1}', eventoHora = '{2}',  eventoTerminoHora = '{3}', eventoNConvidados= '{4}', eventoCapMaxima = '{5}', contratadoHoraChegada = '{6}', contratadoHoraAntecedencia = '{7}', contratadoInicioServico = '{8}', contratadoTerminoServico = '{9}', contratadoQuantGarcons = '{10}', contratadoQuantCopeiros = '{11}', contratadoPrecoPagar = '{12}', contratadoDataPgto = '{13}', devolucaoDia = '{14}', devolucaoHora = '{15}', pessoaFisicaCPF = '{16}', pessoaJuridicaCNPJ = '{17}', dataCriacao='{18}', notaFiscal = '{19}', nomeAniversariante = '{20}' "
+            + " WHERE id = '{21}'",
+            c.Tipo, dataEvento, horaEvento, horaTerminoEvento, c.EventoNConvidados, c.EventoCapMaxima, horaChegada, c.ContratadoHoraAntecedencia,
+                inicioServico, terminoServico, c.ContratadoQuantGarcons, c.ContratadoQuantCopeiros, c.ContratadoPrecoPagar, dataPgto,
+                diaDevolucao, horaDevolucao, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, dataCriacao, c.NotaFiscal, c.NomeAniversariante, id);
 
             db.ExecuteNonQuery(qry);
         }
@@ -120,7 +141,7 @@ namespace Buffet.DAO
                 c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
                 c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
-                c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
+                c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
                 c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
                 aux = int.Parse(dr["notaFiscal"].ToString());
@@ -132,6 +153,7 @@ namespace Buffet.DAO
                 {
                     c.NotaFiscal = false;
                 }
+                c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
                 contratos.Add(c);
             }
@@ -168,7 +190,7 @@ namespace Buffet.DAO
                 c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
                 c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
-                c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
+                c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
                 c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
                 aux = int.Parse(dr["notaFiscal"].ToString());
@@ -180,6 +202,57 @@ namespace Buffet.DAO
                 {
                     c.NotaFiscal = false;
                 }
+                c.NomeAniversariante = dr["nomeAniversariante"].ToString();
+
+                contratos.Add(c);
+
+            }
+            return contratos;
+        }
+
+        public List<Contrato> ListByFisico()
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM Contrato WHERE pessoaJuridicaCNPJ=0";
+            DataSet ds = bd.ExecuteQuery(qry);
+            List<Contrato> contratos = new List<Contrato>();
+            int aux;
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+
+                Contrato c = new Contrato();
+
+                c.Id = int.Parse(dr["id"].ToString());
+                c.Tipo = int.Parse(dr["tipo"].ToString());
+                c.EventoData = DateTime.Parse(dr["eventoData"].ToString());
+                c.EventoHora = DateTime.Parse(dr["eventoHora"].ToString());
+                c.EventoTerminoHora = DateTime.Parse(dr["eventoTerminoHora"].ToString());
+                c.EventoNConvidados = int.Parse(dr["eventoNConvidados"].ToString());
+                c.EventoCapMaxima = int.Parse(dr["eventoCapMaxima"].ToString());
+                c.ContratadoHoraChegada = DateTime.Parse(dr["contratadoHoraChegada"].ToString());
+                c.ContratadoHoraAntecedencia = int.Parse(dr["contratadoHoraAntecedencia"].ToString());
+                c.ContratadoInicioServico = DateTime.Parse(dr["contratadoInicioServico"].ToString());
+                c.ContratadoTerminoServico = DateTime.Parse(dr["contratadoTerminoServico"].ToString());
+                c.ContratadoQuantGarcons = int.Parse(dr["contratadoQuantGarcons"].ToString());
+                c.ContratadoQuantCopeiros = int.Parse(dr["contratadoQuantCopeiros"].ToString());
+                c.ContratadoPrecoPagar = double.Parse(dr["contratadoPrecoPagar"].ToString());
+                c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
+                c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
+                c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
+                c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
+                c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
+                c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
                 contratos.Add(c);
 
@@ -190,7 +263,7 @@ namespace Buffet.DAO
         public List<Contrato> ListByIDFisico(int id)
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM Contrato WHERE id LIKE '%" + id + "%' WHERE tipo=1";
+            string qry = "SELECT * FROM Contrato WHERE pessoaJuridicaCNPJ=0 AND id="+id;
             DataSet ds = bd.ExecuteQuery(qry);
             List<Contrato> contratos = new List<Contrato>();
             int aux;
@@ -217,7 +290,7 @@ namespace Buffet.DAO
                 c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
                 c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
-                c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
+                c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
                 c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
                 aux = int.Parse(dr["notaFiscal"].ToString());
@@ -229,106 +302,7 @@ namespace Buffet.DAO
                 {
                     c.NotaFiscal = false;
                 }
-
-                contratos.Add(c);
-
-            }
-            return contratos;
-        }
-
-        public List<Contrato> ListByIDJuridico(int id)
-        {
-            Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM Contrato WHERE id LIKE '%" + id + "%' WHERE tipo=2";
-            DataSet ds = bd.ExecuteQuery(qry);
-            List<Contrato> contratos = new List<Contrato>();
-            int aux;
-
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-
-                Contrato c = new Contrato();
-
-                c.Id = int.Parse(dr["id"].ToString());
-                c.Tipo = int.Parse(dr["tipo"].ToString());
-                c.EventoData = DateTime.Parse(dr["eventoData"].ToString());
-                c.EventoHora = DateTime.Parse(dr["eventoHora"].ToString());
-                c.EventoTerminoHora = DateTime.Parse(dr["eventoTerminoHora"].ToString());
-                c.EventoNConvidados = int.Parse(dr["eventoNConvidados"].ToString());
-                c.EventoCapMaxima = int.Parse(dr["eventoCapMaxima"].ToString());
-                c.ContratadoHoraChegada = DateTime.Parse(dr["contratadoHoraChegada"].ToString());
-                c.ContratadoHoraAntecedencia = int.Parse(dr["contratadoHoraAntecedencia"].ToString());
-                c.ContratadoInicioServico = DateTime.Parse(dr["contratadoInicioServico"].ToString());
-                c.ContratadoTerminoServico = DateTime.Parse(dr["contratadoTerminoServico"].ToString());
-                c.ContratadoQuantGarcons = int.Parse(dr["contratadoQuantGarcons"].ToString());
-                c.ContratadoQuantCopeiros = int.Parse(dr["contratadoQuantCopeiros"].ToString());
-                c.ContratadoPrecoPagar = double.Parse(dr["contratadoPrecoPagar"].ToString());
-                c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
-                c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
-                c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
-                c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
-                c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
-                aux = int.Parse(dr["notaFiscal"].ToString());
-                if (aux == 1)
-                {
-                    c.NotaFiscal = true;
-                }
-                else
-                {
-                    c.NotaFiscal = false;
-                }
-
-                contratos.Add(c);
-
-            }
-            return contratos;
-        }
-
-
-
-        public List<Contrato> ListByFisico()
-        {
-            Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM Contrato WHERE tipo=1";
-            DataSet ds = bd.ExecuteQuery(qry);
-            List<Contrato> contratos = new List<Contrato>();
-            int aux;
-
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-
-                Contrato c = new Contrato();
-
-                c.Id = int.Parse(dr["id"].ToString());
-                c.Tipo = int.Parse(dr["tipo"].ToString());
-                c.EventoData = DateTime.Parse(dr["eventoData"].ToString());
-                c.EventoHora = DateTime.Parse(dr["eventoHora"].ToString());
-                c.EventoTerminoHora = DateTime.Parse(dr["eventoTerminoHora"].ToString());
-                c.EventoNConvidados = int.Parse(dr["eventoNConvidados"].ToString());
-                c.EventoCapMaxima = int.Parse(dr["eventoCapMaxima"].ToString());
-                c.ContratadoHoraChegada = DateTime.Parse(dr["contratadoHoraChegada"].ToString());
-                c.ContratadoHoraAntecedencia = int.Parse(dr["contratadoHoraAntecedencia"].ToString());
-                c.ContratadoInicioServico = DateTime.Parse(dr["contratadoInicioServico"].ToString());
-                c.ContratadoTerminoServico = DateTime.Parse(dr["contratadoTerminoServico"].ToString());
-                c.ContratadoQuantGarcons = int.Parse(dr["contratadoQuantGarcons"].ToString());
-                c.ContratadoQuantCopeiros = int.Parse(dr["contratadoQuantCopeiros"].ToString());
-                c.ContratadoPrecoPagar = double.Parse(dr["contratadoPrecoPagar"].ToString());
-                c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
-                c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
-                c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
-                c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
-                c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
-                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
-                aux = int.Parse(dr["notaFiscal"].ToString());
-                if (aux == 1)
-                {
-                    c.NotaFiscal = true;
-                }
-                else
-                {
-                    c.NotaFiscal = false;
-                }
+                c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
                 contratos.Add(c);
 
@@ -339,7 +313,7 @@ namespace Buffet.DAO
         public List<Contrato> ListByJuridico()
         {
             Database bd = Database.GetInstance();
-            string qry = "SELECT * FROM Contrato WHERE tipo=2";
+            string qry = "SELECT * FROM Contrato WHERE pessoaJuridicaCNPJ !=0";
             DataSet ds = bd.ExecuteQuery(qry);
             List<Contrato> contratos = new List<Contrato>();
             int aux;
@@ -366,7 +340,7 @@ namespace Buffet.DAO
                 c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
                 c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
                 c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
-                c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
+                c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
                 c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
                 c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
                 aux = int.Parse(dr["notaFiscal"].ToString());
@@ -378,7 +352,107 @@ namespace Buffet.DAO
                 {
                     c.NotaFiscal = false;
                 }
+                c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
+                contratos.Add(c);
+
+            }
+            return contratos;
+        }
+
+        public List<Contrato> ListByIDJuridico(int id)
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM Contrato WHERE pessoaJuridicaCNPJ !=0 AND id="+id;
+            DataSet ds = bd.ExecuteQuery(qry);
+            List<Contrato> contratos = new List<Contrato>();
+            int aux;
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+
+                Contrato c = new Contrato();
+
+                c.Id = int.Parse(dr["id"].ToString());
+                c.Tipo = int.Parse(dr["tipo"].ToString());
+                c.EventoData = DateTime.Parse(dr["eventoData"].ToString());
+                c.EventoHora = DateTime.Parse(dr["eventoHora"].ToString());
+                c.EventoTerminoHora = DateTime.Parse(dr["eventoTerminoHora"].ToString());
+                c.EventoNConvidados = int.Parse(dr["eventoNConvidados"].ToString());
+                c.EventoCapMaxima = int.Parse(dr["eventoCapMaxima"].ToString());
+                c.ContratadoHoraChegada = DateTime.Parse(dr["contratadoHoraChegada"].ToString());
+                c.ContratadoHoraAntecedencia = int.Parse(dr["contratadoHoraAntecedencia"].ToString());
+                c.ContratadoInicioServico = DateTime.Parse(dr["contratadoInicioServico"].ToString());
+                c.ContratadoTerminoServico = DateTime.Parse(dr["contratadoTerminoServico"].ToString());
+                c.ContratadoQuantGarcons = int.Parse(dr["contratadoQuantGarcons"].ToString());
+                c.ContratadoQuantCopeiros = int.Parse(dr["contratadoQuantCopeiros"].ToString());
+                c.ContratadoPrecoPagar = double.Parse(dr["contratadoPrecoPagar"].ToString());
+                c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
+                c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
+                c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
+                c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
+                c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
+                c.NomeAniversariante = dr["nomeAniversariante"].ToString();
+
+                contratos.Add(c);
+
+            }
+            return contratos;
+        }
+
+        public List<Contrato> ListByTipoContrato(int tipo)
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT * FROM Contrato WHERE tipo="+tipo;
+            DataSet ds = bd.ExecuteQuery(qry);
+            List<Contrato> contratos = new List<Contrato>();
+            int aux;
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+
+                Contrato c = new Contrato();
+
+                c.Id = int.Parse(dr["id"].ToString());
+                c.Tipo = int.Parse(dr["tipo"].ToString());
+                c.EventoData = DateTime.Parse(dr["eventoData"].ToString());
+                c.EventoHora = DateTime.Parse(dr["eventoHora"].ToString());
+                c.EventoTerminoHora = DateTime.Parse(dr["eventoTerminoHora"].ToString());
+                c.EventoNConvidados = int.Parse(dr["eventoNConvidados"].ToString());
+                c.EventoCapMaxima = int.Parse(dr["eventoCapMaxima"].ToString());
+                c.ContratadoHoraChegada = DateTime.Parse(dr["contratadoHoraChegada"].ToString());
+                c.ContratadoHoraAntecedencia = int.Parse(dr["contratadoHoraAntecedencia"].ToString());
+                c.ContratadoInicioServico = DateTime.Parse(dr["contratadoInicioServico"].ToString());
+                c.ContratadoTerminoServico = DateTime.Parse(dr["contratadoTerminoServico"].ToString());
+                c.ContratadoQuantGarcons = int.Parse(dr["contratadoQuantGarcons"].ToString());
+                c.ContratadoQuantCopeiros = int.Parse(dr["contratadoQuantCopeiros"].ToString());
+                c.ContratadoPrecoPagar = double.Parse(dr["contratadoPrecoPagar"].ToString());
+                c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
+                c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
+                c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
+                c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
+                c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
+                c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
+                aux = int.Parse(dr["notaFiscal"].ToString());
+                if (aux == 1)
+                {
+                    c.NotaFiscal = true;
+                }
+                else
+                {
+                    c.NotaFiscal = false;
+                }
+                c.NomeAniversariante = dr["nomeAniversariante"].ToString();
                 contratos.Add(c);
 
             }
@@ -414,7 +488,7 @@ namespace Buffet.DAO
                     c.ContratadoDataPgto = DateTime.Parse(dr["contratadoDataPgto"].ToString());
                     c.DevolucaoDia = DateTime.Parse(dr["devolucaoDia"].ToString());
                     c.DevolucaoHora = DateTime.Parse(dr["devolucaoHora"].ToString());
-                    c.PessoaFisica.Cpf = long.Parse(dr["pesssoaFisicaCPF"].ToString());
+                    c.PessoaFisica.Cpf = long.Parse(dr["pessoaFisicaCPF"].ToString());
                     c.PessoaJuridica.Cnpj = long.Parse(dr["pessoaJuridicaCNPJ"].ToString());
                     c.DataCriacao = DateTime.Parse(dr["dataCriacao"].ToString()).Date;
                     aux = int.Parse(dr["notaFiscal"].ToString());
@@ -426,6 +500,7 @@ namespace Buffet.DAO
                     {
                         c.NotaFiscal = false;
                     }
+                    c.NomeAniversariante = dr["nomeAniversariante"].ToString();
                 }
             }
             return c;

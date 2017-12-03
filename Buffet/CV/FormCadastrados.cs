@@ -54,8 +54,8 @@ namespace Buffet
             {
                 ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                 ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                FormFisico ff = new FormFisico(cf, 1);
-                ff.ShowDialog();
+                //FormFisico ff = new FormFisico(cf, 1);
+                //ff.ShowDialog();
             }
             else if (tipo == 2)
             {
@@ -70,8 +70,8 @@ namespace Buffet
                 {
                     ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                     ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                    FormFisico ff = new FormFisico(cf, 1);
-                    ff.ShowDialog();
+                    //FormFisico ff = new FormFisico(cf, 1);
+                    //ff.ShowDialog();
                 }
                 else
                 {
@@ -371,14 +371,6 @@ namespace Buffet
             this.Hide();
         }
 
-        private void txtBuscaNomeCPF_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void dataGViewLista_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int index = dataGViewLista.CurrentCell.RowIndex;
@@ -387,8 +379,8 @@ namespace Buffet
             {
                 ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                 ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                FormFisico ff = new FormFisico(cf, 0);
-                ff.Show();
+                //FormFisico ff = new FormFisico(cf, 0);
+                //ff.Show();
             }
             else if (tipo == 2)//Juridico
             {
@@ -404,8 +396,8 @@ namespace Buffet
                 {
                     ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                     ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                    FormFisico ff = new FormFisico(cf, 0);
-                    ff.Show();
+                    //FormFisico ff = new FormFisico(cf, 0);
+                    //ff.Show();
                 }
                 else
                 {
@@ -451,23 +443,22 @@ namespace Buffet
                 Fill();
         }
 
-        /*private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        private void SomenteLetras(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
             {
                 e.Handled = true;
+                MessageBox.Show("Este Campo aceita apenas Letras!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
-        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
+        private void SomenteNumeros(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
             {
                 e.Handled = true;
+                MessageBox.Show("Este Campo aceita apenas Numeros!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }*/
-
-
-
+        }
     }
 }

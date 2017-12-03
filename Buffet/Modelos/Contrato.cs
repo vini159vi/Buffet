@@ -9,7 +9,8 @@ namespace Buffet.Modelos
     public class Contrato
     {
         private DateTime eventoData, eventoHora, eventoTerminoHora, contratadoHoraChegada, contratadoInicioServico, contratadoTerminoServico, contratadoDataPgto, devolucaoHora, devolucaoDia, dataCriacao;
-        private int id, eventoNConvidados, eventoCapMaxima, contratadoHoraAntecedencia, contratadoQuantGarcons, contratadoQuantCopeiros, tipo;
+        private int id, eventoNConvidados, eventoCapMaxima, contratadoHoraAntecedencia, contratadoQuantGarcons, contratadoQuantCopeiros;
+        private int tipo;
         private double contratadoPrecoPagar;
         private bool notaFiscal;
         private string nomeAniversariante;

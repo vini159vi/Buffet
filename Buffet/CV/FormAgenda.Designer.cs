@@ -94,6 +94,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(765, 20);
             this.txtTelefone.TabIndex = 1;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // dtData
             // 
@@ -140,6 +141,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(783, 20);
             this.txtNome.TabIndex = 0;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lblNome
             // 

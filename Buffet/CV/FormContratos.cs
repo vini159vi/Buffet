@@ -55,8 +55,13 @@ namespace Buffet.CV
                     dataGViewLista.Rows[index].Cells["cellID"].Value = c.Id;
                     dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Fisico";
                     dataGViewLista.Rows[index].Cells["cellNomeEmpresa"].Value = cf.Nome;
-                    dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/mm/yyyy") + " - " + c.EventoHora.ToString("hh:mm");
+                    dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/MM/yyyy") + " - " + c.EventoHora.ToString("HH:mm");
                     dataGViewLista.Rows[index].Cells["cellPreco"].Value = c.ContratadoPrecoPagar;
+
+                    if (c.NotaFiscal)
+                        dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Sim";
+                    else
+                        dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Não";
                 }
 
             }
@@ -71,8 +76,13 @@ namespace Buffet.CV
                     dataGViewLista.Rows[index].Cells["cellID"].Value = c.Id;
                     dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Juridico";
                     dataGViewLista.Rows[index].Cells["cellNomeEmpresa"].Value = cj.NomeEmpresa;
-                    dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/mm/yyyy") + " - " + c.EventoHora.ToString("hh:mm");
+                    dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/MM/yyyy") + " - " + c.EventoHora.ToString("HH:mm");
                     dataGViewLista.Rows[index].Cells["cellPreco"].Value = c.ContratadoPrecoPagar;
+
+                    if (c.NotaFiscal)
+                        dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Sim";
+                    else
+                        dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Não";
 
                 }
             }
@@ -82,15 +92,20 @@ namespace Buffet.CV
 
                 foreach (Contrato c in listc)
                 {
-                    if (c.Tipo == 1)
+                    if (c.PessoaJuridica.Cnpj == 0)
                     {
                         ClienteFisico cf = contratos.FindByFisico(c.PessoaFisica.Cpf);
                         int index = dataGViewLista.Rows.Add();
                         dataGViewLista.Rows[index].Cells["cellID"].Value = c.Id;
                         dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Fisico";
                         dataGViewLista.Rows[index].Cells["cellNomeEmpresa"].Value = cf.Nome;
-                        dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/mm/yyyy") + " - " + c.EventoHora.ToString("hh:mm");
+                        dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/MM/yyyy") + " - " + c.EventoHora.ToString("HH:mm");
                         dataGViewLista.Rows[index].Cells["cellPreco"].Value = c.ContratadoPrecoPagar;
+
+                        if (c.NotaFiscal)
+                            dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Sim";
+                        else
+                            dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Não";
                     }
                     else {
                         ClienteJuridico cj = contratos.FindByJuridico(c.PessoaJuridica.Cnpj);
@@ -98,8 +113,13 @@ namespace Buffet.CV
                         dataGViewLista.Rows[index].Cells["cellID"].Value = c.Id;
                         dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Juridico";
                         dataGViewLista.Rows[index].Cells["cellNomeEmpresa"].Value = cj.NomeEmpresa;
-                        dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/mm/yyyy") + " - " + c.EventoHora.ToString("hh:mm");
+                        dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/MM/yyyy") + " - " + c.EventoHora.ToString("HH:mm");
                         dataGViewLista.Rows[index].Cells["cellPreco"].Value = c.ContratadoPrecoPagar;
+
+                        if (c.NotaFiscal)
+                            dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Sim";
+                        else
+                            dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Não";
                     }
                 }
 
@@ -123,8 +143,13 @@ namespace Buffet.CV
                     dataGViewLista.Rows[index].Cells["cellID"].Value = c.Id;
                     dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Fisico";
                     dataGViewLista.Rows[index].Cells["cellNomeEmpresa"].Value = cf.Nome;
-                    dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/mm/yyyy") + " - " + c.EventoHora.ToString("hh:mm");
+                    dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/MM/yyyy") + " - " + c.EventoHora.ToString("HH:mm");
                     dataGViewLista.Rows[index].Cells["cellPreco"].Value = c.ContratadoPrecoPagar;
+
+                    if (c.NotaFiscal)
+                        dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Sim";
+                    else
+                        dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Não";
                 }
             }
             else if (tipo == 2)//Juridico
@@ -138,8 +163,13 @@ namespace Buffet.CV
                     dataGViewLista.Rows[index].Cells["cellID"].Value = c.Id;
                     dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Juridico";
                     dataGViewLista.Rows[index].Cells["cellNomeEmpresa"].Value = cj.NomeEmpresa;
-                    dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/mm/yyyy") + " - " + c.EventoHora.ToString("hh:mm");
+                    dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/MM/yyyy") + " - " + c.EventoHora.ToString("HH:mm");
                     dataGViewLista.Rows[index].Cells["cellPreco"].Value = c.ContratadoPrecoPagar;
+
+                    if (c.NotaFiscal)
+                        dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Sim";
+                    else
+                        dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Não";
 
                 }
             }
@@ -149,15 +179,20 @@ namespace Buffet.CV
 
                 foreach (Contrato c in listc)
                 {
-                    if (c.Tipo == 1)
+                    if (c.PessoaJuridica.Cnpj == 0)
                     {
                         ClienteFisico cf = contratos.FindByFisico(c.PessoaFisica.Cpf);
                         int index = dataGViewLista.Rows.Add();
                         dataGViewLista.Rows[index].Cells["cellID"].Value = c.Id;
                         dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Fisico";
                         dataGViewLista.Rows[index].Cells["cellNomeEmpresa"].Value = cf.Nome;
-                        dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/mm/yyyy") + " - " + c.EventoHora.ToString("hh:mm");
+                        dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/MM/yyyy") + " - " + c.EventoHora.ToString("HH:mm");
                         dataGViewLista.Rows[index].Cells["cellPreco"].Value = c.ContratadoPrecoPagar;
+
+                        if (c.NotaFiscal)
+                            dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Sim";
+                        else
+                            dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Não";
                     }
                     else
                     {
@@ -166,8 +201,13 @@ namespace Buffet.CV
                         dataGViewLista.Rows[index].Cells["cellID"].Value = c.Id;
                         dataGViewLista.Rows[index].Cells["cellTipo"].Value = "Juridico";
                         dataGViewLista.Rows[index].Cells["cellNomeEmpresa"].Value = cj.NomeEmpresa;
-                        dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/mm/yyyy") + " - " + c.EventoHora.ToString("hh:mm");
+                        dataGViewLista.Rows[index].Cells["cellDataEvento"].Value = c.EventoData.ToString("dd/MM/yyyy") + " - " + c.EventoHora.ToString("HH:mm");
                         dataGViewLista.Rows[index].Cells["cellPreco"].Value = c.ContratadoPrecoPagar;
+
+                        if (c.NotaFiscal)
+                            dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Sim";
+                        else
+                            dataGViewLista.Rows[index].Cells["CellNotaFiscal"].Value = "Não";
                     }
                 }
             }

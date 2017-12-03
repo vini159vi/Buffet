@@ -64,8 +64,8 @@
             this.cbEmpresaBusca = new System.Windows.Forms.ComboBox();
             this.clienteJuridicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbRepresentanteBusca = new System.Windows.Forms.GroupBox();
-            this.txtEmpresaView = new System.Windows.Forms.TextBox();
             this.checkBoxNenhumaEmpresa = new System.Windows.Forms.CheckBox();
+            this.txtEmpresaView = new System.Windows.Forms.TextBox();
             this.gbRepresentante.SuspendLayout();
             this.gbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).BeginInit();
@@ -88,6 +88,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone.TabIndex = 6;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // txtCelular
             // 
@@ -96,6 +97,7 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(133, 20);
             this.txtCelular.TabIndex = 7;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // lbTelefone
             // 
@@ -112,6 +114,7 @@
             this.txtEstadoRepresentante.Name = "txtEstadoRepresentante";
             this.txtEstadoRepresentante.Size = new System.Drawing.Size(207, 20);
             this.txtEstadoRepresentante.TabIndex = 13;
+            this.txtEstadoRepresentante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // txtBairroRepresentante
             // 
@@ -119,6 +122,7 @@
             this.txtBairroRepresentante.Name = "txtBairroRepresentante";
             this.txtBairroRepresentante.Size = new System.Drawing.Size(212, 20);
             this.txtBairroRepresentante.TabIndex = 10;
+            this.txtBairroRepresentante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbEstadoRepresentante
             // 
@@ -144,6 +148,7 @@
             this.txtCidadeRepresentante.Name = "txtCidadeRepresentante";
             this.txtCidadeRepresentante.Size = new System.Drawing.Size(375, 20);
             this.txtCidadeRepresentante.TabIndex = 12;
+            this.txtCidadeRepresentante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbCidadeRepresentante
             // 
@@ -160,6 +165,7 @@
             this.txtRuaRepresentante.Name = "txtRuaRepresentante";
             this.txtRuaRepresentante.Size = new System.Drawing.Size(455, 20);
             this.txtRuaRepresentante.TabIndex = 8;
+            this.txtRuaRepresentante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // txtCEPRepresentante
             // 
@@ -168,6 +174,7 @@
             this.txtCEPRepresentante.Name = "txtCEPRepresentante";
             this.txtCEPRepresentante.Size = new System.Drawing.Size(96, 20);
             this.txtCEPRepresentante.TabIndex = 11;
+            this.txtCEPRepresentante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // txtNumeroRepresentante
             // 
@@ -177,6 +184,7 @@
             this.txtNumeroRepresentante.PromptChar = ' ';
             this.txtNumeroRepresentante.Size = new System.Drawing.Size(38, 20);
             this.txtNumeroRepresentante.TabIndex = 9;
+            this.txtNumeroRepresentante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // lbCEPRepresentante
             // 
@@ -240,6 +248,7 @@
             this.txtEstadoCivil.Name = "txtEstadoCivil";
             this.txtEstadoCivil.Size = new System.Drawing.Size(349, 20);
             this.txtEstadoCivil.TabIndex = 5;
+            this.txtEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbEstadoCivil
             // 
@@ -275,6 +284,7 @@
             this.txtCPFRepresentante.Name = "txtCPFRepresentante";
             this.txtCPFRepresentante.Size = new System.Drawing.Size(100, 20);
             this.txtCPFRepresentante.TabIndex = 1;
+            this.txtCPFRepresentante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
             // 
             // txtNacionalidade
             // 
@@ -282,6 +292,7 @@
             this.txtNacionalidade.Name = "txtNacionalidade";
             this.txtNacionalidade.Size = new System.Drawing.Size(227, 20);
             this.txtNacionalidade.TabIndex = 4;
+            this.txtNacionalidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbNacionalidade
             // 
@@ -298,6 +309,7 @@
             this.txtProfissao.Name = "txtProfissao";
             this.txtProfissao.Size = new System.Drawing.Size(361, 20);
             this.txtProfissao.TabIndex = 3;
+            this.txtProfissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbProfissao
             // 
@@ -314,6 +326,7 @@
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(137, 20);
             this.txtRG.TabIndex = 2;
+            this.txtRG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumerosELetras);
             // 
             // lbRG
             // 
@@ -330,6 +343,7 @@
             this.txtNomeRepresentante.Name = "txtNomeRepresentante";
             this.txtNomeRepresentante.Size = new System.Drawing.Size(376, 20);
             this.txtNomeRepresentante.TabIndex = 0;
+            this.txtNomeRepresentante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteLetras);
             // 
             // lbNomeRepresentante
             // 
@@ -404,14 +418,6 @@
             this.gbRepresentanteBusca.TabStop = false;
             this.gbRepresentanteBusca.Text = "Empresa";
             // 
-            // txtEmpresaView
-            // 
-            this.txtEmpresaView.Location = new System.Drawing.Point(6, 45);
-            this.txtEmpresaView.Name = "txtEmpresaView";
-            this.txtEmpresaView.Size = new System.Drawing.Size(824, 20);
-            this.txtEmpresaView.TabIndex = 22;
-            this.txtEmpresaView.Visible = false;
-            // 
             // checkBoxNenhumaEmpresa
             // 
             this.checkBoxNenhumaEmpresa.AutoSize = true;
@@ -422,6 +428,14 @@
             this.checkBoxNenhumaEmpresa.Text = "Nenhuma Empresa";
             this.checkBoxNenhumaEmpresa.UseVisualStyleBackColor = true;
             this.checkBoxNenhumaEmpresa.CheckedChanged += new System.EventHandler(this.checkBoxNenhumaEmpresa_CheckedChanged);
+            // 
+            // txtEmpresaView
+            // 
+            this.txtEmpresaView.Location = new System.Drawing.Point(6, 45);
+            this.txtEmpresaView.Name = "txtEmpresaView";
+            this.txtEmpresaView.Size = new System.Drawing.Size(824, 20);
+            this.txtEmpresaView.TabIndex = 22;
+            this.txtEmpresaView.Visible = false;
             // 
             // FormRepresentante
             // 
