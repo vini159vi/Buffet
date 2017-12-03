@@ -12,7 +12,7 @@ namespace Buffet.Modelos
         private int id, eventoNConvidados, eventoCapMaxima, contratadoHoraAntecedencia, contratadoQuantGarcons, contratadoQuantCopeiros, tipo;
         private double contratadoPrecoPagar;
         private bool notaFiscal;
-
+        private string nomeAniversariante;
         ClienteFisico pessoaFisica = new ClienteFisico();
         ClienteJuridico pessoaJuridica = new ClienteJuridico();
 
@@ -39,6 +39,7 @@ namespace Buffet.Modelos
             this.DevolucaoDia = devolucaoDia;
             this.DataCriacao = dataCriacao;
             this.NotaFiscal = notaFiscal;
+            this.NomeAniversariante = nomeAniversariante;
         }
 
         public Contrato()
@@ -67,5 +68,7 @@ namespace Buffet.Modelos
         public DateTime DevolucaoDia { get { return devolucaoDia; } set { devolucaoDia = value; } }
         public DateTime DataCriacao { get { return dataCriacao; } set { dataCriacao = value; } }
         public bool NotaFiscal { get { return notaFiscal; } set { notaFiscal = value; } }
+
+        public string NomeAniversariante { get => nomeAniversariante; set => nomeAniversariante = value; }
     }
 }

@@ -90,10 +90,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contrato15Anos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contrato15Anos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContratoAniversario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContratoAniversario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ContratoCasamento.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContratoCasamento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContratoEmpresa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContratoEmpresa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContratoEventoGerais.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContratoEventoGerais.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CV\FormAgenda.cs">
@@ -189,9 +213,25 @@
     <Compile Include="Modelos\RepresentanteJuridico.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Contrato15Anos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Contrato15Anos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratoAniversario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ContratoAniversario.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContratoCasamento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ContratoCasamento.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratoEmpresa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ContratoEmpresa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratoEventoGerais.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ContratoEventoGerais.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormAgenda.resx">
       <DependentUpon>FormAgenda.cs</DependentUpon>
