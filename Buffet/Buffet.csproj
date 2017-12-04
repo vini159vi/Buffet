@@ -324,6 +324,15 @@
       <LastGenOutput>TipoDeFesta.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\Banco.db" />
+    <None Include="bin\Debug\Modelos\Contrato15AnosPessoaFisica.doc" />
+    <None Include="bin\Debug\Modelos\Contrato15AnosPessoaJuridica.doc" />
+    <None Include="bin\Debug\Modelos\ContratoAniversariantePessoaFisica.doc" />
+    <None Include="bin\Debug\Modelos\ContratoAniversariantePessoaJuridica.doc" />
+    <None Include="bin\Debug\Modelos\ContratoCasamentoPessoaFisica.doc" />
+    <None Include="bin\Debug\Modelos\ContratoCasamentoPessoaJuridica.doc" />
+    <None Include="bin\Debug\Modelos\ContratoEventosGeraisPessoaFisica.doc" />
+    <None Include="bin\Debug\Modelos\ContratoEventosGeraisPessoaJuridica.doc" />
+    <None Include="bin\Debug\Modelos\ContratoFestaEmpresaPessoaJuridica.doc" />
     <None Include="bin\Debug\System.Data.SQLite.dll.config">
       <SubType>Designer</SubType>
     </None>
