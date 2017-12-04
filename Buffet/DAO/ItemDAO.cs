@@ -112,6 +112,41 @@ namespace Buffet.DAO
             }
         }
 
+        public bool VerificaTipo(int tipo, int tipo2)
+        {
+            Database bd = Database.GetInstance();
+            string qry = "SELECT i.tipo FROM Item i JOIN itemDoCardapio idc ON idc.idItem=i.id JOIN Cardapio c ON c.id=idc.idCardapio WHERE i.tipo=" + tipo + " AND c.id=" + tipo2;
+            DataSet ds = bd.ExecuteQuery(qry);
+            DataRow dr;
+            try
+            {
+                dr = ds.Tables[0].Rows[0];
+            }
+            catch
+            {
+                return false;
+            }
+
+            Item i = new Item();
+
+            if (dr["tipo"].ToString() != null)
+            {
+                i.Id = int.Parse(dr["tipo"].ToString());
+                if (i.Tipo == tipo)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void AdicionarNoCardapio(int id,int tipo)
         {
             Database db = Database.GetInstance();

@@ -27,7 +27,8 @@ namespace Buffet.CV
         private FormCadastroItem fci = new FormCadastroItem();
         private FormCardapio fCardapio = new FormCardapio();
         private FormControleItens fcItens = new FormControleItens();
-
+        private FormRelatorios fRelatorios = new FormRelatorios();
+        private FormContratoCardapio fcCardapio = new FormContratoCardapio();
         public FormMenuModern()
         {
             InitializeComponent();
@@ -618,6 +619,15 @@ namespace Buffet.CV
                 fcItens.Hide();
             }
 
+            if (fRelatorios.Visible)
+            {
+                fRelatorios.Hide();
+            }
+            if (fcCardapio.Visible)
+            {
+                fcCardapio.Hide();
+            }
+
         }
 
 
@@ -667,12 +677,14 @@ namespace Buffet.CV
             {
                 fcItens.WindowState = FormWindowState.Normal;
             }
-        }
-
-        private void bttTemporario_Click(object sender, EventArgs e)
-        {
-            FormTemporario temporario = new FormTemporario();
-            temporario.Show();
+            if (fRelatorios.Visible)
+            {
+                fRelatorios.WindowState = FormWindowState.Normal;
+            }
+            if (fcCardapio.Visible)
+            {
+                fcCardapio.WindowState = FormWindowState.Normal;
+            }
         }
 
         private void StateMaximized()
@@ -721,7 +733,16 @@ namespace Buffet.CV
             {
                 fcItens.WindowState = FormWindowState.Maximized;
             }
-        }
+
+            if (fRelatorios.Visible)
+            {
+                fRelatorios.WindowState = FormWindowState.Maximized;
+            }
+            if (fcCardapio.Visible)
+            {
+                fcCardapio.WindowState = FormWindowState.Maximized;
+            }
+    }
 
     }
 }

@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormContratoCardapio));
             this.gbItens = new System.Windows.Forms.GroupBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.cellID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellValorPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbPratosQuentes = new System.Windows.Forms.GroupBox();
             this.dgvPratosQuentes = new System.Windows.Forms.DataGridView();
             this.ColumnIDPratosQuentes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,10 +75,6 @@
             this.txtTotal = new System.Windows.Forms.RichTextBox();
             this.bttRemover = new System.Windows.Forms.Button();
             this.bttAdicionar = new System.Windows.Forms.Button();
-            this.cellID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cellNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cellValorPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.gbPratosQuentes.SuspendLayout();
@@ -102,7 +102,7 @@
             this.gbItens.Size = new System.Drawing.Size(398, 450);
             this.gbItens.TabIndex = 0;
             this.gbItens.TabStop = false;
-            this.gbItens.Text = "Itens";
+            this.gbItens.Text = "Itens Opcionais";
             // 
             // dgvItens
             // 
@@ -127,6 +127,30 @@
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(392, 431);
             this.dgvItens.TabIndex = 0;
+            // 
+            // cellID
+            // 
+            this.cellID.HeaderText = "ID";
+            this.cellID.Name = "cellID";
+            this.cellID.ReadOnly = true;
+            // 
+            // cellNome
+            // 
+            this.cellNome.HeaderText = "Nome";
+            this.cellNome.Name = "cellNome";
+            this.cellNome.ReadOnly = true;
+            // 
+            // cellValorPessoa
+            // 
+            this.cellValorPessoa.HeaderText = "Valor por Cabeça";
+            this.cellValorPessoa.Name = "cellValorPessoa";
+            this.cellValorPessoa.ReadOnly = true;
+            // 
+            // cellTipo
+            // 
+            this.cellTipo.HeaderText = "Tipo";
+            this.cellTipo.Name = "cellTipo";
+            this.cellTipo.ReadOnly = true;
             // 
             // gbPratosQuentes
             // 
@@ -214,7 +238,6 @@
             // 
             // gbCardapio
             // 
-            this.gbCardapio.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbCardapio.Controls.Add(this.radioBttTipo2);
             this.gbCardapio.Controls.Add(this.radioBttTipo1);
             this.gbCardapio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -240,6 +263,7 @@
             // radioBttTipo1
             // 
             this.radioBttTipo1.AutoSize = true;
+            this.radioBttTipo1.Checked = true;
             this.radioBttTipo1.Location = new System.Drawing.Point(23, 20);
             this.radioBttTipo1.Name = "radioBttTipo1";
             this.radioBttTipo1.Size = new System.Drawing.Size(55, 17);
@@ -519,9 +543,8 @@
             this.txtTotal.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(3, 16);
-            this.txtTotal.Multiline = false;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(392, 71);
@@ -552,30 +575,6 @@
             this.bttAdicionar.UseVisualStyleBackColor = true;
             this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
             // 
-            // cellID
-            // 
-            this.cellID.HeaderText = "ID";
-            this.cellID.Name = "cellID";
-            this.cellID.ReadOnly = true;
-            // 
-            // cellNome
-            // 
-            this.cellNome.HeaderText = "Nome";
-            this.cellNome.Name = "cellNome";
-            this.cellNome.ReadOnly = true;
-            // 
-            // cellValorPessoa
-            // 
-            this.cellValorPessoa.HeaderText = "Valor por Cabeça";
-            this.cellValorPessoa.Name = "cellValorPessoa";
-            this.cellValorPessoa.ReadOnly = true;
-            // 
-            // cellTipo
-            // 
-            this.cellTipo.HeaderText = "Tipo";
-            this.cellTipo.Name = "cellTipo";
-            this.cellTipo.ReadOnly = true;
-            // 
             // FormContratoCardapio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -597,6 +596,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormContratoCardapio";
             this.Text = "FormContratoCardapio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gbItens.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.gbPratosQuentes.ResumeLayout(false);

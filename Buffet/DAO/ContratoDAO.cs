@@ -563,5 +563,17 @@ namespace Buffet.DAO
 
         }
 
+        public int FindID()
+        {
+            int id;
+            Database bd = Database.GetInstance();
+            string qry = "Select seq from sqlite_sequence where name like 'Contrato';";
+            DataSet ds = bd.ExecuteQuery(qry);
+            DataRow dr = ds.Tables[0].Rows[0];
+
+            id = int.Parse(dr["seq"].ToString());
+            return id;
+        }
+
     }
 }

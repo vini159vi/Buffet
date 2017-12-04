@@ -83,12 +83,33 @@ namespace Buffet.CV
         private void bttGerarContrato_Click(object sender, EventArgs e)
         {
             FormContratos fc = Application.OpenForms["FormContratos"] as FormContratos;
+            FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
             Contrato c = GetDTO();
 
             ContratoDAO cDAO = new ContratoDAO();
-
-            cDAO.Create(c);
-
+            if (tipo == 0)
+            {
+                FormContratoCardapio fcc = new FormContratoCardapio(c, c.PessoaFisica.Cpf,0, contrato);
+                if (!fcc.Visible)
+                {
+                    fcc.TopLevel = false;
+                    fmm.panelWorkstation.Controls.Add(fcc);
+                    fcc.Refresh();
+                    fcc.Show();
+                }
+            }
+            else
+            {
+                FormContratoCardapio fcc = new FormContratoCardapio(c, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, contrato);
+                if (!fcc.Visible)
+                {
+                    fcc.TopLevel = false;
+                    fmm.panelWorkstation.Controls.Add(fcc);
+                    fcc.Refresh();
+                    fcc.Show();
+                }
+            }
+            
             if (fc != null)
             {
                 fc.Fill();

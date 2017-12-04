@@ -172,12 +172,6 @@
     <Compile Include="CV\FormContratos.Designer.cs">
       <DependentUpon>FormContratos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormContratoGerado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CV\FormContratoGerado.Designer.cs">
-      <DependentUpon>FormContratoGerado.cs</DependentUpon>
-    </Compile>
     <Compile Include="CV\FormControleItens.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,12 +201,6 @@
     </Compile>
     <Compile Include="CV\FormRepresentante.Designer.cs">
       <DependentUpon>FormRepresentante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CV\FormTemporario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CV\FormTemporario.Designer.cs">
-      <DependentUpon>FormTemporario.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\AgendaDAO.cs" />
     <Compile Include="DAO\ClienteFisicoDAO.cs" />
@@ -304,9 +292,6 @@
     <EmbeddedResource Include="CV\FormContratos.resx">
       <DependentUpon>FormContratos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormContratoGerado.resx">
-      <DependentUpon>FormContratoGerado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CV\FormControleItens.resx">
       <DependentUpon>FormControleItens.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,9 +306,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormRepresentante.resx">
       <DependentUpon>FormRepresentante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormTemporario.resx">
-      <DependentUpon>FormTemporario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fatura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
