@@ -28,14 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.gbAdicionarItem = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
+            // 
+            // gbAdicionarItem
+            // 
+            this.gbAdicionarItem.Location = new System.Drawing.Point(12, 12);
+            this.gbAdicionarItem.Name = "gbAdicionarItem";
+            this.gbAdicionarItem.Size = new System.Drawing.Size(836, 181);
+            this.gbAdicionarItem.TabIndex = 0;
+            this.gbAdicionarItem.TabStop = false;
+            this.gbAdicionarItem.Text = "Adicionar Item";
             // 
             // FormCadastroItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(860, 690);
+            this.ClientSize = new System.Drawing.Size(860, 207);
+            this.Controls.Add(this.gbAdicionarItem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadastroItem";
             this.Text = "FormCadastroItem";
@@ -44,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox gbAdicionarItem;
     }
 }
