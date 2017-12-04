@@ -156,9 +156,9 @@ namespace Buffet.CV
             c.DataCriacao = DateTime.Now;
             c.NomeAniversariante = txtNomeAniversario.Text;
             if (checkBoxNotaFiscal.Checked)
-                c.NotaFiscal = true;
+                c.NotaFiscal = 1;
             else
-                c.NotaFiscal = false;
+                c.NotaFiscal = 0;
             c.Tipo = contrato;
             return c;
         }

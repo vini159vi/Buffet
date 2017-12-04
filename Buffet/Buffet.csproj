@@ -120,6 +120,18 @@
       <DependentUpon>ContratoEventoGerais.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ContratosFeitos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContratosFeitos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContratosMes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContratosMes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CV\FormAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,11 +168,11 @@
     <Compile Include="CV\FormContratos.Designer.cs">
       <DependentUpon>FormContratos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CV\FormCrystal.cs">
+    <Compile Include="CV\FormContratoGerado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CV\FormCrystal.Designer.cs">
-      <DependentUpon>FormCrystal.cs</DependentUpon>
+    <Compile Include="CV\FormContratoGerado.Designer.cs">
+      <DependentUpon>FormContratoGerado.cs</DependentUpon>
     </Compile>
     <Compile Include="CV\FormJuridico.cs">
       <SubType>Form</SubType>
@@ -174,6 +186,12 @@
     <Compile Include="CV\FormMenuModern.Designer.cs">
       <DependentUpon>FormMenuModern.cs</DependentUpon>
     </Compile>
+    <Compile Include="CV\FormRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CV\FormRelatorios.Designer.cs">
+      <DependentUpon>FormRelatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="CV\FormRepresentante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +202,12 @@
     <Compile Include="DAO\ClienteFisicoDAO.cs" />
     <Compile Include="DAO\ClienteJuridicoDAO.cs" />
     <Compile Include="DAO\ContratoDAO.cs" />
+    <Compile Include="Fatura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fatura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MISC\Database.cs" />
     <Compile Include="MISC\TabelasDB.cs" />
     <Compile Include="CV\FormCadastrados.cs">
@@ -197,10 +221,23 @@
     <Compile Include="Modelos\ClienteFisico.cs" />
     <Compile Include="Modelos\ClienteJuridico.cs" />
     <Compile Include="Modelos\Contrato.cs" />
+    <Compile Include="Modelos\GerarContrato.cs" />
     <Compile Include="Modelos\Item.cs" />
     <Compile Include="Modelos\RepresentanteJuridico.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoDeCardapio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoDeCardapio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TipoDeFesta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoDeFesta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Contrato15Anos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Contrato15Anos.cs</LastGenOutput>
@@ -220,6 +257,14 @@
     <EmbeddedResource Include="ContratoEventoGerais.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ContratoEventoGerais.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratosFeitos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ContratosFeitos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratosMes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ContratosMes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormAgenda.resx">
       <DependentUpon>FormAgenda.cs</DependentUpon>
@@ -242,8 +287,8 @@
     <EmbeddedResource Include="CV\FormContratos.resx">
       <DependentUpon>FormContratos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CV\FormCrystal.resx">
-      <DependentUpon>FormCrystal.cs</DependentUpon>
+    <EmbeddedResource Include="CV\FormContratoGerado.resx">
+      <DependentUpon>FormContratoGerado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CV\FormJuridico.resx">
       <DependentUpon>FormJuridico.cs</DependentUpon>
@@ -251,12 +296,27 @@
     <EmbeddedResource Include="CV\FormMenuModern.resx">
       <DependentUpon>FormMenuModern.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CV\FormRelatorios.resx">
+      <DependentUpon>FormRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CV\FormRepresentante.resx">
       <DependentUpon>FormRepresentante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Fatura.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoDeCardapio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TipoDeCardapio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoDeFesta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TipoDeFesta.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\Banco.db" />
     <None Include="bin\Debug\System.Data.SQLite.dll.config">
@@ -302,6 +362,38 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.106.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.106.0\build\net451\System.Data.SQLite.Core.targets')" />

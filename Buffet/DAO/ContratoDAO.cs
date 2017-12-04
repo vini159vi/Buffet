@@ -71,11 +71,11 @@ namespace Buffet.DAO
             aux = int.Parse(dr["notaFiscal"].ToString());
             if (aux == 1)
             {
-                c.NotaFiscal = true;
+                c.NotaFiscal = 1;
             }
             else
             {
-                c.NotaFiscal = false;
+                c.NotaFiscal = 0;
             }
             c.NomeAniversariante = dr["nomeAniversariante"].ToString();
             return c;
@@ -147,11 +147,11 @@ namespace Buffet.DAO
                 aux = int.Parse(dr["notaFiscal"].ToString());
                 if (aux == 1)
                 {
-                    c.NotaFiscal = true;
+                    c.NotaFiscal = 1;
                 }
                 else
                 {
-                    c.NotaFiscal = false;
+                    c.NotaFiscal = 0;
                 }
                 c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
@@ -196,11 +196,11 @@ namespace Buffet.DAO
                 aux = int.Parse(dr["notaFiscal"].ToString());
                 if (aux == 1)
                 {
-                    c.NotaFiscal = true;
+                    c.NotaFiscal = 1;
                 }
                 else
                 {
-                    c.NotaFiscal = false;
+                    c.NotaFiscal = 0;
                 }
                 c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
@@ -246,11 +246,11 @@ namespace Buffet.DAO
                 aux = int.Parse(dr["notaFiscal"].ToString());
                 if (aux == 1)
                 {
-                    c.NotaFiscal = true;
+                    c.NotaFiscal = 1;
                 }
                 else
                 {
-                    c.NotaFiscal = false;
+                    c.NotaFiscal = 0;
                 }
                 c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
@@ -296,11 +296,11 @@ namespace Buffet.DAO
                 aux = int.Parse(dr["notaFiscal"].ToString());
                 if (aux == 1)
                 {
-                    c.NotaFiscal = true;
+                    c.NotaFiscal = 1;
                 }
                 else
                 {
-                    c.NotaFiscal = false;
+                    c.NotaFiscal = 0;
                 }
                 c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
@@ -346,11 +346,11 @@ namespace Buffet.DAO
                 aux = int.Parse(dr["notaFiscal"].ToString());
                 if (aux == 1)
                 {
-                    c.NotaFiscal = true;
+                    c.NotaFiscal = 1;
                 }
                 else
                 {
-                    c.NotaFiscal = false;
+                    c.NotaFiscal = 0;
                 }
                 c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
@@ -396,11 +396,11 @@ namespace Buffet.DAO
                 aux = int.Parse(dr["notaFiscal"].ToString());
                 if (aux == 1)
                 {
-                    c.NotaFiscal = true;
+                    c.NotaFiscal = 1;
                 }
                 else
                 {
-                    c.NotaFiscal = false;
+                    c.NotaFiscal = 0;
                 }
                 c.NomeAniversariante = dr["nomeAniversariante"].ToString();
 
@@ -446,11 +446,11 @@ namespace Buffet.DAO
                 aux = int.Parse(dr["notaFiscal"].ToString());
                 if (aux == 1)
                 {
-                    c.NotaFiscal = true;
+                    c.NotaFiscal = 1;
                 }
                 else
                 {
-                    c.NotaFiscal = false;
+                    c.NotaFiscal = 0;
                 }
                 c.NomeAniversariante = dr["nomeAniversariante"].ToString();
                 contratos.Add(c);
@@ -494,11 +494,11 @@ namespace Buffet.DAO
                     aux = int.Parse(dr["notaFiscal"].ToString());
                     if (aux == 1)
                     {
-                        c.NotaFiscal = true;
+                        c.NotaFiscal = 1;
                     }
                     else
                     {
-                        c.NotaFiscal = false;
+                        c.NotaFiscal = 0;
                     }
                     c.NomeAniversariante = dr["nomeAniversariante"].ToString();
                 }

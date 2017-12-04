@@ -12,12 +12,12 @@ namespace Buffet.Modelos
         private int id, eventoNConvidados, eventoCapMaxima, contratadoHoraAntecedencia, contratadoQuantGarcons, contratadoQuantCopeiros;
         private int tipo;
         private double contratadoPrecoPagar;
-        private bool notaFiscal;
+        private int notaFiscal;
         private string nomeAniversariante;
         ClienteFisico pessoaFisica = new ClienteFisico();
         ClienteJuridico pessoaJuridica = new ClienteJuridico();
 
-        public Contrato(DateTime eventoData, DateTime eventoHora, DateTime eventoTerminoHora, DateTime contratadoHoraChegada, DateTime contratadoInicioServico, DateTime contratadoTerminoServico, DateTime contratadoDataPgto, DateTime devolucaoHora, int id, int eventoNConvidados, int eventoCapMaxima, int contratadoHoraAntecedencia, int contratadoQuantGarcons, int contratadoQuantCopeiros, int tipo, double contratadoPrecoPagar, ClienteFisico pessoaFisica, ClienteJuridico pessoaJuridica, DateTime devolucaoDia, DateTime dataCriacao, bool notaFiscal)
+        public Contrato(DateTime eventoData, DateTime eventoHora, DateTime eventoTerminoHora, DateTime contratadoHoraChegada, DateTime contratadoInicioServico, DateTime contratadoTerminoServico, DateTime contratadoDataPgto, DateTime devolucaoHora, int id, int eventoNConvidados, int eventoCapMaxima, int contratadoHoraAntecedencia, int contratadoQuantGarcons, int contratadoQuantCopeiros, int tipo, double contratadoPrecoPagar, ClienteFisico pessoaFisica, ClienteJuridico pessoaJuridica, DateTime devolucaoDia, DateTime dataCriacao, int notaFiscal)
         {
             this.EventoData = eventoData;
             this.EventoHora = eventoHora;
@@ -68,7 +68,7 @@ namespace Buffet.Modelos
         public ClienteJuridico PessoaJuridica { get { return pessoaJuridica; } set { pessoaJuridica = value; } }
         public DateTime DevolucaoDia { get { return devolucaoDia; } set { devolucaoDia = value; } }
         public DateTime DataCriacao { get { return dataCriacao; } set { dataCriacao = value; } }
-        public bool NotaFiscal { get { return notaFiscal; } set { notaFiscal = value; } }
+        public int NotaFiscal { get { return notaFiscal; } set { notaFiscal = value; } }
 
         public string NomeAniversariante { get => nomeAniversariante; set => nomeAniversariante = value; }
     }

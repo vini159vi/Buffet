@@ -82,7 +82,7 @@
             this.lbRepresentante = new System.Windows.Forms.Label();
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.lbEmpresa = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbAniversario = new System.Windows.Forms.GroupBox();
             this.txtNomeAniversario = new System.Windows.Forms.TextBox();
             this.gbDevolucao.SuspendLayout();
             this.gbEvento.SuspendLayout();
@@ -92,7 +92,7 @@
             this.gbOpcao.SuspendLayout();
             this.gbTipoContrato.SuspendLayout();
             this.gbPessoaJuridica.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbAniversario.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDevolucao
@@ -671,17 +671,17 @@
             this.lbEmpresa.TabIndex = 0;
             this.lbEmpresa.Text = "Empresa:";
             // 
-            // groupBox1
+            // gbAniversario
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbAniversario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.txtNomeAniversario);
-            this.groupBox1.Location = new System.Drawing.Point(12, 291);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(836, 56);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "15 Anos/Aniversario";
+            this.gbAniversario.Controls.Add(this.txtNomeAniversario);
+            this.gbAniversario.Location = new System.Drawing.Point(12, 291);
+            this.gbAniversario.Name = "gbAniversario";
+            this.gbAniversario.Size = new System.Drawing.Size(836, 56);
+            this.gbAniversario.TabIndex = 4;
+            this.gbAniversario.TabStop = false;
+            this.gbAniversario.Text = "15 Anos/Aniversario";
             // 
             // txtNomeAniversario
             // 
@@ -699,7 +699,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 690);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbAniversario);
             this.Controls.Add(this.gbPessoaJuridica);
             this.Controls.Add(this.gbTipoContrato);
             this.Controls.Add(this.gbOpcao);
@@ -731,8 +731,8 @@
             this.gbTipoContrato.PerformLayout();
             this.gbPessoaJuridica.ResumeLayout(false);
             this.gbPessoaJuridica.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbAniversario.ResumeLayout(false);
+            this.gbAniversario.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -793,7 +793,7 @@
         private System.Windows.Forms.Label lbEmpresa;
         private System.Windows.Forms.CheckBox checkBoxNotaFiscal;
         private System.Windows.Forms.RadioButton radioBttEventosGerais;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbAniversario;
         private System.Windows.Forms.TextBox txtNomeAniversario;
     }
 }

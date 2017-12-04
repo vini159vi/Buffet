@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Buffet.CV
 {
-    public partial class FormCrystal : Form
+    public partial class FormRelatorios : Form
     {
-        public FormCrystal()
+        public FormRelatorios()
         {
             InitializeComponent();
         }
-
-        
     }
 }

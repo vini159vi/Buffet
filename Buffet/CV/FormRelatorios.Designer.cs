@@ -1,6 +1,6 @@
 ﻿namespace Buffet.CV
 {
-    partial class FormCrystal
+    partial class FormRelatorios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // crystalReportViewer
+            // crystalReportViewer1
             // 
-            this.crystalReportViewer.ActiveViewIndex = -1;
-            this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer.ForeColor = System.Drawing.Color.White;
-            this.crystalReportViewer.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer.Name = "crystalReportViewer";
-            this.crystalReportViewer.Size = new System.Drawing.Size(860, 690);
-            this.crystalReportViewer.TabIndex = 0;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(860, 690);
+            this.crystalReportViewer1.TabIndex = 0;
             // 
-            // FormCrystal
+            // FormRelatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 690);
-            this.Controls.Add(this.crystalReportViewer);
+            this.Controls.Add(this.crystalReportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormCrystal";
-            this.Text = "FormCrystal";
+            this.Name = "FormRelatorios";
+            this.Text = "FormRelatorios";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
