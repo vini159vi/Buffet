@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuModern));
             this.timerSlideInBarra = new System.Windows.Forms.Timer(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.bttTemporario = new System.Windows.Forms.Button();
             this.panelSubMenu = new System.Windows.Forms.Panel();
             this.bttOpcao5 = new System.Windows.Forms.Button();
             this.bttOpcao4 = new System.Windows.Forms.Button();
@@ -100,6 +101,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panelMenu.Controls.Add(this.bttTemporario);
             this.panelMenu.Controls.Add(this.panelSubMenu);
             this.panelMenu.Controls.Add(this.panelAgendamento);
             this.panelMenu.Controls.Add(this.panelSelecao);
@@ -114,6 +116,17 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(164, 690);
             this.panelMenu.TabIndex = 0;
+            // 
+            // bttTemporario
+            // 
+            this.bttTemporario.Location = new System.Drawing.Point(44, 52);
+            this.bttTemporario.Name = "bttTemporario";
+            this.bttTemporario.Size = new System.Drawing.Size(75, 23);
+            this.bttTemporario.TabIndex = 8;
+            this.bttTemporario.Text = "button1";
+            this.bttTemporario.UseVisualStyleBackColor = true;
+            this.bttTemporario.Visible = false;
+            this.bttTemporario.Click += new System.EventHandler(this.bttTemporario_Click);
             // 
             // panelSubMenu
             // 
@@ -727,5 +740,6 @@
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button bttOpcao5;
         private System.Windows.Forms.Button bttOpcao4;
+        private System.Windows.Forms.Button bttTemporario;
     }
 }

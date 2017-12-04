@@ -194,5 +194,17 @@ namespace Buffet.CV
                 MessageBox.Show("Este Campo aceita apenas Numeros!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void FormJuridico_VisibleChanged(object sender, EventArgs e)
+        {
+            txtBairroEmpresa.Text = string.Empty;
+            txtCEPEmpresa.Text = string.Empty;
+            txtCidadeEmpresa.Text = string.Empty;
+            txtCNPJ.Text = string.Empty;
+            txtEstadoEmpresa.Text = string.Empty;
+            txtNomeEmpresa.Text = string.Empty;
+            txtNumeroEmpresa.Text = string.Empty;
+            txtRuaEmpresa.Text = string.Empty;
+        }
     }
 }

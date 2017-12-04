@@ -118,6 +118,17 @@ namespace Buffet.CV
             cbEmpresa.DisplayMember = "NomeEmpresa";
             cbEmpresa.ValueMember = "Cnpj";
             cbEmpresa.DataSource = listcj;
+
+            txtCapacidade.Text = string.Empty;
+            txtConvidados.Text = string.Empty;
+            txtCopeiros.Text = string.Empty;
+            txtEmpresa.Text = string.Empty;
+            txtGarcom.Text = string.Empty;
+            txtHorasAntecedencia.Text = string.Empty;
+            txtNomeAniversario.Text = string.Empty;
+            txtPessoaFisica.Text = string.Empty;
+            txtRepresentante.Text = string.Empty;
+
         }
 
         private void FormContratoFísico_FormClosing(object sender, FormClosingEventArgs e)

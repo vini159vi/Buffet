@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormContratoCardapio));
             this.gbItens = new System.Windows.Forms.GroupBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbPratosQuentes = new System.Windows.Forms.GroupBox();
             this.dgvPratosQuentes = new System.Windows.Forms.DataGridView();
             this.ColumnIDPratosQuentes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,8 +69,12 @@
             this.ColumnValorServicos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbTotal = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.RichTextBox();
-            this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttRemover = new System.Windows.Forms.Button();
+            this.bttAdicionar = new System.Windows.Forms.Button();
+            this.cellID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellValorPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.gbPratosQuentes.SuspendLayout();
@@ -96,9 +97,9 @@
             // gbItens
             // 
             this.gbItens.Controls.Add(this.dgvItens);
-            this.gbItens.Location = new System.Drawing.Point(12, 55);
+            this.gbItens.Location = new System.Drawing.Point(6, 55);
             this.gbItens.Name = "gbItens";
-            this.gbItens.Size = new System.Drawing.Size(392, 450);
+            this.gbItens.Size = new System.Drawing.Size(398, 450);
             this.gbItens.TabIndex = 0;
             this.gbItens.TabStop = false;
             this.gbItens.Text = "Itens";
@@ -113,9 +114,10 @@
             this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnID,
-            this.ColumnNome,
-            this.ColumnValor});
+            this.cellID,
+            this.cellNome,
+            this.cellValorPessoa,
+            this.cellTipo});
             this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvItens.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgvItens.Location = new System.Drawing.Point(3, 16);
@@ -123,33 +125,15 @@
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersVisible = false;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(386, 431);
+            this.dgvItens.Size = new System.Drawing.Size(392, 431);
             this.dgvItens.TabIndex = 0;
-            // 
-            // ColumnID
-            // 
-            this.ColumnID.HeaderText = "ID";
-            this.ColumnID.Name = "ColumnID";
-            this.ColumnID.ReadOnly = true;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            // 
-            // ColumnValor
-            // 
-            this.ColumnValor.HeaderText = "Valor por Cabeça";
-            this.ColumnValor.Name = "ColumnValor";
-            this.ColumnValor.ReadOnly = true;
             // 
             // gbPratosQuentes
             // 
             this.gbPratosQuentes.Controls.Add(this.dgvPratosQuentes);
             this.gbPratosQuentes.Location = new System.Drawing.Point(444, 55);
             this.gbPratosQuentes.Name = "gbPratosQuentes";
-            this.gbPratosQuentes.Size = new System.Drawing.Size(392, 90);
+            this.gbPratosQuentes.Size = new System.Drawing.Size(412, 90);
             this.gbPratosQuentes.TabIndex = 1;
             this.gbPratosQuentes.TabStop = false;
             this.gbPratosQuentes.Text = "Pratos Quentes";
@@ -174,7 +158,7 @@
             this.dgvPratosQuentes.ReadOnly = true;
             this.dgvPratosQuentes.RowHeadersVisible = false;
             this.dgvPratosQuentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPratosQuentes.Size = new System.Drawing.Size(386, 71);
+            this.dgvPratosQuentes.Size = new System.Drawing.Size(406, 71);
             this.dgvPratosQuentes.TabIndex = 1;
             // 
             // ColumnIDPratosQuentes
@@ -200,9 +184,9 @@
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbBotoes.Controls.Add(this.bttGerarContrato);
             this.gbBotoes.Controls.Add(this.bttCancelar);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 603);
+            this.gbBotoes.Location = new System.Drawing.Point(6, 603);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(836, 75);
+            this.gbBotoes.Size = new System.Drawing.Size(842, 75);
             this.gbBotoes.TabIndex = 5;
             this.gbBotoes.TabStop = false;
             // 
@@ -270,7 +254,7 @@
             this.gbSaladas.Controls.Add(this.dgvSaladas);
             this.gbSaladas.Location = new System.Drawing.Point(444, 144);
             this.gbSaladas.Name = "gbSaladas";
-            this.gbSaladas.Size = new System.Drawing.Size(392, 90);
+            this.gbSaladas.Size = new System.Drawing.Size(412, 90);
             this.gbSaladas.TabIndex = 2;
             this.gbSaladas.TabStop = false;
             this.gbSaladas.Text = "Mesa de Saladas";
@@ -295,7 +279,7 @@
             this.dgvSaladas.ReadOnly = true;
             this.dgvSaladas.RowHeadersVisible = false;
             this.dgvSaladas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSaladas.Size = new System.Drawing.Size(386, 71);
+            this.dgvSaladas.Size = new System.Drawing.Size(406, 71);
             this.dgvSaladas.TabIndex = 1;
             // 
             // ColumnIDSaladas
@@ -321,7 +305,7 @@
             this.gbMesaDeFrutas.Controls.Add(this.dgvFrutas);
             this.gbMesaDeFrutas.Location = new System.Drawing.Point(444, 234);
             this.gbMesaDeFrutas.Name = "gbMesaDeFrutas";
-            this.gbMesaDeFrutas.Size = new System.Drawing.Size(392, 90);
+            this.gbMesaDeFrutas.Size = new System.Drawing.Size(412, 90);
             this.gbMesaDeFrutas.TabIndex = 2;
             this.gbMesaDeFrutas.TabStop = false;
             this.gbMesaDeFrutas.Text = "Mesa De Frutas";
@@ -346,7 +330,7 @@
             this.dgvFrutas.ReadOnly = true;
             this.dgvFrutas.RowHeadersVisible = false;
             this.dgvFrutas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFrutas.Size = new System.Drawing.Size(386, 71);
+            this.dgvFrutas.Size = new System.Drawing.Size(406, 71);
             this.dgvFrutas.TabIndex = 1;
             // 
             // ColumnIDFrutas
@@ -372,7 +356,7 @@
             this.gbMesaFrios.Controls.Add(this.dgvFrios);
             this.gbMesaFrios.Location = new System.Drawing.Point(444, 325);
             this.gbMesaFrios.Name = "gbMesaFrios";
-            this.gbMesaFrios.Size = new System.Drawing.Size(392, 90);
+            this.gbMesaFrios.Size = new System.Drawing.Size(412, 90);
             this.gbMesaFrios.TabIndex = 3;
             this.gbMesaFrios.TabStop = false;
             this.gbMesaFrios.Text = "Mesa de Frios";
@@ -397,7 +381,7 @@
             this.dgvFrios.ReadOnly = true;
             this.dgvFrios.RowHeadersVisible = false;
             this.dgvFrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFrios.Size = new System.Drawing.Size(386, 71);
+            this.dgvFrios.Size = new System.Drawing.Size(406, 71);
             this.dgvFrios.TabIndex = 1;
             // 
             // ColumnIDFrios
@@ -423,7 +407,7 @@
             this.gbBebidas.Controls.Add(this.dgvBebidas);
             this.gbBebidas.Location = new System.Drawing.Point(444, 415);
             this.gbBebidas.Name = "gbBebidas";
-            this.gbBebidas.Size = new System.Drawing.Size(392, 90);
+            this.gbBebidas.Size = new System.Drawing.Size(412, 90);
             this.gbBebidas.TabIndex = 4;
             this.gbBebidas.TabStop = false;
             this.gbBebidas.Text = "Bebidas";
@@ -448,7 +432,7 @@
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(386, 71);
+            this.dgvBebidas.Size = new System.Drawing.Size(406, 71);
             this.dgvBebidas.TabIndex = 1;
             // 
             // ColumnIDBebidas
@@ -474,7 +458,7 @@
             this.gbServicos.Controls.Add(this.dgvServicos);
             this.gbServicos.Location = new System.Drawing.Point(444, 506);
             this.gbServicos.Name = "gbServicos";
-            this.gbServicos.Size = new System.Drawing.Size(392, 90);
+            this.gbServicos.Size = new System.Drawing.Size(412, 90);
             this.gbServicos.TabIndex = 4;
             this.gbServicos.TabStop = false;
             this.gbServicos.Text = "Serviços";
@@ -499,7 +483,7 @@
             this.dgvServicos.ReadOnly = true;
             this.dgvServicos.RowHeadersVisible = false;
             this.dgvServicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvServicos.Size = new System.Drawing.Size(386, 71);
+            this.dgvServicos.Size = new System.Drawing.Size(406, 71);
             this.dgvServicos.TabIndex = 1;
             // 
             // ColumnIDServicos
@@ -523,9 +507,9 @@
             // gbTotal
             // 
             this.gbTotal.Controls.Add(this.txtTotal);
-            this.gbTotal.Location = new System.Drawing.Point(12, 506);
+            this.gbTotal.Location = new System.Drawing.Point(6, 506);
             this.gbTotal.Name = "gbTotal";
-            this.gbTotal.Size = new System.Drawing.Size(392, 90);
+            this.gbTotal.Size = new System.Drawing.Size(398, 90);
             this.gbTotal.TabIndex = 5;
             this.gbTotal.TabStop = false;
             this.gbTotal.Text = "Total";
@@ -540,9 +524,21 @@
             this.txtTotal.Multiline = false;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(386, 71);
+            this.txtTotal.Size = new System.Drawing.Size(392, 71);
             this.txtTotal.TabIndex = 0;
             this.txtTotal.Text = "R$:";
+            // 
+            // bttRemover
+            // 
+            this.bttRemover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bttRemover.BackgroundImage")));
+            this.bttRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bttRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttRemover.Location = new System.Drawing.Point(407, 352);
+            this.bttRemover.Name = "bttRemover";
+            this.bttRemover.Size = new System.Drawing.Size(34, 34);
+            this.bttRemover.TabIndex = 8;
+            this.bttRemover.UseVisualStyleBackColor = true;
+            this.bttRemover.Click += new System.EventHandler(this.bttRemover_Click);
             // 
             // bttAdicionar
             // 
@@ -556,17 +552,29 @@
             this.bttAdicionar.UseVisualStyleBackColor = true;
             this.bttAdicionar.Click += new System.EventHandler(this.bttAdicionar_Click);
             // 
-            // bttRemover
+            // cellID
             // 
-            this.bttRemover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bttRemover.BackgroundImage")));
-            this.bttRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bttRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttRemover.Location = new System.Drawing.Point(407, 352);
-            this.bttRemover.Name = "bttRemover";
-            this.bttRemover.Size = new System.Drawing.Size(34, 34);
-            this.bttRemover.TabIndex = 8;
-            this.bttRemover.UseVisualStyleBackColor = true;
-            this.bttRemover.Click += new System.EventHandler(this.bttRemover_Click);
+            this.cellID.HeaderText = "ID";
+            this.cellID.Name = "cellID";
+            this.cellID.ReadOnly = true;
+            // 
+            // cellNome
+            // 
+            this.cellNome.HeaderText = "Nome";
+            this.cellNome.Name = "cellNome";
+            this.cellNome.ReadOnly = true;
+            // 
+            // cellValorPessoa
+            // 
+            this.cellValorPessoa.HeaderText = "Valor por Cabeça";
+            this.cellValorPessoa.Name = "cellValorPessoa";
+            this.cellValorPessoa.ReadOnly = true;
+            // 
+            // cellTipo
+            // 
+            this.cellTipo.HeaderText = "Tipo";
+            this.cellTipo.Name = "cellTipo";
+            this.cellTipo.ReadOnly = true;
             // 
             // FormContratoCardapio
             // 
@@ -629,9 +637,6 @@
         private System.Windows.Forms.GroupBox gbServicos;
         private System.Windows.Forms.GroupBox gbTotal;
         private System.Windows.Forms.RichTextBox txtTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
         private System.Windows.Forms.DataGridView dgvPratosQuentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDPratosQuentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNomePratosQuentes;
@@ -658,5 +663,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValorServicos;
         private System.Windows.Forms.Button bttAdicionar;
         private System.Windows.Forms.Button bttRemover;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cellID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cellNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cellValorPessoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cellTipo;
     }
 }

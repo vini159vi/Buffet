@@ -270,6 +270,7 @@
             this.Text = "Juridico";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormJuridico_FormClosing);
+            this.VisibleChanged += new System.EventHandler(this.FormJuridico_VisibleChanged);
             this.gbEmpresa.ResumeLayout(false);
             this.gbEmpresa.PerformLayout();
             this.gbBotoes.ResumeLayout(false);

@@ -212,6 +212,22 @@ namespace Buffet.CV
         private void FormRepresentante_VisibleChanged(object sender, EventArgs e)
         {
             UpdateComboBox();
+
+            txtBairroRepresentante.Text = string.Empty;
+            txtCelular.Text = string.Empty;
+            txtCEPRepresentante.Text = string.Empty;
+            txtCidadeRepresentante.Text = string.Empty;
+            txtCPFRepresentante.Text = string.Empty;
+            txtEmpresaView.Text = string.Empty;
+            txtEstadoCivil.Text = string.Empty;
+            txtEstadoRepresentante.Text = string.Empty;
+            txtNacionalidade.Text = string.Empty;
+            txtNomeRepresentante.Text = string.Empty;
+            txtNumeroRepresentante.Text = string.Empty;
+            txtProfissao.Text = string.Empty;
+            txtRG.Text = string.Empty;
+            txtRuaRepresentante.Text = string.Empty;
+            txtTelefone.Text = string.Empty;
         }
 
         private void cbEmpresaBusca_keyPress(object sender, KeyPressEventArgs e)

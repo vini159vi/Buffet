@@ -12,41 +12,12 @@ using System.Windows.Forms;
 
 namespace Buffet.CV
 {
-    public partial class FormContratoCardapio : Form
+    public partial class FormControleItens : Form
     {
-        public FormContratoCardapio()
+        public FormControleItens()
         {
             InitializeComponent();
-        }
-
-        private void radioBttTipo1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioBttTipo2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttAdicionar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttRemover_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttGerarContrato_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttCancelar_Click(object sender, EventArgs e)
-        {
-
+            Fill();
         }
 
         private void Fill()
@@ -60,8 +31,7 @@ namespace Buffet.CV
                 dgvItens.Rows[index].Cells["cellID"].Value = i.Id;
                 dgvItens.Rows[index].Cells["cellNome"].Value = i.Nome;
                 dgvItens.Rows[index].Cells["cellValorPessoa"].Value = i.ValorCabeca;
-                switch (i.Tipo)
-                {
+                switch(i.Tipo){
                     case 0:
                         dgvItens.Rows[index].Cells["cellTipo"].Value = "Pratos Quentes";
                         break;
@@ -82,6 +52,30 @@ namespace Buffet.CV
                         break;
                 }
             }
+        }
+
+        private void bttRemove_Click(object sender, EventArgs e)
+        {
+            int index = dgvItens.CurrentCell.RowIndex;
+            ItemDAO iDAO = new ItemDAO();
+
+            iDAO.Delete(int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString()));
+            Fill();
+        }
+
+        private void bttEditar_Click(object sender, EventArgs e)
+        {
+            int index = dgvItens.CurrentCell.RowIndex;
+        }
+
+        private void bttFechar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void FormControleItens_VisibleChanged(object sender, EventArgs e)
+        {
+            Fill();
         }
     }
 }

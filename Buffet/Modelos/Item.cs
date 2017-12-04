@@ -20,6 +20,10 @@ namespace Buffet.Modelos
             this.ValorCabeca = valorCabeca;
         }
 
+        public Item()
+        {
+
+        }
         public int Id
         {
             get

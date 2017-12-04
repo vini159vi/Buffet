@@ -37,16 +37,16 @@
             this.lbID = new System.Windows.Forms.Label();
             this.gbLista = new System.Windows.Forms.Panel();
             this.dataGViewLista = new System.Windows.Forms.DataGridView();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.bttFechar = new System.Windows.Forms.Button();
-            this.bttEditar = new System.Windows.Forms.Button();
-            this.bttRemove = new System.Windows.Forms.Button();
             this.cellID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellNomeEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellDataEvento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CellNotaFiscal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.bttFechar = new System.Windows.Forms.Button();
+            this.bttEditar = new System.Windows.Forms.Button();
+            this.bttRemove = new System.Windows.Forms.Button();
             this.gbFiltrar.SuspendLayout();
             this.gbLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGViewLista)).BeginInit();
@@ -176,48 +176,6 @@
             this.dataGViewLista.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGViewLista_CellMouseDoubleClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
             // 
-            // gbBotoes
-            // 
-            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.gbBotoes.Controls.Add(this.bttFechar);
-            this.gbBotoes.Controls.Add(this.bttEditar);
-            this.gbBotoes.Controls.Add(this.bttRemove);
-            this.gbBotoes.Location = new System.Drawing.Point(-58, 587);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(960, 74);
-            this.gbBotoes.TabIndex = 1;
-            this.gbBotoes.TabStop = false;
-            // 
-            // bttFechar
-            // 
-            this.bttFechar.Location = new System.Drawing.Point(745, 16);
-            this.bttFechar.Name = "bttFechar";
-            this.bttFechar.Size = new System.Drawing.Size(125, 43);
-            this.bttFechar.TabIndex = 2;
-            this.bttFechar.Text = "Fechar";
-            this.bttFechar.UseVisualStyleBackColor = true;
-            this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
-            // 
-            // bttEditar
-            // 
-            this.bttEditar.Location = new System.Drawing.Point(416, 16);
-            this.bttEditar.Name = "bttEditar";
-            this.bttEditar.Size = new System.Drawing.Size(125, 43);
-            this.bttEditar.TabIndex = 1;
-            this.bttEditar.Text = "Editar";
-            this.bttEditar.UseVisualStyleBackColor = true;
-            this.bttEditar.Click += new System.EventHandler(this.bttEditar_Click);
-            // 
-            // bttRemove
-            // 
-            this.bttRemove.Location = new System.Drawing.Point(79, 16);
-            this.bttRemove.Name = "bttRemove";
-            this.bttRemove.Size = new System.Drawing.Size(125, 43);
-            this.bttRemove.TabIndex = 0;
-            this.bttRemove.Text = "Remover";
-            this.bttRemove.UseVisualStyleBackColor = true;
-            this.bttRemove.Click += new System.EventHandler(this.bttRemove_Click);
-            // 
             // cellID
             // 
             this.cellID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -258,6 +216,51 @@
             this.CellNotaFiscal.HeaderText = "Nota Fiscal";
             this.CellNotaFiscal.Name = "CellNotaFiscal";
             this.CellNotaFiscal.ReadOnly = true;
+            // 
+            // gbBotoes
+            // 
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.gbBotoes.Controls.Add(this.bttFechar);
+            this.gbBotoes.Controls.Add(this.bttEditar);
+            this.gbBotoes.Controls.Add(this.bttRemove);
+            this.gbBotoes.Location = new System.Drawing.Point(-58, 587);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(960, 74);
+            this.gbBotoes.TabIndex = 1;
+            this.gbBotoes.TabStop = false;
+            // 
+            // bttFechar
+            // 
+            this.bttFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttFechar.Location = new System.Drawing.Point(745, 16);
+            this.bttFechar.Name = "bttFechar";
+            this.bttFechar.Size = new System.Drawing.Size(125, 43);
+            this.bttFechar.TabIndex = 2;
+            this.bttFechar.Text = "Fechar";
+            this.bttFechar.UseVisualStyleBackColor = true;
+            this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
+            // 
+            // bttEditar
+            // 
+            this.bttEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttEditar.Location = new System.Drawing.Point(416, 16);
+            this.bttEditar.Name = "bttEditar";
+            this.bttEditar.Size = new System.Drawing.Size(125, 43);
+            this.bttEditar.TabIndex = 1;
+            this.bttEditar.Text = "Editar";
+            this.bttEditar.UseVisualStyleBackColor = true;
+            this.bttEditar.Click += new System.EventHandler(this.bttEditar_Click);
+            // 
+            // bttRemove
+            // 
+            this.bttRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttRemove.Location = new System.Drawing.Point(79, 16);
+            this.bttRemove.Name = "bttRemove";
+            this.bttRemove.Size = new System.Drawing.Size(125, 43);
+            this.bttRemove.TabIndex = 0;
+            this.bttRemove.Text = "Remover";
+            this.bttRemove.UseVisualStyleBackColor = true;
+            this.bttRemove.Click += new System.EventHandler(this.bttRemove_Click);
             // 
             // FormContratos
             // 

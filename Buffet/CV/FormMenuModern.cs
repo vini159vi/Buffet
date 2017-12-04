@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Buffet.CV
 {
@@ -22,6 +24,9 @@ namespace Buffet.CV
         private FormAgenda fa = new FormAgenda();
         private FormContratoFísico fcf = new FormContratoFísico();
         private FormContratos fcontratos = new FormContratos();
+        private FormCadastroItem fci = new FormCadastroItem();
+        private FormCardapio fCardapio = new FormCardapio();
+        private FormControleItens fcItens = new FormControleItens();
 
         public FormMenuModern()
         {
@@ -188,6 +193,11 @@ namespace Buffet.CV
             LocalizacaoNova(panelCardapio.Location.Y);
             timerSelecao.Enabled = true;
             timerSelecao.Start();
+
+            opcaoCardapio();
+            panelSubMenu.Visible = true;
+            timerSubMenuOut.Enabled = true;
+            timerSubMenuOut.Start();
         }
         private void panelRelatorio_MouseClick(object sender, MouseEventArgs e)
         {
@@ -370,6 +380,7 @@ namespace Buffet.CV
             {
                 fj.TopLevel = false;
                 panelWorkstation.Controls.Add(fj);
+                fj.Refresh();
                 fj.Show();
             }
 
@@ -389,6 +400,7 @@ namespace Buffet.CV
             {
                 fcf.TopLevel = false;
                 panelWorkstation.Controls.Add(fcf);
+                fcf.Refresh();
                 fcf.Show();
             }
 
@@ -408,6 +420,7 @@ namespace Buffet.CV
             {
                 fcontratos.TopLevel = false;
                 panelWorkstation.Controls.Add(fcontratos);
+                fcontratos.Refresh();
                 fcontratos.Show();
             }
 
@@ -427,10 +440,74 @@ namespace Buffet.CV
             {
                 fr.TopLevel = false;
                 panelWorkstation.Controls.Add(fr);
+                fr.Refresh();
                 fr.Show();
             }
 
             bttOpcao3.Click -= new EventHandler(CadastroRepresentante_Click);
+            timerSubMenuIn.Enabled = true;
+            timerSubMenuIn.Start();
+
+        }
+
+        private void CadastroItem_Click(object sender, EventArgs e)
+        {
+            FecharTelas();
+            LocalizacaoNova(bttOpcao1.Location.Y);
+            timerSelecao2.Enabled = true;
+            timerSelecao2.Start();
+
+            if (!fci.Visible)
+            {
+                fci.TopLevel = false;
+                panelWorkstation.Controls.Add(fci);
+                fci.Refresh();
+                fci.Show();
+            }
+
+            bttOpcao1.Click -= new EventHandler(CadastroItem_Click);
+            timerSubMenuIn.Enabled = true;
+            timerSubMenuIn.Start();
+
+        }
+
+        private void Cardapio_Click(object sender, EventArgs e)
+        {
+            FecharTelas();
+            LocalizacaoNova(bttOpcao3.Location.Y);
+            timerSelecao2.Enabled = true;
+            timerSelecao2.Start();
+
+            if (!fCardapio.Visible)
+            {
+                fCardapio.TopLevel = false;
+                panelWorkstation.Controls.Add(fCardapio);
+                fCardapio.Refresh();
+                fCardapio.Show();
+            }
+
+            bttOpcao3.Click -= new EventHandler(Cardapio_Click);
+            timerSubMenuIn.Enabled = true;
+            timerSubMenuIn.Start();
+
+        }
+
+        private void ControleItens_Click(object sender, EventArgs e)
+        {
+            FecharTelas();
+            LocalizacaoNova(bttOpcao2.Location.Y);
+            timerSelecao2.Enabled = true;
+            timerSelecao2.Start();
+
+            if (!fcItens.Visible)
+            {
+                fcItens.TopLevel = false;
+                panelWorkstation.Controls.Add(fcItens);
+                fcItens.Refresh();
+                fcItens.Show();
+            }
+
+            bttOpcao2.Click -= new EventHandler(ControleItens_Click);
             timerSubMenuIn.Enabled = true;
             timerSubMenuIn.Start();
 
@@ -462,7 +539,18 @@ namespace Buffet.CV
 
         private void opcaoCardapio()
         {
+            bttOpcao1.Text = "Cadastrar um item";
+            bttOpcao2.Text = "Ver itens";
+            bttOpcao3.Text = "Gerenciar Cardapio";
+            bttOpcao3.Visible = true;
+            bttOpcao4.Visible = false;
+            bttOpcao5.Visible = false;
 
+            lblOpcao.Text = "Cardapio";
+
+            bttOpcao1.Click += new EventHandler(CadastroItem_Click);
+            bttOpcao2.Click += new EventHandler(ControleItens_Click);
+            bttOpcao3.Click += new EventHandler(Cardapio_Click);
         }
 
         private void opcaoRelatorio()
@@ -514,6 +602,22 @@ namespace Buffet.CV
             {
                 fcontratos.Hide();
             }
+
+            if (fci.Visible)
+            {
+                fci.Hide();
+            }
+
+            if (fCardapio.Visible)
+            {
+                fCardapio.Hide();
+            }
+
+            if (fcItens.Visible)
+            {
+                fcItens.Hide();
+            }
+
         }
 
 
@@ -543,6 +647,32 @@ namespace Buffet.CV
             {
                 fcf.WindowState = FormWindowState.Normal;
             }
+
+            if (fcontratos.Visible)
+            {
+                fcontratos.WindowState = FormWindowState.Normal;
+            }
+
+            if (fci.Visible)
+            {
+                fci.WindowState = FormWindowState.Normal;
+            }
+
+            if (fCardapio.Visible)
+            {
+                fCardapio.WindowState = FormWindowState.Normal;
+            }
+
+            if (fcItens.Visible)
+            {
+                fcItens.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void bttTemporario_Click(object sender, EventArgs e)
+        {
+            FormTemporario temporario = new FormTemporario();
+            temporario.Show();
         }
 
         private void StateMaximized()
@@ -571,6 +701,27 @@ namespace Buffet.CV
             {
                 fcf.WindowState = FormWindowState.Maximized;
             }
+
+            if (fcontratos.Visible)
+            {
+                fcontratos.WindowState = FormWindowState.Maximized;
+            }
+
+            if (fci.Visible)
+            {
+                fci.WindowState = FormWindowState.Maximized;
+            }
+
+            if (fCardapio.Visible)
+            {
+                fCardapio.WindowState = FormWindowState.Maximized;
+            }
+
+            if (fcItens.Visible)
+            {
+                fcItens.WindowState = FormWindowState.Maximized;
+            }
         }
+
     }
 }

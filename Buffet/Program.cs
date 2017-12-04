@@ -19,5 +19,7 @@ namespace Buffet
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMenuModern());
         }
+
+
     }
 }
