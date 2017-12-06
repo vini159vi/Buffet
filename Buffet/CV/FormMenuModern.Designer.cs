@@ -47,9 +47,6 @@
             this.lblAgenda = new System.Windows.Forms.Label();
             this.panelSelecao = new System.Windows.Forms.Panel();
             this.bttMenu = new System.Windows.Forms.Button();
-            this.panelRelatorio = new System.Windows.Forms.Panel();
-            this.lblRelatorio = new System.Windows.Forms.Label();
-            this.pbRelatorio = new System.Windows.Forms.PictureBox();
             this.panelConsulta = new System.Windows.Forms.Panel();
             this.lblConsulta = new System.Windows.Forms.Label();
             this.pbConsulta = new System.Windows.Forms.PictureBox();
@@ -78,8 +75,6 @@
             this.panelSubMenu.SuspendLayout();
             this.panelAgendamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgenda)).BeginInit();
-            this.panelRelatorio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRelatorio)).BeginInit();
             this.panelConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbConsulta)).BeginInit();
             this.panelContrato.SuspendLayout();
@@ -104,7 +99,6 @@
             this.panelMenu.Controls.Add(this.panelAgendamento);
             this.panelMenu.Controls.Add(this.panelSelecao);
             this.panelMenu.Controls.Add(this.bttMenu);
-            this.panelMenu.Controls.Add(this.panelRelatorio);
             this.panelMenu.Controls.Add(this.panelConsulta);
             this.panelMenu.Controls.Add(this.panelContrato);
             this.panelMenu.Controls.Add(this.panelCadastro);
@@ -298,48 +292,6 @@
             this.bttMenu.UseVisualStyleBackColor = true;
             this.bttMenu.Visible = false;
             this.bttMenu.Click += new System.EventHandler(this.bttMenu_Click_1);
-            // 
-            // panelRelatorio
-            // 
-            this.panelRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelRelatorio.Controls.Add(this.lblRelatorio);
-            this.panelRelatorio.Controls.Add(this.pbRelatorio);
-            this.panelRelatorio.Location = new System.Drawing.Point(8, 600);
-            this.panelRelatorio.Name = "panelRelatorio";
-            this.panelRelatorio.Size = new System.Drawing.Size(154, 47);
-            this.panelRelatorio.TabIndex = 5;
-            this.panelRelatorio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelRelatorio_MouseClick);
-            this.panelRelatorio.MouseLeave += new System.EventHandler(this.panelRelatorio_MouseLeave);
-            this.panelRelatorio.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelRelatorio_MouseMove);
-            // 
-            // lblRelatorio
-            // 
-            this.lblRelatorio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblRelatorio.AutoSize = true;
-            this.lblRelatorio.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRelatorio.ForeColor = System.Drawing.Color.White;
-            this.lblRelatorio.Location = new System.Drawing.Point(52, 10);
-            this.lblRelatorio.Name = "lblRelatorio";
-            this.lblRelatorio.Size = new System.Drawing.Size(102, 29);
-            this.lblRelatorio.TabIndex = 15;
-            this.lblRelatorio.Text = "Relatório";
-            this.lblRelatorio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelRelatorio_MouseClick);
-            this.lblRelatorio.MouseLeave += new System.EventHandler(this.panelRelatorio_MouseLeave);
-            this.lblRelatorio.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelRelatorio_MouseMove);
-            // 
-            // pbRelatorio
-            // 
-            this.pbRelatorio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pbRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("pbRelatorio.Image")));
-            this.pbRelatorio.Location = new System.Drawing.Point(-7, 0);
-            this.pbRelatorio.Name = "pbRelatorio";
-            this.pbRelatorio.Size = new System.Drawing.Size(52, 47);
-            this.pbRelatorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRelatorio.TabIndex = 13;
-            this.pbRelatorio.TabStop = false;
-            this.pbRelatorio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelRelatorio_MouseClick);
-            this.pbRelatorio.MouseLeave += new System.EventHandler(this.panelRelatorio_MouseLeave);
-            this.pbRelatorio.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelRelatorio_MouseMove);
             // 
             // panelConsulta
             // 
@@ -661,9 +613,6 @@
             this.panelAgendamento.ResumeLayout(false);
             this.panelAgendamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAgenda)).EndInit();
-            this.panelRelatorio.ResumeLayout(false);
-            this.panelRelatorio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRelatorio)).EndInit();
             this.panelConsulta.ResumeLayout(false);
             this.panelConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbConsulta)).EndInit();
@@ -690,7 +639,6 @@
         private System.Windows.Forms.Panel panelAgendamento;
         private System.Windows.Forms.Panel topPage;
         private System.Windows.Forms.Panel panelContrato;
-        private System.Windows.Forms.Panel panelRelatorio;
         private System.Windows.Forms.Panel panelConsulta;
         private System.Windows.Forms.Panel panelCardapio;
         private System.Windows.Forms.Timer timerSlideOutBarra;
@@ -699,8 +647,6 @@
         private System.Windows.Forms.PictureBox pbContrato;
         private System.Windows.Forms.PictureBox pbCadastro;
         private System.Windows.Forms.PictureBox pbAgenda;
-        private System.Windows.Forms.Label lblRelatorio;
-        private System.Windows.Forms.PictureBox pbRelatorio;
         private System.Windows.Forms.Label lblConsulta;
         private System.Windows.Forms.PictureBox pbConsulta;
         private System.Windows.Forms.Label lblCardapio;

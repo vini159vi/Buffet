@@ -20,6 +20,7 @@ namespace Buffet.CV
         private ClienteFisico cf = new ClienteFisico();
         private ClienteJuridico cj = null;
 
+        private int selecionada=0;
         private long cpf, cnpj;
         private int check, contrato;
         public FormContratoCardapio()
@@ -73,69 +74,177 @@ namespace Buffet.CV
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
+            
             ItemDAO iDAO = new ItemDAO();
-            int index = dgvItens.CurrentCell.RowIndex;
             string nome, tipo;
             double valor;
-            int id;
-
-            id = int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString());
-            tipo = dgvItens.Rows[index].Cells["cellTipo"].Value.ToString();
-            valor = double.Parse(dgvItens.Rows[index].Cells["cellValorPessoa"].Value.ToString());
-            nome = dgvItens.Rows[index].Cells["cellNome"].Value.ToString();
-
-            switch (tipo)
+            int id,aux=0;
+            try
             {
-                case "Pratos Quentes":
-                    int indexPQuentes = dgvPratosQuentes.Rows.Add();
-                    dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnIDPratosQuentes"].Value = id;
-                    dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnNomePratosQuentes"].Value = nome;
-                    dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnValorPratosQuentes"].Value = valor;
-                    dgvItens.Rows.RemoveAt(index);
-                    break;
-                case "Salada":
-                    int indexSaladas = dgvSaladas.Rows.Add();
-                    dgvSaladas.Rows[indexSaladas].Cells["ColumnIDSaladas"].Value = id;
-                    dgvSaladas.Rows[indexSaladas].Cells["ColumnNomeSaladas"].Value = nome;
-                    dgvSaladas.Rows[indexSaladas].Cells["ColumnValorSaladas"].Value = valor;
-                    dgvItens.Rows.RemoveAt(index);
-                    break;
-                case "Fruta":
-                    int indexFrutas = dgvFrutas.Rows.Add();
-                    dgvFrutas.Rows[indexFrutas].Cells["ColumnIDFrutas"].Value = id;
-                    dgvFrutas.Rows[indexFrutas].Cells["ColumnNomeFrutas"].Value = nome;
-                    dgvFrutas.Rows[indexFrutas].Cells["ColumnValorFrutas"].Value = valor;
-                    dgvItens.Rows.RemoveAt(index);
-                    break;
-                case "Frios":
-                    int indexFrios = dgvFrios.Rows.Add();
-                    dgvFrios.Rows[indexFrios].Cells["ColumnIDFrios"].Value = id;
-                    dgvFrios.Rows[indexFrios].Cells["ColumnNomeFrios"].Value = nome;
-                    dgvFrios.Rows[indexFrios].Cells["ColumnValorFrios"].Value = valor;
-                    dgvItens.Rows.RemoveAt(index);
-                    break;
-                case "Bebida":
-                    int indexBebidas = dgvBebidas.Rows.Add();
-                    dgvBebidas.Rows[indexBebidas].Cells["ColumnIDBebidas"].Value = id;
-                    dgvBebidas.Rows[indexBebidas].Cells["ColumnNomeBebidas"].Value = nome;
-                    dgvBebidas.Rows[indexBebidas].Cells["ColumnValorBebidas"].Value = valor;
-                    dgvItens.Rows.RemoveAt(index);
-                    break;
-                case "Serviço":
-                    int indexServicos = dgvServicos.Rows.Add();
-                    dgvServicos.Rows[indexServicos].Cells["ColumnIDServicos"].Value = id;
-                    dgvServicos.Rows[indexServicos].Cells["ColumnNomeServicos"].Value = nome;
-                    dgvServicos.Rows[indexServicos].Cells["ColumnValorServicos"].Value = valor;
-                    dgvItens.Rows.RemoveAt(index);
-                    break;
-            }
+                int index = dgvItens.CurrentCell.RowIndex;
+                id = int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString());
+                tipo = dgvItens.Rows[index].Cells["cellTipo"].Value.ToString();
+                valor = double.Parse(dgvItens.Rows[index].Cells["cellValorPessoa"].Value.ToString());
+                nome = dgvItens.Rows[index].Cells["cellNome"].Value.ToString();
+                Console.WriteLine(tipo);
+                Console.WriteLine(nome);
+                Console.WriteLine(id);
+                Console.WriteLine(valor);
 
-            Fill();
+                switch (tipo)
+                {
+                    case "Pratos Quentes":
+                        aux = 0;
+                        break;
+                    case "Salada":
+                        aux = 1;
+                        break;
+                    case "Fruta":
+                        aux = 2;
+                        break;
+                    case "Frios":
+                        aux = 3;
+                        break;
+                    case "Bebida":
+                        aux = 4;
+                        break;
+                    case "Serviço":
+                        aux = 5;
+                        break;
+                }
+
+
+                switch (aux)
+                {
+                    case 0:
+                        int indexPQuentes = dgvPratosQuentes.Rows.Add();
+                        dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnIDPratosQuentes"].Value = id;
+                        dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnNomePratosQuentes"].Value = nome;
+                        dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnValorPratosQuentes"].Value = valor;
+                        dgvItens.Rows.RemoveAt(index);
+                        break;
+                    case 1:
+                        int indexSaladas = dgvSaladas.Rows.Add();
+                        dgvSaladas.Rows[indexSaladas].Cells["ColumnIDSaladas"].Value = id;
+                        dgvSaladas.Rows[indexSaladas].Cells["ColumnNomeSaladas"].Value = nome;
+                        dgvSaladas.Rows[indexSaladas].Cells["ColumnValorSaladas"].Value = valor;
+                        dgvItens.Rows.RemoveAt(index);
+                        break;
+                    case 2:
+                        int indexFrutas = dgvFrutas.Rows.Add();
+                        dgvFrutas.Rows[indexFrutas].Cells["ColumnIDFrutas"].Value = id;
+                        dgvFrutas.Rows[indexFrutas].Cells["ColumnNomeFrutas"].Value = nome;
+                        dgvFrutas.Rows[indexFrutas].Cells["ColumnValorFrutas"].Value = valor;
+                        dgvItens.Rows.RemoveAt(index);
+                        break;
+                    case 3:
+                        int indexFrios = dgvFrios.Rows.Add();
+                        dgvFrios.Rows[indexFrios].Cells["ColumnIDFrios"].Value = id;
+                        dgvFrios.Rows[indexFrios].Cells["ColumnNomeFrios"].Value = nome;
+                        dgvFrios.Rows[indexFrios].Cells["ColumnValorFrios"].Value = valor;
+                        dgvItens.Rows.RemoveAt(index);
+                        break;
+                    case 4:
+                        int indexBebidas = dgvBebidas.Rows.Add();
+                        dgvBebidas.Rows[indexBebidas].Cells["ColumnIDBebidas"].Value = id;
+                        dgvBebidas.Rows[indexBebidas].Cells["ColumnNomeBebidas"].Value = nome;
+                        dgvBebidas.Rows[indexBebidas].Cells["ColumnValorBebidas"].Value = valor;
+                        dgvItens.Rows.RemoveAt(index);
+                        break;
+                    case 5:
+                        int indexServicos = dgvServicos.Rows.Add();
+                        dgvServicos.Rows[indexServicos].Cells["ColumnIDServicos"].Value = id;
+                        dgvServicos.Rows[indexServicos].Cells["ColumnNomeServicos"].Value = nome;
+                        dgvServicos.Rows[indexServicos].Cells["ColumnValorServicos"].Value = valor;
+                        dgvItens.Rows.RemoveAt(index);
+                        break;
+                }
+                txtTotal.Text = String.Format(@"Valor Total:R$:" + Total(c.EventoNConvidados).ToString() + "\nValor por cabeça:R$:" + ValorCabeca(c.EventoNConvidados).ToString());
+                txtTotal.Text.Replace(@"\n", "<br>");
+            }
+            catch
+            {
+                MessageBox.Show("Você não selecionou um produto valido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void bttRemover_Click(object sender, EventArgs e)
         {
+            ItemDAO iDAO = new ItemDAO();
+            int index=0;
+            string nome="", tipo="";
+            double valor=0;
+            int id = 0;
 
+            try
+            {
+                if (selecionada == 0)
+                {
+                    index = dgvPratosQuentes.CurrentCell.RowIndex;
+                    id = int.Parse(dgvPratosQuentes.Rows[index].Cells["ColumnIDPratosQuentes"].Value.ToString());
+                    tipo = "Pratos Quentes";
+                    valor = double.Parse(dgvPratosQuentes.Rows[index].Cells["ColumnValorPratosQuentes"].Value.ToString());
+                    nome = dgvPratosQuentes.Rows[index].Cells["ColumnNomePratosQuentes"].Value.ToString();
+                    dgvPratosQuentes.Rows.RemoveAt(index);
+                }
+                if (selecionada == 1)
+                {
+                    index = dgvSaladas.CurrentCell.RowIndex;
+                    id = int.Parse(dgvSaladas.Rows[index].Cells["ColumnIDSaladas"].Value.ToString());
+                    tipo = "Saladas";
+                    valor = double.Parse(dgvSaladas.Rows[index].Cells["ColumnValorSaladas"].Value.ToString());
+                    nome = dgvSaladas.Rows[index].Cells["ColumnNomeSaladas"].Value.ToString();
+                    dgvSaladas.Rows.RemoveAt(index);
+                }
+                if (selecionada == 2)
+                {
+                    index = dgvFrutas.CurrentCell.RowIndex;
+                    id = int.Parse(dgvFrutas.Rows[index].Cells["ColumnIDFrutas"].Value.ToString());
+                    tipo = "Frutas";
+                    valor = double.Parse(dgvFrutas.Rows[index].Cells["ColumnValorFrutas"].Value.ToString());
+                    nome = dgvFrutas.Rows[index].Cells["ColumnNomeFrutas"].Value.ToString();
+                    dgvFrutas.Rows.RemoveAt(index);
+                }
+                if (selecionada == 3)
+                {
+                    index = dgvFrios.CurrentCell.RowIndex;
+                    id = int.Parse(dgvFrios.Rows[index].Cells["ColumnIDFrios"].Value.ToString());
+                    tipo = "Frios";
+                    valor = double.Parse(dgvFrios.Rows[index].Cells["ColumnValorFrios"].Value.ToString());
+                    nome = dgvFrios.Rows[index].Cells["ColumnNomeFrios"].Value.ToString();
+                    dgvFrios.Rows.RemoveAt(index);
+                }
+                if (selecionada == 4)
+                {
+                    index = dgvBebidas.CurrentCell.RowIndex;
+                    id = int.Parse(dgvBebidas.Rows[index].Cells["ColumnIDBebidas"].Value.ToString());
+                    tipo = "Bebidas";
+                    valor = double.Parse(dgvBebidas.Rows[index].Cells["ColumnValorBebidas"].Value.ToString());
+                    nome = dgvBebidas.Rows[index].Cells["ColumnNomeBebidas"].Value.ToString();
+                    dgvBebidas.Rows.RemoveAt(index);
+                }
+                if (selecionada == 5)
+                {
+                    index = dgvServicos.CurrentCell.RowIndex;
+                    id = int.Parse(dgvServicos.Rows[index].Cells["ColumnIDServicos"].Value.ToString());
+                    tipo = "Serviços";
+                    valor = double.Parse(dgvServicos.Rows[index].Cells["ColumnValorServicos"].Value.ToString());
+                    nome = dgvServicos.Rows[index].Cells["ColumnNomeServicos"].Value.ToString();
+                    dgvServicos.Rows.RemoveAt(index);
+                }
+
+                int indexNovo = dgvItens.Rows.Add();
+                dgvItens.Rows[indexNovo].Cells["cellID"].Value = id;
+                dgvItens.Rows[indexNovo].Cells["cellTipo"].Value = tipo;
+                dgvItens.Rows[indexNovo].Cells["cellValorPessoa"].Value = valor;
+                dgvItens.Rows[indexNovo].Cells["cellNome"].Value = nome;
+            }
+            catch
+            {
+                MessageBox.Show("Você não selecionou um produto valido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            txtTotal.Text = String.Format(@"Valor Total:R$:" + Total(c.EventoNConvidados).ToString() + "\nValor por cabeça:R$:" + ValorCabeca(c.EventoNConvidados).ToString());
+            txtTotal.Text.Replace(@"\n", "<br>");
         }
 
         private void bttGerarContrato_Click(object sender, EventArgs e)
@@ -143,22 +252,23 @@ namespace Buffet.CV
             ContratoDAO cDAO = new ContratoDAO();
             c.ContratadoPrecoPagar = Total(c.EventoNConvidados);
 
-            cDAO.Create(c);
             if (cj == null)
             {
+                cDAO.Create(c);
                 CriarDocumento(c, cf, null, contrato, ValorCabeca(c.EventoNConvidados));
             }
             else
             {
+                cDAO.Create(c);
                 CriarDocumento(c, cf, cj, contrato, ValorCabeca(c.EventoNConvidados));
             }
-
+            this.Hide();
 
         }
 
         private void bttCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
 
         private void Fill()
@@ -449,12 +559,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -496,12 +606,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -543,12 +653,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -589,12 +699,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -656,12 +766,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -710,12 +820,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -765,12 +875,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -819,12 +929,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -873,12 +983,12 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
                             this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
-                            aux = String.Format(AnexoItem(0));
-                            aux2 = String.Format(AnexoItem(1));
-                            aux3 = String.Format(AnexoItem(2));
-                            aux4 = String.Format(AnexoItem(3));
-                            aux5 = String.Format(AnexoItem(4));
-                            aux6 = String.Format(AnexoItem(5));
+                            aux = AnexoItem(0);
+                            aux2 = AnexoItem(1);
+                            aux3 = AnexoItem(2);
+                            aux4 = AnexoItem(3);
+                            aux5 = AnexoItem(4);
+                            aux6 = AnexoItem(5);
 
                             this.Substitui(oDoc, "@pratosQuentesLista", aux);
                             this.Substitui(oDoc, "@saladasLista", aux2);
@@ -926,6 +1036,37 @@ namespace Buffet.CV
             oRng.Find.Execute(ref FindText, ref missing, ref MatchWholeWord, ref missing, ref missing, ref missing, ref Forward,
             ref missing, ref missing, ref ReplaceWith, ref missing, ref missing, ref missing, ref missing, ref missing);
         }
+
+        private void dgvPratosQuentes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selecionada = 0;
+        }
+
+        private void dgvSaladas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selecionada = 1;
+        }
+
+        private void dgvFrutas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selecionada = 2;
+        }
+
+        private void dgvFrios_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selecionada = 3;
+        }
+
+        private void dgvBebidas_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selecionada = 4;
+        }
+
+        private void dgvServicos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selecionada = 5;
+        }
+
         private void SalvarDocumento(Word.Document oDoc, object pessoa)
         {
             ContratoDAO cDAO = new ContratoDAO();
@@ -970,7 +1111,7 @@ namespace Buffet.CV
                 ref missing, ref missing, ref missing, ref missing, ref missing,
                 ref missing, ref missing, ref missing, ref missing, ref missing);
 
-                MessageBox.Show("Documento salvo com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Documento salvo com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
             {
@@ -991,7 +1132,6 @@ namespace Buffet.CV
                     foreach (DataGridViewRow i in dgvPratosQuentes.Rows)
                     {
                         saida = String.Format(saida + "\n" + i.Cells["ColumnNomePratosQuentes"].Value.ToString());
-                        Console.WriteLine(i.Cells["ColumnNomePratosQuentes"].Value.ToString());
                     }
                     break;
                 case 1:
@@ -1003,25 +1143,25 @@ namespace Buffet.CV
                 case 2:
                     foreach (DataGridViewRow i in dgvFrutas.Rows)
                     {
-                        saida += i.Cells["ColumnNomeFrutas"].Value.ToString();
+                        saida = String.Format(saida + "\n" + i.Cells["ColumnNomeFrutas"].Value.ToString());
                     }
                     break;
                 case 3:
                     foreach (DataGridViewRow i in dgvFrios.Rows)
                     {
-                        saida += i.Cells["ColumnNomeFrios"].Value.ToString();
+                        saida = String.Format(saida + "\n" + i.Cells["ColumnNomeFrios"].Value.ToString());
                     }
                     break;
                 case 4:
                     foreach (DataGridViewRow i in dgvBebidas.Rows)
                     {
-                        saida += i.Cells["ColumnNomeBebidas"].Value.ToString();
+                        saida = String.Format(saida + "\n" + i.Cells["ColumnNomeBebidas"].Value.ToString());
                     }
                     break;
                 case 5:
                     foreach (DataGridViewRow i in dgvServicos.Rows)
                     {
-                        saida += i.Cells["ColumnNomeServicos"].Value.ToString();
+                        saida = String.Format(saida + "\n" + i.Cells["ColumnNomeServicos"].Value.ToString());
                     }
                     break;
             }

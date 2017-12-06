@@ -31,40 +31,11 @@ namespace Buffet
 
         private void bttEditar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int index = dataGViewLista.CurrentCell.RowIndex;
 
-            int index = dataGViewLista.CurrentCell.RowIndex;
-
-            if (tipo == 1)
-            {
-                ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
-                ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                FormRepresentante fr = new FormRepresentante(cf, 1);
-                if (!fr.Visible)
-                {
-                    fr.TopLevel = false;
-                    FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
-                    fmm.panelWorkstation.Controls.Add(fr);
-                    fr.Refresh();
-                    fr.Show();
-                }
-            }
-            else if (tipo == 2)
-            {
-                ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-                ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
-                FormJuridico fj = new FormJuridico(cj,1);
-                if (!fj.Visible)
-                {
-                    fj.TopLevel = false;
-                    FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
-                    fmm.panelWorkstation.Controls.Add(fj);
-                    fj.Refresh();
-                    fj.Show();
-                }
-            }
-            else if(tipo == 0)
-            {
-               if(dataGViewLista.Rows[index].Cells[0].Value.ToString() == "Fisico")
+                if (tipo == 1)
                 {
                     ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                     ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
@@ -78,7 +49,7 @@ namespace Buffet
                         fr.Show();
                     }
                 }
-                else
+                else if (tipo == 2)
                 {
                     ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
                     ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
@@ -92,6 +63,41 @@ namespace Buffet
                         fj.Show();
                     }
                 }
+                else if (tipo == 0)
+                {
+                    if (dataGViewLista.Rows[index].Cells[0].Value.ToString() == "Fisico")
+                    {
+                        ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+                        ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
+                        FormRepresentante fr = new FormRepresentante(cf, 1);
+                        if (!fr.Visible)
+                        {
+                            fr.TopLevel = false;
+                            FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                            fmm.panelWorkstation.Controls.Add(fr);
+                            fr.Refresh();
+                            fr.Show();
+                        }
+                    }
+                    else
+                    {
+                        ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+                        ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
+                        FormJuridico fj = new FormJuridico(cj, 1);
+                        if (!fj.Visible)
+                        {
+                            fj.TopLevel = false;
+                            FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                            fmm.panelWorkstation.Controls.Add(fj);
+                            fj.Refresh();
+                            fj.Show();
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Não tem nenhum dado selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

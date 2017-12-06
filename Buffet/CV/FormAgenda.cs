@@ -23,12 +23,19 @@ namespace Buffet.CV
 
         private void dgvAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = dgvAgenda.CurrentCell.RowIndex;
-            if (e.ColumnIndex == dgvAgenda.Columns["ColumnRemove"].Index)
+            try
             {
-                AgendaDAO aDAO = new AgendaDAO();
-                aDAO.Delete(int.Parse(dgvAgenda.Rows[index].Cells[0].Value.ToString()));
-                Fill();
+                int index = dgvAgenda.CurrentCell.RowIndex;
+                if (e.ColumnIndex == dgvAgenda.Columns["ColumnRemove"].Index)
+                {
+                    AgendaDAO aDAO = new AgendaDAO();
+                    aDAO.Delete(int.Parse(dgvAgenda.Rows[index].Cells[0].Value.ToString()));
+                    Fill();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Não tem nenhum dado selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -165,6 +172,11 @@ namespace Buffet.CV
                 e.Handled = true;
                 MessageBox.Show("Este Campo aceita apenas Numeros!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void bttEditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

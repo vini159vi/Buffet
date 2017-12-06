@@ -16,6 +16,7 @@ namespace Buffet.CV
     {
         private int tipo, id;
         private Item i;
+        bool check = false;
         public FormCadastroItem()
         {
             InitializeComponent();
@@ -103,46 +104,54 @@ namespace Buffet.CV
         {
             if (radioBttPratoQuente.Checked)
                 tipo = 0;
+            check = true;
         }
 
         private void radioBttFrios_CheckedChanged(object sender, EventArgs e)
         {
             if (radioBttFrios.Checked)
                 tipo = 3;
+            check = true;
         }
         private void radioBttSalada_CheckedChanged(object sender, EventArgs e)
         {
             if (radioBttSalada.Checked)
                 tipo = 1;
+            check = true;
         }
 
         private void radioBttBebida_CheckedChanged(object sender, EventArgs e)
         {
             if (radioBttBebida.Checked)
                 tipo = 4;
+            check = true;
         }
 
         private void radioBttFrutas_CheckedChanged(object sender, EventArgs e)
         {
             if (radioBttFrutas.Checked)
                 tipo = 2;
+            check = true;
         }
 
         private void radioBttServicos_CheckedChanged(object sender, EventArgs e)
         {
             if (radioBttServicos.Checked)
                 tipo = 5;
+            check = true;
         }
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            if (Verifica())
+            if (Verifica() && check == true)
             {
                 ItemDAO iDAO = new ItemDAO();
                 Item i = GetDTO();
 
                 iDAO.Create(i);
                 Resetar();
+                MessageBox.Show("Item adicionado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
             }
             else
             {

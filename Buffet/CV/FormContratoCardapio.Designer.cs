@@ -184,6 +184,7 @@
             this.dgvPratosQuentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPratosQuentes.Size = new System.Drawing.Size(406, 71);
             this.dgvPratosQuentes.TabIndex = 1;
+            this.dgvPratosQuentes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPratosQuentes_CellMouseClick);
             // 
             // ColumnIDPratosQuentes
             // 
@@ -262,12 +263,10 @@
             // radioBttTipo1
             // 
             this.radioBttTipo1.AutoSize = true;
-            this.radioBttTipo1.Checked = true;
             this.radioBttTipo1.Location = new System.Drawing.Point(23, 20);
             this.radioBttTipo1.Name = "radioBttTipo1";
             this.radioBttTipo1.Size = new System.Drawing.Size(55, 17);
             this.radioBttTipo1.TabIndex = 0;
-            this.radioBttTipo1.TabStop = true;
             this.radioBttTipo1.Text = "Tipo 1";
             this.radioBttTipo1.UseVisualStyleBackColor = true;
             this.radioBttTipo1.CheckedChanged += new System.EventHandler(this.radioBttTipo1_CheckedChanged);
@@ -304,6 +303,7 @@
             this.dgvSaladas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSaladas.Size = new System.Drawing.Size(406, 71);
             this.dgvSaladas.TabIndex = 1;
+            this.dgvSaladas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSaladas_CellMouseClick);
             // 
             // ColumnIDSaladas
             // 
@@ -355,6 +355,7 @@
             this.dgvFrutas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFrutas.Size = new System.Drawing.Size(406, 71);
             this.dgvFrutas.TabIndex = 1;
+            this.dgvFrutas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFrutas_CellMouseClick);
             // 
             // ColumnIDFrutas
             // 
@@ -406,6 +407,7 @@
             this.dgvFrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFrios.Size = new System.Drawing.Size(406, 71);
             this.dgvFrios.TabIndex = 1;
+            this.dgvFrios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFrios_CellMouseClick);
             // 
             // ColumnIDFrios
             // 
@@ -457,6 +459,7 @@
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBebidas.Size = new System.Drawing.Size(406, 71);
             this.dgvBebidas.TabIndex = 1;
+            this.dgvBebidas.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBebidas_CellMouseClick);
             // 
             // ColumnIDBebidas
             // 
@@ -508,6 +511,7 @@
             this.dgvServicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServicos.Size = new System.Drawing.Size(406, 71);
             this.dgvServicos.TabIndex = 1;
+            this.dgvServicos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvServicos_CellMouseClick);
             // 
             // ColumnIDServicos
             // 

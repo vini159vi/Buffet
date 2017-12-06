@@ -182,6 +182,7 @@
             this.txtCapacidade.Size = new System.Drawing.Size(63, 20);
             this.txtCapacidade.TabIndex = 4;
             this.txtCapacidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
+            this.txtCapacidade.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCapacidade_KeyDown);
             // 
             // lbHoraTermino
             // 
@@ -208,6 +209,7 @@
             this.txtConvidados.Size = new System.Drawing.Size(63, 20);
             this.txtConvidados.TabIndex = 3;
             this.txtConvidados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SomenteNumeros);
+            this.txtConvidados.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConvidados_KeyDown);
             // 
             // lbConvidados
             // 
@@ -509,12 +511,10 @@
             // radioBttFisica
             // 
             this.radioBttFisica.AutoSize = true;
-            this.radioBttFisica.Checked = true;
             this.radioBttFisica.Location = new System.Drawing.Point(15, 20);
             this.radioBttFisica.Name = "radioBttFisica";
             this.radioBttFisica.Size = new System.Drawing.Size(90, 17);
             this.radioBttFisica.TabIndex = 0;
-            this.radioBttFisica.TabStop = true;
             this.radioBttFisica.Text = "Pessoa Fisica";
             this.radioBttFisica.UseVisualStyleBackColor = true;
             this.radioBttFisica.CheckedChanged += new System.EventHandler(this.radioBttFisica_CheckedChanged);
@@ -571,12 +571,10 @@
             // radioBttCasamento
             // 
             this.radioBttCasamento.AutoSize = true;
-            this.radioBttCasamento.Checked = true;
             this.radioBttCasamento.Location = new System.Drawing.Point(115, 20);
             this.radioBttCasamento.Name = "radioBttCasamento";
             this.radioBttCasamento.Size = new System.Drawing.Size(78, 17);
             this.radioBttCasamento.TabIndex = 1;
-            this.radioBttCasamento.TabStop = true;
             this.radioBttCasamento.Text = "Casamento";
             this.radioBttCasamento.UseVisualStyleBackColor = true;
             this.radioBttCasamento.CheckedChanged += new System.EventHandler(this.radioBttCasamento_CheckedChanged);

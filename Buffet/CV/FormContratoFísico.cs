@@ -15,7 +15,7 @@ namespace Buffet.CV
     public partial class FormContratoFísico : Form
     {
         int id, tipo, contrato;
-        bool check = false;
+        bool check = false, validaContrato=false, validaCliente=false;
 
         public FormContratoFísico()
         {
@@ -82,7 +82,7 @@ namespace Buffet.CV
 
         private void bttGerarContrato_Click(object sender, EventArgs e)
         {
-            if (Verifica()) {
+            if (Verifica() && validaCliente == true && validaContrato == true) {
                 FormContratos fc = Application.OpenForms["FormContratos"] as FormContratos;
                 FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
                 Contrato c = GetDTO();
@@ -256,6 +256,7 @@ namespace Buffet.CV
                 txtRepresentante.ReadOnly = true;
                 txtPessoaFisica.ReadOnly = false;
                 txtPessoaFisica.Visible = false;
+                validaCliente = true;
             }
         }
 
@@ -273,6 +274,7 @@ namespace Buffet.CV
                 txtRepresentante.ReadOnly = false;
                 txtPessoaFisica.ReadOnly = true;
                 txtPessoaFisica.Visible = true;
+                validaCliente = true;
             }
         }
         private void cbEmpresa_DropDownClosed(object sender, EventArgs e)
@@ -291,18 +293,22 @@ namespace Buffet.CV
         {
             contrato = 0;
             txtNomeAniversario.ReadOnly = false;
+            validaContrato = true;
         }
 
         private void radioBttCasamento_CheckedChanged(object sender, EventArgs e)
         {
             contrato = 1;
+            txtNomeAniversario.Text = string.Empty;
             txtNomeAniversario.ReadOnly = true;
+            validaContrato = true;
         }
 
         private void radioBtt15anos_CheckedChanged(object sender, EventArgs e)
         {
             contrato = 2;
             txtNomeAniversario.ReadOnly = false;
+            validaContrato = true;
         }
 
         private void checkBoxNotaFiscal_CheckedChanged(object sender, EventArgs e)
@@ -322,13 +328,41 @@ namespace Buffet.CV
         private void radioBttEmpresa_CheckedChanged(object sender, EventArgs e)
         {
             contrato = 3;
+            txtNomeAniversario.Text = string.Empty;
             txtNomeAniversario.ReadOnly = true;
+            validaContrato = true;
+        }
+
+        private void txtCapacidade_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtConvidados_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtCapacidade.Text == "")
+            {
+                MessageBox.Show("Digite a capacidade primeiro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtConvidados.Text = string.Empty;
+            }else
+            {
+                if (txtConvidados.Text != "")
+                {
+                    if (int.Parse(txtConvidados.Text) > int.Parse(txtCapacidade.Text))
+                    {
+                        MessageBox.Show("Não pode ter mais convidados do que a capacidade maxima", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtConvidados.Text = string.Empty;
+                    }
+                }
+            }
         }
 
         private void radioBttEventosGerais_CheckedChanged(object sender, EventArgs e)
         {
             contrato = 4;
+            txtNomeAniversario.Text = string.Empty;
             txtNomeAniversario.ReadOnly = true;
+            validaContrato = true;
         }
 
         private void SomenteLetras(object sender, KeyPressEventArgs e)
@@ -354,13 +388,20 @@ namespace Buffet.CV
         {
             if(txtCapacidade.Text != "" && txtConvidados.Text != "" && txtCopeiros.Text != "" && txtGarcom.Text != "" && txtHorasAntecedencia.Text != "")
             {
-                if (txtNomeAniversario.Text == "" && (contrato != 2 || contrato != 0))
+                if ((contrato != 2 || contrato != 0))
                 {
                     return true;
                 }
                 else
                 {
-                    return false;
+                    if(txtNomeAniversario.Text != null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
             else

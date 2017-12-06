@@ -127,9 +127,9 @@
             // bttAdicionar
             // 
             this.bttAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttAdicionar.Location = new System.Drawing.Point(160, 16);
+            this.bttAdicionar.Location = new System.Drawing.Point(121, 15);
             this.bttAdicionar.Name = "bttAdicionar";
-            this.bttAdicionar.Size = new System.Drawing.Size(529, 32);
+            this.bttAdicionar.Size = new System.Drawing.Size(619, 32);
             this.bttAdicionar.TabIndex = 0;
             this.bttAdicionar.Text = "Adicionar";
             this.bttAdicionar.UseVisualStyleBackColor = true;

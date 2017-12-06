@@ -56,29 +56,47 @@ namespace Buffet.CV
 
         private void bttRemove_Click(object sender, EventArgs e)
         {
-            int index = dgvItens.CurrentCell.RowIndex;
-            ItemDAO iDAO = new ItemDAO();
+            try
+            {
+                int index = dgvItens.CurrentCell.RowIndex;
+                ItemDAO iDAO = new ItemDAO();
 
-            iDAO.Delete(int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString()));
-            Fill();
+                iDAO.Delete(int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString()));
+                Fill();
+                MessageBox.Show("Remoção completa!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Não contem nenhum item na lista", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possivel a remoção", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void bttEditar_Click(object sender, EventArgs e)
         {
-            int index = dgvItens.CurrentCell.RowIndex;
-            int aux = int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString());
-
-            FormCadastroItem fci = new FormCadastroItem(1, aux);
-            FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
-
-            if (!fci.Visible)
+            try
             {
-                fci.TopLevel = false;
-                fmm.panelWorkstation.Controls.Add(fci);
-                fci.Refresh();
-                fci.Show();
-            }
+                int index = dgvItens.CurrentCell.RowIndex;
+                int aux = int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString());
 
+                FormCadastroItem fci = new FormCadastroItem(1, aux);
+                FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+
+                if (!fci.Visible)
+                {
+                    fci.TopLevel = false;
+                    fmm.panelWorkstation.Controls.Add(fci);
+                    fci.Refresh();
+                    fci.Show();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Não tem nenhum dado selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void bttFechar_Click(object sender, EventArgs e)

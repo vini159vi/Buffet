@@ -133,35 +133,45 @@ namespace Buffet.CV
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
             ItemDAO iDAO = new ItemDAO();
-            int index = dgvItens.CurrentCell.RowIndex;
-            int aux=0;
+            try
+            {
+                int index = dgvItens.CurrentCell.RowIndex;
+                int aux = 0;
 
-            if (check == 0)
-                aux = 1;
-            else if (check == 1)
-                aux = 2;
+                if (check == 0)
+                    aux = 1;
+                else if (check == 1)
+                    aux = 2;
 
-            iDAO.AdicionarNoCardapio(int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString()), aux);
-            Fill();
+                iDAO.AdicionarNoCardapio(int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString()), aux);
+                Fill();
+            }
+            catch
+            {
+                MessageBox.Show("Item escolhido invalido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void bttRemover_Click(object sender, EventArgs e)
         {
             ItemDAO iDAO = new ItemDAO();
-            int index = dgvCardapio.CurrentCell.RowIndex;
+            try
+            {
+                int index = dgvCardapio.CurrentCell.RowIndex;
 
             iDAO.RemoverDoCardapio(int.Parse(dgvCardapio.Rows[index].Cells["cellIDCardapio"].Value.ToString()));
             Fill();
+            }
+            catch
+            {
+                MessageBox.Show("Item escolhido invalido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
-        private void bttSalvar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void bttCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
     }
 }

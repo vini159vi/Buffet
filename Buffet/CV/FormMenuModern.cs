@@ -200,12 +200,7 @@ namespace Buffet.CV
             timerSubMenuOut.Enabled = true;
             timerSubMenuOut.Start();
         }
-        private void panelRelatorio_MouseClick(object sender, MouseEventArgs e)
-        {
-            LocalizacaoNova(panelRelatorio.Location.Y);
-            timerSelecao.Enabled = true;
-            timerSelecao.Start();
-        }
+
         private void panelConsulta_MouseClick(object sender, MouseEventArgs e)
         {
             LocalizacaoNova(panelConsulta.Location.Y);
@@ -270,10 +265,7 @@ namespace Buffet.CV
         {
             panelCardapio.BackColor = Color.FromArgb(86, 80, 84);
         }
-        private void panelRelatorio_MouseMove(object sender, MouseEventArgs e)
-        {
-            panelRelatorio.BackColor = Color.FromArgb(86, 80, 84);
-        }
+
         private void panelAgendamento_MouseMove(object sender, MouseEventArgs e)
         {
             panelAgendamento.BackColor = Color.FromArgb(86, 80, 84);
@@ -305,10 +297,7 @@ namespace Buffet.CV
         {
             panelCardapio.BackColor = Color.FromArgb(20, 20, 20);
         }
-        private void panelRelatorio_MouseLeave(object sender, EventArgs e)
-        {
-            panelRelatorio.BackColor = Color.FromArgb(20, 20, 20);
-        }
+
         private void panelConsulta_MouseLeave(object sender, EventArgs e)
         {
             panelConsulta.BackColor = Color.FromArgb(20, 20, 20);
@@ -554,10 +543,6 @@ namespace Buffet.CV
             bttOpcao3.Click += new EventHandler(Cardapio_Click);
         }
 
-        private void opcaoRelatorio()
-        {
-            
-        }
 
         private void opcaoContrato()
         {
