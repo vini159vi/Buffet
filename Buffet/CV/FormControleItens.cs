@@ -20,7 +20,7 @@ namespace Buffet.CV
             Fill();
         }
 
-        private void Fill()
+        internal void Fill()
         {
             ItemDAO iDAO = new ItemDAO();
             List<Item> listI = iDAO.List();
@@ -66,6 +66,19 @@ namespace Buffet.CV
         private void bttEditar_Click(object sender, EventArgs e)
         {
             int index = dgvItens.CurrentCell.RowIndex;
+            int aux = int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString());
+
+            FormCadastroItem fci = new FormCadastroItem(1, aux);
+            FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+
+            if (!fci.Visible)
+            {
+                fci.TopLevel = false;
+                fmm.panelWorkstation.Controls.Add(fci);
+                fci.Refresh();
+                fci.Show();
+            }
+
         }
 
         private void bttFechar_Click(object sender, EventArgs e)
@@ -76,6 +89,23 @@ namespace Buffet.CV
         private void FormControleItens_VisibleChanged(object sender, EventArgs e)
         {
             Fill();
+        }
+
+        private void dgvItens_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int index = dgvItens.CurrentCell.RowIndex;
+            int aux = int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString());
+
+            FormCadastroItem fci = new FormCadastroItem(0, aux);
+            FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+
+            if (!fci.Visible)
+            {
+                fci.TopLevel = false;
+                fmm.panelWorkstation.Controls.Add(fci);
+                fci.Refresh();
+                fci.Show();
+            }
         }
     }
 }

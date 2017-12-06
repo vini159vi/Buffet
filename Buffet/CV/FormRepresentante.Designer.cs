@@ -62,14 +62,14 @@
             this.bttAdicionar = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
             this.cbEmpresaBusca = new System.Windows.Forms.ComboBox();
-            this.clienteJuridicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbRepresentanteBusca = new System.Windows.Forms.GroupBox();
             this.checkBoxNenhumaEmpresa = new System.Windows.Forms.CheckBox();
             this.txtEmpresaView = new System.Windows.Forms.TextBox();
+            this.clienteJuridicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbRepresentante.SuspendLayout();
             this.gbBotoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).BeginInit();
             this.gbRepresentanteBusca.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCel
@@ -401,10 +401,6 @@
             this.cbEmpresaBusca.TabIndex = 0;
             this.cbEmpresaBusca.Click += new System.EventHandler(this.cbEmpresaBusca_Click);
             // 
-            // clienteJuridicoBindingSource
-            // 
-            this.clienteJuridicoBindingSource.DataSource = typeof(Buffet.Modelos.ClienteJuridico);
-            // 
             // gbRepresentanteBusca
             // 
             this.gbRepresentanteBusca.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -437,6 +433,10 @@
             this.txtEmpresaView.TabIndex = 22;
             this.txtEmpresaView.Visible = false;
             // 
+            // clienteJuridicoBindingSource
+            // 
+            this.clienteJuridicoBindingSource.DataSource = typeof(Buffet.Modelos.ClienteJuridico);
+            // 
             // FormRepresentante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,13 +454,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRepresentante_FormClosing);
             this.Load += new System.EventHandler(this.FormRepresentante_Load);
-            this.VisibleChanged += new System.EventHandler(this.FormRepresentante_VisibleChanged);
             this.gbRepresentante.ResumeLayout(false);
             this.gbRepresentante.PerformLayout();
             this.gbBotoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).EndInit();
             this.gbRepresentanteBusca.ResumeLayout(false);
             this.gbRepresentanteBusca.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteJuridicoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

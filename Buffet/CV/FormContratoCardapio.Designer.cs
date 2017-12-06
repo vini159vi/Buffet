@@ -205,7 +205,6 @@
             // 
             // gbBotoes
             // 
-            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbBotoes.Controls.Add(this.bttGerarContrato);
             this.gbBotoes.Controls.Add(this.bttCancelar);
             this.gbBotoes.Location = new System.Drawing.Point(6, 603);
@@ -595,6 +594,7 @@
             this.Controls.Add(this.gbItens);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormContratoCardapio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormContratoCardapio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gbItens.ResumeLayout(false);

@@ -34,14 +34,31 @@ namespace Buffet.CV
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            AgendaDAO aDAO = new AgendaDAO();
-            Agenda a = GetDTO();
+            if (Verifica()) {
+                AgendaDAO aDAO = new AgendaDAO();
+                Agenda a = GetDTO();
 
-            aDAO.Create(a);
+                aDAO.Create(a);
 
-            Fill();
+                Fill();
+            }
+            else
+            {
+                MessageBox.Show("Algum campo está faltando", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
+        private bool Verifica()
+        {
+            if (txtNome.Text != "" && txtTelefone.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void Fill()
         {
             AgendaDAO aDAO = new AgendaDAO();

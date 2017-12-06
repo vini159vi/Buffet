@@ -502,7 +502,6 @@
             this.radioBttJuridica.Name = "radioBttJuridica";
             this.radioBttJuridica.Size = new System.Drawing.Size(99, 17);
             this.radioBttJuridica.TabIndex = 1;
-            this.radioBttJuridica.TabStop = true;
             this.radioBttJuridica.Text = "Pessoa Juridica";
             this.radioBttJuridica.UseVisualStyleBackColor = true;
             this.radioBttJuridica.CheckedChanged += new System.EventHandler(this.radioBttJuridica_CheckedChanged);
@@ -510,6 +509,7 @@
             // radioBttFisica
             // 
             this.radioBttFisica.AutoSize = true;
+            this.radioBttFisica.Checked = true;
             this.radioBttFisica.Location = new System.Drawing.Point(15, 20);
             this.radioBttFisica.Name = "radioBttFisica";
             this.radioBttFisica.Size = new System.Drawing.Size(90, 17);
@@ -542,7 +542,6 @@
             this.radioBttEventosGerais.Name = "radioBttEventosGerais";
             this.radioBttEventosGerais.Size = new System.Drawing.Size(97, 17);
             this.radioBttEventosGerais.TabIndex = 4;
-            this.radioBttEventosGerais.TabStop = true;
             this.radioBttEventosGerais.Text = "Eventos Gerais";
             this.radioBttEventosGerais.UseVisualStyleBackColor = true;
             this.radioBttEventosGerais.CheckedChanged += new System.EventHandler(this.radioBttEventosGerais_CheckedChanged);
@@ -554,7 +553,6 @@
             this.radioBttEmpresa.Name = "radioBttEmpresa";
             this.radioBttEmpresa.Size = new System.Drawing.Size(66, 17);
             this.radioBttEmpresa.TabIndex = 3;
-            this.radioBttEmpresa.TabStop = true;
             this.radioBttEmpresa.Text = "Empresa";
             this.radioBttEmpresa.UseVisualStyleBackColor = true;
             this.radioBttEmpresa.CheckedChanged += new System.EventHandler(this.radioBttEmpresa_CheckedChanged);
@@ -566,7 +564,6 @@
             this.radioBtt15anos.Name = "radioBtt15anos";
             this.radioBtt15anos.Size = new System.Drawing.Size(64, 17);
             this.radioBtt15anos.TabIndex = 2;
-            this.radioBtt15anos.TabStop = true;
             this.radioBtt15anos.Text = "15 Anos";
             this.radioBtt15anos.UseVisualStyleBackColor = true;
             this.radioBtt15anos.CheckedChanged += new System.EventHandler(this.radioBtt15anos_CheckedChanged);
@@ -574,6 +571,7 @@
             // radioBttCasamento
             // 
             this.radioBttCasamento.AutoSize = true;
+            this.radioBttCasamento.Checked = true;
             this.radioBttCasamento.Location = new System.Drawing.Point(115, 20);
             this.radioBttCasamento.Name = "radioBttCasamento";
             this.radioBttCasamento.Size = new System.Drawing.Size(78, 17);
@@ -590,7 +588,6 @@
             this.radioBttAniversario.Name = "radioBttAniversario";
             this.radioBttAniversario.Size = new System.Drawing.Size(77, 17);
             this.radioBttAniversario.TabIndex = 0;
-            this.radioBttAniversario.TabStop = true;
             this.radioBttAniversario.Text = "Aniversario";
             this.radioBttAniversario.UseVisualStyleBackColor = true;
             this.radioBttAniversario.CheckedChanged += new System.EventHandler(this.radioBttAniversario_CheckedChanged);

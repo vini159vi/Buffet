@@ -13,10 +13,12 @@ namespace Buffet.DAO
         public void Create(Item i)
         {
             Database dbCliente = Database.GetInstance();
+            string aux = i.ValorCabeca.ToString();
+
 
             string qry = string.Format("INSERT INTO Item(nome, valorPessoa, tipo) " +
                 "VALUES('{0}', '{1}', '{2}')",
-                i.Nome, i.ValorCabeca, i.Tipo);
+                i.Nome, aux.Replace(",", "."), i.Tipo);
 
             dbCliente.ExecuteNonQuery(qry);
         }
@@ -39,10 +41,11 @@ namespace Buffet.DAO
 
         public void Update(Item i, int id)
         {
+            string aux = i.ValorCabeca.ToString();
             Database db = Database.GetInstance();
             string qry = string.Format("UPDATE Item SET nome = '{0}', valorPessoa = '{1}', tipo = '{2}'"
             + " WHERE id = '{3}'",
-            i.Nome, i.ValorCabeca, i.Tipo, id);
+            i.Nome, aux.Replace(",", "."), i.Tipo, id);
 
             db.ExecuteNonQuery(qry);
         }

@@ -73,7 +73,64 @@ namespace Buffet.CV
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
+            ItemDAO iDAO = new ItemDAO();
+            int index = dgvItens.CurrentCell.RowIndex;
+            string nome, tipo;
+            double valor;
+            int id;
 
+            id = int.Parse(dgvItens.Rows[index].Cells["cellID"].Value.ToString());
+            tipo = dgvItens.Rows[index].Cells["cellTipo"].Value.ToString();
+            valor = double.Parse(dgvItens.Rows[index].Cells["cellValorPessoa"].Value.ToString());
+            nome = dgvItens.Rows[index].Cells["cellNome"].Value.ToString();
+
+            switch (tipo)
+            {
+                case "Pratos Quentes":
+                    int indexPQuentes = dgvPratosQuentes.Rows.Add();
+                    dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnIDPratosQuentes"].Value = id;
+                    dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnNomePratosQuentes"].Value = nome;
+                    dgvPratosQuentes.Rows[indexPQuentes].Cells["ColumnValorPratosQuentes"].Value = valor;
+                    dgvItens.Rows.RemoveAt(index);
+                    break;
+                case "Salada":
+                    int indexSaladas = dgvSaladas.Rows.Add();
+                    dgvSaladas.Rows[indexSaladas].Cells["ColumnIDSaladas"].Value = id;
+                    dgvSaladas.Rows[indexSaladas].Cells["ColumnNomeSaladas"].Value = nome;
+                    dgvSaladas.Rows[indexSaladas].Cells["ColumnValorSaladas"].Value = valor;
+                    dgvItens.Rows.RemoveAt(index);
+                    break;
+                case "Fruta":
+                    int indexFrutas = dgvFrutas.Rows.Add();
+                    dgvFrutas.Rows[indexFrutas].Cells["ColumnIDFrutas"].Value = id;
+                    dgvFrutas.Rows[indexFrutas].Cells["ColumnNomeFrutas"].Value = nome;
+                    dgvFrutas.Rows[indexFrutas].Cells["ColumnValorFrutas"].Value = valor;
+                    dgvItens.Rows.RemoveAt(index);
+                    break;
+                case "Frios":
+                    int indexFrios = dgvFrios.Rows.Add();
+                    dgvFrios.Rows[indexFrios].Cells["ColumnIDFrios"].Value = id;
+                    dgvFrios.Rows[indexFrios].Cells["ColumnNomeFrios"].Value = nome;
+                    dgvFrios.Rows[indexFrios].Cells["ColumnValorFrios"].Value = valor;
+                    dgvItens.Rows.RemoveAt(index);
+                    break;
+                case "Bebida":
+                    int indexBebidas = dgvBebidas.Rows.Add();
+                    dgvBebidas.Rows[indexBebidas].Cells["ColumnIDBebidas"].Value = id;
+                    dgvBebidas.Rows[indexBebidas].Cells["ColumnNomeBebidas"].Value = nome;
+                    dgvBebidas.Rows[indexBebidas].Cells["ColumnValorBebidas"].Value = valor;
+                    dgvItens.Rows.RemoveAt(index);
+                    break;
+                case "Serviço":
+                    int indexServicos = dgvServicos.Rows.Add();
+                    dgvServicos.Rows[indexServicos].Cells["ColumnIDServicos"].Value = id;
+                    dgvServicos.Rows[indexServicos].Cells["ColumnNomeServicos"].Value = nome;
+                    dgvServicos.Rows[indexServicos].Cells["ColumnValorServicos"].Value = valor;
+                    dgvItens.Rows.RemoveAt(index);
+                    break;
+            }
+
+            Fill();
         }
 
         private void bttRemover_Click(object sender, EventArgs e)
@@ -84,6 +141,7 @@ namespace Buffet.CV
         private void bttGerarContrato_Click(object sender, EventArgs e)
         {
             ContratoDAO cDAO = new ContratoDAO();
+            c.ContratadoPrecoPagar = Total(c.EventoNConvidados);
 
             cDAO.Create(c);
             if (cj == null)
@@ -355,6 +413,7 @@ namespace Buffet.CV
 
                 if (cj == null)
                 {
+                    string aux, aux2, aux3, aux4, aux5, aux6;
                     switch (tipo)
                     {
                         case 0:
@@ -372,22 +431,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@cpf", cf.Cpf);
                             this.Substitui(oDoc, "@nomeAniversariante", c.NomeAniversariante);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
 
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
 
                             break;
                         case 1:
@@ -404,21 +478,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@rg", cf.Rg);
                             this.Substitui(oDoc, "@cpf", cf.Cpf);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
+
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
                             break;
                         case 2:
                             this.Substitui(oDoc, "@nomeFisico", cf.Nome);
@@ -435,21 +525,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@cpf", cf.Cpf);
                             this.Substitui(oDoc, "@nomeAniversariante", c.NomeAniversariante);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
+
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
                             break;
                         case 4:
                             this.Substitui(oDoc, "@nomeFisico", cf.Nome);
@@ -465,21 +571,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@rg", cf.Rg);
                             this.Substitui(oDoc, "@cpf", cf.Cpf);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
+
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
                             break;
                         case 3:
                             MessageBox.Show("Pessoa Fisica não pode fazer festa de Empresa", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -489,8 +611,10 @@ namespace Buffet.CV
                 }
                 else
                 {
+                    string aux,aux2,aux3,aux4,aux5,aux6;
                     switch (tipo)
                     {
+
                         case 0:
                             this.Substitui(oDoc, "@nomeEmpresa", cj.NomeEmpresa);
                             this.Substitui(oDoc, "@cidadeEmpresa", cj.Cidade);
@@ -514,21 +638,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@estadoRepresentante", cf.Estado);
                             this.Substitui(oDoc, "@nomeAniversariante", c.NomeAniversariante);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
+
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
                             break;
                         case 1:
                             this.Substitui(oDoc, "@nomeEmpresa", cj.NomeEmpresa);
@@ -552,21 +692,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@cidadeRepresentante", cf.Cidade);
                             this.Substitui(oDoc, "@estadoRepresentante", cf.Estado);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
+
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
                             break;
                         case 2:
                             this.Substitui(oDoc, "@nomeEmpresa", cj.NomeEmpresa);
@@ -591,21 +747,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@estadoRepresentante", cf.Estado);
                             this.Substitui(oDoc, "@nomeAniversariante", c.NomeAniversariante);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
+
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
                             break;
                         case 3:
                             this.Substitui(oDoc, "@nomeEmpresa", cj.NomeEmpresa);
@@ -629,21 +801,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@cidadeRepresentante", cf.Cidade);
                             this.Substitui(oDoc, "@estadoRepresentante", cf.Estado);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
                             break;
                         case 4:
                             this.Substitui(oDoc, "@nomeEmpresa", cj.NomeEmpresa);
@@ -667,21 +855,37 @@ namespace Buffet.CV
                             this.Substitui(oDoc, "@cidadeRepresentante", cf.Cidade);
                             this.Substitui(oDoc, "@estadoRepresentante", cf.Estado);
 
-                            this.Substitui(oDoc, "@dataEvento2", c.EventoData);
-                            this.Substitui(oDoc, "@horasEvento", c.EventoHora);
+                            this.Substitui(oDoc, "@dataEvento01", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@dataEvento02", c.EventoData.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@horasEvento", c.EventoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@numeroConvidados", c.EventoNConvidados);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@festaTermino01", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino02", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino03", c.EventoTerminoHora.ToString("HH:mm"));
                             this.Substitui(oDoc, "@capMaxima", c.EventoCapMaxima);
-                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico);
-                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora);
-                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada);
+                            this.Substitui(oDoc, "@festaInicio", c.ContratadoInicioServico.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@festaTermino", c.EventoTerminoHora.ToString("HH:mm"));
+                            this.Substitui(oDoc, "@horaChegada", c.ContratadoHoraChegada.ToString("HH:mm"));
                             this.Substitui(oDoc, "@horaAntecedencia", c.ContratadoHoraAntecedencia);
                             this.Substitui(oDoc, "@quantGarcons", c.ContratadoQuantGarcons);
                             this.Substitui(oDoc, "@quantCopeiros", c.ContratadoQuantCopeiros);
                             this.Substitui(oDoc, "@valorCabeca", ValorCabeca);
-                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto);
-                            this.Substitui(oDoc, "@dataEvento ", c.EventoData);
-                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora);
+                            this.Substitui(oDoc, "@dataPagamento", c.ContratadoDataPgto.ToString("dd/MM/yyyy"));
+                            this.Substitui(oDoc, "@festaTermino ", c.EventoTerminoHora.ToString("HH:mm"));
+
+                            aux = String.Format(AnexoItem(0));
+                            aux2 = String.Format(AnexoItem(1));
+                            aux3 = String.Format(AnexoItem(2));
+                            aux4 = String.Format(AnexoItem(3));
+                            aux5 = String.Format(AnexoItem(4));
+                            aux6 = String.Format(AnexoItem(5));
+
+                            this.Substitui(oDoc, "@pratosQuentesLista", aux);
+                            this.Substitui(oDoc, "@saladasLista", aux2);
+                            this.Substitui(oDoc, "@frutasLista", aux3);
+                            this.Substitui(oDoc, "@friosLista", aux4);
+                            this.Substitui(oDoc, "@bebidasLista", aux5);
+                            this.Substitui(oDoc, "@servicoLista", aux6);
                             break;
                     }
                 }
@@ -777,5 +981,52 @@ namespace Buffet.CV
                 oDoc2.Close();
             }
         }
-}
+
+        private string AnexoItem(int tipo)
+        {
+            string saida="";
+            switch (tipo)
+            {
+                case 0:
+                    foreach (DataGridViewRow i in dgvPratosQuentes.Rows)
+                    {
+                        saida = String.Format(saida + "\n" + i.Cells["ColumnNomePratosQuentes"].Value.ToString());
+                        Console.WriteLine(i.Cells["ColumnNomePratosQuentes"].Value.ToString());
+                    }
+                    break;
+                case 1:
+                    foreach (DataGridViewRow i in dgvSaladas.Rows)
+                    {
+                        saida = String.Format(saida +"\n"+ i.Cells["ColumnNomeSaladas"].Value.ToString());
+                    }
+                    break;
+                case 2:
+                    foreach (DataGridViewRow i in dgvFrutas.Rows)
+                    {
+                        saida += i.Cells["ColumnNomeFrutas"].Value.ToString();
+                    }
+                    break;
+                case 3:
+                    foreach (DataGridViewRow i in dgvFrios.Rows)
+                    {
+                        saida += i.Cells["ColumnNomeFrios"].Value.ToString();
+                    }
+                    break;
+                case 4:
+                    foreach (DataGridViewRow i in dgvBebidas.Rows)
+                    {
+                        saida += i.Cells["ColumnNomeBebidas"].Value.ToString();
+                    }
+                    break;
+                case 5:
+                    foreach (DataGridViewRow i in dgvServicos.Rows)
+                    {
+                        saida += i.Cells["ColumnNomeServicos"].Value.ToString();
+                    }
+                    break;
+            }
+            Console.WriteLine(saida);
+            return saida;
+        }
+    }
 }

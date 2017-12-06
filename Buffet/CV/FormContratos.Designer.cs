@@ -45,7 +45,6 @@
             this.CellNotaFiscal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.bttFechar = new System.Windows.Forms.Button();
-            this.bttEditar = new System.Windows.Forms.Button();
             this.bttRemove = new System.Windows.Forms.Button();
             this.gbFiltrar.SuspendLayout();
             this.gbLista.SuspendLayout();
@@ -221,7 +220,6 @@
             // 
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gbBotoes.Controls.Add(this.bttFechar);
-            this.gbBotoes.Controls.Add(this.bttEditar);
             this.gbBotoes.Controls.Add(this.bttRemove);
             this.gbBotoes.Location = new System.Drawing.Point(-58, 587);
             this.gbBotoes.Name = "gbBotoes";
@@ -232,7 +230,7 @@
             // bttFechar
             // 
             this.bttFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttFechar.Location = new System.Drawing.Point(745, 16);
+            this.bttFechar.Location = new System.Drawing.Point(594, 19);
             this.bttFechar.Name = "bttFechar";
             this.bttFechar.Size = new System.Drawing.Size(125, 43);
             this.bttFechar.TabIndex = 2;
@@ -240,21 +238,10 @@
             this.bttFechar.UseVisualStyleBackColor = true;
             this.bttFechar.Click += new System.EventHandler(this.bttFechar_Click);
             // 
-            // bttEditar
-            // 
-            this.bttEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttEditar.Location = new System.Drawing.Point(416, 16);
-            this.bttEditar.Name = "bttEditar";
-            this.bttEditar.Size = new System.Drawing.Size(125, 43);
-            this.bttEditar.TabIndex = 1;
-            this.bttEditar.Text = "Editar";
-            this.bttEditar.UseVisualStyleBackColor = true;
-            this.bttEditar.Click += new System.EventHandler(this.bttEditar_Click);
-            // 
             // bttRemove
             // 
             this.bttRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttRemove.Location = new System.Drawing.Point(79, 16);
+            this.bttRemove.Location = new System.Drawing.Point(255, 19);
             this.bttRemove.Name = "bttRemove";
             this.bttRemove.Size = new System.Drawing.Size(125, 43);
             this.bttRemove.TabIndex = 0;
@@ -299,7 +286,6 @@
         private System.Windows.Forms.Panel gbLista;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Button bttFechar;
-        private System.Windows.Forms.Button bttEditar;
         private System.Windows.Forms.Button bttRemove;
         private System.Windows.Forms.DataGridView dataGViewLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn cellID;

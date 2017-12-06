@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panelBotoes = new System.Windows.Forms.Panel();
+            this.bttFechar = new System.Windows.Forms.Button();
+            this.bttEditar = new System.Windows.Forms.Button();
+            this.bttRemove = new System.Windows.Forms.Button();
             this.panelDgv = new System.Windows.Forms.Panel();
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.cellId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellValorPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bttFechar = new System.Windows.Forms.Button();
-            this.bttEditar = new System.Windows.Forms.Button();
-            this.bttRemove = new System.Windows.Forms.Button();
             this.panelBotoes.SuspendLayout();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -52,63 +52,6 @@
             this.panelBotoes.Name = "panelBotoes";
             this.panelBotoes.Size = new System.Drawing.Size(855, 100);
             this.panelBotoes.TabIndex = 0;
-            // 
-            // panelDgv
-            // 
-            this.panelDgv.Controls.Add(this.dgvItens);
-            this.panelDgv.Location = new System.Drawing.Point(2, 2);
-            this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(855, 579);
-            this.panelDgv.TabIndex = 1;
-            // 
-            // dgvItens
-            // 
-            this.dgvItens.AllowUserToAddRows = false;
-            this.dgvItens.AllowUserToDeleteRows = false;
-            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
-            this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cellId,
-            this.cellNome,
-            this.cellValorPessoa,
-            this.cellTipo});
-            this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvItens.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvItens.Location = new System.Drawing.Point(0, 0);
-            this.dgvItens.MultiSelect = false;
-            this.dgvItens.Name = "dgvItens";
-            this.dgvItens.ReadOnly = true;
-            this.dgvItens.RowHeadersVisible = false;
-            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(855, 579);
-            this.dgvItens.TabIndex = 1;
-            // 
-            // cellId
-            // 
-            this.cellId.HeaderText = "ID";
-            this.cellId.Name = "cellId";
-            this.cellId.ReadOnly = true;
-            // 
-            // cellNome
-            // 
-            this.cellNome.HeaderText = "Nome";
-            this.cellNome.Name = "cellNome";
-            this.cellNome.ReadOnly = true;
-            // 
-            // cellValorPessoa
-            // 
-            this.cellValorPessoa.HeaderText = "Valor Por Pessoa";
-            this.cellValorPessoa.Name = "cellValorPessoa";
-            this.cellValorPessoa.ReadOnly = true;
-            // 
-            // cellTipo
-            // 
-            this.cellTipo.HeaderText = "Tipo";
-            this.cellTipo.Name = "cellTipo";
-            this.cellTipo.ReadOnly = true;
             // 
             // bttFechar
             // 
@@ -142,6 +85,64 @@
             this.bttRemove.Text = "Remover";
             this.bttRemove.UseVisualStyleBackColor = true;
             this.bttRemove.Click += new System.EventHandler(this.bttRemove_Click);
+            // 
+            // panelDgv
+            // 
+            this.panelDgv.Controls.Add(this.dgvItens);
+            this.panelDgv.Location = new System.Drawing.Point(2, 2);
+            this.panelDgv.Name = "panelDgv";
+            this.panelDgv.Size = new System.Drawing.Size(855, 579);
+            this.panelDgv.TabIndex = 1;
+            // 
+            // dgvItens
+            // 
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToDeleteRows = false;
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
+            this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cellId,
+            this.cellNome,
+            this.cellValorPessoa,
+            this.cellTipo});
+            this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvItens.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvItens.Location = new System.Drawing.Point(0, 0);
+            this.dgvItens.MultiSelect = false;
+            this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowHeadersVisible = false;
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(855, 579);
+            this.dgvItens.TabIndex = 1;
+            this.dgvItens.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvItens_CellMouseDoubleClick);
+            // 
+            // cellId
+            // 
+            this.cellId.HeaderText = "ID";
+            this.cellId.Name = "cellId";
+            this.cellId.ReadOnly = true;
+            // 
+            // cellNome
+            // 
+            this.cellNome.HeaderText = "Nome";
+            this.cellNome.Name = "cellNome";
+            this.cellNome.ReadOnly = true;
+            // 
+            // cellValorPessoa
+            // 
+            this.cellValorPessoa.HeaderText = "Valor Por Pessoa";
+            this.cellValorPessoa.Name = "cellValorPessoa";
+            this.cellValorPessoa.ReadOnly = true;
+            // 
+            // cellTipo
+            // 
+            this.cellTipo.HeaderText = "Tipo";
+            this.cellTipo.Name = "cellTipo";
+            this.cellTipo.ReadOnly = true;
             // 
             // FormControleItens
             // 

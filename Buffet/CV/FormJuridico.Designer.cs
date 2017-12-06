@@ -111,7 +111,6 @@
             this.lbCidadeEmpresa.Size = new System.Drawing.Size(43, 13);
             this.lbCidadeEmpresa.TabIndex = 12;
             this.lbCidadeEmpresa.Text = "Cidade:";
-            this.lbCidadeEmpresa.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtCEPEmpresa
             // 
@@ -166,7 +165,6 @@
             this.lbNumeroEmpresa.Size = new System.Drawing.Size(22, 13);
             this.lbNumeroEmpresa.TabIndex = 6;
             this.lbNumeroEmpresa.Text = "Nº:";
-            this.lbNumeroEmpresa.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtRuaEmpresa
             // 
@@ -184,7 +182,6 @@
             this.lbRuaEmpresa.Size = new System.Drawing.Size(30, 13);
             this.lbRuaEmpresa.TabIndex = 4;
             this.lbRuaEmpresa.Text = "Rua:";
-            this.lbRuaEmpresa.Click += new System.EventHandler(this.lbRua_Click);
             // 
             // txtCNPJ
             // 
@@ -270,7 +267,6 @@
             this.Text = "Juridico";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormJuridico_FormClosing);
-            this.VisibleChanged += new System.EventHandler(this.FormJuridico_VisibleChanged);
             this.gbEmpresa.ResumeLayout(false);
             this.gbEmpresa.PerformLayout();
             this.gbBotoes.ResumeLayout(false);

@@ -226,7 +226,6 @@
             this.Name = "FormCadastroItem";
             this.Text = "FormCadastroItem";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.VisibleChanged += new System.EventHandler(this.FormCadastroItem_VisibleChanged);
             this.gbAdicionarItem.ResumeLayout(false);
             this.gbAdicionarItem.PerformLayout();
             this.gbInformacoes.ResumeLayout(false);

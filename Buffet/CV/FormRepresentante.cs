@@ -63,6 +63,8 @@ namespace Buffet.CV
                 txtEmpresaView.Visible = true;
                 cbEmpresaBusca.Visible = false;
                 txtEmpresaView.ReadOnly = true;
+                checkBoxNenhumaEmpresa.Visible = false;
+
 
             }
         }
@@ -135,23 +137,44 @@ namespace Buffet.CV
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
-            ClienteFisico cf = GetDTO();
-            ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
 
-            cfDAO.Create(cf);
-
-            if (f != null)
+            if (Verifica())
             {
-                f.Fill();
+                FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+                ClienteFisico cf = GetDTO();
+                ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
+                cfDAO.Create(cf);
+
+                if (f != null)
+                {
+                    f.Fill();
+                }
+                this.Hide();
+                
             }
-            this.Hide();
+            else
+            {
+                MessageBox.Show("Algum campo está faltando", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            Resetar();
         }
 
+        private bool Verifica()
+        {
+            if (txtNomeRepresentante.Text != "" && txtBairroRepresentante.Text != "" && txtCelular.Text != "" && txtCEPRepresentante.Text != "" && txtCidadeRepresentante.Text != "" && txtCPFRepresentante.Text != "" && txtEstadoCivil.Text != "" && txtEstadoRepresentante.Text != "" && txtNacionalidade.Text != "" && txtNumeroRepresentante.Text != "" && txtProfissao.Text != "" && txtRG.Text != "" && txtRuaRepresentante.Text != "" && txtTelefone.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void bttCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Resetar();
         }
 
         private void bttEditar_Click(object sender, EventArgs e)
@@ -181,9 +204,8 @@ namespace Buffet.CV
             txtEmpresaView.Visible = false;
             cbEmpresaBusca.Visible = true;
             txtEmpresaView.ReadOnly = false;
-
+            checkBoxNenhumaEmpresa.Visible = true;
             SetDTO(rj);
-
         }
 
         private void bttUpdate_Click(object sender, EventArgs e)
@@ -200,7 +222,7 @@ namespace Buffet.CV
                 f.Fill();
             }
             this.Hide();
-            
+            Resetar();
         }
 
         private void cbEmpresaBusca_Click(object sender, EventArgs e)
@@ -209,7 +231,7 @@ namespace Buffet.CV
 
         }
 
-        private void FormRepresentante_VisibleChanged(object sender, EventArgs e)
+        private void Resetar()
         {
             UpdateComboBox();
 
@@ -279,6 +301,7 @@ namespace Buffet.CV
         {
             if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)Keys.Back) && !(e.KeyChar == (char)Keys.Space))
             {
+
                 e.Handled = true;
                 MessageBox.Show("Este Campo aceita apenas Letras!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

@@ -14,21 +14,69 @@ namespace Buffet.CV
 {
     public partial class FormCadastroItem : Form
     {
-        private int tipo;
+        private int tipo, id;
+        private Item i;
         public FormCadastroItem()
         {
             InitializeComponent();
             
         }
 
+        public FormCadastroItem(int mode, int id)
+        {
+            ItemDAO idao = new ItemDAO();
+            InitializeComponent();
+            this.i = idao.Read(id);
+            this.id = id;
+            if (mode == 1)
+            {
+                Item i = idao.Read(id);
+                Editar(i);
+            }
+            else
+            {
+                Item i = idao.Read(id);
+                Visualizar(i);
+            }
+        }
+
         private Item GetDTO()
         {
             Item i = new Item();
             i.Nome = txtNome.Text;
+
             i.ValorCabeca = double.Parse(txtValorPorCabeca.Text);
             i.Tipo = tipo;
 
             return i;
+        }
+
+        private void SetDTO(Item i)
+        {
+
+            txtNome.Text = i.Nome;
+            txtValorPorCabeca.Text = i.ValorCabeca.ToString();
+            switch (i.Tipo)
+            {
+                case 0:
+                    radioBttPratoQuente.Checked = true;
+                    break;
+                case 1:
+                    radioBttSalada.Checked = true;
+                    break;
+                case 2:
+                    radioBttFrutas.Checked = true;
+                    break;
+                case 3:
+                    radioBttFrios.Checked = true;
+                    break;
+                case 4:
+                    radioBttBebida.Checked = true;
+                    break;
+                case 5:
+                    radioBttServicos.Checked = true;
+                    break;
+            }
         }
 
 
@@ -88,21 +136,93 @@ namespace Buffet.CV
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            ItemDAO iDAO = new ItemDAO();
-            Item i = GetDTO();
+            if (Verifica())
+            {
+                ItemDAO iDAO = new ItemDAO();
+                Item i = GetDTO();
 
-            iDAO.Create(i);
+                iDAO.Create(i);
+                Resetar();
+            }
+            else
+            {
+                MessageBox.Show("Algum campo está faltando", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void bttCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Resetar();
         }
 
-        private void FormCadastroItem_VisibleChanged(object sender, EventArgs e)
+        private void Resetar()
         {
             txtNome.Text = string.Empty;
             txtValorPorCabeca.Text = string.Empty;
+        }
+
+        private bool Verifica()
+        {
+            if(txtNome.Text != "" && txtValorPorCabeca.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void bttEditar_Click(object sender, EventArgs e)
+        {
+            ItemDAO idao = new ItemDAO();
+            Item i = GetDTO();
+            idao.Update(i, this.id);
+
+            this.Hide();
+
+            FormControleItens fci = Application.OpenForms["FormControleItens"] as FormControleItens;
+            fci.Fill();
+        }
+
+        private void Editar(Item i)
+        {
+            bttAdicionar.Text = "Editar";
+            bttAdicionar.Click -= new EventHandler(bttAdicionar_Click);
+            bttAdicionar.Click += new EventHandler(bttEditar_Click);
+
+            txtNome.Text = i.Nome;
+            txtValorPorCabeca.Text = i.ValorCabeca.ToString();
+            switch (i.Tipo)
+            {
+                case 0:
+                    radioBttPratoQuente.Checked = true;
+                    break;
+                case 1:
+                    radioBttSalada.Checked = true;
+                    break;
+                case 2:
+                    radioBttFrutas.Checked = true;
+                    break;
+                case 3:
+                    radioBttFrios.Checked = true;
+                    break;
+                case 4:
+                    radioBttBebida.Checked = true;
+                    break;
+                case 5:
+                    radioBttServicos.Checked = true;
+                    break;
+            }
+        }
+
+        private void Visualizar(Item i)
+        {
+            txtNome.ReadOnly = true;
+            txtValorPorCabeca.ReadOnly = true;
+            SetDTO(i);
+            bttAdicionar.Visible = false;
         }
     }
 }

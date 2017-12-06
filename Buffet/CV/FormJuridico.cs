@@ -61,29 +61,10 @@ namespace Buffet.CV
             }
         }
 
-        private void lbRua_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCPF_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void bttRemove_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Resetar();
         }
 
         private ClienteJuridico GetDTO()
@@ -120,34 +101,49 @@ namespace Buffet.CV
 
         private void bttAdicionar_Click(object sender, EventArgs e)
         {
-            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
-            ClienteJuridico cj = GetDTO();
-
-            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-
-            cjDAO.Create(cj);
-
-            if (f != null)
+            if (Verifica())
             {
-                f.Fill();
+                FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+                ClienteJuridico cj = GetDTO();
+
+                ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+
+                cjDAO.Create(cj);
+
+                if (f != null)
+                {
+                    f.Fill();
+                }
+                this.Hide();
+                Resetar();
+            }else
+            {
+                MessageBox.Show("Algum campo está faltando", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            this.Hide();
         }
 
         private void bttAdicionar_UpdateClick(object sender, EventArgs e)
         {
-            FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
-            ClienteJuridico cj = GetDTO();
-
-            ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
-
-            cjDAO.Update(cj, cnpj);
-
-            if (f != null)
+            if (Verifica())
             {
-                f.Fill();
+                FormCadastrados f = Application.OpenForms["FormCadastrados"] as FormCadastrados;
+                ClienteJuridico cj = GetDTO();
+
+                ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
+
+                cjDAO.Update(cj, cnpj);
+
+                if (f != null)
+                {
+                    f.Fill();
+                }
+                this.Hide();
+                Resetar();
             }
-            this.Hide();
+            else
+            {
+                MessageBox.Show("Algum campo está faltando", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void bttVerRepresentante_Click(object sender, EventArgs e)
@@ -195,7 +191,7 @@ namespace Buffet.CV
             }
         }
 
-        private void FormJuridico_VisibleChanged(object sender, EventArgs e)
+        private void Resetar()
         {
             txtBairroEmpresa.Text = string.Empty;
             txtCEPEmpresa.Text = string.Empty;
@@ -206,5 +202,20 @@ namespace Buffet.CV
             txtNumeroEmpresa.Text = string.Empty;
             txtRuaEmpresa.Text = string.Empty;
         }
+
+        private bool Verifica()
+        {
+            if (txtBairroEmpresa.Text != "" && txtCEPEmpresa.Text != "" && txtCidadeEmpresa.Text != "" && txtCNPJ.Text != "" && txtEstadoEmpresa.Text != "" && txtNomeEmpresa.Text != "" && txtNumeroEmpresa.Text != "" && txtRuaEmpresa.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
     }
 }

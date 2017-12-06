@@ -66,7 +66,6 @@
             this.gbLista.Size = new System.Drawing.Size(850, 533);
             this.gbLista.TabIndex = 2;
             this.gbLista.TabStop = false;
-            this.gbLista.Enter += new System.EventHandler(this.gbLista_Enter);
             // 
             // dataGViewLista
             // 
@@ -90,8 +89,6 @@
             this.dataGViewLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGViewLista.Size = new System.Drawing.Size(844, 514);
             this.dataGViewLista.TabIndex = 0;
-            this.dataGViewLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGViewLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGViewLista_CellDoubleClick);
             this.dataGViewLista.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGViewLista_CellMouseDoubleClick);
             this.dataGViewLista.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGViewLista_UserDeletedRow);
             // 

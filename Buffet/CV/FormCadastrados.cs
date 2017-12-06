@@ -29,22 +29,6 @@ namespace Buffet
                 Fill();
         }
 
-        private void bttAdicionar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        private void gbLista_Enter(object sender, EventArgs e)
-        {
-            
-        }
-
         private void bttEditar_Click(object sender, EventArgs e)
         {
 
@@ -54,15 +38,29 @@ namespace Buffet
             {
                 ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                 ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                //FormFisico ff = new FormFisico(cf, 1);
-                //ff.ShowDialog();
+                FormRepresentante fr = new FormRepresentante(cf, 1);
+                if (!fr.Visible)
+                {
+                    fr.TopLevel = false;
+                    FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                    fmm.panelWorkstation.Controls.Add(fr);
+                    fr.Refresh();
+                    fr.Show();
+                }
             }
             else if (tipo == 2)
             {
                 ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
                 ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
                 FormJuridico fj = new FormJuridico(cj,1);
-                fj.ShowDialog();
+                if (!fj.Visible)
+                {
+                    fj.TopLevel = false;
+                    FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                    fmm.panelWorkstation.Controls.Add(fj);
+                    fj.Refresh();
+                    fj.Show();
+                }
             }
             else if(tipo == 0)
             {
@@ -70,15 +68,29 @@ namespace Buffet
                 {
                     ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                     ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                    //FormFisico ff = new FormFisico(cf, 1);
-                    //ff.ShowDialog();
+                    FormRepresentante fr = new FormRepresentante(cf, 1);
+                    if (!fr.Visible)
+                    {
+                        fr.TopLevel = false;
+                        FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                        fmm.panelWorkstation.Controls.Add(fr);
+                        fr.Refresh();
+                        fr.Show();
+                    }
                 }
                 else
                 {
                     ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
                     ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
                     FormJuridico fj = new FormJuridico(cj, 1);
-                    fj.ShowDialog();
+                    if (!fj.Visible)
+                    {
+                        fj.TopLevel = false;
+                        FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                        fmm.panelWorkstation.Controls.Add(fj);
+                        fj.Refresh();
+                        fj.Show();
+                    }
                 }
             }
         }
@@ -379,15 +391,29 @@ namespace Buffet
             {
                 ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                 ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                //FormFisico ff = new FormFisico(cf, 0);
-                //ff.Show();
+                FormRepresentante fr = new FormRepresentante(cf, 0);
+                if (!fr.Visible)
+                {
+                    fr.TopLevel = false;
+                    FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                    fmm.panelWorkstation.Controls.Add(fmm);
+                    fr.Refresh();
+                    fr.Show();
+                }
             }
             else if (tipo == 2)//Juridico
             {
                 ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
                 ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\","").Replace("-","")));
                 FormJuridico fj = new FormJuridico(cj, 0);
-                fj.Show();
+                if (!fj.Visible)
+                {
+                    fj.TopLevel = false;
+                    FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                    fmm.panelWorkstation.Controls.Add(fj);
+                    fj.Refresh();
+                    fj.Show();
+                }
 
             }
             else//Todos
@@ -396,15 +422,29 @@ namespace Buffet
                 {
                     ClienteFisicoDAO cfDAO = new ClienteFisicoDAO();
                     ClienteFisico cf = cfDAO.FindByCPF(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace("-", "")));
-                    //FormFisico ff = new FormFisico(cf, 0);
-                    //ff.Show();
+                    FormRepresentante fr = new FormRepresentante(cf, 0);
+                    if (!fr.Visible)
+                    {
+                        FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                        fr.TopLevel = false;
+                        fmm.panelWorkstation.Controls.Add(fr);
+                        fr.Refresh();
+                        fr.Show();
+                    }
                 }
                 else
                 {
                     ClienteJuridicoDAO cjDAO = new ClienteJuridicoDAO();
                     ClienteJuridico cj = cjDAO.FindByCNPJ(long.Parse(dataGViewLista.Rows[index].Cells[2].Value.ToString().Replace(".", "").Replace(@"\", "").Replace("-", "")));
                     FormJuridico fj = new FormJuridico(cj, 0);
-                    fj.Show();
+                    if (!fj.Visible)
+                    {
+                        FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                        fj.TopLevel = false;
+                        fmm.panelWorkstation.Controls.Add(fj);
+                        fj.Refresh();
+                        fj.Show();
+                    }
                 }
             }
         }

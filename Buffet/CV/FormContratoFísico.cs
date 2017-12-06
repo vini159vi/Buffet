@@ -82,39 +82,46 @@ namespace Buffet.CV
 
         private void bttGerarContrato_Click(object sender, EventArgs e)
         {
-            FormContratos fc = Application.OpenForms["FormContratos"] as FormContratos;
-            FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
-            Contrato c = GetDTO();
+            if (Verifica()) {
+                FormContratos fc = Application.OpenForms["FormContratos"] as FormContratos;
+                FormMenuModern fmm = Application.OpenForms["FormMenuModern"] as FormMenuModern;
+                Contrato c = GetDTO();
 
-            ContratoDAO cDAO = new ContratoDAO();
-            if (tipo == 0)
-            {
-                FormContratoCardapio fcc = new FormContratoCardapio(c, c.PessoaFisica.Cpf,0, contrato);
-                if (!fcc.Visible)
+                ContratoDAO cDAO = new ContratoDAO();
+                if (tipo == 0)
                 {
-                    fcc.TopLevel = false;
-                    fmm.panelWorkstation.Controls.Add(fcc);
-                    fcc.Refresh();
-                    fcc.Show();
+                    FormContratoCardapio fcc = new FormContratoCardapio(c, c.PessoaFisica.Cpf, 0, contrato);
+                    if (!fcc.Visible)
+                    {
+                        fcc.TopLevel = false;
+                        fmm.panelWorkstation.Controls.Add(fcc);
+                        fcc.Refresh();
+                        fcc.Show();
+                    }
                 }
+                else
+                {
+                    FormContratoCardapio fcc = new FormContratoCardapio(c, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, contrato);
+                    if (!fcc.Visible)
+                    {
+                        fcc.TopLevel = false;
+                        fmm.panelWorkstation.Controls.Add(fcc);
+                        fcc.Refresh();
+                        fcc.Show();
+                    }
+                }
+
+                if (fc != null)
+                {
+                    fc.Fill();
+                }
+                this.Hide();
             }
             else
             {
-                FormContratoCardapio fcc = new FormContratoCardapio(c, c.PessoaFisica.Cpf, c.PessoaJuridica.Cnpj, contrato);
-                if (!fcc.Visible)
-                {
-                    fcc.TopLevel = false;
-                    fmm.panelWorkstation.Controls.Add(fcc);
-                    fcc.Refresh();
-                    fcc.Show();
-                }
+                MessageBox.Show("Algum campo está faltando", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             
-            if (fc != null)
-            {
-                fc.Fill();
-            }
-            this.Hide();
         }
 
         private void bttCancelar_Click(object sender, EventArgs e)
@@ -340,6 +347,25 @@ namespace Buffet.CV
             {
                 e.Handled = true;
                 MessageBox.Show("Este Campo aceita apenas Numeros!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private bool Verifica()
+        {
+            if(txtCapacidade.Text != "" && txtConvidados.Text != "" && txtCopeiros.Text != "" && txtGarcom.Text != "" && txtHorasAntecedencia.Text != "")
+            {
+                if (txtNomeAniversario.Text == "" && (contrato != 2 || contrato != 0))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
     }

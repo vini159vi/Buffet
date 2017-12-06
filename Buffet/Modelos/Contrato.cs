@@ -70,6 +70,6 @@ namespace Buffet.Modelos
         public DateTime DataCriacao { get { return dataCriacao; } set { dataCriacao = value; } }
         public int NotaFiscal { get { return notaFiscal; } set { notaFiscal = value; } }
 
-        public string NomeAniversariante { get => nomeAniversariante; set => nomeAniversariante = value; }
+        public string NomeAniversariante { get {return nomeAniversariante; } set { nomeAniversariante = value; } }
     }
 }
