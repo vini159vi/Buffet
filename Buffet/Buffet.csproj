@@ -90,43 +90,36 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Contrato15Anos.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ContratoAniversario.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContratoAniversario.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ContratoCasamento.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContratoCasamento.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ContratoEmpresa.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContratoEmpresa.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ContratoEventoGerais.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContratoEventoGerais.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ContratosFeitos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContratosFeitos.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ContratosMes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContratosMes.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="CV\FormAgenda.cs">
       <SubType>Form</SubType>
@@ -197,7 +190,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Fatura.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="MISC\Database.cs" />
     <Compile Include="MISC\TabelasDB.cs" />
@@ -221,13 +213,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TipoDeCardapio.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TipoDeFesta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TipoDeFesta.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Contrato15Anos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -364,7 +354,7 @@
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
-      <VersionMinor>8</VersionMinor>
+      <VersionMinor>7</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
@@ -373,7 +363,7 @@
     <COMReference Include="Microsoft.Office.Interop.Word">
       <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>8</VersionMajor>
-      <VersionMinor>7</VersionMinor>
+      <VersionMinor>6</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
